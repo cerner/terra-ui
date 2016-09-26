@@ -1,8 +1,13 @@
 !/log/.keep
 !/tmp/.keep
+*.log
 .byebug_history
 /.bundle
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /log/*
+/node_modules
+/public/webpack
 /tmp/*
+logs
+npm-debug.log*

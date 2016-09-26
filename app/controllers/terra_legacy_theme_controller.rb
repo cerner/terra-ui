@@ -1,0 +1,2 @@
+class TerraLegacyThemeController < ApplicationController
+end

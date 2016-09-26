@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+
+# Create env variable for running webpack-dev-server in background
+ENV['WEBPACK_DEV_SERVER'] ||= 'true' unless (ARGV & ['s', 'server']).empty?
+
 begin
   load File.expand_path('../spring', __FILE__)
 rescue LoadError => e

@@ -1,1 +1,8 @@
-%h2 Table
+- component = 'terra-table'
+- example_array = [component, 'terra-table-long-text', 'terra-table-size', 'terra-table-striped']
+
+= render_header(component)
+= render_toc(example_array)
+= render_component_version(component)
+- example_array.each do |i|
+  = render_example(component, i)

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'terra#index'
 
-  get 'team/index'
   get 'terra/index'
   get 'terra_application/index'
   get 'terra_button/index'

@@ -1,1 +1,8 @@
-%h2 Grid
+- component = 'terra-grid'
+- example_array = [component, 'terra-grid-alignmnet', 'terra-grid-auto', 'terra-grid-distribution', 'terra-grid-nested', 'terra-grid-responsive', 'terra-grid-source-ordering']
+
+= render_header(component)
+= render_toc(example_array)
+= render_component_version(component)
+- example_array.each do |i|
+  = render_example(component, i)

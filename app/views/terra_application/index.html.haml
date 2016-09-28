@@ -1,1 +1,8 @@
-%h2 Application
+- component = 'terra-application'
+- example_array = ['readme', 'terra-application']
+
+= render_header(component)
+= render_toc(example_array)
+= render_component_version(component)
+- example_array.each do |i|
+  = render_example(component, i)

@@ -12,7 +12,7 @@
     .terra-Grid
       .terra-Grid-col.terra-Grid-col--1
       .terra-Grid-col.terra-Grid-col--10
-        %h1.terra-Title.terra-Title--huge.terra-Title--horizontal
+        %h1.terra-Title.terra-Title--huge.terra-Title--horizontalMiddle
           %span.terra-Title--heading
             Terra
             .terra-Title--caption Front-End Framework
@@ -25,20 +25,19 @@
           = link_to 'Menu', terra_menu_index_path, class: menu_item_is_active('terra_menu')
           = link_to 'Table', terra_table_index_path, class: menu_item_is_active('terra_table')
           = link_to 'Title', terra_title_index_path, class: menu_item_is_active('terra_title')
-          = link_to 'Team', team_index_path, class: menu_item_is_active('team')
         = yield
       .terra-Grid-col.terra-Grid-col--1
-    = javascript_include_tag *webpack_asset_paths('terra-ui', extension: 'js')
+    / = javascript_include_tag *webpack_asset_paths('terra-ui', extension: 'js')
 
-    - # = javascript_include_tag "https://code.jquery.com/jquery-2.2.4.min.js"
-    - # Foundation
-    - # = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css'
-    - # = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js'
+    / = javascript_include_tag "https://code.jquery.com/jquery-2.2.4.min.js"
+    / - # Foundation
+    / = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css'
+    / = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js'
 
-    - # Bootstrap
-    - # = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-    - # = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+    / - # Bootstrap
+    / = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+    / = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
 
-    - # Semantic-UI
-    - # = stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css'
-    - # = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js'
+    / - # Semantic-UI
+    / = stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css'
+    / = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js'

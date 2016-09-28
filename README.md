@@ -1,24 +1,28 @@
-# README
+# [terra-ui.com](https://www.terra-ui.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Documenation site for Terra. Terra is the core UI component library, unifying UX concepts and development across Cerner.
 
-Things you may want to cover:
+## Install Application
+```
+git clone https://github.cerner.com/terra/terra-ui.com.git
 
-* Ruby version
+bundle install
 
-* System dependencies
+npm install
+```
 
-* Configuration
 
-* Database creation
+## Run Application
+```
+rails s
 
-* Database initialization
+Go to localhost:3000
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Test Application
+```
+npm run lint
 
-* Deployment instructions
-
-* ...
+rspec
+```

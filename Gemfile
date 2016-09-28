@@ -4,7 +4,10 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
 gem 'haml-rails', '~> 0.9.0'
 gem 'webpack-rails', '~> 0.9.9'
-gem 'pg'
+gem 'pg', '~> 0.19.0'
+gem 'json', '~> 2.0.2'
+gem 'redcarpet', '~> 3.3.4'
+gem 'html2haml', '~> 2.0.0'
 
 group :development, :test do
   gem 'pry-byebug', '~> 1.3.3'

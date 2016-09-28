@@ -7,8 +7,8 @@
     "lint": "npm run lint-js && npm run lint-scss",
     "lint-js": "eslint .",
     "lint-scss": "stylelint **/*.scss",
-    "webpack": "webpack",
-    "start": "webpack-dev-server --config webpack.hot.config.js --inline"
+    "start": "webpack-dev-server --config webpack.hot.config.js --inline",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "dependencies": {
     "terra-application": "^0.2.0",
     "terra-button": "git://github.cerner.com/terra/terra-button.git",
-    "terra-grid": "git://github.cerner.com/terra/terra-grid.git",
+    "terra-grid": "^0.2.0",
     "terra-legacy-theme": "0.1.0-rc.1 || <=1.x",
     "terra-menu": "git://github.cerner.com/terra/terra-menu.git",
     "terra-table": "git://github.cerner.com/terra/terra-table.git",

@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root 'terra#index'
 
-  get 'terra/index'
-  get 'terra_application/index'
-  get 'terra_button/index'
-  get 'terra_grid/index'
-  get 'terra_legacy_theme/index'
-  get 'terra_menu/index'
-  get 'terra_table/index'
-  get 'terra_title/index'
+  match 'terra', to: 'terra#index', via: :get
+  match 'terra-application/', to: 'terra_application#index', via: :get
+  match 'terra-button', to: 'terra_button#index', via: :get
+  match 'terra-grid', to: 'terra_grid#index', via: :get
+  match 'terra-legacy-theme', to: 'terra_legacy_theme#index', via: :get
+  match 'terra-menu', to: 'terra_menu#index', via: :get
+  match 'terra-table', to: 'terra_table#index', via: :get
+  match 'terra-title', to: 'terra_title#index', via: :get
+
 end

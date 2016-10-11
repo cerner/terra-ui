@@ -36,7 +36,7 @@ RSpec.describe ApplicationHelper, type: :helper do
 
       it 'returns h2 with component version' do
         input =  'terra-ui'
-        output = "<h2 class=\"version terra-ui\">Version: 5.1.0</h2>"
+        output = "<h3 class=\"version terra-ui\">Version: 5.1.0</h3>"
         expect(helper.render_component_version(input)).to eq output
       end
     end
@@ -48,7 +48,7 @@ RSpec.describe ApplicationHelper, type: :helper do
 
       it 'returns h2 with component version' do
         input =  'terra-ui'
-        output = "<h2 class=\"version terra-ui\">Version: Unknown Version</h2>"
+        output = "<h3 class=\"version terra-ui\">Version: Unknown Version</h3>"
         expect(helper.render_component_version(input)).to eq output
       end
     end

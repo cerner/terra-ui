@@ -10,7 +10,7 @@ module ApplicationHelper
 
   # Renders component version header
   def render_component_version(component)
-    content_tag(:h2, class: "version #{component}") do
+    content_tag(:h3, class: "version #{component}") do
       "Version: #{component_version(component)}"
     end
   end

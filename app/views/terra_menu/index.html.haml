@@ -1,8 +1,8 @@
 - component = 'terra-menu'
-- example_array = [component, 'terra-menu-orientation', 'terra-menu-long-text']
+- example_array = [component, 'terra-menu-orientation']
 
 = render_header(component)
-= render_toc(example_array)
 = render_component_version(component)
+= render_toc(example_array)
 - example_array.each do |i|
   = render_example(component, i)

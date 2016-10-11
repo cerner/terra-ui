@@ -21,13 +21,13 @@
           = link_to 'Application', terra_application_index_path, class: menu_item_is_active('terra_application')
           = link_to 'Button', terra_button_index_path, class: menu_item_is_active('terra_button')
           = link_to 'Grid', terra_grid_index_path, class: menu_item_is_active('terra_grid')
-          = link_to 'Legacy Theme', terra_legacy_theme_index_path, class: menu_item_is_active('terra_legacy_theme')
+          = link_to 'Theme', terra_legacy_theme_index_path, class: menu_item_is_active('terra_legacy_theme')
           = link_to 'Menu', terra_menu_index_path, class: menu_item_is_active('terra_menu')
           = link_to 'Table', terra_table_index_path, class: menu_item_is_active('terra_table')
           = link_to 'Title', terra_title_index_path, class: menu_item_is_active('terra_title')
         = yield
       .terra-Grid-col.terra-Grid-col--1
-    / = javascript_include_tag *webpack_asset_paths('terra-ui', extension: 'js')
+    = javascript_include_tag *webpack_asset_paths('terra-ui', extension: 'js')
 
     / = javascript_include_tag "https://code.jquery.com/jquery-2.2.4.min.js"
     / - # Foundation

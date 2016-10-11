@@ -1,3 +1,97 @@
 %h2 Welcome to Terra
 
-%p Documentation for getting started goes here
+%ul
+  %li
+    %a{:href => "#how-to-use-terra"} How to use Terra
+  %li
+    %a{:href => "#installing-node"} Installing Node
+  %li
+    %a{:href => "#themes"} Themes
+  %li
+    %a{:href => "#components"} Components
+  %li
+    %a{:href => "#importing-component"}  Importing Component
+    %ul
+      %li
+        %a{:href => "#importing-component-stylesheets"}  Importing Component Stylesheets
+      %li
+        %a{:href => "#importing-component-javascript"}  Importing Component Javascript
+%h3 Getting Started
+
+%h3#how-to-use-terra How to use Terra
+
+%p= "To use Terra, we recommend using NPM and Webpack. NPM is a popular javascript package management system. Every terra module is published on #{link_to 'NPM', 'https://www.npmjs.com/'}. Webpack is a module bundler. Using Webpack allows us to write modular, reusable components.".html_safe
+
+%h4#installing-node
+%p= "You need to have node.js installed in order to use Terra: #{link_to 'https://docs.npmjs.com/getting-started/installing-node', 'https://docs.npmjs.com/getting-started/installing-node'}".html_safe
+%p You must initialize npm in your project:
+%pre.terra-npm-install
+  %code
+    npm init
+
+%h4#themes Themes
+%p= "Every application must include a theme. A theme defines variables used in different components. We currently provide the #{link_to 'terra-legacy-theme', 'https://www.npmjs.com/package/terra-legacy-theme'}, but you may also create your own. More information will be coming about how to create your own theme.".html_safe
+%p To install the terra-legacy-theme NPM package, from the root of your project, run:
+%pre
+  %code
+    npm install --save terra-legacy-theme
+%ul
+  %li
+    = link_to 'Legacy Theme', 'https://www.npmjs.com/package/terra-legacy-theme'
+    %p The terra-legacy-theme component sets global styles for the entire application. Global styles include font, colors, margins, and sizes.
+
+%h4#components Components
+%p Terra includes several different components which can be found below. Every component can optionaly be included/excluded. We strongly encourage always using the application component. To install all of the terra NPM packages, from the root of your project, run:
+%pre
+  %code
+    npm install --save terra-application terra-button terra-grid terra-menu terra-table terra-title
+%ul
+  %li
+    = link_to 'Application', 'https://www.npmjs.com/package/terra-application'
+    %p The terra-application component sets global styles for the entire application. Global styles include font, colors, margins, and sizes.
+  %li
+    = link_to 'Button', 'https://www.npmjs.com/package/terra-button'
+    %p The terra-button component provides users a way to trigger actions in the UI. It can be modified in color, size, and type, and can optionally display an icon.
+  %li
+    = link_to 'Grid', 'https://www.npmjs.com/package/terra-grid'
+    %p The terra-grid component provides a flexbox based grid system.
+  %li
+    = link_to 'Menu', 'https://www.npmjs.com/package/terra-menu'
+    %p The terra-menu component displays grouped navigation actions. It can be used for site wide navigation or for switching between documents in a container.
+  %li
+    = link_to 'Table', 'https://www.npmjs.com/package/terra-table'
+    %p The terra table component provides a responsive way to present tabular data.
+  %li
+    = link_to 'Title', 'https://www.npmjs.com/package/terra-title'
+    %p The terra-title component provides a short summary of content. It can be modified in size, orientation, and can optionally display a graphic and/or caption.
+
+%h3#importing-component Importing Component
+%p Each component can contain javascript and styles. Users have the option of opting into whichever code they may need.
+
+%h4#mporting-component-stylesheets Importing Component Style
+%p We recommend each application having a single stylesheet to import additional stylesheets for different Terra components. Below is the application stylesheet used in the Terra documentation site.
+%pre
+  %code
+  \// Import theme styles
+  @import 'terra-legacy-theme';
+  //
+  \// Optionally override theming variables.
+  //
+  \// Import component styles
+  @import 'terra-application';
+  @import 'terra-button';
+  @import 'terra-grid';
+  @import 'terra-menu';
+  @import 'terra-table';
+  @import 'terra-title';
+
+
+%h4#importing-component-javascript  Importing Component Javascript
+%p We recommend having a single javascript file to import javascript for each component. Below is the javascript file used in the Terra documenation site. Since we are using webpack, we also import our stylesheet file. Our components do not currently have any javascript. We will be releasing components with javascript in the near future.
+%pre.terra-npm-install
+  %code
+  \// Import application styles
+  import './terra-ui.scss';
+  //
+  \// Import component javascript
+

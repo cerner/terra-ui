@@ -2,12 +2,17 @@
   "name": "terra-ui.com",
   "private": true,
   "version": "0.1.0",
+  "engines": {
+    "node": "6.3.0",
+    "npm": "3.10.3"
+  },
   "description": "Documentation site for Terra, a modularized Front-End Framework",
   "scripts": {
     "lint": "npm run lint-js && npm run lint-scss",
     "lint-js": "eslint .",
     "lint-scss": "stylelint **/*.scss",
     "start": "webpack-dev-server --config webpack.hot.config.js --inline --hot",
+    "postinstall": "npm run webpack",
     "webpack": "webpack"
   },
   "repository": {

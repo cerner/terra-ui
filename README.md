@@ -1,5 +1,8 @@
 # [terra-ui.com](https://www.terra-ui.com)
 
+[![Build Status](https://travis-ci.org/cerner/terra-ui.com.svg?branch=master)](https://travis-ci.org/cerner/terra-ui.com)
+[![Stories in Ready](https://badge.waffle.io/cerner/terra-ui.com.svg?label=ready&title=Ready)](http://waffle.io/cerner/terra-ui.com)
+
 Documenation site for Terra. Terra is the core UI component library, unifying UX concepts and development across Cerner.
 
 - [Getting Started](#getting-started)

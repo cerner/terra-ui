@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const config = require('./webpack.base.config');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const devPort = 3808;
 
@@ -9,6 +10,7 @@ config.entry['terra-ui'].unshift('webpack/hot/only-dev-server');
 
 config.plugins.push(new webpack.NoErrorsPlugin());
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
+config.plugins.push(new ExtractTextPlugin('[name].css'));
 
 config.devtool = 'eval';
 config.debug = true;

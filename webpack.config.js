@@ -2,6 +2,7 @@
 const CleanPlugin = require('clean-webpack-plugin');
 const config = require('./webpack.base.config');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Add optimize plugins normally found in the -p (production flag) in CLI
 config.plugins.push(new webpack.optimize.UglifyJsPlugin({
@@ -20,6 +21,7 @@ config.plugins.push(new webpack.DefinePlugin({
 
 // Setup long-term caching by including a hash on the end of the bundle names
 config.output.filename = '[name]-[hash].js';
+config.plugins.push(new ExtractTextPlugin('[name]-[hash].css'));
 
 // Clean build before running
 config.plugins.push(new CleanPlugin('public/webpack'));

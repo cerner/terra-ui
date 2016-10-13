@@ -11,13 +11,16 @@
     "lint": "npm run lint-js && npm run lint-scss",
     "lint-js": "eslint .",
     "lint-scss": "stylelint **/*.scss",
-    "start": "webpack-dev-server --config webpack.hot.config.js --inline --hot",
     "postinstall": "npm run webpack",
+    "release:major": "npm version patch -m \"Released version %s\" && git push --follow-tags",
+    "release:minor": "npm version minor -m \"Released version %s\" && git push --follow-tags",
+    "release:patch": "npm version patch -m \"Released version %s\" && git push --follow-tags",
+    "start": "webpack-dev-server --config webpack.hot.config.js --inline --hot",
     "webpack": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.cerner.com/terra/terra-ui.com.git"
+    "url": "https://github.com/cerner/terra-ui.com.git"
   },
   "homepage": "https://www.terra-ui.com",
   "author": "Cerner Corporation",

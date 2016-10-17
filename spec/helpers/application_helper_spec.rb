@@ -10,7 +10,7 @@ RSpec.describe ApplicationHelper, type: :helper do
       end
 
       it 'returns example' do
-        output = "<article id=\"terra-component\"><h1>Terra Title</h1>\n<br># Terra Title</br><pre class=\"tui-html-code\"><code># Terra Title</code></pre></article>"
+        output = "<article id=\"terra-component\"><br># Terra Title</br></article>"
         expect(helper.render_example('terra-component', 'terra-component')).to eq output
       end
     end

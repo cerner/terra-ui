@@ -1,5 +1,5 @@
 !!!
-%html.terra-Application{dir: 'ltr', lang: "#{I18n.locale}"}
+%html.terra-Application{dir: @dir, lang: I18n.locale}
   %head
     %meta{charset: 'utf-8'}/
     %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}/
@@ -27,6 +27,9 @@
           = link_to 'Title', terra_title_path, class: menu_item_is_active('terra_title')
         = yield
       .terra-Grid-col.terra-Grid-col--1
+        %form{method: 'get'}
+          %p.field.field-select
+            = select_tag 'dir', options_for_select([ 'ltr', 'rtl' ], @dir), :onchange => "this.form.submit()"
     = javascript_include_tag *webpack_asset_paths('terra-ui', extension: 'js')
 
     / = javascript_include_tag "https://code.jquery.com/jquery-2.2.4.min.js"

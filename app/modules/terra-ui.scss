@@ -1,6 +1,10 @@
 // import theme
 @import 'terra-legacy-theme';
 
+$terra-bidi: true;
+
+@import 'terra-mixins';
+
 // override themeing variables here
 
 // import components

@@ -27,12 +27,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "terra-application": "^0.2.0",
-    "terra-button": "^0.1.0",
-    "terra-grid": "^0.2.0",
+    "terra-button": "git://github.com/cerner/terra-button.git#master",
+    "terra-grid": "git://github.com/cerner/terra-grid.git#master",
     "terra-legacy-theme": "^0.1.0",
-    "terra-menu": "^0.1.0",
-    "terra-table": "^0.1.0",
-    "terra-title": "^0.1.0"
+    "terra-menu": "git://github.com/cerner/terra-menu.git#master",
+    "terra-mixins": "^0.3.0",
+    "terra-table": "git://github.com/cerner/terra-table.git#master",
+    "terra-title": "git://github.com/cerner/terra-title.git#master"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",

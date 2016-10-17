@@ -19,12 +19,12 @@ module ApplicationHelper
   def render_example(component, example)
     content_tag(:article, id: example) do
       if File.exist? markdown_path(component, example)
-        concat render_markdown(component, example)
+        #concat render_markdown(component, example)
       end
 
       if File.exist? html_path(component, example)
         concat render_html(component, example)
-        concat render_code_html(component, example)
+        #concat render_code_html(component, example)
         #concat render_code_haml(component, example)
       end
     end

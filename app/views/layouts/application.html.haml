@@ -16,7 +16,6 @@
           %span.terra-Title--heading
             Terra
             .terra-Title--caption Front-End Framework
-        %hr
         %div.terra-Menu.terra-Menu--horizontal
           = link_to 'Terra', terra_path, class: menu_item_is_active('terra')
           = link_to 'Application', terra_application_path, class: menu_item_is_active('terra_application')
@@ -26,7 +25,6 @@
           = link_to 'Menu', terra_menu_path, class: menu_item_is_active('terra_menu')
           = link_to 'Table', terra_table_path, class: menu_item_is_active('terra_table')
           = link_to 'Title', terra_title_path, class: menu_item_is_active('terra_title')
-        %hr
         = yield
       .terra-Grid-col.terra-Grid-col--1
         %form{method: 'get'}

@@ -1,0 +1,16 @@
+language: ruby
+
+env:
+  - TRAVIS_NODE_VERSION="6.3.0"
+
+before_install:
+  - nvm install $TRAVIS_NODE_VERSION
+
+install:
+  - npm install
+  - npm run webpack
+  - bundle install
+
+script:
+  - npm run lint
+  - bundle exec rspec

@@ -16,29 +16,30 @@ $terra-bidi: true;
 
 // CUSTOM SITE STYLES
 // ================================================
+// Custom site styles not follow terra selector-class-pattern
+// stylelint-disable selector-class-pattern
 
 // horizontal scrolling on code
 pre {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 pre code {
-    overflow-wrap: normal;
-    white-space: pre;
+  overflow-wrap: normal;
+  white-space: pre;
 }
 
-// background/padding on code
-.tui-html-code{
-  padding: 1rem;
+.tui-html-code {
   background-color: #f7f7f9;
-}
-
-.tui-haml-code{
   padding: 1rem;
-  background-color: #daf3ff;
 }
 
-// grid demo styling
+.tui-haml-code {
+  background-color: #daf3ff;
+  padding: 1rem;
+}
+
+// background/padding on grid examples
 .demo-bar {
   background-color: #c8cacb;
   margin-bottom: 1rem;

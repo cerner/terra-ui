@@ -29,6 +29,7 @@
     "terra-application": "^0.2.0",
     "terra-button": "git://github.com/cerner/terra-button.git#master",
     "terra-grid": "git://github.com/cerner/terra-grid.git#master",
+    "terra-label": "git://github.com/cerner/terra-label.git#master",
     "terra-legacy-theme": "^0.1.0",
     "terra-menu": "git://github.com/cerner/terra-menu.git#master",
     "terra-mixins": "^0.3.0",

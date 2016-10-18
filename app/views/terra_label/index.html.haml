@@ -1,0 +1,9 @@
+- component = 'terra-label'
+- example_array = [component, 'terra-label-context', 'terra-label-badge', 'terra-label-icon', 'terra-label-size',  'terra-label-button']
+
+= render_header(component)
+= render_component_version(component)
+= render_toc(example_array)
+- example_array.each do |i|
+  = render_example(component, i)
+

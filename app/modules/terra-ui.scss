@@ -19,23 +19,23 @@ $terra-bidi: true;
 
 // horizontal scrolling on code
 pre {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 pre code {
-    overflow-wrap: normal;
-    white-space: pre;
+  overflow-wrap: normal;
+  white-space: pre;
 }
 
 // background/padding on code
-.tui-html-code{
-  padding: 1rem;
+.tui-html-code {
   background-color: #f7f7f9;
+  padding: 1rem;
 }
 
-.tui-haml-code{
-  padding: 1rem;
+.tui-haml-code {
   background-color: #daf3ff;
+  padding: 1rem;
 }
 
 // grid demo styling

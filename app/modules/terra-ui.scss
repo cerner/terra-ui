@@ -16,6 +16,8 @@ $terra-bidi: true;
 
 // CUSTOM SITE STYLES
 // ================================================
+// Custom site styles not follow terra selector-class-pattern
+// stylelint-disable selector-class-pattern
 
 // horizontal scrolling on code
 pre {
@@ -27,7 +29,6 @@ pre code {
   white-space: pre;
 }
 
-// background/padding on code
 .tui-html-code {
   background-color: #f7f7f9;
   padding: 1rem;
@@ -38,7 +39,7 @@ pre code {
   padding: 1rem;
 }
 
-// grid demo styling
+// background/padding on grid examples
 .demo-bar {
   background-color: #c8cacb;
   margin-bottom: 1rem;

@@ -9,6 +9,7 @@ before_install:
 install:
   - npm install
   - npm run webpack
+  - bundle install
 
 script:
   - npm run lint

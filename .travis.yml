@@ -4,10 +4,8 @@ env:
   - TRAVIS_NODE_VERSION="node"
   - TRAVIS_NODE_VERSION="6.3.0"
 
-install:
-  - npm install
-
 before_script:
+  - npm install
   - npm run webpack
 
 script:

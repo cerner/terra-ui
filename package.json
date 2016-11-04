@@ -8,7 +8,6 @@
   },
   "description": "Documentation site for Terra, a modularized Front-End Framework",
   "scripts": {
-    "browser-sync": "browser-sync start --proxy localhost:3000 --files 'app/assets/stylesheets/*.scss, app/views/*.html.haml'",
     "lint": "npm run lint-js && npm run lint-scss",
     "lint-js": "eslint .",
     "lint-scss": "stylelint **/*.scss",
@@ -45,7 +44,6 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
-    "browser-sync": "^2.17.5",
     "clean-webpack-plugin": "^0.1.10",
     "css-loader": "^0.25.0",
     "eslint": "^3.5.0",

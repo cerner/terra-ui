@@ -27,14 +27,15 @@
   "author": "Cerner Corporation",
   "license": "Apache-2.0",
   "dependencies": {
-    "terra-application": "^0.2.0",
+    "terra-application": "git://github.com/cerner/terra-application.git#master",
     "terra-button": "git://github.com/cerner/terra-button.git#master",
     "terra-content": "git://github.com/cerner/terra-content.git#master",
     "terra-grid": "git://github.com/cerner/terra-grid.git#master",
+    "terra-image": "git://github.com/cerner/terra-image.git#master",
     "terra-label": "git://github.com/cerner/terra-label.git#master",
-    "terra-legacy-theme": "^0.1.0",
+    "terra-legacy-theme": "git://github.com/cerner/terra-legacy-theme.git#master",
     "terra-menu": "git://github.com/cerner/terra-menu.git#master",
-    "terra-mixins": "^0.3.0",
+    "terra-mixins": "git://github.com/cerner/terra-mixins.git#master",
     "terra-table": "git://github.com/cerner/terra-table.git#master",
     "terra-title": "git://github.com/cerner/terra-title.git#master"
   },

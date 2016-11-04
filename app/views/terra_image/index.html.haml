@@ -1,0 +1,9 @@
+- component = 'terra-image'
+- example_array = [component, 'terra-image-rounded', 'terra-image-circle', 'terra-image-thumbnail', 'terra-image-fluid', 'expected-behavior']
+
+= render_header(component)
+= render_component_version(component)
+= render_toc(example_array)
+- example_array.each do |i|
+  = render_example(component, i)
+

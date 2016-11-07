@@ -28,6 +28,7 @@
   "dependencies": {
     "terra-application": "git://github.com/cerner/terra-application.git#master",
     "terra-button": "git://github.com/cerner/terra-button.git#master",
+    "terra-content": "git://github.com/cerner/terra-content.git#master",
     "terra-grid": "git://github.com/cerner/terra-grid.git#master",
     "terra-image": "git://github.com/cerner/terra-image.git#master",
     "terra-label": "git://github.com/cerner/terra-label.git#master",

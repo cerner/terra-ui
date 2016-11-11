@@ -30,7 +30,7 @@
     "terra-button": "git://github.com/cerner/terra-button.git#master",
     "terra-content": "git://github.com/cerner/terra-content.git#master",
     "terra-grid": "git://github.com/cerner/terra-grid.git#master",
-    "terra-icon": "git://github.com/cerner/terra-icon.git#initial-development",
+    "terra-icon": "git://github.com/cerner/terra-icon.git#master",
     "terra-image": "git://github.com/cerner/terra-image.git#master",
     "terra-label": "git://github.com/cerner/terra-label.git#master",
     "terra-legacy-theme": "git://github.com/cerner/terra-legacy-theme.git#master",

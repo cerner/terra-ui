@@ -157,4 +157,11 @@ module ApplicationHelper
     end
   end
 
+
+  def render_svg(path)
+    content_tag(:br) do
+      File.read("#{path}").html_safe
+    end
+  end
+
 end

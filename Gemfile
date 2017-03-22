@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
+gem 'react_on_rails', '~> 6'
 
 group :development, :test do
   gem 'byebug', platform: :mri

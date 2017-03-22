@@ -1,10 +1,8 @@
-/* eslint comma-dangle: ["error",
- {"functions": "never", "arrays": "only-multiline", "objects":
- "only-multiline"} ] */
-
 const webpack = require('webpack');
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const devBuild = process.env.NODE_ENV !== 'production';
 
 const config = {
   entry: [
@@ -13,41 +11,63 @@ const config = {
 
   output: {
     filename: 'webpack-bundle.js',
-    path: '../app/assets/webpack',
+    path: path.resolve('../app/assets/webpack'),
   },
 
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  plugins: [
-    new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
-  ],
   module: {
-    rules: [
-      {
-        test: require.resolve('react'),
-        use: {
-          loader: 'imports-loader',
-          options: {
-            shim: 'es5-shim/es5-shim',
-            sham: 'es5-shim/es5-sham',
-          }
-        },
+    loaders: [{
+        test: /\.(jsx|js)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
       {
-        test: /\.jsx?$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
+        test: /\.json$/,
+        loader: 'json-loader',
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [{
+            loader: "css-loader"
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function() {
+                return [
+                  require('autoprefixer')({
+                    browsers: [
+                      'ie >= 10',
+                      'last 2 versions',
+                      'last 2 android versions',
+                      'last 2 and_chr versions',
+                      'iOS >= 8',
+                    ],
+                  })
+                ];
+              }
+            }
+          }, {
+            loader: "sass-loader",
+            options: {
+              data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/src/LegacyTheme.scss'))}"; @import "${path.resolve(path.join(__dirname, 'node_modules/terra-application/src/Application.scss'))}"; $terra-bidi: true;`,
+            }
+          }, ]
+        })
+
+      },
+      {
+        test: /\.md$/,
+        loader: 'raw-loader',
       },
     ],
   },
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
 };
 
 module.exports = config;
-
-if (devBuild) {
-  console.log('Webpack dev build for Rails'); // eslint-disable-line no-console
-  module.exports.devtool = 'eval-source-map';
-} else {
-  console.log('Webpack production build for Rails'); // eslint-disable-line no-console
-}

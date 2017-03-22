@@ -1,14 +1,11 @@
 {
-  "name": "react-webpack-rails-tutorial",
+  "name": "terra-ui.com",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": "6.9.4",
-    "npm": "4.1.1"
-  },
   "scripts": {
     "postinstall": "cd client && npm install",
     "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
-    "test": "rspec"
+    "test": "rspec",
+    "start": "foreman start -f Procfile.dev"
   }
 }

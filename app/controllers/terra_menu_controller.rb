@@ -1,2 +1,0 @@
-class TerraMenuController < ApplicationController
-end

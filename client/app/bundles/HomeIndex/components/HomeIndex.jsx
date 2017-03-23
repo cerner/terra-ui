@@ -1,4 +1,5 @@
 import React  from 'react';
+import './HomeIndex.scss';
 
 class HomeIndex extends React.Component {
   render() {

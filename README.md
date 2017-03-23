@@ -1,4 +1,12 @@
-# [terra-ui.com](https://www.terra-ui.com) _In Development_
+<!-- Logo -->
+<p align="center">
+  <img height="128" width="128" src="https://raw.githubusercontent.com/cerner/terra-core/master/terra.png">
+</p>
+
+<!-- Name -->
+<h1 align="center">
+  <a href="#">terra-ui.com</a> (In Development)
+</h1>
 
 [![Build Status](https://travis-ci.org/cerner/terra-ui.com.svg?branch=master)](https://travis-ci.org/cerner/terra-ui.com)
 

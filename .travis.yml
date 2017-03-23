@@ -1,7 +1,7 @@
 language: ruby
 dist: trusty
 sudo: required
-
+cache: bundler
 env:
   - TRAVIS_NODE_VERSION="6.9.4"
 

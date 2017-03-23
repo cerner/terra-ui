@@ -1,4 +1,6 @@
 language: ruby
+dist: trusty
+sudo: required
 
 env:
   - TRAVIS_NODE_VERSION="6.9.4"

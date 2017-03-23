@@ -4,12 +4,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 const config = {
-  entry: [
-    './app/bundles/HomeIndex/startup/registration',
-  ],
+  entry: {
+    'terra-ui':'./app/bundles/HomeIndex/startup/registration',
+  },
 
   output: {
-    filename: 'webpack-bundle.js',
+    filename: '[name].js',
     path: path.resolve('../app/assets/webpack'),
   },
 
@@ -52,8 +52,8 @@ const config = {
         }, {
           loader: 'sass-loader',
           options: {
-            // TODO add terra-application in after it gets published
-            data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/src/LegacyTheme.scss'))}"; $terra-bidi: true;`,
+            // TODO: add @import "${path.resolve(path.join(__dirname, 'node_modules/terra-application/src/Application.scss'))}";
+            data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/src/LegacyTheme.scss'))}";  $terra-bidi: true;`,
           },
         }],
       }),

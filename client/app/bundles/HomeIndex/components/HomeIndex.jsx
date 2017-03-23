@@ -1,4 +1,5 @@
 import React  from 'react';
+import './Test.scss';
 import 'terra-mixins';
 
 class HomeIndex extends React.Component {

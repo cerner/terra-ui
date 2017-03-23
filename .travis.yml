@@ -12,5 +12,4 @@ install:
   - bundle install
 
 script:
-  - npm run lint
-  - bundle exec rspec
+  - npm run test

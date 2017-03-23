@@ -5,7 +5,8 @@
   "scripts": {
     "build:test": "webpack --config webpack.config.js",
     "build:production": "NODE_ENV=production webpack --config webpack.config.js",
-    "build:development": "webpack -w --config webpack.config.js"
+    "build:development": "webpack -w --config webpack.config.js",
+    "test": "eslint . --fix"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",
@@ -29,5 +30,12 @@
     "terra-legacy-theme": "^0.x",
     "terra-mixins": "^1.0.0",
     "webpack": "^2.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
   }
 }

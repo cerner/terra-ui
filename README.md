@@ -19,19 +19,17 @@ Documenation site for Terra. Terra is the core UI component library, unifying UX
 ```
 git clone https://github.cerner.com/terra/terra-ui.com.git
 
-bundle install
-
-npm install
+bundle install && npm install
 ```
 
 ### Run Application
 ```
-TODO: Update with react_on_rails
+npm run start
 ```
 
 ### Test Application
 ```
-TODO: Update with react_on_rails
+npm run test
 ```
 
 ## Supported Browsers

@@ -52,7 +52,8 @@ const config = {
         }, {
           loader: 'sass-loader',
           options: {
-            data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/src/LegacyTheme.scss'))}"; @import "${path.resolve(path.join(__dirname, 'node_modules/terra-application/src/Application.scss'))}"; $terra-bidi: true;`,
+            // TODO add terra-application in after it gets published
+            data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/src/LegacyTheme.scss'))}"; $terra-bidi: true;`,
           },
         }],
       }),

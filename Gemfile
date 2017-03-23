@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
+gem 'haml-rails', '~> 0.9'
 gem 'react_on_rails', '~> 6'
 
 group :development, :test do
@@ -17,6 +18,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'foreman'
+
 end
 
 gem 'mini_racer', platforms: :ruby

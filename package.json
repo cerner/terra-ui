@@ -2,6 +2,10 @@
   "name": "terra-ui.com",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "6.9.4",
+    "npm": "3.10.10"
+  },
   "scripts": {
     "postinstall": "cd client && npm install",
     "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",

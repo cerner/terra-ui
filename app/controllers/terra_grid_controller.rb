@@ -1,2 +1,0 @@
-class TerraGridController < ApplicationController
-end

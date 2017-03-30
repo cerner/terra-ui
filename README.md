@@ -1,7 +1,14 @@
-# [terra-ui.com](https://www.terra-ui.com)
+<!-- Logo -->
+<p align="center">
+  <img height="128" width="128" src="https://raw.githubusercontent.com/cerner/terra-core/master/terra.png">
+</p>
+
+<!-- Name -->
+<h1 align="center">
+  <a href="#">terra-ui.com</a> (In Development)
+</h1>
 
 [![Build Status](https://travis-ci.org/cerner/terra-ui.com.svg?branch=master)](https://travis-ci.org/cerner/terra-ui.com)
-[![Stories in Ready](https://badge.waffle.io/cerner/terra-ui.com.svg?label=ready&title=Ready)](http://waffle.io/cerner/terra-ui.com)
 
 Documenation site for Terra. Terra is the core UI component library, unifying UX concepts and development across Cerner.
 
@@ -20,23 +27,17 @@ Documenation site for Terra. Terra is the core UI component library, unifying UX
 ```
 git clone https://github.cerner.com/terra/terra-ui.com.git
 
-bundle install
-
-npm install
+bundle install && npm install
 ```
 
 ### Run Application
 ```
-rails s
-
-Go to localhost:3000
+npm run start
 ```
 
 ### Test Application
 ```
-npm run lint
-
-rspec
+npm run test
 ```
 
 ## Supported Browsers
@@ -55,7 +56,7 @@ Please read through our [contributing guidelines](CONTRIBUTING.md). Included are
 
 ## LICENSE
 
-Copyright 2016 Cerner Innovation, Inc.
+Copyright 2017 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

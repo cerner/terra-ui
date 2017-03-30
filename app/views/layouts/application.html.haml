@@ -6,45 +6,7 @@
     %meta{content: 'ie=edge', 'http-equiv' => 'x-ua-compatible'}/
     %title Terra UI
     = csrf_meta_tags
-    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'
-    = stylesheet_link_tag *webpack_asset_paths('terra-ui', extension: 'css')
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'application'
   %body
-    .terra-Grid
-      .terra-Grid-col.terra-Grid-col--1
-      .terra-Grid-col.terra-Grid-col--10
-        %h1.terra-Title.terra-Title--huge.terra-Title--horizontalMiddle
-          %span.terra-Title--heading
-            Terra
-            .terra-Title--caption Front-End Framework
-        %div.terra-Menu.terra-Menu--horizontal
-          = link_to 'Terra', terra_path, class: menu_item_is_active('terra')
-          = link_to 'Application', terra_application_path, class: menu_item_is_active('terra_application')
-          = link_to 'Button', terra_button_path, class: menu_item_is_active('terra_button')
-          = link_to 'Content', terra_content_path, class: menu_item_is_active('terra_content')
-          = link_to 'Grid', terra_grid_path, class: menu_item_is_active('terra_grid')
-          = link_to 'Icon', terra_icon_path, class: menu_item_is_active('terra_icon')
-          = link_to 'Image', terra_image_path, class: menu_item_is_active('terra_image')
-          = link_to 'Label', terra_label_path, class: menu_item_is_active('terra_label')
-          = link_to 'Theme', terra_legacy_theme_path, class: menu_item_is_active('terra_legacy_theme')
-          = link_to 'Menu', terra_menu_path, class: menu_item_is_active('terra_menu')
-          = link_to 'Table', terra_table_path, class: menu_item_is_active('terra_table')
-          = link_to 'Title', terra_title_path, class: menu_item_is_active('terra_title')
-        = yield
-      .terra-Grid-col.terra-Grid-col--1
-        %form{method: 'get'}
-          %p.field.field-select
-            = select_tag 'dir', options_for_select([ 'ltr', 'rtl' ], @dir), :onchange => "this.form.submit()"
-    = javascript_include_tag *webpack_asset_paths('terra-ui', extension: 'js')
-
-    / = javascript_include_tag "https://code.jquery.com/jquery-2.2.4.min.js"
-    / - # Foundation
-    / = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css'
-    / = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js'
-
-    / - # Bootstrap
-    / = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-    / = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
-
-    / - # Semantic-UI
-    / = stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css'
-    / = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js'
+    = yield

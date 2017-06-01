@@ -7,12 +7,10 @@ const config = {
   entry: {
     'terra-ui': path.resolve('./app/bundles/Home/startup/registration'),
   },
-
   output: {
     filename: '[name].js',
     path: path.resolve('../app/assets/webpack'),
   },
-
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -53,11 +51,10 @@ const config = {
           loader: 'sass-loader',
           options: {
             // TODO: add @import "${path.resolve(path.join(__dirname, 'node_modules/terra-application/src/Application.scss'))}";
-            data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/src/LegacyTheme.scss'))}";  $terra-bidi: true;`,
+            data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/lib/LegacyTheme.scss'))}";  $terra-bidi: true;`,
           },
         }],
       }),
-
     },
     {
       test: /\.md$/,

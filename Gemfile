@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails', '1.0.0'
+gem 'react_on_rails', '~> 8.0.1'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.3.13'

@@ -7,13 +7,13 @@ ReactOnRails.configure do |config|
   config.generated_assets_dir = File.join(%w[public webpack], Rails.env)
 
   # Define the files we need to check for webpack compilation when running tests.
-  config.webpack_generated_files = %w( application-bundle.js )
+  config.webpack_generated_files = %w( commons-bundle.js, components-bundle.js, arrange-bundle.js, base-bundle.js, badge-bundle.js, button-bundle.js, button-group-bundle.js, content-bundle.js, content-container-bundle.js, date-picker-bundle.js, demographics-banner-bundle.js, form-bundle.js, grid-bundle.js, i18n-bundle.js, icon-bundle.js, image-bundle.js, list-bundle.js, modal-bundle.js, progress-bar-bundle.js, responsive-element-bundle.js, slide-panel-bundle.js, standout-bundle.js, status-bundle.js, table-bundle.js, title-bundle )
 
   # This is the file used for server rendering of React when using `(prerender: true)`
   # If you are never using server rendering, you may set this to "".
   # If you are using the same file for client and server rendering, having this set probably does
   # not affect performance.
-  config.server_bundle_js_file = "application-bundle.js"
+  config.server_bundle_js_file = ""
 
   # If you are using the ReactOnRails::TestHelper.configure_rspec_to_compile_assets(config)
   # with rspec then this controls what yarn command is run

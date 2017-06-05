@@ -1,9 +1,9 @@
 {
-  "scripts": {
-    "start": "foreman start -f Procfile.dev"
-  },
   "name": "terra-ui_com",
   "private": true,
-  "dependencies": {
+  "scripts": {
+    "postinstall": "cd client && yarn",
+    "start": "foreman start -f Procfile.dev",
+    "test": "rspec && cd client && npm run test"
   }
 }

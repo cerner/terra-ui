@@ -51,8 +51,6 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
-    foreman (0.84.0)
-      thor (~> 0.19.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     haml (5.0.1)
@@ -202,7 +200,6 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  foreman
   haml-rails (= 1.0.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

@@ -4069,7 +4069,7 @@ sax@~1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
 
-schema-utils@^0.x:
+schema-utils@^0.3.0, schema-utils@^0.x:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
@@ -4284,6 +4284,13 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
+style-loader@^0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.18.2.tgz#cc31459afbcd6d80b7220ee54b291a9fd66ff5eb"
+  dependencies:
+    loader-utils "^1.0.2"
+    schema-utils "^0.3.0"
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -4431,6 +4438,12 @@ terra-grid@^2.0.0:
     prop-types "^15.5.8"
     terra-base "^0.5.0"
     terra-mixins "^1.2.0"
+
+terra-i18n-plugin@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/terra-i18n-plugin/-/terra-i18n-plugin-0.3.0.tgz#4e31a33b3476dd2077d629b999800eb7aa12cf56"
+  dependencies:
+    mkdirp "^0.5.1"
 
 terra-i18n@^0.3.0, terra-i18n@^0.x:
   version "0.3.0"

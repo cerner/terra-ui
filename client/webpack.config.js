@@ -9,16 +9,39 @@ const { devBuild, manifest, webpackOutputPath, webpackPublicOutputDir } = webpac
 const Autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const I18nAggregatorPlugin = require('terra-i18n-plugin');
+/* eslint-disable import/no-extraneous-dependencies */
+const i18nSupportedLocales = require('terra-i18n/lib/i18nSupportedLocales');
+/* eslint-enable import/no-extraneous-dependencies */
 
 const config = {
-
   context: resolve(__dirname),
-
   entry: {
     'commons-bundle': ['babel-polyfill'],
     'components-bundle': ['./app/bundles/Components/startup/registration'],
     'arrange-bundle': ['./app/bundles/Arrange/startup/registration'],
+    'base-bundle': ['./app/bundles/Base/startup/registration'],
     'badge-bundle': ['./app/bundles/Badge/startup/registration'],
+    'button-bundle': ['./app/bundles/Button/startup/registration'],
+    'button-group-bundle': ['./app/bundles/ButtonGroup/startup/registration'],
+    'content-bundle': ['./app/bundles/Content/startup/registration'],
+    'content-container-bundle': ['./app/bundles/ContentContainer/startup/registration'],
+    'date-picker-bundle': ['./app/bundles/DatePicker/startup/registration'],
+    'demographics-banner-bundle': ['./app/bundles/DemographicsBanner/startup/registration'],
+    'form-bundle': ['./app/bundles/Form/startup/registration'],
+    'grid-bundle': ['./app/bundles/Grid/startup/registration'],
+    'i18n-bundle': ['./app/bundles/I18n/startup/registration'],
+    'icon-bundle': ['./app/bundles/Icon/startup/registration'],
+    'image-bundle': ['./app/bundles/Image/startup/registration'],
+    'list-bundle': ['./app/bundles/List/startup/registration'],
+    'modal-bundle': ['./app/bundles/Modal/startup/registration'],
+    'progress-bar-bundle': ['./app/bundles/ProgressBar/startup/registration'],
+    'responsive-element-bundle': ['./app/bundles/ResponsiveElement/startup/registration'],
+    'slide-panel-bundle': ['./app/bundles/SlidePanel/startup/registration'],
+    'standout-bundle': ['./app/bundles/Standout/startup/registration'],
+    'status-bundle': ['./app/bundles/Status/startup/registration'],
+    'table-bundle': ['./app/bundles/Table/startup/registration'],
+    'title-bundle': ['./app/bundles/Title/startup/registration'],
   },
 
   output: {
@@ -32,6 +55,7 @@ const config = {
 
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [path.resolve(__dirname, 'aggregated-translations'), 'node_modules'],
   },
 
   plugins: [
@@ -41,6 +65,11 @@ const config = {
       DEBUG: false,
     }),
     new ManifestPlugin({ fileName: manifest, writeToFileEmit: true }),
+    new I18nAggregatorPlugin({
+      baseDirectory: __dirname,
+      supportedLocales: i18nSupportedLocales,
+    }),
+    new webpack.NamedChunksPlugin(),
   ],
 
   module: {
@@ -98,6 +127,9 @@ const config = {
         loader: 'raw-loader',
       },
     ],
+  },
+  resolveLoader: {
+    modules: [path.resolve(path.join(__dirname, 'node_modules'))],
   },
 };
 

@@ -8,7 +8,7 @@ import Button from 'terra-button';
 
 const Components = () => (
   <div>
-    <h2>Core</h2>
+    <h3>Core</h3>
     <List >
       <List.Item content={<Button variant="link" href="/components/core/arrange">Arrange</Button>} />
       <List.Item content={<Button variant="link" href="/components/core/base">Base</Button>} />
@@ -17,7 +17,7 @@ const Components = () => (
       <List.Item content={<Button variant="link" href="/components/core/button-group">Button Group</Button>} />
       <List.Item content={<Button variant="link" href="/components/core/content">Content</Button>} />
       <List.Item content={<Button variant="link" href="/components/core/content-container">Content Container</Button>} />
-      <List.Item content={<Button variant="link" href="/components/core/datepicker">Date Picker</Button>} />
+      <List.Item content={<Button variant="link" href="/components/core/date-picker">Date Picker</Button>} />
       <List.Item content={<Button variant="link" href="/components/core/demographics-banner">Demographics Banner</Button>} />
       <List.Item content={<Button variant="link" href="/components/core/form">Form</Button>} />
       <List.Item content={<Button variant="link" href="/components/core/grid">Grid</Button>} />

@@ -7,7 +7,7 @@ default: &default
 development:
   <<: *default
   # generated files for development, in /public/webpack/development
-  webpack_public_output_dir: webpack/development
+  webpack_public_output_dir: webpack/development/
 
   # Default is localhost:3500
   hot_reloading_host: localhost:3500
@@ -19,9 +19,9 @@ development:
 test:
   <<: *default
   # generated files for tests, in /public/webpack/test
-  webpack_public_output_dir: webpack/test
+  webpack_public_output_dir: webpack/test/
 
 production:
   <<: *default
   # generated files for tests, in /public/webpack/production
-  webpack_public_output_dir: webpack/production
+  webpack_public_output_dir: webpack/production/

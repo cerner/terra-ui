@@ -29,6 +29,7 @@
     "react-dom": "^15.5.4",
     "react-on-rails": "8.0.1",
     "terra-site": "0.1.0",
+    "terra-i18n-plugin": "^0.3.0",
     "webpack": "^2.6.1",
     "webpack-manifest-plugin": "^1.1.0"
   },
@@ -45,6 +46,7 @@
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.5",
     "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.5"
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.2"
   }
 }

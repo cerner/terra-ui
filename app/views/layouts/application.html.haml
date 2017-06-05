@@ -1,10 +1,10 @@
 !!!
-%html
+%html.terra-Base{dir: @dir, lang: I18n.locale}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title TerraUiCom
     = csrf_meta_tags
-    = stylesheet_link_tag 'application', media: 'all'
-    = javascript_include_tag 'application'
+    = javascript_pack_tag 'commons-bundle'
   %body
+    %h1 Terra UI
     = yield

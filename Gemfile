@@ -11,6 +11,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails', '1.0.0'
 gem 'react_on_rails', '~> 8.0.1'
 
+gem 'mini_racer', platforms: :ruby
+gem 'webpacker_lite'
+gem 'foreman'
+
 group :development, :test do
   gem 'sqlite3', '~> 1.3.13'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -26,5 +30,4 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'mini_racer', platforms: :ruby
-gem 'webpacker_lite'
+

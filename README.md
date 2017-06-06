@@ -43,15 +43,6 @@ brew install postgresql (mac)
 npm run start
 ```
 
-<details>
-<summary>If npm run start fails</summary>
-sh: foreman: command not found, then you need install the foreman gem.
-
-gem install foreman
-
-</details>
-
-
 ### Test Application
 ```
 npm run test

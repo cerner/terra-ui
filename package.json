@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "postinstall": "cd client && yarn",
-    "start": "foreman start -f Procfile.dev",
+    "start": "bundle exec foreman start -f Procfile.dev",
     "test": "rspec && cd client && npm run test"
   }
 }

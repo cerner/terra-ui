@@ -32,7 +32,7 @@ bundle install && npm install
 
 <details>
 <summary>If bundle install fails</summary>
-An error occurred while installing pg (0.20.0), and Bundler cannot continue.Make sure that gem install pg -v '0.20.0' succeeds before bundling., then install postgresql and try again.
+An error occurred while installing pg (0.20.0), and Bundler cannot continue. Make sure that gem install pg -v '0.20.0' succeeds before bundling., then install postgresql and try again.
 
 brew install postgresql (mac)
 

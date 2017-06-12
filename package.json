@@ -2,7 +2,7 @@
   "name": "terra-ui_com",
   "private": true,
   "scripts": {
-    "postinstall": "cd client && yarn",
+    "postinstall": "cd client && npm install",
     "start": "bundle exec foreman start -f Procfile.dev",
     "test": "rspec && cd client && npm run test"
   }

@@ -1,0 +1,2 @@
+class TerraIconController < ApplicationController
+end

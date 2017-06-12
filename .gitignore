@@ -13,11 +13,15 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore Byebug command history file.
+/node_modules
+/yarn-error.log
+
 .byebug_history
 # React on Rails
 npm-debug.log*
 node_modules
 
 # Generated js bundles
-/app/assets/webpack/*
+/public/webpack/*
+
+**/aggregated-translations/*.*

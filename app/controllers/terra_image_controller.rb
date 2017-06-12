@@ -1,0 +1,2 @@
+class TerraImageController < ApplicationController
+end

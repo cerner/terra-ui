@@ -1,0 +1,2 @@
+class TerraSlidePanelController < ApplicationController
+end

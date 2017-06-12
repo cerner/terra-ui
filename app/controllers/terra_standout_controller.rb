@@ -1,0 +1,2 @@
+class TerraStandoutController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class TerraArrangeController < ApplicationController
+end

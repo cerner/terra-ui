@@ -1,0 +1,2 @@
+class TerraTitleController < ApplicationController
+end

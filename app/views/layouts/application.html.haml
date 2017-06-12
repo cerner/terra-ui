@@ -1,12 +1,12 @@
 !!!
-%html.terra-Application{dir: @dir, lang: I18n.locale}
+%html.terra-Base{dir: @dir, lang: I18n.locale}
   %head
     %meta{charset: 'utf-8'}/
     %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}/
     %meta{content: 'ie=edge', 'http-equiv' => 'x-ua-compatible'}/
     %title Terra UI
     = csrf_meta_tags
-    = stylesheet_link_tag    'application'
-    = javascript_include_tag 'application'
+    = javascript_pack_tag 'commons-bundle'
   %body
+    %h1 Terra UI
     = yield

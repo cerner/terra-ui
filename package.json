@@ -1,6 +1,21 @@
 {
   "name": "terra-ui_com",
   "private": true,
+  "version": "0.0.0",
+  "description": "terra-ui.com is the documentation site for the Terra UI ecosystem.",
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-ui.com/issues"
+  },
+  "engines": {
+    "node": "6.9.4",
+    "npm": "3.10.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-ui.com.git"
+  },
   "scripts": {
     "postinstall": "cd client && npm install",
     "start": "bundle exec foreman start -f Procfile.dev",

@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build:test": "NODE_ENV=test webpack --config webpack.config.js",
-    "build:production": "NODE_ENV=production webpack --config webpack.config.js",
+    "build:production": "NODE_ENV=production webpack --config webpack.config.js -p",
     "build:development": "NODE_ENV=development webpack -w --config webpack.config.js",
     "lint": "npm run lint:js",
     "lint:js": "eslint --ext .js,.jsx ."
@@ -27,7 +27,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-on-rails": "8.0.1",
-    "terra-site": "0.1.0",
+    "terra-site": "0.x",
     "terra-i18n-plugin": "^0.3.0",
     "webpack": "^2.6.1",
     "webpack-manifest-plugin": "^1.1.0"

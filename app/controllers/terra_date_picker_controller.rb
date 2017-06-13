@@ -1,2 +1,0 @@
-class TerraDatePickerController < ApplicationController
-end

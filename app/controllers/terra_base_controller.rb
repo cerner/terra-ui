@@ -1,2 +1,0 @@
-class TerraBaseController < ApplicationController
-end

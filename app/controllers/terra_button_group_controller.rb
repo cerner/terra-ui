@@ -1,2 +1,0 @@
-class TerraButtonGroupController < ApplicationController
-end

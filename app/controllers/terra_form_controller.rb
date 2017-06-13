@@ -1,2 +1,0 @@
-class TerraFormController < ApplicationController
-end

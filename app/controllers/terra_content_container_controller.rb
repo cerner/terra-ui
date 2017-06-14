@@ -1,2 +1,0 @@
-class TerraContentContainerController < ApplicationController
-end

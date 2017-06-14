@@ -1,2 +1,0 @@
-class TerraModalController < ApplicationController
-end

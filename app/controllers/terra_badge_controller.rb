@@ -1,2 +1,0 @@
-class TerraBadgeController < ApplicationController
-end

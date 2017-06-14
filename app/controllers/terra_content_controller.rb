@@ -1,2 +1,0 @@
-class TerraContentController < ApplicationController
-end

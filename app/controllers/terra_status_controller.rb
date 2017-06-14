@@ -1,2 +1,0 @@
-class TerraStatusController < ApplicationController
-end

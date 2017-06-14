@@ -87,9 +87,6 @@ const config = {
             },
           }, {
             loader: 'sass-loader',
-            options: {
-              data: `@import "${path.resolve(path.join(__dirname, 'node_modules/terra-legacy-theme/lib/LegacyTheme.scss'))}"; $terra-bidi: true;`,
-            },
           }],
         }),
       },

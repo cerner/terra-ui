@@ -1,2 +1,0 @@
-class TerraArrangeController < ApplicationController
-end

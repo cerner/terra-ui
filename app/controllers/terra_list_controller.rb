@@ -1,2 +1,0 @@
-class TerraListController < ApplicationController
-end

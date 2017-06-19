@@ -1,2 +1,0 @@
-class TerraResponsiveElementController < ApplicationController
-end

@@ -31,9 +31,8 @@ class App extends React.Component {
         <Grid>
           <Grid.Row>
             <Grid.Column small={2}>
-              <ClinicalPackages />
               <CorePackages />
-              
+              <ClinicalPackages />
             </Grid.Column>
             <Grid.Column small={10}>
               {this.props.children}

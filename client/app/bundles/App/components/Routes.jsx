@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import './site.scss';
 
-// Examples
+// Core Examples
 import ArrangeExamples from '../../Arrange/components/Index';
 import BadgeExamples from '../../Badge/components/Index';
 import BaseExamples from '../../Base/components/Index';
@@ -27,8 +27,22 @@ import StatusExamples from '../../Status/components/Index';
 import TableExamples from '../../Table/components/Index';
 import TextExamples from '../../Text/components/Index';
 import TimeInputExamples from '../../TimeInput/components/Index';
-import DocSiteLayout from './Index';
 
+// Clinical Examples
+import ActionHeaderExamples from '../../ActionHeader/components/Index';
+import AppDelegateExamples from '../../AppDelegate/components/Index';
+import ApplicationExamples from '../../Application/components/Index';
+import DetailViewExamples from '../../DetailView/components/Index';
+import ErrorViewExamples from '../../ErrorView/components/Index';
+import HeaderExamples from '../../Header/components/Index';
+import ItemDisplayExamples from '../../ItemDisplay/components/Index';
+import ItemViewExamples from '../../ItemView/components/Index';
+import LabelValueViewExamples from '../../LabelValueView/components/Index';
+import ModalMangerExamples from '../../ModalManager/components/Index';
+import NoDataViewExamples from '../../NoDataView/components/Index';
+import SlideGroupExamples from '../../SlideGroup/components/Index';
+
+import DocSiteLayout from './Index';
 class DocSiteLayoutRoutes extends React.Component {
 
   render() {
@@ -60,10 +74,25 @@ class DocSiteLayoutRoutes extends React.Component {
           <Route path="/components/core/table" component={TableExamples} />
           <Route path="/components/core/text" component={TextExamples} />
           <Route path="/components/core/time-input" component={TimeInputExamples} />
+          <Route path="/components/clinical/action-header" component={ActionHeaderExamples} />
+          <Route path="/components/clinical/app-delegate" component={AppDelegateExamples} />
+          <Route path="/components/clinical/application" component={ApplicationExamples} />
+          <Route path="/components/clinical/detail-view" component={DetailViewExamples} />
+          <Route path="/components/clinical/error-view" component={ErrorViewExamples} />
+          <Route path="/components/clinical/header" component={HeaderExamples} />
+          <Route path="/components/clinical/item-display" component={ItemDisplayExamples} />
+          <Route path="/components/clinical/item-view" component={ItemViewExamples} />
+          <Route path="/components/clinical/label-value-view" component={LabelValueViewExamples} />
+          <Route path="/components/clinical/modal-manager" component={ModalMangerExamples} />
+          <Route path="/components/clinical/no-data-view" component={NoDataViewExamples} />
+          <Route path="/components/clinical/slide-group" component={SlideGroupExamples} />
         </Route>
       </Router>
     );
   }
 }
+
+
+
 
 export default DocSiteLayoutRoutes;

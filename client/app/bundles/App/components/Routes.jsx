@@ -13,6 +13,7 @@ import DatePickerExamples from '../../DatePicker/components/Index';
 import DemographicsBannerExamples from '../../DemographicsBanner/components/Index';
 import FormExamples from '../../Form/components/Index';
 import GridExamples from '../../Grid/components/Index';
+import HeadingExamples from '../../Heading/components/Index';
 import I18nExamples from '../../I18n/components/Index';
 import IconExamples from '../../Icon/components/Index';
 import ImageExamples from '../../Image/components/Index';
@@ -20,9 +21,12 @@ import ListExamples from '../../List/components/Index';
 import ModalExamples from '../../Modal/components/Index';
 import ProgressBarExamples from '../../ProgressBar/components/Index';
 import ResponsiveElementExamples from '../../ResponsiveElement/components/Index';
+import SearchFieldExamples from '../../SearchField/components/Index';
 import SlidePanelExamples from '../../SlidePanel/components/Index';
 import StatusExamples from '../../Status/components/Index';
 import TableExamples from '../../Table/components/Index';
+import TextExamples from '../../Text/components/Index';
+import TimeInputExamples from '../../TimeInput/components/Index';
 import DocSiteLayout from './Index';
 
 class DocSiteLayoutRoutes extends React.Component {
@@ -42,6 +46,7 @@ class DocSiteLayoutRoutes extends React.Component {
           <Route path="/components/core/demographics-banner" component={DemographicsBannerExamples} />
           <Route path="/components/core/form" component={FormExamples} />
           <Route path="/components/core/grid" component={GridExamples} />
+          <Route path="/components/core/heading" component={HeadingExamples} />
           <Route path="/components/core/i18n" component={I18nExamples} />
           <Route path="/components/core/icon" component={IconExamples} />
           <Route path="/components/core/image" component={ImageExamples} />
@@ -49,9 +54,12 @@ class DocSiteLayoutRoutes extends React.Component {
           <Route path="/components/core/modal" component={ModalExamples} />
           <Route path="/components/core/progress-bar" component={ProgressBarExamples} />
           <Route path="/components/core/responsive-element" component={ResponsiveElementExamples} />
+          <Route path="/components/core/search-field" component={SearchFieldExamples} />
           <Route path="/components/core/slide-panel" component={SlidePanelExamples} />
           <Route path="/components/core/status" component={StatusExamples} />
           <Route path="/components/core/table" component={TableExamples} />
+          <Route path="/components/core/text" component={TextExamples} />
+          <Route path="/components/core/time-input" component={TimeInputExamples} />
         </Route>
       </Router>
     );

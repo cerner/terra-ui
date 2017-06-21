@@ -43,6 +43,7 @@ class App extends React.Component {
                 <List.Item className="site-nav-item" content={<Link to="/components/core/demographics-banner">Demographics Banner</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/form">Form</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/grid">Grid</Link>} />
+                <List.Item className="site-nav-item" content={<Link to="/components/core/heading">Heading</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/i18n">I18n</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/icon">Icon</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/image">Image</Link>} />
@@ -50,9 +51,12 @@ class App extends React.Component {
                 <List.Item className="site-nav-item" content={<Link to="/components/core/modal">Modal</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/progress-bar">Progress Bar</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/responsive-element">Responsive Element</Link>} />
+                <List.Item className="site-nav-item" content={<Link to="/components/core/search-field">Search Field</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/slide-panel">Slide Panel</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/status">Status</Link>} />
                 <List.Item className="site-nav-item" content={<Link to="/components/core/table">Table</Link>} />
+                <List.Item className="site-nav-item" content={<Link to="/components/core/text">Text</Link>} />
+                <List.Item className="site-nav-item" content={<Link to="/components/core/time-input">Time Input</Link>} />
               </List>
             </Grid.Column>
             <Grid.Column small={10}>

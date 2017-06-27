@@ -30,9 +30,8 @@
     "react-redux": "^5.0.5",
     "react-router": "^3.0.5",
     "redux": "^3.7.0",
-    "terra-clinical-application": "^0.2.0",
-    "terra-clinical-site": "^0.1.0",
-    "terra-i18n-plugin": "^0.3.0",
+    "terra-clinical-site": "^0.2.0",
+    "terra-i18n-plugin": "^0.x.0",
     "terra-site": "0.10.0",
     "webpack": "^2.6.1",
     "webpack-manifest-plugin": "^1.1.0"

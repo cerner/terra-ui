@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import Markdown from 'terra-markdown';
-import ReadMe from 'terra-clinical-slide-group/docs/README.md';
-import { version } from 'terra-clinical-slide-group/package.json';
+import ReadMe from 'terra-slide-group/docs/README.md';
+import { version } from 'terra-slide-group/package.json';
 
 // Example Files
-import SlideGroupDemo from 'terra-clinical-site/lib/examples/slide-group/SlideGroupDemo';
+import SlideGroupDemo from 'terra-site/lib/examples/slide-group/SlideGroupDemo';
 
 const SlideGroupExamples = () => (
   <div>

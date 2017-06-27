@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import Markdown from 'terra-markdown';
-import ReadMe from 'terra-clinical-modal-manager/docs/README.md';
-import { version } from 'terra-clinical-modal-manager/package.json';
+import ReadMe from 'terra-modal-manager/docs/README.md';
+import { version } from 'terra-modal-manager/package.json';
 
-import ModalManagerDemo from 'terra-clinical-site/lib/examples/modal-manager/ModalManagerDemo';
+import ModalManagerDemo from 'terra-site/lib/examples/modal-manager/ModalManagerDemo';
 
 // Example Files
 

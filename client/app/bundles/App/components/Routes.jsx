@@ -83,8 +83,6 @@ class DocSiteLayoutRoutes extends React.Component {
           <Route path="/components/core/toggle" component={ToggleExamples} />
           <Route path="/components/core/toggle-button" component={ToggleButtonExamples} />
 
-
-
           <Route path="/components/clinical/action-header" component={ActionHeaderExamples} />
           <Route path="/components/clinical/application" component={ApplicationExamples} />
           <Route path="/components/clinical/detail-view" component={DetailViewExamples} />

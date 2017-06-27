@@ -37,7 +37,7 @@ const CorePackages = () => {
         <List.Item className="site-nav-item" content={<Link to="/components/core/time-input">Time Input</Link>} />
         <List.Item className="site-nav-item" content={<Link to="/components/core/toggle">Toggle</Link>} />
         <List.Item className="site-nav-item" content={<Link to="/components/core/toggle-button">Toggle Button</Link>} />
-        </List>
+      </List>
     </div>
   );
 }

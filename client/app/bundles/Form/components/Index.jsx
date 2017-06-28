@@ -4,6 +4,7 @@ import React from 'react';
 import Button from 'terra-button';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-form/docs/README.md';
+import ControlledInputDocs from 'terra-site/lib/examples/form/docs/ControlledInput.md';
 import ControlDocs from 'terra-form/docs/Control.md';
 import FieldDocs from 'terra-form/docs/Field.md';
 import FieldsetDocs from 'terra-form/docs/Fieldset.md';
@@ -12,12 +13,13 @@ import NumberFieldDocs from 'terra-form/docs/NumberField.md';
 import TextareaDocs from 'terra-form/docs/Textarea.md';
 import TextareaFieldDocs from 'terra-form/docs/TextareaField.md';
 import TextFieldDocs from 'terra-form/docs/TextField.md';
+import SelectDocs from 'terra-form/docs/Select.md';
+import SelectFieldDocs from 'terra-form/docs/SelectField.md';
 
 import { version } from 'terra-form/package.json';
 
 
 // Example Files
-import ControlledInputDocs from 'terra-site/lib/examples/form/docs/ControlledInput.md';
 import ControlledInput from 'terra-site/lib/examples/form/examples/ControlledInput';
 import ControlExamples from 'terra-site/lib/examples/form/examples/Control';
 import FieldExamples from 'terra-site/lib/examples/form/examples/Field';

@@ -27,6 +27,8 @@ import NumberFieldExamples from 'terra-site/lib/examples/form/examples/NumberFie
 import TextareaExamples from 'terra-site/lib/examples/form/examples/Textarea';
 import TextareaFieldExamples from 'terra-site/lib/examples/form/examples/TextareaField';
 import TextFieldExamples from 'terra-site/lib/examples/form/examples/TextField';
+import SelectExamples from 'terra-site/lib/examples/form/examples/Select';
+import SelectFieldExamples from 'terra-site/lib/examples/form/examples/SelectField';
 
 const scrollToComponent = (id) => {
   document.querySelector(id).scrollIntoView();
@@ -63,6 +65,12 @@ const FormsExamples = () => (
       <Button text="Text Field" variant="link" onClick={() => { scrollToComponent('#text-field'); }} />
     </div>
     <div>
+      <Button text="Select" variant="link" onClick={() => { scrollToComponent('#select'); }} />
+    </div>
+    <div>
+      <Button text="Select Field" variant="link" onClick={() => { scrollToComponent('#select-field'); }} />
+    </div>
+    <div>
       <Button text="Controlled Input Example" variant="link" onClick={() => { scrollToComponent('#controlled-input-example'); }} />
     </div>
     <Markdown id="field-docs" src={FieldDocs} />
@@ -81,6 +89,10 @@ const FormsExamples = () => (
     <TextareaFieldExamples />
     <Markdown id="text-field-docs" src={TextFieldDocs} />
     <TextFieldExamples />
+    <Markdown id="select-docs" src={SelectDocs} />
+    <SelectExamples />
+    <Markdown id="select-field-docs" src={SelectFieldDocs} />
+    <SelectFieldExamples />
     <Markdown id="controlled-input-example" src={ControlledInputDocs} />
     <ControlledInput />
   </div>

@@ -2,6 +2,9 @@ import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import './site.scss';
 
+// Docs
+import GettingStarted from '../../GettingStarted/components/Index';
+
 // Core Examples
 import AppDelegateExamples from '../../AppDelegate/components/Index';
 import ArrangeExamples from '../../Arrange/components/Index';
@@ -53,6 +56,9 @@ class DocSiteLayoutRoutes extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={DocSiteLayout}>
           <IndexRoute />
+
+          <Route path="/getting-started" component={GettingStarted} />
+
           <Route path="/components/core/app-delegate" component={AppDelegateExamples} />
           <Route path="/components/core/arrange" component={ArrangeExamples} />
           <Route path="/components/core/badge" component={BadgeExamples} />

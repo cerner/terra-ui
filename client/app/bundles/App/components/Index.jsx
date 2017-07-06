@@ -1,13 +1,13 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
+/* eslint-disable import/no-extraneous-dependencies */
 import Base from 'terra-base';
 import Grid from 'terra-grid';
 import List from 'terra-list';
-import { Link } from 'react-router';
+/* eslint-enable import/no-extraneous-dependencies */
 import CorePackages from './CorePackages';
 import ClinicalPackages from './ClinicalPackages';
-
 
 const propTypes = {
   children: PropTypes.node,

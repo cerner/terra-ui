@@ -6,7 +6,8 @@
     "build:production": "NODE_ENV=production webpack --config webpack.config.js -p",
     "build:development": "NODE_ENV=development webpack -w --config webpack.config.js",
     "lint": "npm run lint:js",
-    "lint:js": "eslint --ext .js,.jsx . --fix"
+    "lint:js": "eslint --ext .js,.jsx . --fix",
+    "test": "npm run lint"
   },
   "cacheDirectories": [
     "node_modules",

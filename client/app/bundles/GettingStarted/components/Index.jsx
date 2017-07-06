@@ -1,5 +1,7 @@
 import React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
 import Heading from 'terra-heading';
+/* eslint-enable import/no-extraneous-dependencies */
 import WhatIsTerra from './WhatIsTerra';
 import InstallingComponents from './InstallingComponents';
 import Dependencies from './Dependencies';

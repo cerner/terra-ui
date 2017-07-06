@@ -6,14 +6,11 @@ import Markdown from 'terra-markdown';
 
 import DatePicker from 'terra-date-picker';
 import moment from 'moment';
-import DateRange from 'terra-date-picker/lib/DateRange';
 /* eslint-enable import/no-extraneous-dependencies */
 
 // Example Files
 import DatePickerFilterDates from 'terra-site/lib/examples/date-picker/DatePickerFilterDates';
 import DatePickerOnChange from 'terra-site/lib/examples/date-picker/DatePickerOnChange';
-
-const dateFormat = 'MM/DD/YYYY';
 
 const DatePickerExamples = () => (
   <div>

@@ -3,7 +3,9 @@ import React from 'react';
 import ReadMe from 'terra-table/docs/README.md';
 import { version } from 'terra-table/package.json';
 import Markdown from 'terra-markdown';
+import TableProps from 'terra-table/docs/props-table/Table.md';
 /* eslint-enable import/no-extraneous-dependencies */
+
 
 import NoStripedTable from 'terra-site/lib/examples/table/NoStripedTable';
 import NoPaddingTable from 'terra-site/lib/examples/table/NoPaddingTable';
@@ -20,6 +22,7 @@ const TableExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={TableProps} />
     <h2>Table</h2>
     <h2>Table Header</h2>
     <h2>Table Header Cell</h2>

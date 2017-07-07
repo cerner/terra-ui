@@ -3,6 +3,8 @@ import React from 'react';
 import ReadMe from 'terra-button-group/docs/README.md';
 import { version } from 'terra-button-group/package.json';
 import Markdown from 'terra-markdown';
+import ButtonGroupProps from 'terra-button-group/docs/props-table/ButtonGroup.md';
+import ButtonGroupButtonProps from 'terra-button-group/docs/props-table/ButtonGroupButton.md';
 /* eslint-enable import/no-extraneous-dependencies */
 
 // Example Files
@@ -18,8 +20,8 @@ const ButtonGroupExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <h2>Button Group</h2>
-    <h2>Button Group Button</h2>
+    <Markdown id="props-table-button-group" src={ButtonGroupProps} />
+    <Markdown id="props-table-button-group-button" src={ButtonGroupButtonProps} />
     <h2>Variant</h2>
     <ButtonGroupVariant />
     <h2>Size</h2>

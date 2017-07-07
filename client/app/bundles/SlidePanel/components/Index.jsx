@@ -3,6 +3,7 @@ import React from 'react';
 import ReadMe from 'terra-slide-panel/docs/README.md';
 import { version } from 'terra-slide-panel/package.json';
 import Markdown from 'terra-markdown';
+import SlidePanelProps from 'terra-slide-panel/docs/props-table/SlidePanel.md';
 /* eslint-enable import/no-extraneous-dependencies */
 
 // Example Files
@@ -20,6 +21,7 @@ const SlidePanelExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={SlidePanelProps} />
     <h2 id="overlay">Behavior - Overlay</h2>
     <SlidePanelOverlay />
     <h2 id="squish">Behavior - Squish</h2>

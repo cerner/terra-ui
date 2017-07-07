@@ -4,6 +4,7 @@ import ReadMe from 'terra-base/docs/README.md';
 import { version } from 'terra-base/package.json';
 import Markdown from 'terra-markdown';
 import Base from 'terra-base';
+import BaseProps from 'terra-base/docs/props-table/Base.md';
 /* eslint-enable import/no-extraneous-dependencies */
 
 
@@ -13,6 +14,7 @@ const BaseExamples = () => (
   <Base locale={locale}>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={BaseProps} />
     <div>
       <h1>Globale BaseStyles example</h1>
       <p>Sample paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

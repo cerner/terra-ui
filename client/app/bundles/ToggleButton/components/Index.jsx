@@ -3,6 +3,7 @@ import React from 'react';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-toggle-button/docs/README.md';
 import { version } from 'terra-toggle-button/package.json';
+import ToggleButtonProps from 'terra-toggle-button/docs/props-table/ToggleButton.md';
 
 // Example Files
 import DefaultToggleButton from 'terra-site/lib/examples/toggle-button/DefaultToggleButton';
@@ -17,6 +18,7 @@ const ToggleButtonExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ToggleButtonProps} />
     <h2 id="default">Default ToggleButton</h2>
     <DefaultToggleButton />
     <h2 id="animated">isAnimated ToggleButton</h2>

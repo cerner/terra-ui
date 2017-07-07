@@ -3,7 +3,7 @@ import React from 'react';
 import ReadMe from 'terra-date-picker/docs/README.md';
 import { version } from 'terra-date-picker/package.json';
 import Markdown from 'terra-markdown';
-
+import DatePickerProps from 'terra-date-picker/docs/props-table/DatePicker.md';
 import DatePicker from 'terra-date-picker';
 import moment from 'moment';
 /* eslint-enable import/no-extraneous-dependencies */
@@ -16,6 +16,7 @@ const DatePickerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={DatePickerProps} />
     <h2 id="default">Default</h2>
     <DatePicker
       name="date-input-default"

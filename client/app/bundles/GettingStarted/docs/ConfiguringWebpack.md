@@ -4,19 +4,18 @@
 
 ### CSS plugins/loaders
 
-[style-loader](https://github.com/webpack-contrib/style-loader) - Adds CSS to the DOM by injecting a ``<style>`` tag.
-[css-loader](https://github.com/webpack-contrib/css-loader) - The css-loader interprets @import and url() like import/require() and will resolve them. The css-loader is also used to parse CSS Modules.
-[sass-loader](https://github.com/webpack-contrib/sass-loader) - Loads a SASS/SCSS file and compiles it to CSS.
-[postcss-loader](https://github.com/postcss/postcss-loader) - Transforms styles with JS plugins.
-[autoprefixer](https://github.com/postcss/autoprefixer) - Plugin to parse CSS and add vendor prefixes to CSS rules.
-[postcss-custom-properties](https://github.com/postcss/postcss-custom-properties) - Transforms W3C CSS Custom Properties to static values.
-[node-sass](https://github.com/sass/node-sass) Allows native compilation of scss files.
-[extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) - The extract-text-webpack-plugin moves all of the required css modules into their own separate css file.
+- [style-loader](https://github.com/webpack-contrib/style-loader) - Adds CSS to the DOM by injecting a ``<style>`` tag.
+- [css-loader](https://github.com/webpack-contrib/css-loader) - The css-loader interprets @import and url() like import/require() and will resolve them. The css-loader is also used to parse CSS Modules.
+- [sass-loader](https://github.com/webpack-contrib/sass-loader) - Loads a SASS/SCSS file and compiles it to CSS.
+- [postcss-loader](https://github.com/postcss/postcss-loader) - Transforms styles with JS plugins.
+- [autoprefixer](https://github.com/postcss/autoprefixer) - Plugin to parse CSS and add vendor prefixes to CSS rules.
+- [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties) - Transforms W3C CSS Custom Properties to static values.
+- [node-sass](https://github.com/sass/node-sass) Allows native compilation of scss files.
+- [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) - The extract-text-webpack-plugin moves all of the required css modules into their own separate css file.
 
 ### JavaScript Loaders
-
-[babel-loader](https://github.com/babel/babel-loader) - Allows transpiling JavaScript files using Babel and webpack.
-[terra-i18n-plugin](https://github.com/cerner/terra-core/tree/master/packages/terra-i18n-plugin) - Examines dependencies for translations files then aggregates them into a single file per locale.
+- [babel-loader](https://github.com/babel/babel-loader) - Allows transpiling JavaScript files using Babel and webpack.
+- [terra-i18n-plugin](https://github.com/cerner/terra-core/tree/master/packages/terra-i18n-plugin) - Examines dependencies for translations files then aggregates them into a single file per locale.
 
 ### Example Webpack Configuration
 Sample webpack config needed for Terra UI v1.0.0 components.

@@ -3,6 +3,7 @@ import React from 'react';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-clinical-error-view/docs/README.md';
 import { version } from 'terra-clinical-error-view/package.json';
+import ErrorViewProps from 'terra-clinical-error-view/docs/props-table/ErrorView.md';
 
 // Example Files
 import ErrorViewStandard from 'terra-clinical-site/lib/examples/error-view/ErrorViewStandard';
@@ -15,6 +16,7 @@ const ErrorViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ErrorViewProps} />
     <h2 id="errorView">Error View</h2>
     <ErrorViewStandard />
     <h2 id="errorView-glyph-hidden">Error View With Glyph Hidden</h2>

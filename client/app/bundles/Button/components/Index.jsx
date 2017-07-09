@@ -3,6 +3,7 @@ import React from 'react';
 import ReadMe from 'terra-button/docs/README.md';
 import { version } from 'terra-button/package.json';
 import Markdown from 'terra-markdown';
+import ButtonProps from 'terra-button/docs/props-table/Button.md';
 /* eslint-enable import/no-extraneous-dependencies */
 
 // Example Files
@@ -19,6 +20,7 @@ const ButtonExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ButtonProps} />
     <h2 id="variant">Variant</h2>
     <ButtonVariant />
     <h2 id="compact">Compact</h2>

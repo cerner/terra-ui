@@ -3,6 +3,7 @@ import React from 'react';
 import ReadMe from 'terra-progress-bar/docs/README.md';
 import { version } from 'terra-progress-bar/package.json';
 import Markdown from 'terra-markdown';
+import ProgressBarProps from 'terra-progress-bar/docs/props-table/ProgressBar.md';
 /* eslint-enable import/no-extraneous-dependencies */
 
 // Example Files
@@ -14,6 +15,7 @@ const ProgressBarExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ProgressBarProps} />
     <h2 id="default">Default</h2>
     <ProgressBarDefault />
     <h2 id="size">Size</h2>

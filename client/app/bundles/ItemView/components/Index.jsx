@@ -3,6 +3,7 @@ import React from 'react';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-clinical-item-view/docs/README.md';
 import { version } from 'terra-clinical-item-view/package.json';
+import ItemViewProps from 'terra-clinical-item-view/docs/props-table/ItemView.md';
 
 // Example Files
 import ItemViewStandard from 'terra-clinical-site/lib/examples/item-view/ItemViewStandard';
@@ -16,6 +17,7 @@ const ItemViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ItemViewProps} />
     <h2 id="standard">Standard Displays</h2>
     <ItemViewStandard />
     <h2 id="two-column">Two Column ItemView</h2>

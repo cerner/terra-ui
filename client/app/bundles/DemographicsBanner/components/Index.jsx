@@ -4,7 +4,9 @@ import ReadMe from 'terra-demographics-banner/docs/README.md';
 import { version } from 'terra-demographics-banner/package.json';
 import Markdown from 'terra-markdown';
 import DemographicsBanner from 'terra-demographics-banner';
+import DemographicsBannerProps from 'terra-demographics-banner/docs/props-table/DemographicsBanner.md';
 /* eslint-enable import/no-extraneous-dependencies */
+
 
 // Examples
 import DemographicsBannerAdditionalAges from 'terra-site/lib/examples/demographics-banner/DemographicsBannerAdditionalAges';
@@ -16,6 +18,7 @@ const DemographicsBannerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={DemographicsBannerProps} />
     <h1>Basic Demographics Banner</h1>
     <DemographicsBannerBasic />
     <h1>Demographics Banner with Missing Data</h1>

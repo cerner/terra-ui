@@ -8,6 +8,7 @@ import TextWeightDocs from 'terra-text/docs/text-weights.md';
 import TextVariationsDocs from 'terra-text/docs/text-variations.md';
 import TextVisuallyHiddenDocs from 'terra-text/docs/text-visually-hidden.md';
 import { version } from 'terra-text/package.json';
+import TextProps from 'terra-text/docs/props-table/Text.md';
 
 // Example Files
 import TextColors from 'terra-site/lib/examples/text/TextColors';
@@ -21,6 +22,7 @@ const TextExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={TextProps} />
     <TextDisplays />
     <br />
     <br />

@@ -3,7 +3,9 @@ import React from 'react';
 import ReadMe from 'terra-modal/docs/README.md';
 import { version } from 'terra-modal/package.json';
 import Markdown from 'terra-markdown';
+import ModalProps from 'terra-modal/docs/props-table/Modal.md';
 /* eslint-enable import/no-extraneous-dependencies */
+
 
 // Example Files
 import ModalIsOpened from 'terra-site/lib/examples/modal/ModalIsOpened';
@@ -14,6 +16,7 @@ const ModalExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ModalProps} />
     <h2 id="isOpened">Default Modal</h2>
     <ModalIsOpened />
     <h2 id="closeOnOutsideClick">Disable closing the modal when clicking on the overlay</h2>

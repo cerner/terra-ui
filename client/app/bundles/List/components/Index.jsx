@@ -3,8 +3,10 @@ import React from 'react';
 import ReadMe from 'terra-list/docs/README.md';
 import { version } from 'terra-list/package.json';
 import Markdown from 'terra-markdown';
+import ListProps from 'terra-list/docs/props-table/List.md';
+import SingleSelectListProps from 'terra-list/docs/props-table/SingleSelectList.md';
+import MultiSelectListProps from 'terra-list/docs/props-table/MultiSelectList.md';
 /* eslint-enable import/no-extraneous-dependencies */
-
 
 // Example Files
 import ListDemo from 'terra-site/lib/examples/list/ListDemo';
@@ -16,10 +18,9 @@ const ListExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <h2>List Item</h2>
-    <h2>List</h2>
-    <h2>Single Select List</h2>
-    <h2>Multiple Select List</h2>
+    <Markdown id="props-table-list" src={ListProps} />
+    <Markdown id="props-table-single-select-list" src={SingleSelectListProps} />
+    <Markdown id="props-table-multi-select-list" src={MultiSelectListProps} />
     <br />
     <h1>Examples</h1>
     <h2 id="list">List</h2>

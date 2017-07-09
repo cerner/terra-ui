@@ -18,6 +18,17 @@ import SelectFieldDocs from 'terra-form/docs/SelectField.md';
 
 import { version } from 'terra-form/package.json';
 
+// Props Table
+// import ControlProps from 'terra-form/docs/props-table/Control.md';
+import FieldProps from 'terra-form/docs/props-table/Field.md';
+import FieldsetProps from 'terra-form/docs/props-table/Fieldset.md';
+import InputProps from 'terra-form/docs/props-table/Input.md';
+import NumberFieldProps from 'terra-form/docs/props-table/NumberField.md';
+import TextareaProps from 'terra-form/docs/props-table/Textarea.md';
+import TextareaFieldProps from 'terra-form/docs/props-table/TextareaField.md';
+import TextFieldProps from 'terra-form/docs/props-table/TextField.md';
+import SelectProps from 'terra-form/docs/props-table/Select.md';
+import SelectFieldProps from 'terra-form/docs/props-table/SelectField.md';
 
 // Example Files
 import ControlledInput from 'terra-site/lib/examples/form/examples/ControlledInput';
@@ -76,24 +87,34 @@ const FormsExamples = () => (
       <Button text="Controlled Input Example" variant="link" onClick={() => { scrollToComponent('#controlled-input-example'); }} />
     </div>
     <Markdown id="field-docs" src={FieldDocs} />
+    <Markdown id="props-table-field" src={FieldProps} />
     <FieldExamples />
     <Markdown id="fieldset-docs" src={FieldsetDocs} />
+    <Markdown id="props-table-fieldset" src={FieldsetProps} />
     <FieldsetExamples />
     <Markdown id="input-docs" src={InputDocs} />
+    <Markdown id="props-table-input" src={InputProps} />
     <InputExamples />
     <Markdown id="control-docs" src={ControlDocs} />
+    {/* <Markdown id="props-table-control" src={ControlProps} /> */}
     <ControlExamples />
     <Markdown id="number-field-docs" src={NumberFieldDocs} />
+    <Markdown id="props-table-number-field" src={NumberFieldProps} />
     <NumberFieldExamples />
     <Markdown id="text-area-docs" src={TextareaDocs} />
+    <Markdown id="props-table-text-area" src={TextareaProps} />
     <TextareaExamples />
     <Markdown id="text-area-field-docs" src={TextareaFieldDocs} />
+    <Markdown id="props-table-text-area-field" src={TextareaFieldProps} />
     <TextareaFieldExamples />
     <Markdown id="text-field-docs" src={TextFieldDocs} />
+    <Markdown id="props-table-text-field" src={TextFieldProps} />
     <TextFieldExamples />
     <Markdown id="select-docs" src={SelectDocs} />
+    <Markdown id="props-table-select" src={SelectProps} />
     <SelectExamples />
     <Markdown id="select-field-docs" src={SelectFieldDocs} />
+    <Markdown id="props-table-select-field" src={SelectFieldProps} />
     <SelectFieldExamples />
     <Markdown id="controlled-input-example" src={ControlledInputDocs} />
     <ControlledInput />

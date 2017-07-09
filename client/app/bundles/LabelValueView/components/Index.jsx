@@ -3,6 +3,7 @@ import React from 'react';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-clinical-label-value-view/docs/README.md';
 import { version } from 'terra-clinical-label-value-view/package.json';
+import LabelValueViewProps from 'terra-clinical-label-value-view/docs/props-table/LabelValueView.md';
 
 // Example Files
 import LabelValueViewText from 'terra-clinical-site/lib/examples/label-value-view/LabelValueViewText';
@@ -12,6 +13,7 @@ const LabelValueViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={LabelValueViewProps} />
     <h2 id="text_value">Label Value View with a Text Input</h2>
     <LabelValueViewText />
     <br />

@@ -2,6 +2,7 @@
 import React from 'react';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-clinical-action-header/docs/README.md';
+import ActionHeaderProps from 'terra-clinical-action-header/docs/props-table/ActionHeader.md';
 import { version } from 'terra-clinical-action-header/package.json';
 
 // Example Files
@@ -13,6 +14,7 @@ const HeaderExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ActionHeaderProps} />
     <h2>Action Header</h2>
     <h2>Back, Previous-Next, Close</h2>
     <ActionHeaderBackNextPreviousClose />

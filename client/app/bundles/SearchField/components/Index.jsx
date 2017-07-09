@@ -3,6 +3,7 @@ import React from 'react';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-search-field/docs/README.md';
 import { version } from 'terra-search-field/package.json';
+import SearchFieldProps from 'terra-search-field/docs/props-table/SearchField.md';
 
 // Example Files
 import SearchFieldBasic from 'terra-site/lib/examples/search-field/SearchFieldBasic';
@@ -14,6 +15,7 @@ const SearchFieldExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={SearchFieldProps} />
     <h2 id="searchField">Search Field</h2>
     <SearchFieldBasic />
     <br />

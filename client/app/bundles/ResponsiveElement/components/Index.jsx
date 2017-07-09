@@ -3,7 +3,9 @@ import React from 'react';
 import ReadMe from 'terra-responsive-element/docs/README.md';
 import { version } from 'terra-responsive-element/package.json';
 import Markdown from 'terra-markdown';
+import ResponsiveElementProps from 'terra-responsive-element/docs/props-table/ResponsiveElement.md';
 /* eslint-enable import/no-extraneous-dependencies */
+
 
 // Example Files
 import ResponsiveExample from 'terra-site/lib/examples/responsive-element/ResponsiveExample';
@@ -12,6 +14,7 @@ const ResponsiveElementExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ResponsiveElementProps} />
     <h2>Responsive to Parent</h2>
     <h3>All Breakpoints</h3>
     <ResponsiveExample

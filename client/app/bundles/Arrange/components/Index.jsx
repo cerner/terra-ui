@@ -3,6 +3,7 @@ import React from 'react';
 import ReadMe from 'terra-arrange/docs/README.md';
 import { version } from 'terra-arrange/package.json';
 import Markdown from 'terra-markdown';
+import ArrangeProps from 'terra-arrange/docs/props-table/Arrange.md';
 /* eslint-enable import/no-extraneous-dependencies */
 
 import { icon, image, simpleText } from 'terra-site/lib/examples/arrange/examplesetup';
@@ -13,6 +14,7 @@ const ArrangeIndex = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={ArrangeProps} />
     <h2 id="align-all">Align All Containers</h2>
     <ArrangeAlignment alignment="all" fitStart={image} fill={simpleText} />
     <br />

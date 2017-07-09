@@ -9,6 +9,7 @@ import HeadingWeightDocs from 'terra-heading/docs/heading-weights.md';
 import HeadingVisuallyHiddenDocs from 'terra-heading/docs/heading-visually-hidden.md';
 import HeadingVariationDocs from 'terra-heading/docs/heading-variations.md';
 import { version } from 'terra-heading/package.json';
+import HeadingProps from 'terra-heading/docs/props-table/Heading.md';
 
 // Example Files
 import HeadingColors from 'terra-site/lib/examples/heading/HeadingColors';
@@ -22,6 +23,7 @@ const HeadingExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <Markdown id="props-table" src={HeadingProps} />
     <Markdown id="heading-level-docs" src={HeadingLevelDocs} />
     <HeadingLevels />
     <br />

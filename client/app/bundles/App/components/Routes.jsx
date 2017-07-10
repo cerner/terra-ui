@@ -4,6 +4,7 @@ import './site.scss';
 
 // Docs
 import GettingStarted from '../../GettingStarted/components/Index';
+import Home from '../../Home/components/Index';
 
 // Core Examples
 import AppDelegateExamples from '../../AppDelegate/components/Index';
@@ -52,7 +53,9 @@ import DocSiteLayout from './Index';
 
 const DocSiteLayoutRoutes = () => (
   <Router history={browserHistory}>
-    <Route path="/" component={DocSiteLayout}>
+    <Route path="/" component={Home} />
+    <Route path="/home" component={Home} />
+    <Route path="/components" component={DocSiteLayout}>
       <IndexRoute />
 
       <Route path="/getting-started" component={GettingStarted} />

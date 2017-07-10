@@ -1,20 +1,17 @@
 import React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
 import IconHouse from 'terra-icon/lib/icon/IconHouse';
+/* eslint-enable import/no-extraneous-dependencies */
 import './DocSiteNavigation.scss';
 
 class DocSiteNavigation extends React.Component {
-  constructor() {
-    super();
-    this.expand = this.expand.bind(this);
-  }
-
   expand() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "doc-site-topnav") {
-          x.className += " responsive";
-      } else {
-          x.className = "doc-site-topnav";
-      }
+    const x = document.getElementById('myTopnav');
+    if (x.className === 'doc-site-topnav') {
+      x.className += ' responsive';
+    } else {
+      x.className = 'doc-site-topnav';
+    }
   }
 
   render() {

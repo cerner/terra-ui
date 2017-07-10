@@ -1,7 +1,9 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import DocSiteHeroConfig from './DocSiteHeroConfig.js';
+/* eslint-disable import/no-extraneous-dependencies */
 import Button from 'terra-button';
+/* eslint-enable import/no-extraneous-dependencies */
+import DocSiteHeroConfig from './DocSiteHeroConfig';
 import './DocSiteHero.scss';
 
 class DocSiteHero extends React.Component {
@@ -10,10 +12,10 @@ class DocSiteHero extends React.Component {
     return (
       <section >
         <div className="doc-site-hero">
-          <Particles height={'80vh'} params={DocSiteHeroConfig}/>
+          <Particles height={'80vh'} params={DocSiteHeroConfig} />
           <div className="doc-site-hero-content">
             <h1 className="doc-site-hero-title">{'Terra'}</h1>
-            <Button className="doc-site-hero-button" variant='primary' size='large' text="Get Started" href="/getting-started" />
+            <Button className="doc-site-hero-button" variant="primary" size="large" text="Get Started" href="/getting-started" />
           </div>
         </div>
       </section>

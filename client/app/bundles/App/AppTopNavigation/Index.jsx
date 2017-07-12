@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 const expand = () => {
   const x = document.getElementById('myTopnav');
   if (x.className === styles.topnav) {
-    x.className = cx(x.className,styles.responsive);
+    x.className = cx(x.className, styles.responsive);
   } else {
     x.className = styles.topnav;
   }

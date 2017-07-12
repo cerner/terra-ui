@@ -8,7 +8,7 @@ import cernerLogo from './cerner_logo.png';
 import styles from './Index.scss';
 
 const AppFooter = () => (
-  <footer className={styles['footer']}>
+  <footer className={styles.footer}>
     <Grid>
       <Grid.Row>
         <Grid.Column col={1} />

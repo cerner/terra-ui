@@ -9,23 +9,30 @@ import styles from './Index.scss';
 
 const cx = classNames.bind(styles);
 
-const expand = () => {
-  const x = document.getElementById('myTopnav');
-  if (x.className === styles.topnav) {
-    x.className = cx(x.className, styles.responsive);
-  } else {
-    x.className = styles.topnav;
-  }
-};
+class AppTopNavigation extends React.Component {
+  constructor() {
+    super();
 
-const AppTopNavigation = () => (
-  <div className={styles.topnav} id="myTopnav">
-    <Link to="/home"><IconHouse /> Home</Link>
-    <Link to="/getting-started">Getting Started</Link>
-    <Link to="/components">Components</Link>
-    <a href="https://github.com/cerner/terra-core">GitHub</a>
-    <a href="javascript:void(0);" className={styles['topnav-icon']} onClick={expand}>&#9776;</a>
-  </div>
-  );
+    this.state = { isOpen: false };
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
+
+  render() {
+    const classes = cx([styles.topnav, { responsive: this.state.isOpen }]);
+    return (
+      <div className={classes} id="myTopnav">
+        <Link to="/home"><IconHouse /> Home</Link>
+        <Link to="/getting-started">Getting Started</Link>
+        <Link to="/components">Components</Link>
+        <a href="https://github.com/cerner/terra-core">GitHub</a>
+        <a role="button" tabIndex={0} className={styles['topnav-icon']} onClick={this.toggle}>&#9776;</a>
+      </div>
+    );
+  }
+}
 
 export default AppTopNavigation;

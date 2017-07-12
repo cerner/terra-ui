@@ -1,41 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 /* eslint-disable import/no-extraneous-dependencies */
-import Base from 'terra-base';
+import Grid from 'terra-grid';
 /* eslint-enable import/no-extraneous-dependencies */
-import DocSiteTopNavigation from '../../DocSiteTopNavigation/components/Index';
-import DocSiteFooter from '../../DocSiteFooter/components/Index';
+import CorePackages from './CorePackages';
+import ClinicalPackages from './ClinicalPackages';
+import './Index.scss';
 
 const propTypes = {
   children: PropTypes.node,
 };
 
-const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
+const Components = props => (
+  <Grid>
+    <Grid.Row>
+      <Grid.Column small={2} className="components-vertical-nav">
+        <CorePackages />
+        <ClinicalPackages />
+      </Grid.Column>
+      <Grid.Column small={10} className="components-content">
+        {props.children}
+      </Grid.Column>
+    </Grid.Row>
+  </Grid>
+  );
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      locale,
-    };
-    this.handleLocaleChange = this.handleLocaleChange.bind(this);
-  }
+Components.propTypes = propTypes;
 
-  handleLocaleChange(e) {
-    this.setState({ locale: e.target.value });
-  }
-
-  render() {
-    return (
-      <Base locale={this.state.locale}>
-        <DocSiteTopNavigation />
-        {this.props.children}
-        <DocSiteFooter />
-      </Base>
-    );
-  }
-}
-
-App.propTypes = propTypes;
-
-export default App;
+export default Components;

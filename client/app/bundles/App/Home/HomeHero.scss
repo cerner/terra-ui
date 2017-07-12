@@ -1,0 +1,44 @@
+.home-hero {
+  position:relative;
+}
+
+.home-hero canvas {
+  background: #223;
+  background-image: url('https://raw.githubusercontent.com/cerner/terra-core/master/terra.png');
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  position: absolute;
+  top: 0px;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:0;
+}
+
+.home-hero-content  {
+  color: white;
+  position: absolute;
+  top: 60vh;
+  width: 100%;
+  text-align: center;
+}
+
+.home-hero-title {
+  font-size: 72px;
+  font-weight: 100;
+  letter-spacing: 40px;
+  padding-left: 20px;
+}
+
+.home-hero-button {
+  display: inline-block;
+  margin-top: 10px;
+  vertical-align: middle;
+  max-width: 200px;
+}
+
+.home-hero-positioning {
+    margin-top: 80vh;
+}

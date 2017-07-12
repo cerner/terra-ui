@@ -1,37 +1,42 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import Grid from 'terra-grid';
+import Heading from 'terra-heading';
+import List from 'terra-list';
 /* eslint-enable import/no-extraneous-dependencies */
 import cernerLogo from './cerner_logo.png';
-import './Index.scss';
+import styles from './Index.scss';
 
 const AppFooter = () => (
-  <footer className="doc-footer">
+  <footer className={styles['footer']}>
     <Grid>
       <Grid.Row>
         <Grid.Column col={1} />
-        <Grid.Column col={3}>
-          <h3>GitHub</h3>
-          <ul>
-            <li><a href="https://github.com/cerner/terra-core">terra-core</a></li>
-            <li><a href="https://github.com/cerner/terra-clinical">terra-clinical</a></li>
-            <li><a href="https://github.com/cerner/terra-ui.com">terra-ui.com</a></li>
-          </ul>
+        <Grid.Column className={styles['footer-col']} small={2} >
+          <Heading level={4} color={'lightblue'}>GitHub</Heading>
+          <List>
+            <List.Item content={<a href="https://github.com/cerner/terra-core">terra-core</a>} />
+            <List.Item content={<a href="https://github.com/cerner/terra-clinical">terra-clinical</a>} />
+            <List.Item content={<a href="https://github.com/cerner/terra-ui.com">terra-ui.com</a>} />
+          </List>
         </Grid.Column>
-        <Grid.Column col={3}>
-          <h3>Support</h3>
-          <p><a href="https://github.com/cerner/terra-core/issues/new">Log an issue</a></p>
+        <Grid.Column className={styles['footer-col']} small={2}>
+          <Heading level={4} color={'lightblue'}>Support</Heading>
+          <List>
+            <List.Item content={<a href="https://github.com/cerner/terra-core/issues/new">Log an issue</a>} />
+          </List>
         </Grid.Column>
-        <Grid.Column col={3}>
-          <h3>About Us</h3>
-          <ul>
-            <li><a href="https://www.cerner.com/">Cerner</a></li>
-            <li><a href="http://engineering.cerner.com/">Engineering</a></li>
-          </ul>
+        <Grid.Column className={styles['footer-col']} small={2}>
+          <Heading level={4} color={'lightblue'}>About Us</Heading>
+          <List>
+            <List.Item content={<a href="https://www.cerner.com/">Cerner</a>} />
+            <List.Item content={<a href="http://engineering.cerner.com/">Engineering</a>} />
+          </List>
         </Grid.Column>
-        <Grid.Column col={1} >
-          <img alt="Cerner Corporation" src={cernerLogo} />
+        <Grid.Column className={styles['footer-col']} small={4} >
+          <a href="https://www.cerner.com/"><img alt="Cerner Corporation" src={cernerLogo} /></a>
         </Grid.Column>
+        <Grid.Column col={1} />
       </Grid.Row>
     </Grid>
   </footer>

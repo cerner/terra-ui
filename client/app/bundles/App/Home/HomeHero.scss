@@ -4,7 +4,6 @@
 
 .home-hero canvas {
   background: #223;
-  background-image: url('https://raw.githubusercontent.com/cerner/terra-core/master/terra.png');
   background-size: 200px;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,9 +19,9 @@
 .home-hero-content  {
   color: white;
   position: absolute;
+  text-align: center;
   top: 60vh;
   width: 100%;
-  text-align: center;
 }
 
 .home-hero-title {
@@ -33,10 +32,30 @@
 }
 
 .home-hero-button {
+  background-color: #007cc3;
+  border-color: #0065a3;
+  border-radius: 0.25em;
+  border-style: solid;
+  border-width: 1px;
+  color: #fff;
+  cursor: pointer;
   display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.429;
   margin-top: 10px;
+  padding-left: 0.714em;
+  padding-right: 0.714em;
+  padding-bottom: 0.286em;
+  padding-top: 0.286em;
+  text-decoration: none;
+  text-transform: none;
+  text-align: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  user-select: none;
   vertical-align: middle;
-  max-width: 200px;
+  white-space: normal;
 }
 
 .home-hero-positioning {

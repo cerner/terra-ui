@@ -5,6 +5,7 @@
 .vertical-menu {
   height: 100%;
 }
+
 .vertical-menu h2 {
   color: black;
   display: block;
@@ -13,21 +14,14 @@
 }
 
 .vertical-menu a {
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
 }
 
-.vertical-menu a:hover {
-    background-color: #ccc;
-}
-
-.vertical-menu a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.components-content {
-  padding: 1rem;
+.vertical-menu a:hover,
+.vertical-menu a:focus {
+  background-color: #ccc;
+  outline: none;
 }

@@ -19,6 +19,7 @@ const Components = props => (
         <ClinicalPackages />
       </Grid.Column>
       <Grid.Column small={10} className="components-content">
+        <br />
         {props.children}
       </Grid.Column>
     </Grid.Row>

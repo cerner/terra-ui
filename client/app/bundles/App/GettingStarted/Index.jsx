@@ -20,6 +20,7 @@ const GettingStartedPage = () => (
       <Grid.Row>
         <Grid.Column col={1} />
         <Grid.Column col={10} >
+          <br />
           <Markdown id="what-is-terra" src={WhatIsTerra} />
           <Markdown id="features" src={Features} />
           <Markdown id="installing-components" src={InstallingComponents} />

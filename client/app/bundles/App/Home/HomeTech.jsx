@@ -1,24 +1,27 @@
 import React from 'react';
+import imgWebpack from './assets/webpack.svg';
+import imgReact from './assets/react.svg';
+import imgCssModules from './assets/css-modules.png';
 import './HomeTech.scss';
 
 const HomeTech = () => (
   <div className="home-tech">
     <div className="home-card">
-      <img width={'100%'} src="https://raw.githubusercontent.com/css-modules/logos/master/css-modules-logo.png" alt="CSS Modules" />
+      <img width={'100%'} src={imgCssModules} alt="CSS Modules" />
       <div className="home-container">
         <h4>CSS Modules</h4>
         <p>Terra uses CSS modules ensuring all class names are scoped locally by default.</p>
       </div>
     </div>
     <div className="home-card">
-      <img width={'100%'} src="https://facebook.github.io/react/img/logo.svg" alt="ReactJS" />
+      <img width={'100%'} src={imgReact} alt="ReactJS" />
       <div className="home-container">
         <h4>React</h4>
         <p>All Terra components are created using React making composition easy for consuming applications.</p>
       </div>
     </div>
     <div className="home-card">
-      <img width={'100%'} src="https://camo.githubusercontent.com/d18f4a7a64244f703efcb322bf298dcb4ca38856/68747470733a2f2f7765627061636b2e6a732e6f72672f6173736574732f69636f6e2d7371756172652d6269672e737667" alt="Webpack" />
+      <img width={'100%'} src={imgWebpack} alt="Webpack" />
       <div className="home-container">
         <h4>Webpack</h4>
         <p>Terra uses webpack to bundle both css and js. Import a component in js and it is automatically styled.</p>

@@ -1,17 +1,17 @@
 :local {
   .section {
-    padding: 10px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-  }
-
-  .card {
-      width: 200px;
-      margin: 10px;
+    padding: 10px;
   }
 
   .container {
-      padding: 2px 16px;
+    padding: 2px 16px;
+  }
+
+  .card {
+    margin: 10px;
+    width: 200px;
   }
 }

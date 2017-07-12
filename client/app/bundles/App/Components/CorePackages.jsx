@@ -4,10 +4,11 @@ import { Link } from 'react-router';
 import List from 'terra-list';
 import Heading from 'terra-heading';
 /* eslint-enable import/no-extraneous-dependencies */
+import styles from './Index.scss';
 
 const CorePackages = () => (
   <div>
-    <List className="vertical-menu">
+    <List className={styles['vertical-menu']}>
       <List.Item content={<Heading level={2}>Core</Heading>} />
       <List.Item content={<Link to="/components/core/app-delegate">App Delegate</Link>} />
       <List.Item content={<Link to="/components/core/arrange">Arrange</Link>} />

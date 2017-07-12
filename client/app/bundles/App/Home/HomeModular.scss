@@ -1,6 +1,11 @@
-.home-modular {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  line-height: 2em;
+:local {
+  .modular {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    line-height: 2em;
+  }
+  .modular-background {
+    background-color: #f4f4f4;
+  }
 }

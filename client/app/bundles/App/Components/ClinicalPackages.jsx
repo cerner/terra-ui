@@ -4,10 +4,11 @@ import { Link } from 'react-router';
 import List from 'terra-list';
 import Heading from 'terra-heading';
 /* eslint-enable import/no-extraneous-dependencies */
+import styles from './Index.scss';
 
 const ClinicalPackages = () => (
   <div>
-    <List className="vertical-menu">
+    <List className={styles['vertical-menu']}>
       <List.Item content={<Heading level={2}>Clinical</Heading>} />
       <List.Item content={<Link to="/components/clinical/action-header">Action Header</Link>} />
       <List.Item content={<Link to="/components/clinical/application">Application</Link>} />

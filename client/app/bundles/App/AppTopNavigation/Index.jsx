@@ -5,8 +5,8 @@ import classNames from 'classnames/bind';
 import IconHouse from 'terra-icon/lib/icon/IconHouse';
 /* eslint-enable import/no-extraneous-dependencies */
 import { Link } from 'react-router';
-
 import styles from './Index.scss';
+
 const cx = classNames.bind(styles);
 
 const expand = () => {

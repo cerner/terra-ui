@@ -1,27 +1,29 @@
-.components-vertical-nav {
-  background-color: #eee;
-}
+:local {
+  .components-vertical-nav {
+    background-color: #eee;
+  }
 
-.vertical-menu {
-  height: 100%;
-}
+  .vertical-menu {
+    height: 100%;
+  }
 
-.vertical-menu h2 {
-  color: black;
-  display: block;
-  padding: 12px;
-  text-decoration: none;
-}
+  .vertical-menu h2 {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
 
-.vertical-menu a {
-  color: black;
-  display: block;
-  padding: 12px;
-  text-decoration: none;
-}
+  .vertical-menu a {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
 
-.vertical-menu a:hover,
-.vertical-menu a:focus {
-  background-color: #ccc;
-  outline: none;
+  .vertical-menu a:hover,
+  .vertical-menu a:focus {
+    background-color: #ccc;
+    outline: none;
+  }
 }

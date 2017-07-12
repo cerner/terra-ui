@@ -5,7 +5,7 @@ import Grid from 'terra-grid';
 /* eslint-enable import/no-extraneous-dependencies */
 import CorePackages from './CorePackages';
 import ClinicalPackages from './ClinicalPackages';
-import './Index.scss';
+import styles from './Index.scss';
 
 const propTypes = {
   children: PropTypes.node,
@@ -14,11 +14,11 @@ const propTypes = {
 const Components = props => (
   <Grid>
     <Grid.Row>
-      <Grid.Column small={2} className="components-vertical-nav">
+      <Grid.Column small={2} className={styles['components-vertical-nav']}>
         <CorePackages />
         <ClinicalPackages />
       </Grid.Column>
-      <Grid.Column small={10} className="components-content">
+      <Grid.Column small={10} className={styles['components-content']}>
         <br />
         {props.children}
       </Grid.Column>

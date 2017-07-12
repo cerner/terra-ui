@@ -52,6 +52,7 @@
     "node-sass": "^4.5.3",
     "postcss-custom-properties": "^6.1.0",
     "postcss-loader": "^2.0.5",
+    "postcss-rtl": "^0.5.10",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2"

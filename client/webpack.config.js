@@ -10,6 +10,7 @@ const Autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const CustomProperties = require('postcss-custom-properties');
+const rtl = require('postcss-rtl');
 const I18nAggregatorPlugin = require('terra-i18n-plugin');
 /* eslint-disable import/no-extraneous-dependencies */
 const i18nSupportedLocales = require('terra-i18n/lib/i18nSupportedLocales');
@@ -89,6 +90,7 @@ const config = {
                     ],
                   }),
                   CustomProperties(),
+                  rtl(),
                 ];
               },
             },

@@ -9,6 +9,8 @@ const { devBuild, manifest, webpackOutputPath, webpackPublicOutputDir } = webpac
 const Autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const CustomProperties = require('postcss-custom-properties');
+const rtl = require('postcss-rtl');
 const I18nAggregatorPlugin = require('terra-i18n-plugin');
 /* eslint-disable import/no-extraneous-dependencies */
 const i18nSupportedLocales = require('terra-i18n/lib/i18nSupportedLocales');
@@ -63,11 +65,16 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(scss|css)$/,
+        test: /.(scss|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [{
             loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              importLoaders: 2,
+              localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+            },
           }, {
             loader: 'postcss-loader',
             options: {
@@ -82,10 +89,13 @@ const config = {
                       'iOS >= 8',
                     ],
                   }),
+                  CustomProperties(),
+                  rtl(),
                 ];
               },
             },
-          }, {
+          },
+          {
             loader: 'sass-loader',
           }],
         }),

@@ -9,7 +9,7 @@ import styles from './Index.scss';
 const CorePackages = () => (
   <div>
     <List className={styles['vertical-menu']}>
-      <List.Item content={<Heading level={2}>Core</Heading>} />
+      <List.Item content={<Heading level={1} size="large">Core</Heading>} />
       <List.Item content={<Link to="/components/core/app-delegate">App Delegate</Link>} />
       <List.Item content={<Link to="/components/core/arrange">Arrange</Link>} />
       <List.Item content={<Link to="/components/core/base">Base</Link>} />

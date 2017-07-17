@@ -9,7 +9,7 @@ import styles from './Index.scss';
 const ClinicalPackages = () => (
   <div>
     <List className={styles['vertical-menu']}>
-      <List.Item content={<Heading level={2}>Clinical</Heading>} />
+      <List.Item content={<Heading level={1} size="large">Clinical</Heading>} />
       <List.Item content={<Link to="/components/clinical/action-header">Action Header</Link>} />
       <List.Item content={<Link to="/components/clinical/application">Application</Link>} />
       <List.Item content={<Link to="/components/clinical/detail-view">Detail View</Link>} />

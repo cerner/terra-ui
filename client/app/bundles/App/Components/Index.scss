@@ -26,8 +26,8 @@
     background-color: #ccc;
     outline: none;
   }
+}
 
-  .markdown-body code {
-    background-color: #f6f8fa; // fixes contrast issue of code elements
-  }
+.markdown-body code {
+  background-color: #f6f8fa; // fixes contrast issue of code elements
 }

@@ -27,3 +27,7 @@
     outline: none;
   }
 }
+
+.markdown-body code {
+  background-color: #f6f8fa; // fixes contrast issue of code elements
+}

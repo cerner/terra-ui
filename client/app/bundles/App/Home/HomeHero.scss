@@ -1,12 +1,12 @@
 :local {
   .hero {
     position:relative;
-    height: 472px;
+    height: 33.714rem;
   }
 
   .hero canvas {
     background: #223;
-    background-size: 14.286rem; // 200px
+    background-size: 14.286rem;
     background-repeat: no-repeat;
     background-position: center;
     color: white;
@@ -27,10 +27,10 @@
   }
 
   .hero-title {
-    font-size: 5.143rem; // 72px
+    font-size: 5.143rem;
     font-weight: 100;
-    padding-left: 1.429rem; // 20px
-    padding-right: 1.429rem; // 20px
+    padding-left: 1.429rem;
+    padding-right: 1.429rem;
   }
 
   .hero-button {
@@ -45,7 +45,7 @@
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.429;
-    margin-top: 0.714rem; // 10px
+    margin-top: 0.714rem;
     padding-left: 0.714em;
     padding-right: 0.714em;
     padding-bottom: 0.286em;

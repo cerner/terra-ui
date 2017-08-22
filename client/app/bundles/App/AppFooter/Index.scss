@@ -1,8 +1,7 @@
 :local {
   .footer {
     background: #004c76;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 2.857rem 1.429rem 1.429rem;
   }
 
   .footer a:visited,
@@ -12,6 +11,6 @@
   }
 
   .footer-col {
-    margin: 10px;
+    margin-bottom: 2rem;
   }
 }

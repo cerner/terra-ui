@@ -15,6 +15,7 @@ const ClinicalPackages = () => (
       <List.Item content={<Link to="/components/clinical/detail-view">Detail View</Link>} />
       <List.Item content={<Link to="/components/clinical/error-view">Error View</Link>} />
       <List.Item content={<Link to="/components/clinical/header">Header</Link>} />
+      <List.Item content={<Link to="/components/clinical/item-collection">Item Collection</Link>} />
       <List.Item content={<Link to="/components/clinical/item-display">Item Display</Link>} />
       <List.Item content={<Link to="/components/clinical/item-view">Item View</Link>} />
       <List.Item content={<Link to="/components/clinical/label-value-view">Label Value View</Link>} />

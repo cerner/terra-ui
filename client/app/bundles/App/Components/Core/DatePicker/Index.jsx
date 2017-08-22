@@ -4,59 +4,51 @@ import ReadMe from 'terra-date-picker/docs/README.md';
 import { version } from 'terra-date-picker/package.json';
 import Markdown from 'terra-markdown';
 import DatePickerProps from 'terra-date-picker/docs/props-table/DatePicker.md';
-import DatePicker from 'terra-date-picker';
-import moment from 'moment';
 /* eslint-enable import/no-extraneous-dependencies */
 
 // Example Files
+import DatePickerDefault from 'terra-site/lib/examples/date-picker/DatePickerDefault';
+import DatePickerExcludeDates from 'terra-site/lib/examples/date-picker/DatePickerExcludeDates';
+import DatePickerIncludeDates from 'terra-site/lib/examples/date-picker/DatePickerIncludeDates';
 import DatePickerFilterDates from 'terra-site/lib/examples/date-picker/DatePickerFilterDates';
-import DatePickerOnChange from 'terra-site/lib/examples/date-picker/DatePickerOnChange';
+import DatePickerMinMax from 'terra-site/lib/examples/date-picker/DatePickerMinMax';
+import DatePickerDefaultDate from 'terra-site/lib/examples/date-picker/DatePickerDefaultDate';
+import DatePickerInsideModal from 'terra-site/lib/examples/date-picker/DatePickerInsideModal';
 
 const DatePickerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <Markdown id="props-table" src={DatePickerProps} />
+    <Markdown id="props-table-date-picker" src={DatePickerProps} />
     <h2 id="default">Default</h2>
-    <DatePicker
-      name="date-input-default"
-    />
+    <DatePickerDefault />
     <br />
     <br />
-    <h2 id="exclude-dates">ExcludeDates</h2>
-    <DatePicker
-      name="date-input-exclude"
-      excludeDates={[moment().subtract(1, 'days').format(), moment().add(1, 'days').format()]}
-    />
+    <h2 id="exclude-dates">Exclude Dates</h2>
+    <DatePickerExcludeDates />
     <br />
     <br />
-    <h2 id="filter-dates">FilterDates</h2>
+    <h2 id="filter-dates">Filter Dates</h2>
     <DatePickerFilterDates />
     <br />
+    <br />
     <h2 id="include-dates">Include Dates</h2>
-    <DatePicker
-      name="date-input-include"
-      includeDates={[moment().format(), moment().subtract(1, 'days').format(), moment().add(1, 'days').format()]}
-    />
+    <DatePickerIncludeDates />
     <br />
     <br />
-    <h2 id="min-max">Min Max</h2>
-    <DatePicker
-      name="date-input-min-max"
-      minDate={moment().format()}
-      maxDate={moment().add(6, 'days').format()}
-    />
+    <h2 id="min-max">Min Max Selection Options</h2>
+    <DatePickerMinMax />
     <br />
-    <br />
-    <h2 id="on-change">On Change</h2>
-    <DatePickerOnChange />
     <br />
     <h2 id="start-date">Default Date</h2>
-    <DatePicker
-      name="date-input-default-date"
-      selectedDate={moment().format()}
-    />
+    <DatePickerDefaultDate />
+    <br />
+    <br />
+    <h2 id="modal">Presented Inside Modal</h2>
+    <DatePickerInsideModal />
+    <br />
   </div>
 );
+
 
 export default DatePickerExamples;

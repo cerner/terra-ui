@@ -1,16 +1,17 @@
 :local {
   .hero {
     position:relative;
+    height: 472px;
   }
 
   .hero canvas {
     background: #223;
-    background-size: 200px;
+    background-size: 14.286rem; // 200px
     background-repeat: no-repeat;
     background-position: center;
     color: white;
     position: absolute;
-    top: 0px;
+    top: 0;
     right:0;
     bottom:0;
     left:0;
@@ -21,19 +22,19 @@
     color: white;
     position: absolute;
     text-align: center;
-    top: 60vh;
     width: 100%;
+    bottom: 9%;
   }
 
   .hero-title {
-    font-size: 72px;
+    font-size: 5.143rem; // 72px
     font-weight: 100;
-    letter-spacing: 40px;
-    padding-left: 20px;
+    padding-left: 1.429rem; // 20px
+    padding-right: 1.429rem; // 20px
   }
 
   .hero-button {
-    background-color: #007cc3;
+    background-color: #0065a3;
     border-color: #0065a3;
     border-radius: 0.25em;
     border-style: solid;
@@ -41,10 +42,10 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.429;
-    margin-top: 10px;
+    margin-top: 0.714rem; // 10px
     padding-left: 0.714em;
     padding-right: 0.714em;
     padding-bottom: 0.286em;
@@ -57,9 +58,5 @@
     user-select: none;
     vertical-align: middle;
     white-space: normal;
-  }
-
-  .hero-positioning {
-      margin-top: 80vh;
   }
 }

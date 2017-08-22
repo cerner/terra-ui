@@ -24,13 +24,13 @@ class AppTopNavigation extends React.Component {
   render() {
     const classes = cx([styles.topnav, { responsive: this.state.isOpen }]);
     return (
-      <div className={classes} id="myTopnav">
+      <nav className={classes}>
         <Link to="/home"><IconHouse /> Home</Link>
         <Link to="/getting-started">Getting Started</Link>
         <Link to="/components">Components</Link>
         <a href="https://github.com/cerner/terra-core">GitHub</a>
         <a role="button" tabIndex={0} className={styles['topnav-icon']} onClick={this.toggle}>&#9776;</a>
-      </div>
+      </nav>
     );
   }
 }

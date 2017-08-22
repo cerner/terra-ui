@@ -10,14 +10,14 @@
   .vertical-menu h1 {
     color: black;
     display: block;
-    padding: 12px;
+    padding: 0.857rem; // 12px
     text-decoration: none;
   }
 
   .vertical-menu a {
     color: black;
     display: block;
-    padding: 12px;
+    padding: 0.857rem; // 12px
     text-decoration: none;
   }
 
@@ -25,6 +25,15 @@
   .vertical-menu a:focus {
     background-color: #ccc;
     outline: none;
+  }
+
+  .vertical-sub-menu {
+    padding-left: .5rem;
+  }
+
+  .components-content {
+    padding: 1rem;
+    padding-left: 0;
   }
 }
 

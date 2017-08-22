@@ -1,5 +1,6 @@
 :local {
   .topnav {
+    display: block;
     overflow: hidden;
     background-color: #f4f4f4;
   }
@@ -9,16 +10,15 @@
     display: block;
     color: #0075b8;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1rem 1.2rem;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 200;
+    font-size: 1.3rem;
   }
 
   .topnav a:hover,
   .topnav a:focus {
     background-color: #ddd;
-    color: black;
+    color: #000;
     outline: none;
   }
 

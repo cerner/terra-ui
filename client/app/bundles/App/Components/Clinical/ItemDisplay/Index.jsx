@@ -4,6 +4,7 @@ import Markdown from 'terra-markdown';
 import ReadMe from 'terra-clinical-item-display/docs/README.md';
 import { version } from 'terra-clinical-item-display/package.json';
 import ItemDisplayProps from 'terra-clinical-item-display/docs/props-table/ItemDisplay.md';
+import ItemDisplayCommentProps from 'terra-clinical-item-display/docs/props-table/ItemComment.md';
 
 // Example Files
 import TextItemDisplay from 'terra-clinical-site/lib/examples/item-display/TextItemDisplay';
@@ -16,8 +17,7 @@ const ItemDisplayExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <Markdown id="props-table" src={ItemDisplayProps} />
-    <h2> Item Display </h2>
-    <h2> Item Display-Comment </h2>
+    <Markdown id="props-table" src={ItemDisplayCommentProps} />
     <h2 id="text">Text Display</h2>
     <TextItemDisplay />
     <br />

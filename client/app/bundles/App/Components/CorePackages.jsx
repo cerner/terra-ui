@@ -10,6 +10,7 @@ const CorePackages = () => (
   <div>
     <List className={styles['vertical-menu']}>
       <List.Item content={<Heading level={1} size="large">Core</Heading>} />
+      <List.Item content={<Link to="/components/core/alert">Alert</Link>} />
       <List.Item content={<Link to="/components/core/app-delegate">App Delegate</Link>} />
       <List.Item content={<Link to="/components/core/arrange">Arrange</Link>} />
       <List.Item content={<Link to="/components/core/base">Base</Link>} />
@@ -20,6 +21,19 @@ const CorePackages = () => (
       <List.Item content={<Link to="/components/core/datepicker">Date Picker</Link>} />
       <List.Item content={<Link to="/components/core/demographics-banner">Demographics Banner</Link>} />
       <List.Item content={<Link to="/components/core/form">Form</Link>} />
+      <List.Item content={<List className={styles['vertical-sub-menu']}>
+        <List.Item content={<Link to="/components/core/form/field">Field</Link>} />
+        <List.Item content={<Link to="/components/core/form/fieldset">Fieldset</Link>} />
+        <List.Item content={<Link to="/components/core/form/input">Input</Link>} />
+        <List.Item content={<Link to="/components/core/form/control">Control</Link>} />
+        <List.Item content={<Link to="/components/core/form/number-field">Number Field</Link>} />
+        <List.Item content={<Link to="/components/core/form/textarea">Textarea</Link>} />
+        <List.Item content={<Link to="/components/core/form/textarea-field">Textarea Field</Link>} />
+        <List.Item content={<Link to="/components/core/form/text-field">Text Field</Link>} />
+        <List.Item content={<Link to="/components/core/form/select">Select</Link>} />
+        <List.Item content={<Link to="/components/core/form/select-field">Select Field</Link>} />
+      </List>}
+      />
       <List.Item content={<Link to="/components/core/grid">Grid</Link>} />
       <List.Item content={<Link to="/components/core/heading">Heading</Link>} />
       <List.Item content={<Link to="/components/core/i18n">I18n</Link>} />
@@ -28,6 +42,7 @@ const CorePackages = () => (
       <List.Item content={<Link to="/components/core/list">List</Link>} />
       <List.Item content={<Link to="/components/core/modal">Modal</Link>} />
       <List.Item content={<Link to="/components/core/modal-manager">Modal Manager</Link>} />
+      <List.Item content={<Link to="/components/core/overlay">Overlay</Link>} />
       <List.Item content={<Link to="/components/core/progress-bar">Progress Bar</Link>} />
       <List.Item content={<Link to="/components/core/responsive-element">Responsive Element</Link>} />
       <List.Item content={<Link to="/components/core/search-field">Search Field</Link>} />

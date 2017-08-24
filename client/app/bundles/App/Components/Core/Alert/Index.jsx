@@ -18,11 +18,12 @@ import ActionExample from 'terra-site/lib/examples/alert/ActionExample';
 import SmallContainerExample from 'terra-site/lib/examples/alert/SmallContainerExample';
 import DismissibleExample from 'terra-site/lib/examples/alert/DismissibleExample';
 import ActionAndDismissibleExample from 'terra-site/lib/examples/alert/ActionAndDismissibleExample';
-import BuildYourOwnAlertExample from 'terra-site/lib/examples/alert/BuildYourOwnAlertExample';
+import { BuildYourOwnAlertExample as CustomizableAlertExample } from 'terra-site/lib/examples/alert/BuildYourOwnAlertExample';
 // Styles
 import styles from '../../Index.scss';
 
-const AlertExamples = () => (
+const AlertExamples = () =>
+(
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
@@ -58,7 +59,7 @@ const AlertExamples = () => (
     <hr className={styles['hr']} />
     <ActionAndDismissibleExample />
     <hr className={styles['hr']} />
-    <BuildYourOwnAlertExample />
+    <CustomizableAlertExample />
     <hr className={styles['hr']} />
   </div>
 );

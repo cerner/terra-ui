@@ -34,33 +34,33 @@ const AlertExamples = () =>
     PLEASE NOTE: The strings that are internationalized in the following examples are the default titles for each of
     the alert types (except the custom alert type), and the text for the Dismiss button.
     </p>
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <AlertExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <ErrorExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <WarningExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <AdvisoryExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <InfoExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <SuccessExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <CustomExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <LongTextExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <ActionExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <SmallContainerExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <DismissibleExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <ActionAndDismissibleExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
     <CustomizableAlertExample />
-    <hr className={styles['hr']} />
+    <hr className={styles.hr} />
   </div>
 );
 

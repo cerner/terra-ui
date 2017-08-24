@@ -6,6 +6,21 @@ import Heading from 'terra-heading';
 /* eslint-enable import/no-extraneous-dependencies */
 import styles from './Index.scss';
 
+const formSubMenuItems = (
+  <List className={styles['vertical-sub-menu']}>
+    <List.Item content={<Link to="/components/core/form/field">Field</Link>} />
+    <List.Item content={<Link to="/components/core/form/fieldset">Fieldset</Link>} />
+    <List.Item content={<Link to="/components/core/form/input">Input</Link>} />
+    <List.Item content={<Link to="/components/core/form/control">Control</Link>} />
+    <List.Item content={<Link to="/components/core/form/number-field">Number Field</Link>} />
+    <List.Item content={<Link to="/components/core/form/textarea">Textarea</Link>} />
+    <List.Item content={<Link to="/components/core/form/textarea-field">Textarea Field</Link>} />
+    <List.Item content={<Link to="/components/core/form/text-field">Text Field</Link>} />
+    <List.Item content={<Link to="/components/core/form/select">Select</Link>} />
+    <List.Item content={<Link to="/components/core/form/select-field">Select Field</Link>} />
+  </List>
+);
+
 const CorePackages = () => (
   <div>
     <List className={styles['vertical-menu']}>
@@ -21,19 +36,7 @@ const CorePackages = () => (
       <List.Item content={<Link to="/components/core/datepicker">Date Picker</Link>} />
       <List.Item content={<Link to="/components/core/demographics-banner">Demographics Banner</Link>} />
       <List.Item content={<Link to="/components/core/form">Form</Link>} />
-      <List.Item content={<List className={styles['vertical-sub-menu']}>
-        <List.Item content={<Link to="/components/core/form/field">Field</Link>} />
-        <List.Item content={<Link to="/components/core/form/fieldset">Fieldset</Link>} />
-        <List.Item content={<Link to="/components/core/form/input">Input</Link>} />
-        <List.Item content={<Link to="/components/core/form/control">Control</Link>} />
-        <List.Item content={<Link to="/components/core/form/number-field">Number Field</Link>} />
-        <List.Item content={<Link to="/components/core/form/textarea">Textarea</Link>} />
-        <List.Item content={<Link to="/components/core/form/textarea-field">Textarea Field</Link>} />
-        <List.Item content={<Link to="/components/core/form/text-field">Text Field</Link>} />
-        <List.Item content={<Link to="/components/core/form/select">Select</Link>} />
-        <List.Item content={<Link to="/components/core/form/select-field">Select Field</Link>} />
-      </List>}
-      />
+      <List.Item content={formSubMenuItems} />
       <List.Item content={<Link to="/components/core/grid">Grid</Link>} />
       <List.Item content={<Link to="/components/core/heading">Heading</Link>} />
       <List.Item content={<Link to="/components/core/i18n">I18n</Link>} />

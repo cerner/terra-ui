@@ -50,5 +50,4 @@ const DatePickerExamples = () => (
   </div>
 );
 
-
 export default DatePickerExamples;

@@ -19,6 +19,8 @@ import SmallContainerExample from 'terra-site/lib/examples/alert/SmallContainerE
 import DismissibleExample from 'terra-site/lib/examples/alert/DismissibleExample';
 import ActionAndDismissibleExample from 'terra-site/lib/examples/alert/ActionAndDismissibleExample';
 import BuildYourOwnAlertExample from 'terra-site/lib/examples/alert/BuildYourOwnAlertExample';
+// Styles
+import styles from '../../Index.scss';
 
 const AlertExamples = () => (
   <div>
@@ -31,33 +33,33 @@ const AlertExamples = () => (
     PLEASE NOTE: The strings that are internationalized in the following examples are the default titles for each of
     the alert types (except the custom alert type), and the text for the Dismiss button.
     </p>
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <AlertExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <ErrorExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <WarningExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <AdvisoryExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <InfoExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <SuccessExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <CustomExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <LongTextExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <ActionExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <SmallContainerExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <DismissibleExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <ActionAndDismissibleExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
     <BuildYourOwnAlertExample />
-    <br /><hr /><br />
+    <hr className={styles['hr']} />
   </div>
 );
 

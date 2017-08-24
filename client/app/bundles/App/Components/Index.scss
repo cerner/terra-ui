@@ -35,6 +35,14 @@
     padding: 1rem;
     padding-left: 0;
   }
+
+  .hr {
+    border: 0;
+    border-top: 1px solid #c8cacb;
+    box-sizing: border-box;
+    height: 1px;
+    margin: 1rem 0;
+  }
 }
 
 .markdown-body code {

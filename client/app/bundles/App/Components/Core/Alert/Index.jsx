@@ -22,8 +22,7 @@ import { BuildYourOwnAlertExample as CustomizableAlertExample } from 'terra-site
 // Styles
 import styles from '../../Index.scss';
 
-const AlertExamples = () =>
-(
+const AlertExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />

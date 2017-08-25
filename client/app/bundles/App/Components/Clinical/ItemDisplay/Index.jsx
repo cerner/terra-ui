@@ -16,15 +16,15 @@ const ItemDisplayExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <Markdown id="props-table" src={ItemDisplayProps} />
-    <Markdown id="props-table" src={ItemDisplayCommentProps} />
+    <Markdown id="props-table1" src={ItemDisplayProps} />
+    <Markdown id="props-table2" src={ItemDisplayCommentProps} />
     <h2 id="text">Text Display</h2>
     <TextItemDisplay />
     <br />
-    <h2 id="icon">Icon Display</h2>
+    <h2 id="icon-display">Icon Display</h2>
     <IconItemDisplay />
     <br />
-    <h2 id="icon">Icon and Text Display</h2>
+    <h2 id="icon-text-display">Icon and Text Display</h2>
     <TextIconItemDisplay />
     <br />
     <h2 id="standard">Comment Display</h2>

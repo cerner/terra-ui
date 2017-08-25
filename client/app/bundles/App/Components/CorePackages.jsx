@@ -46,6 +46,8 @@ const CorePackages = () => (
       <List.Item content={<Link to="/components/core/modal">Modal</Link>} />
       <List.Item content={<Link to="/components/core/modal-manager">Modal Manager</Link>} />
       <List.Item content={<Link to="/components/core/overlay">Overlay</Link>} />
+      <List.Item content={<Link to="/components/core/popup">Popup</Link>} />
+      <List.Item content={<Link to="/components/core/profile-image">Profile Image</Link>} />
       <List.Item content={<Link to="/components/core/progress-bar">Progress Bar</Link>} />
       <List.Item content={<Link to="/components/core/responsive-element">Responsive Element</Link>} />
       <List.Item content={<Link to="/components/core/search-field">Search Field</Link>} />

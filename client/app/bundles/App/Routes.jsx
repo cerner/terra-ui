@@ -37,6 +37,8 @@ import ListExamples from './Components/Core/List/Index';
 import ModalExamples from './Components/Core/Modal/Index';
 import ModalMangerExamples from './Components/Core/ModalManager/Index';
 import OverlayExamples from './Components/Core/Overlay/Index';
+import PopupExamples from './Components/Core/Popup/Index';
+import ProfileImageExamples from './Components/Core/ProfileImage/Index';
 import ProgressBarExamples from './Components/Core/ProgressBar/Index';
 import ResponsiveElementExamples from './Components/Core/ResponsiveElement/Index';
 import SearchFieldExamples from './Components/Core/SearchField/Index';
@@ -104,6 +106,8 @@ const DocSiteLayoutRoutes = () => (
         <Route path="/components/core/modal" component={ModalExamples} />
         <Route path="/components/core/modal-manager" component={ModalMangerExamples} />
         <Route path="/components/core/overlay" component={OverlayExamples} />
+        <Route path="/components/core/popup" component={PopupExamples} />
+        <Route path="/components/core/profile-image" component={ProfileImageExamples} />
         <Route path="/components/core/progress-bar" component={ProgressBarExamples} />
         <Route path="/components/core/responsive-element" component={ResponsiveElementExamples} />
         <Route path="/components/core/search-field" component={SearchFieldExamples} />

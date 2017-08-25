@@ -7,8 +7,6 @@ import Markdown from 'terra-markdown';
 import PopupProps from 'terra-popup/docs/props-table/Popup.md';
 /* eslint-enable import/no-extraneous-dependencies */
 
-
-// Example Files
 // Example Files
 import PopupStandard from 'terra-site/lib/examples/popup/PopupStandard';
 import PopupBounded from 'terra-site/lib/examples/popup/PopupBounded';

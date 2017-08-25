@@ -28,7 +28,7 @@ const GettingStartedPage = () => (
       <Grid.Row>
         <Grid.Column small={2} className={styles['components-vertical-nav']}>
           <List className={styles['vertical-menu']}>
-            <List.Item content={<Heading level={2}>Getting Started</Heading>} />
+            <List.Item content={<Heading level={1} size="large">Getting Started</Heading>} />
             <List.Item content={<Link to="/getting-started#what-is-terra-" onClick={() => { scrollToComponent('#what-is-terra-'); }} >What is Terra?</Link>} />
             <List.Item content={<Link to="/getting-started#features" onClick={() => { scrollToComponent('#features'); }} >Features</Link>} />
             <List.Item content={<Link to="/getting-started#installing-components" onClick={() => { scrollToComponent('#installing-components'); }} >Installing Components</Link>} />
@@ -57,4 +57,3 @@ const GettingStartedPage = () => (
 );
 
 export default GettingStartedPage;
-

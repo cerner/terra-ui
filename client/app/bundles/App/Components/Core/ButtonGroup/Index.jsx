@@ -13,8 +13,6 @@ import ButtonGroupSize from 'terra-site/lib/examples/button-group/ButtonGroupSiz
 import ButtonGroupCompact from 'terra-site/lib/examples/button-group/ButtonGroupCompact';
 import ButtonGroupSelectable from 'terra-site/lib/examples/button-group/ButtonGroupSelectable';
 import ButtonGroupWithIcons from 'terra-site/lib/examples/button-group/ButtonGroupWithIcons';
-import ButtonGroupOnClick from 'terra-site/lib/examples/button-group/ButtonGroupOnClick';
-import ButtonGroupOnChange from 'terra-site/lib/examples/button-group/ButtonGroupOnChange';
 
 const ButtonGroupExamples = () => (
   <div>
@@ -30,12 +28,8 @@ const ButtonGroupExamples = () => (
     <ButtonGroupCompact />
     <h2>Icons</h2>
     <ButtonGroupWithIcons />
-    <h2>Unselectable With On Click Set</h2>
-    <ButtonGroupOnClick />
     <h2>Selectable</h2>
     <ButtonGroupSelectable />
-    <h2>On Change</h2>
-    <ButtonGroupOnChange />
   </div>
 );
 

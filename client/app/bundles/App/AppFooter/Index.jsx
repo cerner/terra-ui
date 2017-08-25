@@ -13,7 +13,7 @@ const AppFooter = () => (
       <Grid.Row>
         <Grid.Column col={1} />
         <Grid.Column className={styles['footer-col']} small={2} >
-          <Text fontSize="18" weight="700" color={'#a6d9f4'}>GitHub</Text>
+          <Text fontSize={18} weight={700} color={'#a6d9f4'}>GitHub</Text>
           <List>
             <List.Item content={<a href="https://github.com/cerner/terra-core">terra-core</a>} />
             <List.Item content={<a href="https://github.com/cerner/terra-clinical">terra-clinical</a>} />
@@ -21,13 +21,13 @@ const AppFooter = () => (
           </List>
         </Grid.Column>
         <Grid.Column className={styles['footer-col']} small={2}>
-          <Text fontSize="18" weight="700" color={'#a6d9f4'}>Support</Text>
+          <Text fontSize={18} weight={700} color={'#a6d9f4'}>Support</Text>
           <List>
             <List.Item content={<a href="https://github.com/cerner/terra-core/issues/new">Log an issue</a>} />
           </List>
         </Grid.Column>
         <Grid.Column className={styles['footer-col']} small={2}>
-          <Text fontSize="18" weight="700" color={'#a6d9f4'}>About Us</Text>
+          <Text fontSize={18} weight={700} color={'#a6d9f4'}>About Us</Text>
           <List>
             <List.Item content={<a href="https://www.cerner.com/">Cerner</a>} />
             <List.Item content={<a href="http://engineering.cerner.com/">Engineering</a>} />

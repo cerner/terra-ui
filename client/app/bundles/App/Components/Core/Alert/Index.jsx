@@ -18,7 +18,7 @@ import ActionExample from 'terra-site/lib/examples/alert/ActionExample';
 import SmallContainerExample from 'terra-site/lib/examples/alert/SmallContainerExample';
 import DismissibleExample from 'terra-site/lib/examples/alert/DismissibleExample';
 import ActionAndDismissibleExample from 'terra-site/lib/examples/alert/ActionAndDismissibleExample';
-import { BuildYourOwnAlertExample as CustomizableAlertExample } from 'terra-site/lib/examples/alert/BuildYourOwnAlertExample';
+import CustomizableAlertExample from 'terra-site/lib/examples/alert/BuildYourOwnAlertExample';
 // Styles
 import styles from '../../Index.scss';
 

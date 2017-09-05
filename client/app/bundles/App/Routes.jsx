@@ -14,9 +14,12 @@ import BadgeExamples from './Components/Core/Badge/Index';
 import BaseExamples from './Components/Core/Base/Index';
 import ButtonExamples from './Components/Core/Button/Index';
 import ButtonGroupExamples from './Components/Core/ButtonGroup/Index';
+import CardExamples from './Components/Core/Card/Index';
 import ContentContainerExamples from './Components/Core/ContentContainer/Index';
 import DatePickerExamples from './Components/Core/DatePicker/Index';
 import DemographicsBannerExamples from './Components/Core/DemographicsBanner/Index';
+import DynamicGridExamples from './Components/Core/DynamicGrid/Index';
+import EmbeddedContentConsumerExamples from './Components/Core/EmbeddedContentConsumer/Index';
 import FormExamples from './Components/Core/Form/Index';
 import FormFieldExamples from './Components/Core/Form/Field';
 import FormFieldsetExamples from './Components/Core/Form/Fieldset';
@@ -48,6 +51,7 @@ import StatusExamples from './Components/Core/Status/Index';
 import TableExamples from './Components/Core/Table/Index';
 import TextExamples from './Components/Core/Text/Index';
 import TimeInputExamples from './Components/Core/TimeInput/Index';
+import ThemeProviderExamples from './Components/Core/ThemeProvider/Index';
 import ToggleExamples from './Components/Core/Toggle/Index';
 import ToggleButtonExamples from './Components/Core/ToggleButton/Index';
 
@@ -83,9 +87,12 @@ const DocSiteLayoutRoutes = () => (
         <Route path="/components/core/base" component={BaseExamples} />
         <Route path="/components/core/button" component={ButtonExamples} />
         <Route path="/components/core/button-group" component={ButtonGroupExamples} />
+        <Route path="/components/core/card" component={CardExamples} />
         <Route path="/components/core/content-container" component={ContentContainerExamples} />
         <Route path="/components/core/datepicker" component={DatePickerExamples} />
         <Route path="/components/core/demographics-banner" component={DemographicsBannerExamples} />
+        <Route path="/components/core/dynamic-grid" component={DynamicGridExamples} />
+        <Route path="/components/core/embedded-content-consumer" component={EmbeddedContentConsumerExamples} />
         <Route path="/components/core/form" component={FormExamples} />
         <Route path="/components/core/form/field" component={FormFieldExamples} />
         <Route path="/components/core/form/fieldset" component={FormFieldsetExamples} />
@@ -117,6 +124,7 @@ const DocSiteLayoutRoutes = () => (
         <Route path="/components/core/table" component={TableExamples} />
         <Route path="/components/core/text" component={TextExamples} />
         <Route path="/components/core/time-input" component={TimeInputExamples} />
+        <Route path="/components/core/theme-provider" component={ThemeProviderExamples} />
         <Route path="/components/core/toggle" component={ToggleExamples} />
         <Route path="/components/core/toggle-button" component={ToggleButtonExamples} />
 

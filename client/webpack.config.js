@@ -89,7 +89,7 @@ const config = {
                       'iOS >= 8',
                     ],
                   }),
-                  CustomProperties(),
+                  CustomProperties({ preserve: true, warnings: false }),
                   rtl(),
                 ];
               },
@@ -97,6 +97,9 @@ const config = {
           },
           {
             loader: 'sass-loader',
+            options: {
+              data: '$bundled-themes: mock, consumer;',
+            },
           }],
         }),
       },

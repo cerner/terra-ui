@@ -32,9 +32,12 @@ const CorePackages = () => (
       <List.Item content={<Link to="/components/core/badge">Badge</Link>} />
       <List.Item content={<Link to="/components/core/button">Button</Link>} />
       <List.Item content={<Link to="/components/core/button-group">Button Group</Link>} />
+      <List.Item content={<Link to="/components/core/card">Card</Link>} />
       <List.Item content={<Link to="/components/core/content-container">Content Container</Link>} />
       <List.Item content={<Link to="/components/core/datepicker">Date Picker</Link>} />
       <List.Item content={<Link to="/components/core/demographics-banner">Demographics Banner</Link>} />
+      <List.Item content={<Link to="/components/core/dynamic-grid">Dynamic Grid</Link>} />
+      <List.Item content={<Link to="/components/core/embedded-content-consumer">Embedded Content Consumer</Link>} />
       <List.Item content={<Link to="/components/core/form">Form</Link>} />
       <List.Item content={formSubMenuItems} />
       <List.Item content={<Link to="/components/core/grid">Grid</Link>} />
@@ -57,6 +60,7 @@ const CorePackages = () => (
       <List.Item content={<Link to="/components/core/table">Table</Link>} />
       <List.Item content={<Link to="/components/core/text">Text</Link>} />
       <List.Item content={<Link to="/components/core/time-input">Time Input</Link>} />
+      <List.Item content={<Link to="/components/core/theme-provider">Theme Provider</Link>} />
       <List.Item content={<Link to="/components/core/toggle">Toggle</Link>} />
       <List.Item content={<Link to="/components/core/toggle-button">Toggle Button</Link>} />
     </List>

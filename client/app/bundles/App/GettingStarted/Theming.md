@@ -3,18 +3,18 @@
 Terra UI provides theming capabilities in various components via [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
 
 ### Terra default theme
-Terra UI provides a default theme for components via [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
-For teams that do not have additional theming needs outside of the default terra theme, we recommend using the [PostCSS loader for webpack ](https://github.com/postcss/postcss-loader/) along with the [CustomProperties plugin](https://github.com/postcss/postcss-custom-properties) to compile CSS custom properties down to static values. This ensures the theme styles render in modern browsers as well as those which do not support CSS custom properties.
+Terra UI provides a default theme for components via [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) a.k.a CSS variables.
+For teams that do not have theming needs outside of the default terra theme, we recommend using the [PostCSS loader for webpack ](https://github.com/postcss/postcss-loader/) along with the [CustomProperties plugin](https://github.com/postcss/postcss-custom-properties) to compile CSS custom properties down to static values. This ensures the theme styles render in modern browsers, as well as those which [do not support CSS custom properties](http://caniuse.com/#search=custom%20properties).
 
 
-__Recommend webpack setup for this use case:__
+__Recommended webpack setup to only support default theme:__
 ```js
 // Require the PostCSS Custom Properties plugin
 const CustomProperties = require('postcss-custom-properties');
 
 ...
 
-// In your webpack config
+// In your webpack config, include the PostCSS plugin in the module object
 {
   loader: 'postcss-loader',
   options: {
@@ -38,14 +38,14 @@ The `$default-theme` variable should be a single string value of the name of a f
 
 This will replace the default terra CSS custom properties values with those specified in the default theme and compile them down to static values.
 
-__Recommend webpack setup for this use case:__
+__Recommended webpack setup for changing the default theme:__
 ```js
 // Require the PostCSS Custom Properties plugin
 const CustomProperties = require('postcss-custom-properties');
 
 ...
 
-// In your webpack config
+// In your webpack config, include the following in the module object.
 {
   loader: 'postcss-loader',
   options: {
@@ -64,7 +64,7 @@ const CustomProperties = require('postcss-custom-properties');
 ```
 
 ### Using the theme provider to dynamically switch between themes
-Terra UI offers a theme provider component to theme various Terra UI components via CSS custom properties a.k.a CSS variables. This is accomplished by setting a CSS class which contains defined CSS custom properties for the specified theme on the DOM element that wraps the children rendered by the theme provider.
+Terra UI offers a theme provider component to theme various Terra UI components via CSS custom properties. This is accomplished by setting a CSS class which contains defined CSS custom properties for the specified theme on the DOM element that wraps the children rendered by the theme provider.
 
 Note: The CSS custom properties applied via the theme provider component only work in browsers which have native support for CSS custom properties.
 
@@ -84,7 +84,7 @@ const CustomProperties = require('postcss-custom-properties');
 
 ...
 
-// In your webpack config
+// In your webpack config, include the following in the module object.
 {
   loader: 'postcss-loader',
   options: {

@@ -5,6 +5,7 @@ import Markdown from 'terra-markdown';
 import Grid from 'terra-grid';
 import List from 'terra-list';
 import Heading from 'terra-heading';
+import themingVariables from 'terra-site/themeable-variables.json';
 /* eslint-enable import/no-extraneous-dependencies */
 import WhatIsTerra from './WhatIsTerra.md';
 import Features from './Features.md';
@@ -14,9 +15,12 @@ import BasicUsage from './BasicUsage.md';
 import ConfiguringWebpack from './ConfiguringWebpack.md';
 import I18n from './I18n.md';
 import Directionality from './Directionality.md';
+import ThemingIntro from './ThemingIntro.md';
 import Theming from './Theming.md';
 import styles from './Index.scss';
 
+// Filter out MockThemeComponent
+const themableComponents = Object.keys(themingVariables).filter(x => x !== 'MockThemeComponent');
 
 const scrollToComponent = (id) => {
   document.querySelector(id).scrollIntoView();
@@ -49,6 +53,10 @@ const GettingStartedPage = () => (
           <Markdown src={ConfiguringWebpack} />
           <Markdown src={I18n} />
           <Markdown src={Directionality} />
+          <Markdown src={ThemingIntro} />
+          <List style={{ paddingBottom: '0.5rem' }}>
+            {themableComponents.map(component => <List.Item key={component} style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }} content={<span>{component}</span>} />)}
+          </List>
           <Markdown src={Theming} />
         </Grid.Column>
       </Grid.Row>

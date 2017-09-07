@@ -1,7 +1,3 @@
-## Theming
-
-Terra UI provides theming capabilities in various components via [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
-
 ### Terra default theme
 Terra UI provides a default theme for components via [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) a.k.a CSS variables.
 For teams that do not have theming needs outside of the default terra theme, we recommend using the [PostCSS loader for webpack ](https://github.com/postcss/postcss-loader/) along with the [CustomProperties plugin](https://github.com/postcss/postcss-custom-properties) to compile CSS custom properties down to static values. This ensures the theme styles render in modern browsers, as well as those which [do not support CSS custom properties](http://caniuse.com/#search=custom%20properties).

@@ -3,9 +3,15 @@ import React from 'react';
 import ReadMe from 'terra-table/docs/README.md';
 import { version } from 'terra-table/package.json';
 import Markdown from 'terra-markdown';
-import TableProps from 'terra-table/docs/props-table/Table.md';
-/* eslint-enable import/no-extraneous-dependencies */
 
+// Component Props
+import TableProps from 'terra-table/docs/props-table/Table.md';
+import TableHeaderProps from 'terra-table/docs/props-table/TableHeader.md';
+import TableRowProps from 'terra-table/docs/props-table/TableRow.md';
+import TableRowsProps from 'terra-table/docs/props-table/TableRows.md';
+import TableCellProps from 'terra-table/docs/props-table/TableCell.md';
+import TableSubheaderProps from 'terra-table/docs/props-table/TableSubheader.md';
+/* eslint-enable import/no-extraneous-dependencies */
 
 import NoStripedTable from 'terra-site/lib/examples/table/NoStripedTable';
 import NoPaddingTable from 'terra-site/lib/examples/table/NoPaddingTable';
@@ -18,19 +24,17 @@ import TableWithLongContent from 'terra-site/lib/examples/table/TableWithLongCon
 import TableWithCustomCells from 'terra-site/lib/examples/table/TableWithCustomCells';
 import TableWithSubheaders from 'terra-site/lib/examples/table/TableWithSubheaders';
 
+
 const TableExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <Markdown id="props-table" src={TableProps} />
-    <h2>Table</h2>
-    <h2>Table Header</h2>
-    <h2>Table Header Cell</h2>
-    <h2>Table Subheader</h2>
-    <h2>Table Rows</h2>
-    <h2>Single Selectable Table Row</h2>
-    <h2>Table Row</h2>
-    <h2>Table Cell</h2>
+    <Markdown src={TableProps} />
+    <Markdown src={TableHeaderProps} />
+    <Markdown src={TableSubheaderProps} />
+    <Markdown src={TableRowsProps} />
+    <Markdown src={TableRowProps} />
+    <Markdown src={TableCellProps} />
     <br />
     <h1>Examples </h1>
     <h2>Table without zebra stripes</h2>
@@ -45,7 +49,7 @@ const TableExamples = () => (
     <h2>Table with some rows selected. Table will not select or deselect any row</h2>
     <TableWithHighlightedRows />
     <br />
-    <h2>Selectable table. Only one row can be selected</h2>
+    <h2>Selectable table</h2>
     <SingleRowSelectableTable />
     <br />
     <h2>Selectable table with second row as non selectable</h2>

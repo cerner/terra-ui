@@ -5,7 +5,7 @@ This documentation has fallen behind in updates. The following links provide the
 * http://engineering.cerner.com/terra-consumer/#/site
 * http://engineering.cerner.com/terra-clinical/#/site
 
-We are working to update terra-ui to pull doc automatically from the repos above so we can go back to using this as our main documentation reference. In the mean time, the individual links above are the best resource for terra component documentation.
+We are working to update terra-ui to pull doc automatically from the repos above so we can go back to using this as our main documentation reference. In the meantime, the individual links above are the best resource for terra component documentation.
 
 <!-- Logo -->
 <p align="center">

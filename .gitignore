@@ -17,8 +17,6 @@
 /node_modules
 /yarn-error.log
 
-.byebug_history
-# React on Rails
 npm-debug.log*
 node_modules
 

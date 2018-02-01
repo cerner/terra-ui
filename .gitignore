@@ -23,4 +23,6 @@ node_modules
 # Generated js bundles
 /public/webpack/*
 
-**/aggregated-translations/*.*
+aggregated-translations/*.*
+generatedComponentConfig.js
+themeable-variables.json

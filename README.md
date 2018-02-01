@@ -10,7 +10,7 @@
 
 [![Build Status](https://travis-ci.org/cerner/terra-ui.com.svg?branch=master)](https://travis-ci.org/cerner/terra-ui.com)
 
-Documenation site for Terra. Terra is the core UI component library, unifying UX concepts and development across Cerner.
+Documentation site for Terra. Terra is the core UI component library, unifying UX concepts and development across Cerner.
 
 - [Getting Started](#getting-started)
   - [Install Application](#install-application)
@@ -27,16 +27,8 @@ Documenation site for Terra. Terra is the core UI component library, unifying UX
 ```
 git clone https://github.cerner.com/terra/terra-ui.com.git
 
-bundle install && npm install
+npm install
 ```
-
-<details>
-<summary>If bundle install fails</summary>
-An error occurred while installing pg (0.20.0), and Bundler cannot continue. Make sure that gem install pg -v '0.20.0' succeeds before bundling., then install postgresql and try again.
-
-brew install postgresql (mac)
-
-</details>
 
 ### Run Application
 ```

@@ -1,3 +1,12 @@
+This documentation has fallen behind in updates. The following links provide the most up to date documentation on avaialable terra components:
+
+* http://engineering.cerner.com/terra-core/#/site
+* http://engineering.cerner.com/terra-framework/#/site
+* http://engineering.cerner.com/terra-consumer/#/site
+* http://engineering.cerner.com/terra-clinical/#/site
+
+We are working to update terra-ui to pull doc automatically from the repos above so we can go back to using this as our main documentation reference. In the meantime, the individual links above are the best resource for terra component documentation.
+
 <!-- Logo -->
 <p align="center">
   <img height="128" width="128" src="https://raw.githubusercontent.com/cerner/terra-core/master/terra.png">

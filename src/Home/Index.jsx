@@ -7,7 +7,7 @@ import HomeAboutTerra2 from './HomeModular';
 import HomeTech from './HomeTech';
 
 const Home = () => (
-  <div>
+  <div style={{ height: '100%', overflow: 'auto' }}>
     <HomeHero />
     <HomeAboutTerra />
     <HomeAdditionalPages />

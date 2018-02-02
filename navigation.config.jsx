@@ -10,16 +10,15 @@ const navConfig = {
       text: 'Home',
       exampleType: 'home',
       component: Home,
-      isStatic: true,
     }, {
       path: '/site/getting-started',
       text: 'Getting Started',
       component: GettingStarted,
-      isStatic: true,
     }, {
       path: '/site/components',
       text: 'Components',
       exampleType: 'pages',
+      hasSubNav: true,
     }],
   },
 };

@@ -28,7 +28,7 @@ const scrollToComponent = (id) => {
 };
 
 const GettingStartedPage = () => (
-  <div>
+  <div style={{ height: '100%', overflow: 'auto' }}>
     <Grid>
       <Grid.Row>
         <Grid.Column small={2} className={styles['components-vertical-nav']}>

@@ -1,14 +1,12 @@
-import navigationConfig from './navigation.config';
+import navConfig from './navigation.config';
 import componentConfig from './generatedComponentConfig';
-
-// console.log("CONFIG", componentConfig)
 
 const siteConfig = {
   /* The navigation configuration.  */
-  navConfig: navigationConfig,
+  navConfig,
 
   /* The component configuration path. */
-  componentConfigPath: componentConfig,
+  componentConfig,
 
   /* The logo to display as the placeholder. */
   placeholderSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',

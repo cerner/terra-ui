@@ -60,7 +60,7 @@
     "terra-framework": "git://github.com/cerner/terra-framework.git#master",
     "terra-grid": "^3.19.0",
     "terra-heading": "^1.17.0",
-    "terra-site": "^2.0.0-RC.2",
+    "terra-site": "git://github.com/cerner/terra-site.git#fix-module-clashing",
     "terra-text": "^1.16.0",
     "webpack": "^3.6.0",
     "webpack-dev-server": "2.7.1",

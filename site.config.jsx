@@ -1,20 +1,17 @@
-const fs = require('fs');
+import navigationConfig from './navigation.config';
+import componentConfig from './generatedComponentConfig';
 
-const homeReadMe = fs.readFileSync('./README.md', 'utf-8');
-// const navigationConfig = require('./navigation.config');
+// console.log("CONFIG", componentConfig)
 
-module.exports = {
+const siteConfig = {
   /* The navigation configuration.  */
-  navConfig: './navigation.config.js',
+  navConfig: navigationConfig,
 
   /* The component configuration path. */
-  componentConfigPath: './generatedComponentConfig.js',
+  componentConfigPath: componentConfig,
 
   /* The logo to display as the placeholder. */
   placeholderSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
-
-  /* The markdown content to display on the home page. */
-  readMeContent: homeReadMe,
 
   appConfig: {
     /* The logo for the site header. */
@@ -24,3 +21,5 @@ module.exports = {
     title: 'Terra UI',
   },
 };
+
+export default siteConfig;

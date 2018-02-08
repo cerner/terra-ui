@@ -24,5 +24,4 @@ node_modules
 /public/webpack/*
 
 aggregated-translations/*.*
-generatedComponentConfig.jsx
 themeable-variables.json

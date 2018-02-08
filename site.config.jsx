@@ -1,5 +1,9 @@
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+import 'terra-core/packages/terra-site/src/cerner-mock-theme.scss';
+
 import navConfig from './navigation.config';
 import componentConfig from './generatedComponentConfig';
+
 
 const siteConfig = {
   /* The navigation configuration.  */
@@ -17,6 +21,11 @@ const siteConfig = {
 
     /* The title for the site header. */
     title: 'Terra UI',
+
+    themes: {
+      'Default Theme': '',
+      'Mock Theme': 'cerner-mock-theme',
+    },
   },
 };
 

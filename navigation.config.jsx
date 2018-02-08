@@ -1,5 +1,6 @@
 import Home from './src/Home/Index';
 import GettingStarted from './src/GettingStarted/Index';
+import GettingStartedNav from './src/GettingStarted/Nav';
 
 const navConfig = {
   rootPath: '/site',
@@ -14,6 +15,9 @@ const navConfig = {
       path: '/site/getting-started',
       text: 'Getting Started',
       component: GettingStarted,
+      menuComponent: GettingStartedNav,
+      exampleType: 'custome',
+      hasSubNav: true,
     }, {
       path: '/site/components',
       text: 'Components',

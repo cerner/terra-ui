@@ -2,7 +2,6 @@ import { TerraFrameworkSiteHome, TerraClinicalSiteHome, TerraCoreSiteHome } from
 
 import componentConfig from './generatedComponentConfig';
 
-
 componentConfig['terra-framework'].component = TerraFrameworkSiteHome;
 componentConfig['terra-clinical'].component = TerraClinicalSiteHome;
 componentConfig['terra-core'].component = TerraCoreSiteHome;

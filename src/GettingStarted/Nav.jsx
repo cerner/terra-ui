@@ -2,7 +2,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import List from 'terra-list';
-import Heading from 'terra-heading';
 
 import styles from './Index.scss';
 
@@ -22,11 +21,11 @@ const gettingStartedNav = {
 };
 
 const GettingStartedPage = () => (
-  <div style={{ height: '100%' }}>
-    <Heading level={1} size="large">
-      Getting Started
-    </Heading>
-    <List className={styles['vertical-menu']}>
+  <div className={styles['menu-container']}>
+    <div className={styles['menu-header']}>
+      <h3 style={{ margin: '0' }}>Getting Started</h3>
+    </div>
+    <List className={styles.menu}>
       {Object.keys(gettingStartedNav).map(link => (
         <List.Item
           key={link}

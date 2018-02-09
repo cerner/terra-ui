@@ -23,5 +23,5 @@ node_modules
 # Generated js bundles
 /public/webpack/*
 
-aggregated-translations/*.*
+# add aggregated-translations once i18n aggregation is fixed.
 themeable-variables.json

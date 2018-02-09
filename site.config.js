@@ -2,8 +2,8 @@
 import 'terra-core/packages/terra-site/src/cerner-mock-theme.scss';
 
 import navConfig from './navigation.config';
-import componentConfig from './generatedComponentConfig';
-
+// import componentConfig from './generatedComponentConfig';
+import componentConfig from './componentConfig';
 
 const siteConfig = {
   /* The navigation configuration.  */

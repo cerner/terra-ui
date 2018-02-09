@@ -16,7 +16,7 @@ const navConfig = {
       text: 'Getting Started',
       component: GettingStarted,
       menuComponent: GettingStartedNav,
-      exampleType: 'custome',
+      exampleType: 'custom',
       hasSubNav: true,
     }, {
       path: '/site/components',

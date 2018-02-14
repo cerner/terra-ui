@@ -17,7 +17,6 @@ const AppFooter = () => (
           <List>
             <List.Item content={<a href="https://github.com/cerner/terra-clinical">terra-clinical</a>} />
             <List.Item content={<a href="https://github.com/cerner/terra-core">terra-core</a>} />
-            <List.Item content={<a href="https://github.com/cerner?utf8=%E2%9C%93&q=terra&type=&language=">all</a>} />
             <List.Item content={<a href="https://github.com/cerner/terra-framework">terra-framework</a>} />
           </List>
         </Grid.Column>

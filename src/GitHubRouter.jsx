@@ -6,7 +6,7 @@ const GithubRouter = (
   <a href="https://github.com/cerner?utf8=%E2%9C%93&q=terra&type=&language=">
     <Image
       variant="rounded"
-      src={'https://github.com/cerner/terra-core/raw/master/terra.png'}
+      src={'https://github.com/cerner/terra-ui.com/raw/master/src/github-logo.png'}
       alt="github image"
       height="26px"
       width="26px"

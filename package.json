@@ -63,7 +63,7 @@
     "terra-image": "^1.16.0",
     "terra-grid": "^3.19.0",
     "terra-heading": "^1.17.0",
-    "terra-site": "git://github.com/cerner/terra-site.git#2ef82a69edb3cf9545a277919b90e007579258ad",
+    "terra-site": "2.0.0-RC.4",
     "terra-text": "^1.16.0",
     "webpack": "^3.6.0",
     "webpack-dev-server": "2.7.1",

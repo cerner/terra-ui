@@ -24,4 +24,3 @@ node_modules
 /public/webpack/*
 
 # add aggregated-translations once i18n aggregation is fixed.
-themeable-variables.json

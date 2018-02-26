@@ -1,4 +1,4 @@
-const webpackConfig = require('terra-site/src/config/webpack.config');
+const webpackConfig = require('terra-dev-site/src/config/webpack.config');
 
 const babelLoderRule = {
   test: /\.(jsx|js)$/,

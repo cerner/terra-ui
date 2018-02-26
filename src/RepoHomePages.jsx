@@ -1,6 +1,6 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 import React from 'react';
-import Home from 'terra-site/src/app/components/Home';
+import Home from 'terra-dev-site/src/app/components/Home';
 
 import TerraFrameworkReadMe from 'terra-framework/README.md';
 import TerraClinicalReadMe from 'terra-clinical/README.md';

@@ -21,6 +21,7 @@
     "build:test": "NODE_ENV=test webpack --config webpack.config.js",
     "build:production": "NODE_ENV=production webpack --config webpack.config.js -p",
     "build:development": "NODE_ENV=development webpack -w --config webpack.config.js",
+    "heroku-postbuild": "npm install && npm run build:production",
     "lint": "npm run lint:js",
     "lint:js": "eslint --ext .js,.jsx . --fix",
     "test": "npm run lint"

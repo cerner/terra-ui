@@ -22,6 +22,7 @@
     "build:production": "NODE_ENV=production webpack --config webpack.config.prod.js -p",
     "build:development": "NODE_ENV=development webpack -w --config webpack.config.js",
     "generate-config": "node node_modules/terra-dev-site/scripts/generate-component-config/generate-component-config.js -s 'node_modules/terra-framework/packages/*/examples/*.site-page?(.jsx|.js)' -s 'node_modules/terra-core/packages/terra-site/src/examples/*/Index.jsx' -s 'node_modules/terra-clinical/packages/terra-clinical-site/src/examples/*/Index.jsx'",
+    "heroku-postbuild": "npm install && npm run build:production",
     "lint": "npm run lint:js",
     "lint:js": "eslint --ext .js,.jsx . --fix",
     "start": "webpack-dev-server --progress",

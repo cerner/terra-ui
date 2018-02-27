@@ -19,14 +19,15 @@
     "clean": "node scripts/clean-modules/index.js",
     "clean:install": "npm run clean && npm install",
     "build:test": "NODE_ENV=test webpack --config webpack.config.js",
-    "build:production": "NODE_ENV=production webpack --config webpack.prod.config.js -p",
+    "build:production": "NODE_ENV=production node --max_old_space_size=2000 node_modules/webpack/bin/webpack.js --config webpack.prod.config.js -p",
     "build:development": "NODE_ENV=development webpack -w --config webpack.config.js",
     "generate-config": "node node_modules/terra-dev-site/scripts/generate-component-config/generate-component-config.js -s 'node_modules/terra-framework/packages/*/examples/*.site-page?(.jsx|.js)' -s 'node_modules/terra-core/packages/terra-site/src/examples/*/Index.jsx' -s 'node_modules/terra-clinical/packages/terra-clinical-site/src/examples/*/Index.jsx'",
     "heroku-postbuild": "npm install && npm run build:production",
     "lint": "npm run lint:js",
     "lint:js": "eslint --ext .js,.jsx . --fix",
     "start": "webpack-dev-server --progress",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

@@ -1,6 +1,6 @@
 const webpackConfig = require('terra-dev-site/src/config/webpack.config');
 
-const babelLoderRule = {
+const babelLoaderRule = {
   test: /\.(jsx|js)$/,
   exclude: /node_modules(?!\/terra-)/,
   use: 'babel-loader',
@@ -8,7 +8,7 @@ const babelLoderRule = {
 
 const moduleRules = webpackConfig.module.rules;
 moduleRules.shift();
-moduleRules.unshift(babelLoderRule);
+moduleRules.unshift(babelLoaderRule);
 
 webpackConfig.module.rules = moduleRules;
 

@@ -1,22 +1,17 @@
 language: node_js
+cache: false
 sudo: required
 script:
   - npm test
 branches:
   only:
     - master
-cache:
-  directories:
-    - node_modules
-# before_install:
-#   - docker pull selenium/standalone-chrome:
-#   - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome
-# before_deploy:
-#   - lerna run build:production
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-#   local_dir: build
-#   on:
-#     branch: master
+before_deploy:
+  - npm run build:production
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master

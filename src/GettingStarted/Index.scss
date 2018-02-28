@@ -1,29 +1,56 @@
 :local {
-  .components-vertical-nav {
-    background-color: #eee;
-  }
-
-  .vertical-menu {
+  .menu-container {
     height: 100%;
   }
 
-  .vertical-menu h1 {
-    color: black;
-    display: block;
-    padding: 0.857rem;
-    text-decoration: none;
+  .menu-header {
+    background: #f4f4f4;
+    border-bottom: 0.071rem solid #edeeee;
+    border-top: 0.071rem solid #bcbfc0;
+    box-shadow: inset 0 -0.286rem 0.5rem 0 rgba(0, 0, 0, 0.06);
+    color: #9b9fa1 !important;
+    min-height: 3.429rem;
+    padding-left: 0.7143rem;
+    padding-top: 0.8928rem;
+    width: 100%;
   }
 
-  .vertical-menu a {
-    color: black;
-    display: block;
-    padding: 0.857rem;
-    text-decoration: none;
+  .menu {
+    height: 100%;
+    overflow: auto;
   }
 
-  .vertical-menu a:hover,
-  .vertical-menu a:focus {
-    background-color: #ccc;
-    outline: none;
+  .menu-link {
+    color: #1c1f21;
+    display: block;
+    font-size: 1.071rem;
+    line-height: 3.214rem;
+    padding-left: 1.2143rem;
+    padding-right: 0.7143rem;
+    text-decoration: none;
+
+    &:focus,
+    &.is-focused,
+    &:hover,
+    &.is-hovered,
+    &:visited,
+    &.is-visited {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    &:hover,
+    &.is-hovered {
+      background: linear-gradient(-90deg, #fff, #f1f1f2);
+    }
+
+    &:active,
+    &:focus,
+    &.is-focused {
+      background-image: linear-gradient(-270deg, #fff, #e8e9ea);
+      box-shadow: inset 0.5rem 0 0 0 #007cc3;
+      font-weight: bold;
+      padding: 0 1.214rem;
+    }
   }
 }

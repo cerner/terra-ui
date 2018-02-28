@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import Particles from 'react-particles-js';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import HomeHeroConfig from './HomeHeroConfig';
 import imgTerra from './assets/terra-ui.png';
 import styles from './HomeHero.scss';
@@ -14,7 +14,7 @@ const HomeHero = () => (
       <Particles style={particleStyle} params={HomeHeroConfig} />
       <div className={styles['hero-content']}>
         <h1 className={styles['hero-title']}>{'Terra UI'}</h1>
-        <Link className={styles['hero-button']} to="/getting-started">Get Started</Link>
+        <NavLink className={styles['hero-button']} to="/site/getting-started">Get Started</NavLink>
       </div>
     </div>
   </section>

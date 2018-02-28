@@ -18,7 +18,7 @@
     z-index:0;
   }
 
-  .hero-content  {
+  .hero-content {
     color: white;
     position: absolute;
     text-align: center;
@@ -42,7 +42,7 @@
     border-radius: 0.25em;
     border-style: solid;
     border-width: 1px;
-    color: #fff;
+    color: #fff !important;
     cursor: pointer;
     display: inline-block;
     font-size: 1.6rem;

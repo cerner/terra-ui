@@ -7,7 +7,9 @@ const babelLoaderRule = {
 };
 
 const moduleRules = webpackConfig.module.rules;
+// Remove the default babel loader rule
 moduleRules.shift();
+// Add the terra-ui's babel loader rule
 moduleRules.unshift(babelLoaderRule);
 
 webpackConfig.module.rules = moduleRules;

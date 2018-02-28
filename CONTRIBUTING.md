@@ -32,7 +32,7 @@ Thanks.
 ## Project Governance 
 * This project is maintained and goverend following the [terra governance document](https://github.com/cerner/terra-ui/blob/master/GOVERNANCE.md).
 
-[1]: https://github.com/cerner/terra-ui.com/issues
+[1]: https://github.com/cerner/terra-ui/issues
 [2]: http://gun.io/blog/how-to-github-fork-branch-and-pull-request
 [3]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [4]: ./LICENSE

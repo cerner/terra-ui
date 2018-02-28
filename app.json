@@ -1,11 +1,11 @@
 {
-  "name": "terra-ui.com",
-  "description": "Heroku reviews app for terra-ui.com development",
+  "name": "terra-ui",
+  "description": "Heroku reviews app for terra-ui development",
   "keywords": [
     "productivity"
   ],
-  "website": "https://engineering.cerner.com/terra-ui.com/#/site",
-  "repository": "https://github.com/cerner/terra-ui.com",
+  "website": "https://engineering.cerner.com/terra-ui/#/site",
+  "repository": "https://github.com/cerner/terra-ui",
   "success_url": "/",
   "scripts": {},
   "env": {

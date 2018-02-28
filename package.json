@@ -1,19 +1,19 @@
 {
-  "name": "terra-ui.com",
+  "name": "terra-ui",
   "private": true,
   "version": "0.0.0",
-  "description": "terra-ui.com is the documentation site for the Terra UI ecosystem.",
+  "description": "terra-ui is the documentation site for the Terra UI ecosystem.",
   "author": "Cerner Corporation",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cerner/terra-ui.com/issues"
+    "url": "https://github.com/cerner/terra-ui/issues"
   },
   "engines": {
     "node": "8.9.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-ui.com.git"
+    "url": "git+https://github.com/cerner/terra-ui.git"
   },
   "scripts": {
     "clean": "node scripts/clean-modules/index.js",

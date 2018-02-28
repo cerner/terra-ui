@@ -8,7 +8,7 @@
   <a href="http://engineering.cerner.com/terra-ui/#/site/home">terra-ui</a> (In Development)
 </h1>
 
-[![Build Status](https://travis-ci.org/cerner/terra-ui.com.svg?branch=master)](https://travis-ci.org/cerner/terra-ui.com)
+[![Build Status](https://travis-ci.org/cerner/terra-ui.svg?branch=master)](https://travis-ci.org/cerner/terra-ui)
 
 Documentation site for Terra. Terra is the core UI component library, unifying UX concepts and development across Cerner.
 
@@ -25,7 +25,7 @@ Documentation site for Terra. Terra is the core UI component library, unifying U
 
 ### Install Application
 ```
-git clone https://github.cerner.com/terra/terra-ui.com.git
+git clone https://github.cerner.com/terra/terra-ui.git
 
 npm install
 ```

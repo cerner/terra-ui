@@ -29,7 +29,7 @@ Thanks.
 * Open a [pull request][6].
 * The pull request will be reviewed by the community and merged by the project committers.
 
-[1]: https://github.com/cerner/terra-ui.com/issues
+[1]: https://github.com/cerner/terra-ui/issues
 [2]: http://gun.io/blog/how-to-github-fork-branch-and-pull-request
 [3]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [4]: ./LICENSE

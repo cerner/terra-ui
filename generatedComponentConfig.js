@@ -69,7 +69,6 @@ import TerraFrameworkIndex3 from './node_modules/terra-framework/packages/terra-
 import TerraFrameworkIndex4 from './node_modules/terra-framework/packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraFrameworkIndex5 from './node_modules/terra-framework/packages/terra-application-name/examples/Index.site-page';
 import TerraFrameworkIndex6 from './node_modules/terra-framework/packages/terra-disclosure-manager/examples/Index.site-page';
-import TerraFrameworkIndex7 from './node_modules/terra-framework/packages/terra-embedded-component/examples/Index.site-page';
 import TerraFrameworkIndex8 from './node_modules/terra-framework/packages/terra-layout/examples/Index.site-page';
 import TerraFrameworkIndex9 from './node_modules/terra-framework/packages/terra-modal-manager/examples/Index.site-page';
 import TerraFrameworkIndex10 from './node_modules/terra-framework/packages/terra-navigation-layout/examples/Index.site-page';
@@ -852,17 +851,6 @@ const componentConfig = {
             name: 'Index',
             path: '/index',
             component: TerraFrameworkIndex6,
-          },
-        ],
-      },
-      {
-        name: 'Embedded Component',
-        path: '/embedded-component',
-        pages: [
-          {
-            name: 'Index',
-            path: '/index',
-            component: TerraFrameworkIndex7,
           },
         ],
       },

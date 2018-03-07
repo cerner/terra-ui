@@ -23,4 +23,4 @@ node_modules
 # Generated js bundles
 /public/webpack/*
 
-# add aggregated-translations once i18n aggregation is fixed.
+**/aggregated-translations/*.*

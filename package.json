@@ -63,7 +63,7 @@
     "stylelint-scss": "^2.0.0",
     "stylelint-suitcss": "^1.0.0",
     "terra-clinical": "git://github.com/cerner/terra-clinical.git#terra-clinical-onset-picker@2.1.0",
-    "terra-core": "git://github.com/cerner/terra-core.git#terra-toggle@2.2.0",
+    "terra-core": "git://github.com/cerner/terra-core.git#terra-toggle-section-header@1.0.0",
     "terra-dev-site": "^0.2.0",
     "terra-framework": "git://github.com/cerner/terra-framework.git#terra-theme-provider@2.1.0",
     "terra-grid": "^4.0.1",

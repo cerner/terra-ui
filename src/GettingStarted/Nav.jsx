@@ -16,7 +16,7 @@ const gettingStartedNav = {
   dependencies: 'Dependencies',
   'basic-usage': 'Basic Usage',
   'configuring-webpack': 'Configuring Webpack',
-  'internationalization-i18n-and-localization-l10n-': 'I18n',
+  'localized-styles': 'Localized Styles',
   theming: 'Theming',
 };
 

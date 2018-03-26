@@ -1,7 +1,7 @@
 import Home from './src/Home/Index';
 import GettingStarted from './src/GettingStarted/Index';
 import GettingStartedNav from './src/GettingStarted/Nav';
-import GithubRouter from './src/GitHubRouter';
+import extensions from './src/Extensions'
 
 const navConfig = {
   rootPath: '/site',
@@ -25,7 +25,7 @@ const navConfig = {
       exampleType: 'pages',
       hasSubNav: true,
     }],
-    extensions: GithubRouter,
+    extensions,
   },
 };
 

@@ -64,7 +64,7 @@
     "stylelint-suitcss": "^1.0.0",
     "terra-clinical": "git://github.com/cerner/terra-clinical.git#terra-clinical-item-view@2.1.1",
     "terra-core": "git://github.com/cerner/terra-core.git#terra-toggle-section-header@1.0.0",
-    "terra-dev-site": "^0.2.0",
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#use-terra-application-layout",
     "terra-framework": "git://github.com/cerner/terra-framework.git#terra-application-utility@1.0.0",
     "terra-grid": "^4.0.1",
     "terra-heading": "^2.0.1",

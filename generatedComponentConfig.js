@@ -71,16 +71,21 @@ import TerraCoreIndex55 from './node_modules/terra-core/packages/terra-site/src/
 import TerraFrameworkIndex from './node_modules/terra-framework/packages/terra-aggregator/examples/Index.site-page';
 import TerraFrameworkIndex1 from './node_modules/terra-framework/packages/terra-app-delegate/examples/Index.site-page';
 import TerraFrameworkIndex2 from './node_modules/terra-framework/packages/terra-application-header-layout/examples/Index.site-page';
+import TerraFrameworkAbout from './node_modules/terra-framework/packages/terra-application-layout/examples/About.site-page';
+import TerraFrameworkExample from './node_modules/terra-framework/packages/terra-application-layout/examples/Example.site-page';
+import TerraFrameworkUtils from './node_modules/terra-framework/packages/terra-application-layout/examples/Utils.site-page';
 import TerraFrameworkIndex3 from './node_modules/terra-framework/packages/terra-application-links/examples/Index.site-page';
 import TerraFrameworkIndex4 from './node_modules/terra-framework/packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraFrameworkIndex5 from './node_modules/terra-framework/packages/terra-application-name/examples/Index.site-page';
-import TerraFrameworkIndex6 from './node_modules/terra-framework/packages/terra-disclosure-manager/examples/Index.site-page';
-import TerraFrameworkIndex7 from './node_modules/terra-framework/packages/terra-layout/examples/Index.site-page';
-import TerraFrameworkIndex8 from './node_modules/terra-framework/packages/terra-modal-manager/examples/Index.site-page';
-import TerraFrameworkIndex9 from './node_modules/terra-framework/packages/terra-navigation-layout/examples/Index.site-page';
-import TerraFrameworkIndex10 from './node_modules/terra-framework/packages/terra-navigation-side-menu/examples/Index.site-page';
-import TerraFrameworkIndex11 from './node_modules/terra-framework/packages/terra-slide-panel-manager/examples/Index.site-page';
-import TerraFrameworkIndex12 from './node_modules/terra-framework/packages/terra-theme-provider/examples/Index.site-page';
+import TerraFrameworkIndex6 from './node_modules/terra-framework/packages/terra-application-utility/examples/Index.site-page';
+import TerraFrameworkIndex7 from './node_modules/terra-framework/packages/terra-disclosure-manager/examples/Index.site-page';
+import TerraFrameworkIndex8 from './node_modules/terra-framework/packages/terra-infinite-list/examples/Index.site-page';
+import TerraFrameworkIndex9 from './node_modules/terra-framework/packages/terra-layout/examples/Index.site-page';
+import TerraFrameworkIndex10 from './node_modules/terra-framework/packages/terra-modal-manager/examples/Index.site-page';
+import TerraFrameworkIndex11 from './node_modules/terra-framework/packages/terra-navigation-layout/examples/Index.site-page';
+import TerraFrameworkIndex12 from './node_modules/terra-framework/packages/terra-navigation-side-menu/examples/Index.site-page';
+import TerraFrameworkIndex13 from './node_modules/terra-framework/packages/terra-slide-panel-manager/examples/Index.site-page';
+import TerraFrameworkIndex14 from './node_modules/terra-framework/packages/terra-theme-provider/examples/Index.site-page';
 
 
 const componentConfig = {
@@ -883,6 +888,27 @@ const componentConfig = {
         ],
       },
       {
+        name: 'Application Layout',
+        path: '/application-layout',
+        pages: [
+          {
+            name: 'About',
+            path: '/about',
+            component: TerraFrameworkAbout,
+          },
+          {
+            name: 'Example',
+            path: '/example',
+            component: TerraFrameworkExample,
+          },
+          {
+            name: 'Utils',
+            path: '/utils',
+            component: TerraFrameworkUtils,
+          },
+        ],
+      },
+      {
         name: 'Application Links',
         path: '/application-links',
         pages: [
@@ -916,13 +942,35 @@ const componentConfig = {
         ],
       },
       {
+        name: 'Application Utility',
+        path: '/application-utility',
+        pages: [
+          {
+            name: 'Index',
+            path: '/index',
+            component: TerraFrameworkIndex6,
+          },
+        ],
+      },
+      {
         name: 'Disclosure Manager',
         path: '/disclosure-manager',
         pages: [
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex6,
+            component: TerraFrameworkIndex7,
+          },
+        ],
+      },
+      {
+        name: 'Infinite List',
+        path: '/infinite-list',
+        pages: [
+          {
+            name: 'Index',
+            path: '/index',
+            component: TerraFrameworkIndex8,
           },
         ],
       },
@@ -933,7 +981,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex7,
+            component: TerraFrameworkIndex9,
           },
         ],
       },
@@ -944,7 +992,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex8,
+            component: TerraFrameworkIndex10,
           },
         ],
       },
@@ -955,7 +1003,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex9,
+            component: TerraFrameworkIndex11,
           },
         ],
       },
@@ -966,7 +1014,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex10,
+            component: TerraFrameworkIndex12,
           },
         ],
       },
@@ -977,7 +1025,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex11,
+            component: TerraFrameworkIndex13,
           },
         ],
       },
@@ -988,7 +1036,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex12,
+            component: TerraFrameworkIndex14,
           },
         ],
       },

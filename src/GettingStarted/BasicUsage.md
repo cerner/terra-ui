@@ -1,6 +1,6 @@
 ## Basic Usage
 
-After installation, its possible to import the React components in the application. In this minimal example, we import a Button component:
+After installation, it's possible to import the React components in the application. In this minimal example, we import a Button component:
 
 ```js
 import React from 'react';

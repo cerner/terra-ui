@@ -28,7 +28,7 @@ const siteConfig = {
     },
 
     extensions: {
-      gitHubUrl: 'https://github.com/cerner/terra-dev-site',
+      gitHubUrl: 'https://github.com/cerner?utf8=%E2%9C%93&q=terra&type=&language=',
     },
   },
 };

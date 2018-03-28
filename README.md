@@ -5,7 +5,7 @@
 
 <!-- Name -->
 <h1 align="center">
-  <a href="http://engineering.cerner.com/terra-ui/#/site/home">terra-ui</a> (In Development)
+  <a href="http://engineering.cerner.com/terra-ui/#/site/home">terra-ui</a>
 </h1>
 
 [![Build Status](https://travis-ci.org/cerner/terra-ui.svg?branch=master)](https://travis-ci.org/cerner/terra-ui)

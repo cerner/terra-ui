@@ -1,4 +1,4 @@
 ## What is Terra?
-Terra offers a set of configurable React components designed to help build scalable and modular healthcare focused applications. These components follow Cerner’s Design Standard Guidelines and are well-maintained and tested. The UI framework easily integrates with webpack-based workflows and was created to solve real-world issues in projects we work on day to day.
+Terra offers a set of configurable React components designed to help build scalable and modular healthcare focused applications. These components follow Cerner’s Design Standard Guidelines and are actively maintained and tested. The User Interface (UI) framework easily integrates with webpack-based workflows and was created to solve real-world issues in projects we work on day to day.
 
-Getting familiar with [React](http://facebook.github.io/react/) before getting started with Terra UI is recommended but not required. Terra UI is a set of React components, so understanding how React fits into web development is important. Terra UI components work with React 15.4.2+.
+It is highly recommended to become familiar with [React](https://reactjs.org/) before using Terra UI, but it is not required. Since Terra UI is a set of React components, it is important to understand how React fits into web development. Terra UI components work with React v16.2.0+.

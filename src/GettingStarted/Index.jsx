@@ -10,9 +10,7 @@ import InstallingComponents from './InstallingComponents.md';
 import Dependencies from './Dependencies.md';
 import BasicUsage from './BasicUsage.md';
 import ConfiguringWebpack from './ConfiguringWebpack.md';
-import I18n from './I18n.md';
 import Directionality from './Directionality.md';
-import ThemingIntro from './ThemingIntro.md';
 import Theming from './Theming.md';
 
 // Filter out MockThemeComponent
@@ -27,13 +25,11 @@ const GettingStartedPage = () => (
     <Markdown src={Dependencies} />
     <Markdown src={BasicUsage} />
     <Markdown src={ConfiguringWebpack} />
-    <Markdown src={I18n} />
     <Markdown src={Directionality} />
-    <Markdown src={ThemingIntro} />
-    <List style={{ paddingBottom: '0.5rem' }}>
-      {themableComponents.map(component => <List.Item key={component} style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }} content={<span>{component}</span>} />)}
-    </List>
     <Markdown src={Theming} />
+    <List style={{ paddingLeft: '1rem', paddingBottom: '0.5rem' }}>
+      {themableComponents.map(component => <List.Item key={component} style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }} content={<span>- {component}</span>} />)}
+    </List>
   </div>
 );
 

@@ -40,34 +40,31 @@ import TerraCoreIndex24 from './node_modules/terra-core/packages/terra-site/src/
 import TerraCoreIndex25 from './node_modules/terra-core/packages/terra-site/src/examples/form/Index';
 import TerraCoreIndex26 from './node_modules/terra-core/packages/terra-site/src/examples/grid/Index';
 import TerraCoreIndex27 from './node_modules/terra-core/packages/terra-site/src/examples/heading/Index';
-import TerraCoreIndex28 from './node_modules/terra-core/packages/terra-site/src/examples/hookshot/Index';
-import TerraCoreIndex29 from './node_modules/terra-core/packages/terra-site/src/examples/i18n/Index';
-import TerraCoreIndex30 from './node_modules/terra-core/packages/terra-site/src/examples/icon/Index';
-import TerraCoreIndex31 from './node_modules/terra-core/packages/terra-site/src/examples/image/Index';
-import TerraCoreIndex32 from './node_modules/terra-core/packages/terra-site/src/examples/list/Index';
-import TerraCoreIndex33 from './node_modules/terra-core/packages/terra-site/src/examples/menu/Index';
-import TerraCoreIndex34 from './node_modules/terra-core/packages/terra-site/src/examples/modal/Index';
-import TerraCoreIndex35 from './node_modules/terra-core/packages/terra-site/src/examples/overlay/Index';
-import TerraCoreIndex36 from './node_modules/terra-core/packages/terra-site/src/examples/popup/Index';
-import TerraCoreIndex37 from './node_modules/terra-core/packages/terra-site/src/examples/profile-image/Index';
-import TerraCoreIndex38 from './node_modules/terra-core/packages/terra-site/src/examples/progress-bar/Index';
-import TerraCoreIndex39 from './node_modules/terra-core/packages/terra-site/src/examples/responsive-element/Index';
-import TerraCoreIndex40 from './node_modules/terra-core/packages/terra-site/src/examples/search-field/Index';
-import TerraCoreIndex41 from './node_modules/terra-core/packages/terra-site/src/examples/section-header/Index';
-import TerraCoreIndex42 from './node_modules/terra-core/packages/terra-site/src/examples/signature/Index';
-import TerraCoreIndex43 from './node_modules/terra-core/packages/terra-site/src/examples/slide-group/Index';
-import TerraCoreIndex44 from './node_modules/terra-core/packages/terra-site/src/examples/slide-panel/Index';
-import TerraCoreIndex45 from './node_modules/terra-core/packages/terra-site/src/examples/spacer/Index';
-import TerraCoreIndex46 from './node_modules/terra-core/packages/terra-site/src/examples/status-view/Index';
-import TerraCoreIndex47 from './node_modules/terra-core/packages/terra-site/src/examples/status/Index';
-import TerraCoreIndex48 from './node_modules/terra-core/packages/terra-site/src/examples/table/Index';
-import TerraCoreIndex49 from './node_modules/terra-core/packages/terra-site/src/examples/tabs/Index';
-import TerraCoreIndex50 from './node_modules/terra-core/packages/terra-site/src/examples/tag/Index';
-import TerraCoreIndex51 from './node_modules/terra-core/packages/terra-site/src/examples/text/Index';
-import TerraCoreIndex52 from './node_modules/terra-core/packages/terra-site/src/examples/time-input/Index';
-import TerraCoreIndex53 from './node_modules/terra-core/packages/terra-site/src/examples/toggle-button/Index';
-import TerraCoreIndex54 from './node_modules/terra-core/packages/terra-site/src/examples/toggle-section-header/Index';
-import TerraCoreIndex55 from './node_modules/terra-core/packages/terra-site/src/examples/toggle/Index';
+import TerraCoreIndex28 from './node_modules/terra-core/packages/terra-site/src/examples/i18n/Index';
+import TerraCoreIndex29 from './node_modules/terra-core/packages/terra-site/src/examples/icon/Index';
+import TerraCoreIndex30 from './node_modules/terra-core/packages/terra-site/src/examples/image/Index';
+import TerraCoreIndex31 from './node_modules/terra-core/packages/terra-site/src/examples/list/Index';
+import TerraCoreIndex32 from './node_modules/terra-core/packages/terra-site/src/examples/menu/Index';
+import TerraCoreIndex33 from './node_modules/terra-core/packages/terra-site/src/examples/modal/Index';
+import TerraCoreIndex34 from './node_modules/terra-core/packages/terra-site/src/examples/overlay/Index';
+import TerraCoreIndex35 from './node_modules/terra-core/packages/terra-site/src/examples/profile-image/Index';
+import TerraCoreIndex36 from './node_modules/terra-core/packages/terra-site/src/examples/progress-bar/Index';
+import TerraCoreIndex37 from './node_modules/terra-core/packages/terra-site/src/examples/responsive-element/Index';
+import TerraCoreIndex38 from './node_modules/terra-core/packages/terra-site/src/examples/search-field/Index';
+import TerraCoreIndex39 from './node_modules/terra-core/packages/terra-site/src/examples/section-header/Index';
+import TerraCoreIndex40 from './node_modules/terra-core/packages/terra-site/src/examples/signature/Index';
+import TerraCoreIndex41 from './node_modules/terra-core/packages/terra-site/src/examples/slide-group/Index';
+import TerraCoreIndex42 from './node_modules/terra-core/packages/terra-site/src/examples/spacer/Index';
+import TerraCoreIndex43 from './node_modules/terra-core/packages/terra-site/src/examples/status-view/Index';
+import TerraCoreIndex44 from './node_modules/terra-core/packages/terra-site/src/examples/status/Index';
+import TerraCoreIndex45 from './node_modules/terra-core/packages/terra-site/src/examples/table/Index';
+import TerraCoreIndex46 from './node_modules/terra-core/packages/terra-site/src/examples/tabs/Index';
+import TerraCoreIndex47 from './node_modules/terra-core/packages/terra-site/src/examples/tag/Index';
+import TerraCoreIndex48 from './node_modules/terra-core/packages/terra-site/src/examples/text/Index';
+import TerraCoreIndex49 from './node_modules/terra-core/packages/terra-site/src/examples/time-input/Index';
+import TerraCoreIndex50 from './node_modules/terra-core/packages/terra-site/src/examples/toggle-button/Index';
+import TerraCoreIndex51 from './node_modules/terra-core/packages/terra-site/src/examples/toggle-section-header/Index';
+import TerraCoreIndex52 from './node_modules/terra-core/packages/terra-site/src/examples/toggle/Index';
 import TerraFrameworkIndex from './node_modules/terra-framework/packages/terra-aggregator/examples/Index.site-page';
 import TerraFrameworkIndex1 from './node_modules/terra-framework/packages/terra-app-delegate/examples/Index.site-page';
 import TerraFrameworkIndex2 from './node_modules/terra-framework/packages/terra-application-header-layout/examples/Index.site-page';
@@ -539,24 +536,13 @@ const componentConfig = {
             ],
           },
           {
-            name: 'Hookshot',
-            path: '/hookshot',
-            pages: [
-              {
-                name: 'Index',
-                path: '/index',
-                component: TerraCoreIndex28,
-              },
-            ],
-          },
-          {
             name: 'I 18 N',
             path: '/i-18-n',
             pages: [
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex29,
+                component: TerraCoreIndex28,
               },
             ],
           },
@@ -567,7 +553,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex30,
+                component: TerraCoreIndex29,
               },
             ],
           },
@@ -578,7 +564,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex31,
+                component: TerraCoreIndex30,
               },
             ],
           },
@@ -589,7 +575,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex32,
+                component: TerraCoreIndex31,
               },
             ],
           },
@@ -600,7 +586,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex33,
+                component: TerraCoreIndex32,
               },
             ],
           },
@@ -611,7 +597,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex34,
+                component: TerraCoreIndex33,
               },
             ],
           },
@@ -622,18 +608,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex35,
-              },
-            ],
-          },
-          {
-            name: 'Popup',
-            path: '/popup',
-            pages: [
-              {
-                name: 'Index',
-                path: '/index',
-                component: TerraCoreIndex36,
+                component: TerraCoreIndex34,
               },
             ],
           },
@@ -644,7 +619,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex37,
+                component: TerraCoreIndex35,
               },
             ],
           },
@@ -655,7 +630,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex38,
+                component: TerraCoreIndex36,
               },
             ],
           },
@@ -666,7 +641,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex39,
+                component: TerraCoreIndex37,
               },
             ],
           },
@@ -677,7 +652,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex40,
+                component: TerraCoreIndex38,
               },
             ],
           },
@@ -688,7 +663,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex41,
+                component: TerraCoreIndex39,
               },
             ],
           },
@@ -699,7 +674,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex42,
+                component: TerraCoreIndex40,
               },
             ],
           },
@@ -710,18 +685,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex43,
-              },
-            ],
-          },
-          {
-            name: 'Slide Panel',
-            path: '/slide-panel',
-            pages: [
-              {
-                name: 'Index',
-                path: '/index',
-                component: TerraCoreIndex44,
+                component: TerraCoreIndex41,
               },
             ],
           },
@@ -732,7 +696,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex45,
+                component: TerraCoreIndex42,
               },
             ],
           },
@@ -743,7 +707,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex46,
+                component: TerraCoreIndex43,
               },
             ],
           },
@@ -754,7 +718,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex47,
+                component: TerraCoreIndex44,
               },
             ],
           },
@@ -765,7 +729,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex48,
+                component: TerraCoreIndex45,
               },
             ],
           },
@@ -776,7 +740,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex49,
+                component: TerraCoreIndex46,
               },
             ],
           },
@@ -787,7 +751,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex50,
+                component: TerraCoreIndex47,
               },
             ],
           },
@@ -798,7 +762,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex51,
+                component: TerraCoreIndex48,
               },
             ],
           },
@@ -809,7 +773,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex52,
+                component: TerraCoreIndex49,
               },
             ],
           },
@@ -820,7 +784,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex53,
+                component: TerraCoreIndex50,
               },
             ],
           },
@@ -831,7 +795,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex54,
+                component: TerraCoreIndex51,
               },
             ],
           },
@@ -842,7 +806,7 @@ const componentConfig = {
               {
                 name: 'Index',
                 path: '/index',
-                component: TerraCoreIndex55,
+                component: TerraCoreIndex52,
               },
             ],
           },

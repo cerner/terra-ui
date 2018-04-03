@@ -93,13 +93,16 @@ import TerraFrameworkIndex4 from './node_modules/terra-framework/packages/terra-
 import TerraFrameworkIndex5 from './node_modules/terra-framework/packages/terra-application-name/examples/Index.site-page';
 import TerraFrameworkIndex6 from './node_modules/terra-framework/packages/terra-application-utility/examples/Index.site-page';
 import TerraFrameworkIndex7 from './node_modules/terra-framework/packages/terra-disclosure-manager/examples/Index.site-page';
-import TerraFrameworkIndex8 from './node_modules/terra-framework/packages/terra-infinite-list/examples/Index.site-page';
-import TerraFrameworkIndex9 from './node_modules/terra-framework/packages/terra-layout/examples/Index.site-page';
-import TerraFrameworkIndex10 from './node_modules/terra-framework/packages/terra-modal-manager/examples/Index.site-page';
-import TerraFrameworkIndex11 from './node_modules/terra-framework/packages/terra-navigation-layout/examples/Index.site-page';
-import TerraFrameworkIndex12 from './node_modules/terra-framework/packages/terra-navigation-side-menu/examples/Index.site-page';
-import TerraFrameworkIndex13 from './node_modules/terra-framework/packages/terra-slide-panel-manager/examples/Index.site-page';
-import TerraFrameworkIndex14 from './node_modules/terra-framework/packages/terra-theme-provider/examples/Index.site-page';
+import TerraFrameworkIndex8 from './node_modules/terra-framework/packages/terra-hookshot/examples/Index.site-page';
+import TerraFrameworkIndex9 from './node_modules/terra-framework/packages/terra-infinite-list/examples/Index.site-page';
+import TerraFrameworkIndex10 from './node_modules/terra-framework/packages/terra-layout/examples/Index.site-page';
+import TerraFrameworkIndex11 from './node_modules/terra-framework/packages/terra-modal-manager/examples/Index.site-page';
+import TerraFrameworkIndex12 from './node_modules/terra-framework/packages/terra-navigation-layout/examples/Index.site-page';
+import TerraFrameworkIndex13 from './node_modules/terra-framework/packages/terra-navigation-side-menu/examples/Index.site-page';
+import TerraFrameworkIndex14 from './node_modules/terra-framework/packages/terra-popup/examples/Index.site-page';
+import TerraFrameworkIndex15 from './node_modules/terra-framework/packages/terra-slide-panel-manager/examples/Index.site-page';
+import TerraFrameworkIndex16 from './node_modules/terra-framework/packages/terra-slide-panel/examples/Index.site-page';
+import TerraFrameworkIndex17 from './node_modules/terra-framework/packages/terra-theme-provider/examples/Index.site-page';
 
 
 const componentConfig = {
@@ -1030,13 +1033,24 @@ const componentConfig = {
         ],
       },
       {
+        name: 'Hookshot',
+        path: '/hookshot',
+        pages: [
+          {
+            name: 'Index',
+            path: '/index',
+            component: TerraFrameworkIndex8,
+          },
+        ],
+      },
+      {
         name: 'Infinite List',
         path: '/infinite-list',
         pages: [
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex8,
+            component: TerraFrameworkIndex9,
           },
         ],
       },
@@ -1047,7 +1061,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex9,
+            component: TerraFrameworkIndex10,
           },
         ],
       },
@@ -1058,7 +1072,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex10,
+            component: TerraFrameworkIndex11,
           },
         ],
       },
@@ -1069,7 +1083,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex11,
+            component: TerraFrameworkIndex12,
           },
         ],
       },
@@ -1080,7 +1094,18 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex12,
+            component: TerraFrameworkIndex13,
+          },
+        ],
+      },
+      {
+        name: 'Popup',
+        path: '/popup',
+        pages: [
+          {
+            name: 'Index',
+            path: '/index',
+            component: TerraFrameworkIndex14,
           },
         ],
       },
@@ -1091,7 +1116,18 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex13,
+            component: TerraFrameworkIndex15,
+          },
+        ],
+      },
+      {
+        name: 'Slide Panel',
+        path: '/slide-panel',
+        pages: [
+          {
+            name: 'Index',
+            path: '/index',
+            component: TerraFrameworkIndex16,
           },
         ],
       },
@@ -1102,7 +1138,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex14,
+            component: TerraFrameworkIndex17,
           },
         ],
       },

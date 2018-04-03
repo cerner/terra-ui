@@ -12,6 +12,7 @@ import TerraClinicalIndex7 from './node_modules/terra-clinical/packages/terra-cl
 import TerraClinicalIndex8 from './node_modules/terra-clinical/packages/terra-clinical-site/src/examples/label-value-view/Index';
 import TerraClinicalIndex9 from './node_modules/terra-clinical/packages/terra-clinical-site/src/examples/no-data-view/Index';
 import TerraClinicalIndex10 from './node_modules/terra-clinical/packages/terra-clinical-site/src/examples/onset-picker/Index';
+import TerraCoreCenteredActionFooterIndex from './node_modules/terra-core/packages/terra-site/src/examples/action-footer/CenteredActionFooterIndex';
 import TerraCoreIndex from './node_modules/terra-core/packages/terra-site/src/examples/action-footer/Index';
 import TerraCoreIndex1 from './node_modules/terra-core/packages/terra-site/src/examples/alert/Index';
 import TerraCoreIndex2 from './node_modules/terra-core/packages/terra-site/src/examples/arrange/Index';
@@ -38,12 +39,27 @@ import TerraCoreIndex22 from './node_modules/terra-core/packages/terra-site/src/
 import TerraCoreIndex23 from './node_modules/terra-core/packages/terra-site/src/examples/form-select/Index';
 import TerraCoreIndex24 from './node_modules/terra-core/packages/terra-site/src/examples/form-textarea/Index';
 import TerraCoreIndex25 from './node_modules/terra-core/packages/terra-site/src/examples/form/Index';
+import TerraCoreControlIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/ControlIndex';
+import TerraCoreFieldIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/FieldIndex';
+import TerraCoreFieldsetIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/FieldsetIndex';
+import TerraCoreInputIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/InputIndex';
+import TerraCoreNumberFieldIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/NumberFieldIndex';
+import TerraCoreSelectFieldIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/SelectFieldIndex';
+import TerraCoreSelectIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/SelectIndex';
+import TerraCoreTextFieldIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/TextFieldIndex';
+import TerraCoreTextareaFieldIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/TextareaFieldIndex';
+import TerraCoreTextareaIndex from './node_modules/terra-core/packages/terra-site/src/examples/form/components/TextareaIndex';
 import TerraCoreIndex26 from './node_modules/terra-core/packages/terra-site/src/examples/grid/Index';
 import TerraCoreIndex27 from './node_modules/terra-core/packages/terra-site/src/examples/heading/Index';
 import TerraCoreIndex28 from './node_modules/terra-core/packages/terra-site/src/examples/i18n/Index';
 import TerraCoreIndex29 from './node_modules/terra-core/packages/terra-site/src/examples/icon/Index';
+import TerraCoreIconStatic from './node_modules/terra-core/packages/terra-site/src/examples/icon/components/IconStatic';
+import TerraCoreIconThemeable from './node_modules/terra-core/packages/terra-site/src/examples/icon/components/IconThemeable';
 import TerraCoreIndex30 from './node_modules/terra-core/packages/terra-site/src/examples/image/Index';
 import TerraCoreIndex31 from './node_modules/terra-core/packages/terra-site/src/examples/list/Index';
+import TerraCoreMultiSelectIndex from './node_modules/terra-core/packages/terra-site/src/examples/list/components/MultiSelectIndex';
+import TerraCoreSelectableListIndex from './node_modules/terra-core/packages/terra-site/src/examples/list/components/SelectableListIndex';
+import TerraCoreSingleSelectIndex from './node_modules/terra-core/packages/terra-site/src/examples/list/components/SingleSelectIndex';
 import TerraCoreIndex32 from './node_modules/terra-core/packages/terra-site/src/examples/menu/Index';
 import TerraCoreIndex33 from './node_modules/terra-core/packages/terra-site/src/examples/modal/Index';
 import TerraCoreIndex34 from './node_modules/terra-core/packages/terra-site/src/examples/overlay/Index';
@@ -58,6 +74,7 @@ import TerraCoreIndex42 from './node_modules/terra-core/packages/terra-site/src/
 import TerraCoreIndex43 from './node_modules/terra-core/packages/terra-site/src/examples/status-view/Index';
 import TerraCoreIndex44 from './node_modules/terra-core/packages/terra-site/src/examples/status/Index';
 import TerraCoreIndex45 from './node_modules/terra-core/packages/terra-site/src/examples/table/Index';
+import TerraCoreMultiSelectIndex1 from './node_modules/terra-core/packages/terra-site/src/examples/table/components/MultiSelectIndex';
 import TerraCoreIndex46 from './node_modules/terra-core/packages/terra-site/src/examples/tabs/Index';
 import TerraCoreIndex47 from './node_modules/terra-core/packages/terra-site/src/examples/tag/Index';
 import TerraCoreIndex48 from './node_modules/terra-core/packages/terra-site/src/examples/text/Index';
@@ -231,6 +248,11 @@ const componentConfig = {
             name: 'Action Footer',
             path: '/action-footer',
             pages: [
+              {
+                name: 'Centered Action Footer Index',
+                path: '/centered-action-footer-index',
+                component: TerraCoreCenteredActionFooterIndex,
+              },
               {
                 name: 'Index',
                 path: '/index',
@@ -511,6 +533,56 @@ const componentConfig = {
                 path: '/index',
                 component: TerraCoreIndex25,
               },
+              {
+                name: 'Control Index',
+                path: '/control-index',
+                component: TerraCoreControlIndex,
+              },
+              {
+                name: 'Field Index',
+                path: '/field-index',
+                component: TerraCoreFieldIndex,
+              },
+              {
+                name: 'Fieldset Index',
+                path: '/fieldset-index',
+                component: TerraCoreFieldsetIndex,
+              },
+              {
+                name: 'Input Index',
+                path: '/input-index',
+                component: TerraCoreInputIndex,
+              },
+              {
+                name: 'Number Field Index',
+                path: '/number-field-index',
+                component: TerraCoreNumberFieldIndex,
+              },
+              {
+                name: 'Select Field Index',
+                path: '/select-field-index',
+                component: TerraCoreSelectFieldIndex,
+              },
+              {
+                name: 'Select Index',
+                path: '/select-index',
+                component: TerraCoreSelectIndex,
+              },
+              {
+                name: 'Text Field Index',
+                path: '/text-field-index',
+                component: TerraCoreTextFieldIndex,
+              },
+              {
+                name: 'Textarea Field Index',
+                path: '/textarea-field-index',
+                component: TerraCoreTextareaFieldIndex,
+              },
+              {
+                name: 'Textarea Index',
+                path: '/textarea-index',
+                component: TerraCoreTextareaIndex,
+              },
             ],
           },
           {
@@ -555,6 +627,16 @@ const componentConfig = {
                 path: '/index',
                 component: TerraCoreIndex29,
               },
+              {
+                name: 'Icon Static',
+                path: '/icon-static',
+                component: TerraCoreIconStatic,
+              },
+              {
+                name: 'Icon Themeable',
+                path: '/icon-themeable',
+                component: TerraCoreIconThemeable,
+              },
             ],
           },
           {
@@ -576,6 +658,21 @@ const componentConfig = {
                 name: 'Index',
                 path: '/index',
                 component: TerraCoreIndex31,
+              },
+              {
+                name: 'Multi Select Index',
+                path: '/multi-select-index',
+                component: TerraCoreMultiSelectIndex,
+              },
+              {
+                name: 'Selectable List Index',
+                path: '/selectable-list-index',
+                component: TerraCoreSelectableListIndex,
+              },
+              {
+                name: 'Single Select Index',
+                path: '/single-select-index',
+                component: TerraCoreSingleSelectIndex,
               },
             ],
           },
@@ -730,6 +827,11 @@ const componentConfig = {
                 name: 'Index',
                 path: '/index',
                 component: TerraCoreIndex45,
+              },
+              {
+                name: 'Multi Select Index',
+                path: '/multi-select-index',
+                component: TerraCoreMultiSelectIndex1,
               },
             ],
           },

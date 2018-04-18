@@ -12,11 +12,11 @@ const siteConfig = {
   componentConfig,
 
   /* The logo to display as the placeholder. */
-  placeholderSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
+  // placeholderSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
 
   appConfig: {
     /* The logo for the site header. */
-    logoSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
+    // logoSrc: 'https://github.com/cerner/terra-core/raw/master/terra.png',
 
     /* The title for the site header. */
     title: 'Terra UI',

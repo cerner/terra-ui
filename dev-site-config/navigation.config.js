@@ -1,6 +1,6 @@
-import Home from './src/Home/Index';
-import GettingStarted from './src/GettingStarted/Index';
-import GettingStartedNav from './src/GettingStarted/Nav';
+import Home from '../src/Home/Index';
+import GettingStarted from '../src/GettingStarted/Index';
+import GettingStartedNav from '../src/GettingStarted/Nav';
 
 const navConfig = {
   rootPath: '/site',

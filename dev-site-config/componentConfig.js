@@ -1,4 +1,4 @@
-import { TerraFrameworkSiteHome, TerraClinicalSiteHome, TerraCoreSiteHome } from './src/RepoHomePages';
+import { TerraFrameworkSiteHome, TerraClinicalSiteHome, TerraCoreSiteHome } from '../src/RepoHomePages';
 
 import componentConfig from './generatedComponentConfig';
 

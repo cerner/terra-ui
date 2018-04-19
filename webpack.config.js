@@ -1,19 +1,21 @@
 const webpackConfig = require('terra-dev-site/config/webpack/webpack.config')();
-// const I18nAggregatorPlugin = require('terra-i18n-plugin');
-// const i18nSupportedLocales = require('terra-i18n/lib/i18nSupportedLocales');
-// const path = require('path');
-// const glob = require('glob');
-
-
-// const searchPattern = path.resolve(process.cwd(), 'node_modules', 'terra-*', 'packages', '*');
-
-// const translationsDirectories = glob.sync(searchPattern);
+const path = require('path');
 
 const babelLoaderRule = {
   test: /\.(jsx|js)$/,
   exclude: /node_modules(?!\/terra-)/,
   use: 'babel-loader',
 };
+
+const propsTable = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-props-table'));
+const momentAlias = path.resolve(path.join(process.cwd(), 'node_modules', 'moment'));
+const intl = path.resolve(path.join(process.cwd(), 'node_modules', 'intl'));
+const terraMarkdown = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-markdown'));
+const terraDatePicker = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-core', 'packages', 'terra-date-picker'));
+const resizeObserver = path.resolve(path.join(process.cwd(), 'node_modules', 'resize-observer-polyfill'));
+const reactRouterDom = path.resolve(path.join(process.cwd(), 'node_modules', 'react-router-dom'));
+const babelRuntime = path.resolve(path.join(process.cwd(), 'node_modules', 'babel-runtime'));
+const terraButton = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-button'));
 
 const moduleRules = webpackConfig.module.rules;
 // Remove the default babel loader rule
@@ -22,20 +24,15 @@ moduleRules.shift();
 moduleRules.unshift(babelLoaderRule);
 
 webpackConfig.module.rules = moduleRules;
-
-
-// const i18nAggregator = new I18nAggregatorPlugin({
-//   baseDirectory: process.cwd(),
-//   translationsDirectories,
-//   supportedLocales: i18nSupportedLocales,
-// });
-
-// Remove the default default i18n aggregator plugin
-// const startPlugins = webpackConfig.plugins.splice(0, 2);
-// // Add the terra-ui's i18n aggregator plugin
-// startPlugins.push(i18nAggregator);
-// const endPlugins = webpackConfig.plugins.splice(1, webpackConfig.plugins.length);
-
-// webpackConfig.plugins = startPlugins.concat(endPlugins);
+webpackConfig.stats = 'normal';
+webpackConfig.resolve.alias['terra-props-table'] = propsTable;
+webpackConfig.resolve.alias['terra-markdown'] = terraMarkdown;
+webpackConfig.resolve.alias['terra-date-picker'] = terraDatePicker;
+webpackConfig.resolve.alias.moment = momentAlias;
+webpackConfig.resolve.alias.intl = intl;
+webpackConfig.resolve.alias['resize-observer-polyfill'] = resizeObserver;
+webpackConfig.resolve.alias['react-router-dom'] = reactRouterDom;
+webpackConfig.resolve.alias['babel-runtime'] = babelRuntime;
+webpackConfig.resolve.alias['terra-button'] = terraButton;
 
 module.exports = webpackConfig;

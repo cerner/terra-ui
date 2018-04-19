@@ -19,7 +19,7 @@
     "clean": "node scripts/clean-modules/index.js",
     "clean:install": "npm run clean && npm install",
     "build:test": "NODE_ENV=test webpack --config webpack.config.js",
-    "build:production": "NODE_ENV=production webpack --config webpack.prod.config.js -p",
+    "build:production": "NODE_ENV=production webpack --config webpack.config.js -p",
     "build:development": "NODE_ENV=development webpack -w --config webpack.config.js",
     "generate-config": "generate-config -o 'dev-site-config' -s 'node_modules/terra-framework/packages/*/examples/*.site-page?(.jsx|.js)' -s 'node_modules/terra-core/packages/terra-site/src/examples/**/?(*Index|IconStatic|IconThemeable).jsx' -s 'node_modules/terra-clinical/packages/terra-clinical-site/src/examples/*/Index.jsx'",
     "heroku-postbuild": "npm install && npm run build:production",

@@ -24,3 +24,4 @@ node_modules
 /public/webpack/*
 
 **/aggregated-translations/*.*
+build/

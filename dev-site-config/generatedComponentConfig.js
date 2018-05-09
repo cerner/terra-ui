@@ -96,11 +96,15 @@ import TerraFrameworkIndex3 from '../node_modules/terra-framework/packages/terra
 import TerraFrameworkIndex4 from '../node_modules/terra-framework/packages/terra-application-menu-layout/examples/Index.site-page';
 import TerraFrameworkIndex5 from '../node_modules/terra-framework/packages/terra-application-name/examples/Index.site-page';
 import TerraFrameworkIndex6 from '../node_modules/terra-framework/packages/terra-application-utility/examples/Index.site-page';
-import TerraFrameworkIndex7 from '../node_modules/terra-framework/packages/terra-disclosure-manager/examples/Index.site-page';
-import TerraFrameworkIndex8 from '../node_modules/terra-framework/packages/terra-hookshot/examples/Index.site-page';
-import TerraFrameworkIndex9 from '../node_modules/terra-framework/packages/terra-infinite-list/examples/Index.site-page';
-import TerraFrameworkIndex10 from '../node_modules/terra-framework/packages/terra-layout/examples/Index.site-page';
-import TerraFrameworkIndex11 from '../node_modules/terra-framework/packages/terra-modal-manager/examples/Index.site-page';
+import TerraFrameworkIndex7 from '../node_modules/terra-framework/packages/terra-brand-footer/examples/Index.site-page';
+import TerraFrameworkIndex8 from '../node_modules/terra-framework/packages/terra-disclosure-manager/examples/Index.site-page';
+import TerraFrameworkIndex9 from '../node_modules/terra-framework/packages/terra-hookshot/examples/Index.site-page';
+import TerraFrameworkIndex10 from '../node_modules/terra-framework/packages/terra-infinite-list/examples/Index.site-page';
+import TerraFrameworkIndex11 from '../node_modules/terra-framework/packages/terra-layout/examples/Index.site-page';
+import TerraFrameworkAbout1 from '../node_modules/terra-framework/packages/terra-modal-manager/examples/About.site-page';
+import TerraFrameworkChangeLog from '../node_modules/terra-framework/packages/terra-modal-manager/examples/ChangeLog.site-page';
+import TerraFrameworkExample1 from '../node_modules/terra-framework/packages/terra-modal-manager/examples/Example.site-page';
+import TerraFrameworkUpgradeGuide from '../node_modules/terra-framework/packages/terra-modal-manager/examples/UpgradeGuide.site-page';
 import TerraFrameworkIndex12 from '../node_modules/terra-framework/packages/terra-navigation-layout/examples/Index.site-page';
 import TerraFrameworkIndex13 from '../node_modules/terra-framework/packages/terra-navigation-side-menu/examples/Index.site-page';
 import TerraFrameworkIndex14 from '../node_modules/terra-framework/packages/terra-popup/examples/Index.site-page';
@@ -1058,13 +1062,24 @@ const componentConfig = {
         ],
       },
       {
+        name: 'Brand Footer',
+        path: '/brand-footer',
+        pages: [
+          {
+            name: 'Index',
+            path: '/index',
+            component: TerraFrameworkIndex7,
+          },
+        ],
+      },
+      {
         name: 'Disclosure Manager',
         path: '/disclosure-manager',
         pages: [
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex7,
+            component: TerraFrameworkIndex8,
           },
         ],
       },
@@ -1075,7 +1090,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex8,
+            component: TerraFrameworkIndex9,
           },
         ],
       },
@@ -1086,7 +1101,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex9,
+            component: TerraFrameworkIndex10,
           },
         ],
       },
@@ -1097,7 +1112,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraFrameworkIndex10,
+            component: TerraFrameworkIndex11,
           },
         ],
       },
@@ -1106,9 +1121,24 @@ const componentConfig = {
         path: '/modal-manager',
         pages: [
           {
-            name: 'Index',
-            path: '/index',
-            component: TerraFrameworkIndex11,
+            name: 'About',
+            path: '/about',
+            component: TerraFrameworkAbout1,
+          },
+          {
+            name: 'Change Log',
+            path: '/change-log',
+            component: TerraFrameworkChangeLog,
+          },
+          {
+            name: 'Example',
+            path: '/example',
+            component: TerraFrameworkExample1,
+          },
+          {
+            name: 'Upgrade Guide',
+            path: '/upgrade-guide',
+            component: TerraFrameworkUpgradeGuide,
           },
         ],
       },

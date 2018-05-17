@@ -37,7 +37,7 @@ const siteConfig = {
   readMeContent: undefined,
 
   themeImports: [
-    'terra-core/packages/terra-site/src/cerner-mock-theme.scss',
+    'terra-legacy-theme/lib/scoped-theme',
   ],
 
   appConfig: {
@@ -47,7 +47,7 @@ const siteConfig = {
     /* The themes to toggle in the site. */
     themes: {
       'Default Theme': '',
-      'Mock Theme': 'cerner-mock-theme',
+      'Legacy Theme': 'terra-legacy-theme',
     },
 
     extensions: {

@@ -72,5 +72,8 @@
     "terra-text": "^2.0.1",
     "terra-toolkit": "^3.0.0",
     "xfc": "^1.2.1"
+  },
+  "dependencies": {
+    "terra-legacy-theme": "^2.0.0"
   }
 }

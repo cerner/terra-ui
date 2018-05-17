@@ -1,15 +1,44 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-import 'terra-core/packages/terra-site/src/cerner-mock-theme.scss';
-
-import navConfig from './navigation.config';
-import componentConfig from './componentConfig';
+const navConfig = require('./navigation.config');
+const path = require('path');
 
 const siteConfig = {
   /* The navigation configuration.  */
   navConfig,
 
-  /* The component configuration. */
-  componentConfig,
+  generatePages: {
+    searchPatterns: [
+      {
+        root: process.cwd(),
+        dist: 'src',
+        entryPoint: 'terra-dev-site',
+      },
+      {
+        root: path.join(process.cwd(), 'node_modules', 'terra-framework'),
+        dist: 'lib',
+        entryPoint: 'terra-dev-site',
+      },
+      {
+        root: path.join(process.cwd(), 'node_modules', 'terra-clinical'),
+        dist: 'lib',
+        entryPoint: 'terra-dev-site',
+      },
+      {
+        root: path.join(process.cwd(), 'node_modules', 'terra-core'),
+        dist: 'lib',
+        entryPoint: 'terra-dev-site',
+      },
+    ],
+  },
+
+  hotReloading: {
+    enabled: false,
+  },
+
+  readMeContent: undefined,
+
+  themeImports: [
+    'terra-core/packages/terra-site/src/cerner-mock-theme.scss',
+  ],
 
   appConfig: {
     /* The title for the site header. */
@@ -27,4 +56,4 @@ const siteConfig = {
   },
 };
 
-export default siteConfig;
+module.exports = siteConfig;

@@ -30,9 +30,7 @@ const siteConfig = {
     ],
   },
 
-  hotReloading: {
-    enabled: false,
-  },
+  hotReloading: false,
 
   readMeContent: undefined,
 

@@ -1,6 +1,10 @@
 const navConfig = require('./navigation.config');
 const path = require('path');
 
+const terraFrameworkPath = path.join(process.cwd(), 'node_modules', 'terra-framework');
+const terraClinicalPath = path.join(process.cwd(), 'node_modules', 'terra-clinical');
+const terraCorePath = path.join(process.cwd(), 'node_modules', 'terra-core');
+
 const siteConfig = {
   /* The navigation configuration.  */
   navConfig,
@@ -13,20 +17,28 @@ const siteConfig = {
         entryPoint: 'terra-dev-site',
       },
       {
-        root: path.join(process.cwd(), 'node_modules', 'terra-framework'),
+        root: terraFrameworkPath,
         dist: 'lib',
         entryPoint: 'terra-dev-site',
       },
       {
-        root: path.join(process.cwd(), 'node_modules', 'terra-clinical'),
+        root: terraClinicalPath,
         dist: 'lib',
         entryPoint: 'terra-dev-site',
       },
       {
-        root: path.join(process.cwd(), 'node_modules', 'terra-core'),
+        root: terraCorePath,
         dist: 'lib',
         entryPoint: 'terra-dev-site',
       },
+    ],
+  },
+
+  monoRepo: {
+    packages: [
+      path.join(terraFrameworkPath, 'packages'),
+      path.join(terraClinicalPath, 'packages'),
+      path.join(terraCorePath, 'packages'),
     ],
   },
 

@@ -27,8 +27,7 @@
     "start": "tt:serve",
     "start-heroku": "tt:serve-static --site build",
     "test": "npm run lint",
-    "deploy": "gh-pages -d build",
-    "tds:generate-app-config": "tds:generate-app-config"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -61,10 +60,10 @@
     "stylelint-order": "^0.8.1",
     "stylelint-scss": "^3.1.0",
     "stylelint-suitcss": "^3.0.0",
-    "terra-clinical": "git://github.com/cerner/terra-clinical.git#Consume-terra-dev-site-1.0",
-    "terra-core": "git://github.com/cerner/terra-core.git#consume-terra-dev-site-1.0",
+    "terra-clinical": "git://github.com/cerner/terra-clinical.git#terra-clinical-onset-picker@2.6.0",
+    "terra-core": "git://github.com/cerner/terra-core.git#terra-toggle@2.11.0",
     "terra-dev-site": "^1.0.0",
-    "terra-framework": "git://github.com/cerner/terra-framework.git#consume-terra-dev-site-1.0",
+    "terra-framework": "git://github.com/cerner/terra-framework.git#terra-theme-provider@2.5.0",
     "terra-grid": "^4.0.1",
     "terra-heading": "^2.0.1",
     "terra-i18n": "^2.0.0",

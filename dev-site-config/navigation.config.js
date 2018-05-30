@@ -1,30 +1,20 @@
-import Home from '../src/Home/Index';
-import GettingStarted from '../src/GettingStarted/Index';
-import GettingStartedNav from '../src/GettingStarted/Nav';
-
 const navConfig = {
-  rootPath: '/site',
   navigation: {
-    index: '/site/home',
+    index: '/home',
     links: [{
-      path: '/site/home',
+      path: '/home',
       text: 'Home',
-      exampleType: 'home',
-      component: Home,
+      pageTypes: ['home'],
     }, {
-      path: '/site/getting-started',
+      path: '/getting-started',
       text: 'Getting Started',
-      component: GettingStarted,
-      menuComponent: GettingStartedNav,
-      exampleType: 'custom',
-      hasSubNav: true,
+      pageTypes: ['guide'],
     }, {
-      path: '/site/components',
+      path: '/components',
       text: 'Components',
-      exampleType: 'pages',
-      hasSubNav: true,
+      pageTypes: ['doc'],
     }],
   },
 };
 
-export default navConfig;
+module.exports = navConfig;

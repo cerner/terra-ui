@@ -13,8 +13,8 @@ const HomeHero = () => (
     <div className={styles.hero}>
       <Particles style={particleStyle} params={HomeHeroConfig} />
       <div className={styles['hero-content']}>
-        <h1 className={styles['hero-title']}>{'Terra UI'}</h1>
-        <NavLink className={styles['hero-button']} to="/site/getting-started">Get Started</NavLink>
+        <h1 className={styles['hero-title']}>Terra UI</h1>
+        <NavLink className={styles['hero-button']} to="/getting-started">Get Started</NavLink>
       </div>
     </div>
   </section>

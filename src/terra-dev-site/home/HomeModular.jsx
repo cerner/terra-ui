@@ -17,6 +17,6 @@ const HomeModular = () => (
       <Grid.Column col={2} />
     </Grid.Row>
   </Grid>
-  );
+);
 
 export default HomeModular;

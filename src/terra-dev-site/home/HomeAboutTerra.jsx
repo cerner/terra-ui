@@ -17,6 +17,6 @@ const HomeAboutTerra = () => (
       <Grid.Column col={2} />
     </Grid.Row>
   </Grid>
-  );
+);
 
 export default HomeAboutTerra;

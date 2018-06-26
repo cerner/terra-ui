@@ -5,9 +5,11 @@ Cerner Corporation
 - Emily Rohrbough [@emilyrohrbough]
 - Ryan Manuel [@ryanthemanuel]
 - Nathan Faltermeier [@Blackop778]
+- Derek Yu [@yuderekyu]
 
 [@matt-butler]: https://github.com/matt-butler
 [@windse7en]:https://github.com/windse7en
 [@emilyrohrbough]:https://github.com/emilyrohrbough
 [@ryanthemanuel]:https://github.com/ryanthemanuel
 [@Blackop778]:https://github.com/Blackop778
+[yuderekyu]:https://github.com/yuderekyu

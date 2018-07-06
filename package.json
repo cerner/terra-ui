@@ -67,7 +67,7 @@
     "terra-i18n": "^2.0.0",
     "terra-image": "^2.0.1",
     "terra-text": "^2.0.1",
-    "terra-toolkit": "^4.0.0",
+    "terra-toolkit": "^4.1.0",
     "xfc": "^1.2.1"
   },
   "dependencies": {

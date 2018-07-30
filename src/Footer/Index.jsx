@@ -3,11 +3,9 @@ import React from 'react';
 import BrandFooter from 'terra-brand-footer';
 /* eslint-enable import/no-extraneous-dependencies */
 import cernerLogo from './cerner_logo.png';
-import styles from './Index.scss';
 
 const AppFooter = () => (
   <BrandFooter
-    className={styles.footer}
     contentLeft={
       <a href="https://www.cerner.com/"> 
         <img alt="Cerner Corporation" src={cernerLogo} />

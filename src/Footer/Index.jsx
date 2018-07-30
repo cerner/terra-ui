@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import BrandFooter from 'terra-brand-footer';
+// Needs to be specified otherwise the terra-brand-footer from the terra-framework folder will be used
+import BrandFooter from '../../node_modules/terra-brand-footer';
 /* eslint-enable import/no-extraneous-dependencies */
 import cernerLogo from './cerner_logo.png';
 import styles from './Index.scss';

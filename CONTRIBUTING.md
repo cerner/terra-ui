@@ -29,7 +29,7 @@ Thanks.
 * Open a [pull request][6].
 * The pull request will be reviewed by the community and merged by the project committers.
 
-## Project Governance 
+## Project Governance
 * This project is maintained and goverend following the [terra governance document](https://github.com/cerner/terra-ui/blob/master/GOVERNANCE.md).
 
 [1]: https://github.com/cerner/terra-ui/issues
@@ -39,3 +39,24 @@ Thanks.
 [5]: http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
 [6]: https://help.github.com/articles/using-pull-requests
 [7]: ./CONTRIBUTORS.md
+
+
+## Check issues / Log an issue for the contribution
+* Please browse our [existing issues][1] before logging new issues.
+
+ * terra-ui issues
+ * terra-core issues
+ * terra-framework issues
+ * terra-clinical issues
+ * terra-toolkit issues
+ * generator-terra-module issues
+ * eslint-config terra issues
+ * stylelint-config-terra issues
+ * browserlist-config-terra issues
+
+* Check that the issue has not already been fixed in the `master` branch.
+* Open an issue with a descriptive title and a summary.
+* Please be as clear and explicit as you can in your description of the issue.
+* If you are planning to submit a pull request to resolve the issue, [provide a tech design](https://github.com/cerner/terra-ui/wiki/Tech--Design-Template) on the issue describing the code change.
+* Please state the version of Operating System, Browser, and the version you are using in the description.
+* Include any relevant code in the issue summary.

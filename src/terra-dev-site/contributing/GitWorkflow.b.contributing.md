@@ -72,7 +72,7 @@ Depending on the size of the changes, additional reviews via meetings/emails may
 
 If decisions are made in meetings/emails, details/decisions should be added to the relevant GitHub issue as comments when possible to ensure that the decisions/changes/reasons are tracked and documented.
 
-#### Labeling
+#### PR Labelling
 
 We will add the appropriate label on the PR: "**Small**" or "**Large**" to denote the change size.
 

@@ -1,7 +1,6 @@
 ## Internationalization (I18n)
 Terra load translations and locale data on demand when providing translated messages to components. The `terra-base` component will handle locale changes, manage the locale's loading state, and receive customized translation messages from an application. The `terra-base` component is responsible for passing this information to the `terra-i18n` component which communicates with [`react-intl`](https://github.com/yahoo/react-intl). Terra-base is a requirement for the consumption of Terra components. Here's what you need to know:
 
-
 1. Install `terra-base` and then wrap your application in `terra-base` with the `locale` prop defined. More information on how to use `terra-base` can be found [here](https://engineering.cerner.com/terra-ui/#/components/terra-base/base/base).
 2. Extend terra's [default webpack configuration](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/webpack) for automatic `react-intl` configuration and translation aggregation.
     - Review the [aggregated-translation i18n configuration docs](https://github.com/cerner/terra-toolkit/blob/master/docs/AggregateTranslations.md#terrai18nconfig-example) to customize your translation aggregation.

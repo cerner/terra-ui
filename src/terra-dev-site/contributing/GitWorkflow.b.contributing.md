@@ -36,8 +36,6 @@ git add .
 git commit -m "Fixes issue #123"
 ```
 
-This will commit your changes to your local copy of the repo.
-
 Then push your changes to the remote repo.
 
 `git push`
@@ -105,7 +103,13 @@ After the PR has been merged into master, the PR branch will be deleted.
 
 ## Versioning
 
+We view the React.js props API of our components as our main public API. We use this to guide us when versioning components.
+
+Prior to components reaching v1.0.0, a component is considered to be in a beta stage. Components in beta stage may include breaking changes, new features, and bug fixes all within v0.x.x releases.
+
 New versions are published in weekly releases. The version number will be determined based on changes in the pull request / changes described in the changelog. The version number will be automatically bumped in the package.json during release and does not need to be updated in a PR.
+
+For more information on versioning, check out [https://semver.npmjs.com/](https://semver.npmjs.com/)
 
 ## Releases
 

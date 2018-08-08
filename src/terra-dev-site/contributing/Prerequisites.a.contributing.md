@@ -45,7 +45,7 @@ You must have [git](https://help.github.com/articles/set-up-git/) installed on y
 
 ### Node / NPM
 
-You’ll also need to install [Node.js](https://nodejs.org/) and npm. (npm will be installed when you install Node.js)
+You’ll need to install [Node.js](https://nodejs.org/) and npm. (npm will be installed when you install Node.js)
 
 We currently use the 8.x version of node in our projects.
 

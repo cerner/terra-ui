@@ -3,7 +3,7 @@
 ## Create Tech Design
 It's good to create a tech design on the related GitHub issue you'll be working on. This allows for discussion with the [terra team](https://github.com/orgs/cerner/teams/terra) before getting deep into development. Once you feel the tech design has been landed on, feel free to open up a pull request. Based on the changes introduced in the PR, the change will either be considered a small or large change and follow review guidelines documented in the [terra governance modal](https://github.com/cerner/terra-ui/blob/master/GOVERNANCE.md).
 
-Based on feedback you receive from tech design review, incorporate it into your implementation. It's helpful to update the tech design with feedback you incorporate.
+Incorporate feedback you receive from tech design review into your implementation. It's helpful to update the tech design with feedback you incorporate.
 
 ## Tech Design Format
 
@@ -48,29 +48,31 @@ Components along with their docs and tests are organized as individual packages 
 
 After you’ve gone through the [git workflow](#/contributing/terra-ui/git-workflow) and created your branch, the next step will be to install the project dependencies.
 
-Run the following command to install the npm dependencies.
+Run the following command:
 
 `npm install`
 
-Make sure you’re using the correct NodeJS version (we recommend using [nvm](https://github.com/creationix/nvm) to install and manage node on your machine)
+This will do the following:
+* Install dependencies and hoist shared dependencies
+* Symlink together all Lerna packages that are dependencies
+* Compile JSX in `src` to `lib` directories
+* Copy SCSS files in `src` to `lib` directories
 
-Run the following command to switch the node version required for the project.
-
-`nvm use`
-
-If your terminal tells you that you don’t have that version installed, run
-
-`nvm install`
+_Note that if you switch between branches, dependencies may be different between them. We recommend running `npm run clean:install` when switching between branches. This clears all `node_modules` directories and runs `npm install`_
 
 ## Starting The Development Server
 
-Running `npm start` will start up the development server. It will be available at http://localhost:8080/
+Running `npm start` will start up the development server. It will be available at [http://localhost:8080/](http://localhost:8080/)
 
 You can navigate to different component documentation pages. These pages are auto-generated via files in the  [terra-dev-site](https://github.com/cerner/terra-dev-site) doc directories found in each package directory.
 
 ## Starting The Development Server For Internet Explorer 10
 
-// TODO
+The version of webpack-serve we use for the development site is not compatible with IE 10. To handle this, there is a `start-static` script that can be run that will fire of a static dev server that works in IE 10.
+
+`npm run start-static`
+
+_Note that this static server does not support hot reloading, if you want to see changes based on your code updates, you will need to restart the server after you've made changes to see the updates._
 
 ## Follow Component Standards
 As you work on your code changes, ensure the components follow [the Terra UI component standards](https://github.com/cerner/terra-core/wiki/Component-Features).
@@ -81,14 +83,14 @@ For Terra UI projects, we’ve created our own [ESLint config](https://github.co
 * Our ESLint config is based on [Airbnb’s JavaScript style guide](https://github.com/airbnb/javascript).
 * Our Stylelint config is based on [sass-guidelin.es](https://sass-guidelin.es/).
 
-Inside the monorepos, running the following command in the root directory to run both ESLint and Stylelint for all packages.
+Run the following command in the root directory to run both ESLint and Stylelint for all packages.
 
 `npm run lint`
 
-* You can also run `npm run lint:js` and this will only run ESLint.
-* You can also run `npm run lint:scss` and this will only run StyleLint.
+* You can also run `npm run lint:js` to only run ESLint for all packages.
+* You can also run `npm run lint:scss` to only run StyleLint for all packages.
 
-Along with being able to run these scripts across the entire project, you can run these scripts in individual package directories.
+You can also run these scripts in the individual package directories.
 
 Change directories to the specific package in your terminal, e.g. `cd packages/terra-button`, and run the same lint commands for ESLint and Stylelint.
 
@@ -98,64 +100,43 @@ npm run lint:js
 npm run lint:scss
 ```
 
-We recommend that you install a plugin to your editor to run [ESLint](https://eslint.org/docs/user-guide/integrations#editors) and [Stylelint](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) automatically which will then show you any errors inline.
+We recommend that you install a plugin to your editor to run [ESLint](https://eslint.org/docs/user-guide/integrations#editors) and [Stylelint](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) automatically when you type, which will then show you any errors inline.
 
-## Testing Components
+## Running Jest Tests
 
-Terra UI has 2 types of tests:
-* Unit tests, using Jest
-* Browser tests, using Webdriver.io
+For Terra UI, we use [Jest](https://jestjs.io/) for testing, including unit tests for functionality and snapshot testing for components.
 
-### Jest
-We use Jest for testing, including unit tests for functionality and snapshot testing for components.
+Run the following command in the root directory to run Jest for all packages.
+
+`npm run jest`
+
+You can also run Jest in the individual package directories.
+
+Change directories to the specific package in your terminal, e.g. `cd packages/terra-button`, and run the following command
+
+`npm run test:jest`
 
 If you make intentional changes to an existing component, you will need to update its snapshot:
-npm test -- -u
 
-At minimum, all components should have a "does it render" test:
+`npm run test:jest -- -u`
 
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Link from './Link';
+## Running Webdriver.io (WDIO) Tests
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Link />, div);
-});
-```
+For Terra UI, we use also use [Webdriver.io](http://webdriver.io/) for testing, including browser tests for functionality and visual regression testing and accessibility testing for components.
 
+Run the following command in the root directory to run Webdriver.io for all packages.
 
-You may also want to test class level functions:
+`npm run wdio`
 
-```jsx
-it('tracks the number of clicks', () => {
-  const div = document.createElement('div');
-  const instance = ReactDOM.render(<Link />, div);
+You can also run Webdriver.io in the individual package directories.
 
-  t.equals(instace.state.clicks, 0);
-  instance.trackClick();
-  t.equals(instace.state.clicks, 1);
-});
-```
+Change directories to the specific package in your terminal, e.g. `cd packages/terra-button`, and run the following command
 
-Be careful when adding tests; we need to be wary of when we're effectively testing the React internals as opposed to our own components.
+`npm run test:wdio`
 
-#### Running Jest Tests
+More info on writing webdriver.io tests for terra can be [found here](https://github.com/cerner/terra-toolkit/blob/master/docs/Wdio_Utility.md).
 
-// TODO
-
-### Webdriver.io (WDIO)
-
-// TODO
-
-#### Visual Regression Testing
-
-// TODO
-
-#### Running Webdriver Tests
-
-// TODO
+_If you make changes to code inside of the `src` directories, and you do not see if reflected in tests, run `npm compile` to ensure your tests are using the latest code changes._
 
 ### A Note On Testing
 
@@ -165,7 +146,18 @@ Even though we'd like to automate as much as possible, a comprehensive manual te
 
 ## Updating The Changelog
 
-// TODO
+Once you're done with development, you'll need to document your changes in the component's `CHANGELOG.md` file. We follow [https://keepachangelog.com/en/1.0.0/](https://keepachangelog.com/en/1.0.0/) for our changelog format. In the changelog, at the top under the "Unreleased" section, add a section for the type of change you've made.
 
-## Submitting a Pull Request
+Types of changelog sections:
+* `Added` - for new features.
+* `Changed` - for changes in existing functionality.
+* `Deprecated` - for soon-to-be removed features.
+* `Removed` - for now removed features.
+* `Fixed` - for any bug fixes.
+* `Security` - in case of vulnerabilities.
+
+Then add entries for the changes made in your branch under this section.
+
+## Submitting A Pull Request
+
 Check out the [git workflow](#/contributing/terra-ui/git-workflow) to follow the steps for submitting a pull request after your development is ready for review. From there, you'll follow the git workflow until the pull request is merged.

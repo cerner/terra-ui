@@ -220,7 +220,7 @@ it('tracks the number of clicks', () => {
 
 We use [Webdriver.io](http://webdriver.io/) for browser testing functionality, visual regression testing, and accessibility testing.
 
-At minimum, components should include accessibility and visual regression tests using the Terra helpers, `.should.beAccessible()` and `.should.matchScreenshot()`;
+At minimum, components should include accessibility and visual regression tests using the Terra helpers, `Terra.should.beAccessible()` and `Terra.should.matchScreenshot()`;
 
 ```js
 describe('Compact Button', () => {

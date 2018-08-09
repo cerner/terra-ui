@@ -42,7 +42,7 @@ The following guide covers the development workflow for the terra monorepos that
 * [terra-framework](https://github.com/cerner/terra-framework)
 * [terra-clinical](https://github.com/cerner/terra-clinical)
 
-Components along with their docs and tests are organized as individual packages that share similar tooling. You can read more about the [directory structure of these components here](https://github.com/cerner/generator-terra-module#generated-package).
+Components, along with their docs and tests are organized as individual packages that share similar tooling. You can read more about the [directory structure of these components here](https://github.com/cerner/generator-terra-module#generated-package).
 
 ## Install Dependencies
 
@@ -58,7 +58,7 @@ This will do the following:
 * Compile JSX in `src` to `lib` directories
 * Copy SCSS files in `src` to `lib` directories
 
-_Note that if you switch between branches, dependencies may be different between them. We recommend running `npm run clean:install` when switching between branches. This clears all `node_modules` directories and runs `npm install`_
+Note that if you switch between branches, dependencies may be different between them. We recommend running `npm run clean:install` when switching between branches. This clears all `node_modules` directories and runs `npm install`
 
 ## Starting The Development Server
 
@@ -68,14 +68,14 @@ You can navigate to different component documentation pages. These pages are aut
 
 ## Starting The Development Server For Internet Explorer 10
 
-The version of webpack-serve we use for the development site is not compatible with IE 10. To handle this, there is a `start-static` script that can be run that will fire of a static dev server that works in IE 10.
+The version of [webpack-serve](https://github.com/webpack-contrib/webpack-serve) we use for the local development site is not compatible with IE 10. To handle this, there is a `start-static` script that can be run that will start up a static dev server that works in IE 10.
 
 `npm run start-static`
 
 _Note that this static server does not support hot reloading, if you want to see changes based on your code updates, you will need to restart the server after you've made changes to see the updates._
 
 ## Follow Component Standards
-As you work on your code changes, ensure the components follow [the Terra UI component standards](https://github.com/cerner/terra-core/wiki/Component-Features).
+As you work on your code changes, ensure the components follow [the Terra UI component standards](#/contributing/terra-ui/component-standards).
 
 ## Running Lint Scripts
 For Terra UI projects, we’ve created our own [ESLint config](https://github.com/cerner/eslint-config-terra) and [Stylelint config](https://github.com/cerner/stylelint-config-terra).
@@ -104,7 +104,7 @@ We recommend that you install a plugin to your editor to run [ESLint](https://es
 
 ## Running Jest Tests
 
-For Terra UI, we use [Jest](https://jestjs.io/) for testing, including unit tests for functionality and snapshot testing for components.
+We use [Jest](https://jestjs.io/) for testing, including unit tests and snapshot testing for components.
 
 Run the following command in the root directory to run Jest for all packages.
 
@@ -122,7 +122,7 @@ If you make intentional changes to an existing component, you will need to updat
 
 ## Running Webdriver.io (WDIO) Tests
 
-For Terra UI, we use also use [Webdriver.io](http://webdriver.io/) for testing, including browser tests for functionality and visual regression testing and accessibility testing for components.
+We use Webdriver.io for browser testing functionality, visual regression testing, and accessibility testing.
 
 Run the following command in the root directory to run Webdriver.io for all packages.
 
@@ -136,7 +136,7 @@ Change directories to the specific package in your terminal, e.g. `cd packages/t
 
 More info on writing webdriver.io tests for terra can be [found here](https://github.com/cerner/terra-toolkit/blob/master/docs/Wdio_Utility.md).
 
-_If you make changes to code inside of the `src` directories, and you do not see if reflected in tests, run `npm compile` to ensure your tests are using the latest code changes._
+_If you make changes to code inside of the `src` directories, and you do not see if reflected in tests, run `npm run compile` to ensure your tests are using the latest code changes._
 
 ### A Note On Testing
 

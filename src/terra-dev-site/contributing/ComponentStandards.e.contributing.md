@@ -78,22 +78,22 @@ Components should include [Jest](https://github.com/facebook/jest) tests and [We
 
 Components should be internationalized and support the following locales:
 
-* `ar`
-* `de`
-* `en-GB`
-* `en-US`
-* `en`
-* `es-ES`
-* `es-US`
-* `es`
-* `fr-FR`
-* `fr`
-* `nl-BE`
-* `nl`
-* `pt-BR`
-* `pt`
-* `sv`
-* `sv-SE`
+* Arabic `ar`
+* English `en`
+* English (US) `en-US`
+* English (United Kingdom) `en-GB`
+* Spanish `es`
+* Spanish (Spain) `es-ES`
+* Spanish (United States) `es-US`
+* German `de`
+* French `fr`
+* French (France) `fr-FR`
+* Dutch `nl`
+* Dutch (Belgium) `nl-BE`
+* Portuguese `pt`
+* Portuguese (Brazil) `pt-BR`
+* Swedish `sv`
+* Swedish (Sweden) `sv-SE`
 
 ### LTR / RTL Support
 

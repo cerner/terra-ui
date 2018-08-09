@@ -68,16 +68,21 @@ class Component extends React.Component {
 #### Define propTypes and defaultProps before component implementation
 
 ```jsx
+// Define required props first
 const propTypes = {
- isDisabled: PropTypes.bool,
- onClick: PropTypes.func,
- text: PropTypes.string,
- variant: PropTypes.oneOf(['link', 'outline']),
+  text: PropTypes.string.required,
+  isDisabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  variant: PropTypes.oneOf(['default', 'link', 'outline']),
 };
 
+// Required props do not need default prop
 const defaultProps = {
- isDisabled: false,
+  isDisabled: false,
+  onClick: () => {},
+  variant: 'default',
 };
+
 
 // Component definition
 const Button = (props) => {
@@ -215,6 +220,47 @@ it('tracks the number of clicks', () => {
 });
 ```
 
+Components that rely on react-intl require setup to work properly with Jest.
+
+Create a file inside of the `jest` directory for the component you are working on named `intl-context-setup.js` with the following code.
+
+```js
+import { IntlProvider, intlShape } from 'react-intl';
+import messages from '../../translations/en-US.json';
+
+const locale = 'en-US';
+const intlProvider = new IntlProvider({ locale, messages }, {});
+const { intl } = intlProvider.getChildContext();
+
+const shallowContext = { context: { intl } };
+const mountContext = { context: { intl }, childContextTypes: { intl: intlShape } };
+
+const intlContexts = { shallowContext, mountContext };
+
+export default intlContexts;
+```
+
+Then, import the `intl-context-setup.js` file in your Jest test. You can then use `intlContexts.shallowContext` and `intlContexts.mountContext` in your tests for react-intl based components.
+
+```js
+import React from 'react';
+import intlContexts from './intl-context-setup';
+import ExampleComponent from '../../src/ExampleComponent';
+
+it('should should shallow render the example component', () => {
+  const example = <ExampleComponent />;
+  const wrapper = shallow(example, intlContexts.shallowContext);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should should mount the example component', () => {
+  const example = <ExampleComponent />;
+   const wrapper = mount(example, intlContexts.mountContext);
+  expect(wrapper).toMatchSnapshot();
+});
+```
+
+Reference: [https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl](https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl)
 
 ## Webdriver.io
 

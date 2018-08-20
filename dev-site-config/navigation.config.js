@@ -13,6 +13,10 @@ const navConfig = {
       path: '/components',
       text: 'Components',
       pageTypes: ['doc'],
+    }, {
+      path: '/contributing',
+      text: 'Contributing',
+      pageTypes: ['contributing'],
     }],
   },
 };

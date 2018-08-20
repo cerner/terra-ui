@@ -95,6 +95,10 @@ If the Heroku deployment build fails, a link reporting the failed build status w
 
 If you've forked the repo and are submitting a PR back to the upstream repo, Heroku PR builds will not be triggered automatically when opening a PR. Reach out to one of the maintainers to trigger the Heroku PR deployment for your PR from a fork.
 
+## Adding The Pull Request To The Project Board
+
+We use [GitHub project boards](https://help.github.com/articles/about-project-boards/) to track what work is actively being developed. If you are on the [terra team](https://github.com/orgs/cerner/teams/terra), you can add PRs to the project board by clicking on the "Projects" section in the right sidebar, then clicking on the "Organizations" tab, and then clicking on "Terra". This will add a card for the PR to awaiting triage section of the [terra project board](https://github.com/orgs/cerner/projects/1). From here, [terra team](https://github.com/orgs/cerner/teams/terra) members should manage their PR card on the board and update as they work on the issue.
+
 ## Merging The Pull Request
 
 Once everything is good on the PR, an individual from the [terra team](https://github.com/orgs/cerner/teams/terra) will merge your change in!

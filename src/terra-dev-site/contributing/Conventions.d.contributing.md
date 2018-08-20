@@ -190,11 +190,11 @@ At minimum, all components should have a "does it render" test:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Link from './Link';
+import Button from '../../src/Button';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Link />, div);
+  ReactDOM.render(<Button text="test" />, div);
 });
 ```
 
@@ -212,7 +212,7 @@ You may also want to test class level functions:
 ```jsx
 it('tracks the number of clicks', () => {
   const div = document.createElement('div');
-  const instance = ReactDOM.render(<Link />, div);
+  const instance = ReactDOM.render(<Button />, div);
 
   t.equals(instace.state.clicks, 0);
   instance.trackClick();

@@ -274,6 +274,12 @@ describe('Compact Button', () => {
 
     Terra.should.beAccessible();
     Terra.should.matchScreenshot();
+
+    it('displays button that has been clicked', () => {
+      browser.click('button');
+    });
+
+    Terra.should.matchScreenshot('clicked button');
   });
 ```
 

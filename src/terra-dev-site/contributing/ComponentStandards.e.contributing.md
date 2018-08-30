@@ -57,10 +57,11 @@ The important keys for testing are:
 * `←` and/or `→` for moving focus within tabs and some other custom controls
 * `Esc` for closing menus, dialogs, and popups
 
-Test with screen readers:
+Test terra components with the following screen reader / browser combinations.
 
+* [JAWS](https://www.freedomscientific.com/Products/Blindness/JAWS) with Internet Explorer 11
 * [VoiceOver](https://help.apple.com/voiceover/info/guide/10.12/) on Mac / Safari
-* [Narrator on Windows](https://support.microsoft.com/en-us/help/17173/windows-10-hear-text-read-aloud)
+* [VoiceOver](https://www.imore.com/how-use-voiceover-iphone-and-ipad) on iOS / Safari
 
 ## CSS
 

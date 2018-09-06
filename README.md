@@ -13,6 +13,7 @@
 [![Build Status](https://badgen.net/travis/cerner/terra-ui)](https://travis-ci.org/cerner/terra-ui)
 [![Dependencies status](https://badgen.net/david/dep/cerner/terra-ui)](https://david-dm.org/cerner/terra-ui)
 [![devDependencies status](https://badgen.net/david/dev/cerner/terra-ui)](https://david-dm.org/cerner/terra-ui?type=dev)
+
 Documentation site for Terra. Terra is the core UI component library, unifying UX concepts and development across Cerner.
 
 - [Getting Started](#getting-started)

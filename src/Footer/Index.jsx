@@ -6,11 +6,11 @@ import cernerLogo from './cerner_logo.png';
 
 const AppFooter = () => (
   <BrandFooter
-    contentLeft={
-      <a href="https://www.cerner.com/"> 
+    contentLeft={(
+      <a href="https://www.cerner.com/">
         <img alt="Cerner Corporation" src={cernerLogo} />
       </a>
-    }
+)}
     isVertical
     sections={[
       {

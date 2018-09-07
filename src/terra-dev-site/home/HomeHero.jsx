@@ -9,7 +9,7 @@ import styles from './HomeHero.scss';
 const particleStyle = { background: `url(${imgTerra}) no-repeat 50% calc(50% - 70px) / 250px 250px #223` };
 
 const HomeHero = () => (
-  <section >
+  <section>
     <div className={styles.hero}>
       <Particles style={particleStyle} params={HomeHeroConfig} />
       <div className={styles['hero-content']}>

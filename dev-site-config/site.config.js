@@ -1,5 +1,5 @@
-const navConfig = require('./navigation.config');
 const path = require('path');
+const navConfig = require('./navigation.config');
 
 const terraFrameworkPath = path.join(process.cwd(), 'node_modules', 'terra-framework');
 const terraClinicalPath = path.join(process.cwd(), 'node_modules', 'terra-clinical');

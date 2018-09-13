@@ -1,26 +1,26 @@
 :local {
   .section {
-    padding-top: 3.571rem;
-    padding-bottom: 3.571rem;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 3.571rem;
+    padding-top: 3.571rem;
   }
 
   .card {
-      width: 50%;
-      margin: 0.714rem;
+    margin: 0.714rem;
+    width: 50%;
 
-      @media screen and (min-width: 768px) {
-        width: 25%;
-      }
+    @media screen and (min-width: 768px) {
+      width: 25%;
+    }
 
-      @media screen and (min-width: 1024px) {
-        width: 15%;
-      }
+    @media screen and (min-width: 1024px) {
+      width: 15%;
+    }
   }
 
   .container {
-      padding: 0.143rem 1.143rem;
+    padding: 0.143rem 1.143rem;
   }
 }

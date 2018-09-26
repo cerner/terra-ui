@@ -29,7 +29,7 @@ Documentation site for Terra. Terra is the core UI component library, unifying U
 
 ### Install Application
 ```
-git clone https://github.cerner.com/terra/terra-ui.git
+git clone https://github.com/cerner/terra-ui.git
 
 npm install
 ```

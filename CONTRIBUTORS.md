@@ -6,6 +6,7 @@ Cerner Corporation
 - Ryan Manuel [@ryanthemanuel]
 - Nathan Faltermeier [@Blackop778]
 - Derek Yu [@yuderekyu]
+- Dave Kasper [@dkasper-was-taken]
 
 [@matt-butler]: https://github.com/matt-butler
 [@windse7en]:https://github.com/windse7en
@@ -13,3 +14,4 @@ Cerner Corporation
 [@ryanthemanuel]:https://github.com/ryanthemanuel
 [@Blackop778]:https://github.com/Blackop778
 [yuderekyu]:https://github.com/yuderekyu
+[@dkasper-was-taken]: https://github.com/dkasper-was-taken

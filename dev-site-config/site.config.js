@@ -64,6 +64,8 @@ const siteConfig = {
       gitHubUrl: 'https://github.com/cerner?utf8=%E2%9C%93&q=terra&type=&language=',
     },
   },
+
+  includeTestEvidence: false,
 };
 
 module.exports = siteConfig;

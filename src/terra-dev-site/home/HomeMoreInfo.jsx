@@ -14,11 +14,11 @@ const HomeAdditionalPages = () => (
         <NavLink className={styles.link} to="getting-started"><Heading level={2}>Getting Started</Heading></NavLink>
         <div style={{ marginTop: '.5rem' }}>
           <Text fontSize={18}>
-            Looking to learn more about Terra UI? Check out our
+            Want to learn more about Terra UI? Check out the
             {' '}
             <NavLink to="/getting-started">Getting Started Guide</NavLink>
             {' '}
-            to learn more about component features, usage, installation, configuration and more.
+            to learn more about the following: component features, usage, installation, configuration, and more.
           </Text>
         </div>
       </Grid.Column>
@@ -26,9 +26,9 @@ const HomeAdditionalPages = () => (
         <NavLink className={styles.link} to="components"><Heading level={2}>Components</Heading></NavLink>
         <div style={{ marginTop: '.5rem' }}>
           <Text fontSize={18}>
-            Terra UI offers a wide range of components from common UI components to more specialized components designed for clincal use. You can view the entire library of
+            Terra UI offers a wide range of components - from common UI components to specialized components designed for clinical use.
             {' '}
-            <NavLink to="/components">Terra UI components here</NavLink>
+            <NavLink to="/components">View the entire library</NavLink>
             .
           </Text>
         </div>

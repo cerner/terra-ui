@@ -11,7 +11,7 @@ const HomeModular = () => (
       <Grid.Column col={2} />
       <Grid.Column col={8}>
         <Text className={styles.modular} fontSize={20} weight={200}>
-          {'Each Terra UI component is published as a separate npm package. This allows each component to be independently versioned allowing applications to move at their own speed.'}
+          {'Each Terra UI component is published as a separate npm package. This allows each component to be independently versioned, so applications can move at their own speed.'}
         </Text>
       </Grid.Column>
       <Grid.Column col={2} />

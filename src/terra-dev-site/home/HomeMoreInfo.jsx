@@ -15,6 +15,7 @@ const HomeAdditionalPages = () => (
         <div style={{ marginTop: '.5rem' }}>
           <Text fontSize={18}>
             Looking to learn more about Terra UI? Check out our
+            {' '}
             <NavLink to="/getting-started">Getting Started Guide</NavLink>
             {' '}
             to learn more about component features, usage, installation, configuration and more.

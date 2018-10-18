@@ -43,6 +43,7 @@ The current Maintainers on the project are:
 - [Jake LaCombe](https://github.com/jakecombe)
 - [Matt Henkes](https://github.com/mjhenkes)
 - [Ryan Manuel](https://github.com/rfmanuel)
+- [Tyler Biethman](https://github.com/tbiethman)
 
 ### Committers
 
@@ -76,7 +77,7 @@ Trivial changes may be committed directly to a repository. Changes deemed trivia
 
 All other changes must be reviewed by the maintainers. This includes contributions from the community as well as the current maintainers. We use [Github pull requests](https://help.github.com/articles/about-pull-requests/) and [Github pull request reviews](https://help.github.com/articles/about-pull-request-reviews/) to manage reviewing and merging the proposed changes.
 
-For small changes, at least one maintainer must approve the change. If a maintainer was the author of the change being reviewed, the approval must come from a different maintainer. 
+For small changes, at least one maintainer must approve the change. If a maintainer was the author of the change being reviewed, the approval must come from a different maintainer.
 
 For large, significant, or breaking changes, the participating maintainers must reach consensus on the change. Like *trivial*, the notion of *small* and *large* are subjective terms. However, a breaking change should be clear and unambiguous. Note that the size of the contribution does not determine whether the change requires just one approval or consensus. Rather, the impact of the change reflects the type of review required. For instance, the addition of a new component would be considered a significant change and would warrant consensus amongst the maintainers.
 
@@ -100,7 +101,7 @@ Large
 - Non-passive public api changes
 - Changing the testing framework
 - Major dependency version bumps
-   
+
 
 ### Feature branches
 

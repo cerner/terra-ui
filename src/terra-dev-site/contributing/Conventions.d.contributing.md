@@ -261,6 +261,7 @@ it('should should mount the example component', () => {
 ```
 
 Reference: [https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl](https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl)
+
 Additional info: [https://djangostars.com/blog/what-and-how-to-test-with-enzyme-and-jest-full-instruction-on-react-component-testing/](https://djangostars.com/blog/what-and-how-to-test-with-enzyme-and-jest-full-instruction-on-react-component-testing/)
 
 ## Webdriver.io

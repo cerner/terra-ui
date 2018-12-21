@@ -20,4 +20,4 @@
 
 A full list of component-specific features can be viewed on each component's README.
 
-###### \* To support legacy browsers, additional configuration is required.
+_\* To support legacy browsers, additional configuration is required._

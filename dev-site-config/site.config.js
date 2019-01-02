@@ -65,6 +65,8 @@ const siteConfig = {
     },
   },
 
+  filterSideMenu: true,
+
   includeTestEvidence: false,
 };
 

@@ -22,7 +22,7 @@ Next, create a new branch for your work, with an appropriate name for your chang
 
 ## Development Workflow
 
-Read through our [development workflow guide](#/contributing/terra-ui/developer-workflow) to better understand the development process.
+Read through our [development workflow guide](/#/contributing/terra-ui/developer-workflow) to better understand the development process.
 
 ## Adding, Committing, And Pushing Changes
 

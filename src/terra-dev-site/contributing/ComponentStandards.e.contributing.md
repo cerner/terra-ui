@@ -65,15 +65,15 @@ Test terra components with the following screen reader / browser combinations.
 
 ## CSS
 
-Components should follow [https://sass-guidelin.es/](https://sass-guidelin.es/) and our [CSS conventions](#/contributing/terra-ui/conventions) for Terra UI.
+Components should follow [https://sass-guidelin.es/](https://sass-guidelin.es/) and our [CSS conventions](/#/contributing/terra-ui/conventions) for Terra UI.
 
 ## JavaScript
 
-Components should follow [Airbnb javascript style guide](https://github.com/airbnb/javascript) and our [JS conventions](#/contributing/terra-ui/conventions) for Terra UI.
+Components should follow [Airbnb javascript style guide](https://github.com/airbnb/javascript) and our [JS conventions](/#/contributing/terra-ui/conventions) for Terra UI.
 
 ## Testing
 
-Components should include [Jest](https://github.com/facebook/jest) tests and [Webdriver.io](http://webdriver.io/) tests and follow our [testing conventions](#/contributing/terra-ui/conventions) for Terra UI.
+Components should include [Jest](https://github.com/facebook/jest) tests and [Webdriver.io](http://webdriver.io/) tests and follow our [testing conventions](/#/contributing/terra-ui/conventions) for Terra UI.
 
 ## Internationalization (I18n) Support
 

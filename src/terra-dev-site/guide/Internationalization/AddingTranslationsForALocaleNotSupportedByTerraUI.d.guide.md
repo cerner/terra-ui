@@ -1,6 +1,6 @@
 # Adding Translations For A Locale Not Supported By Terra UI
 
-Terra UI provides translations for [the following locales](https://github.com/cerner/terra-toolkit/blob/master/scripts/aggregate-translations/i18nSupportedLocales.js) for any strings we use in our components. In some cases, you may need to support locales outside of the ones we provide by default.
+Terra UI provides translations for [the following locales](https://github.com/cerner/terra-toolkit/blob/master/scripts/aggregate-translations/i18nSupportedLocales.js) for any string used in our components. In some cases, you may need to support locales outside of the ones we provide by default.
 
 As an example, let's say you need to support Polish (pl) in your app.
 
@@ -42,7 +42,9 @@ Exception Message: ENOENT: no such file or directory, open '/Users/MyComputer/re
 
 The above message is a general warning that occurs for each Terra UI component your app uses noting that it does not provide translations for the locales you are adding beyond the default locales supported by Terra UI.
 
-To resolve these warnings, we recommend translating all of translations in the `en.js` file in your app's aggregate-translations directory into the locale(s) that you are adding and add that file as a `.json` file into you app's translation directory.
+To resolve these warnings after running the aggregate-translations tool, you will need to add the terra name-spaced translation keys with the correct translations as `.json` file for each non-supported locale in your app's translations directory.
+
+We recommend copying all of terra name-space translations keys found in the `aggregate-translations/en.js` file as the basis for your new translations file. This will be a compiled list of the terra component translations used in your app.
 
 For example:
 
@@ -52,5 +54,5 @@ src/
 translations/
   ↳ en.json
   ↳ es.json
-  ↳ pl.json // Includes all keys from aggregate-translations/en.js in polish translations
+  ↳ pl.json // Includes all keys from aggregate-translations/en.js in polish translations, in addition to your custom translations
 ```

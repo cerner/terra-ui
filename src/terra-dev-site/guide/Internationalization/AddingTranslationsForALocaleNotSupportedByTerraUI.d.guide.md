@@ -1,6 +1,6 @@
 # Adding Translations For A Locale Not Supported By Terra UI
 
-Terra UI provides translations for [the following locales](https://github.com/cerner/terra-toolkit/blob/master/scripts/aggregate-translations/i18nSupportedLocales.js) for any string used in our components. In some cases, you may need to support locales outside of the ones we provide by default.
+Terra UI provides translations for [the following locales](https://github.com/cerner/terra-toolkit/blob/master/scripts/aggregate-translations/i18nSupportedLocales.js) for any string used in our components. In some cases, you may need to support locales outside of the ones we provide by default. This is possible, however one must ensure the locales are supported by `react-intl`, otherwise no locale-data will exist and loading the intl data will result in an error. Once confirmed that the locale is supported by `react-intl`, one is responsible for including the appropriate translations messages for each terra component used in your application, otherwise the translations will fail and `react-intl` will display the message name as the fallback.
 
 As an example, let's say you need to support Polish (pl) in your app.
 

@@ -93,6 +93,7 @@ import { injectIntl, intlShape } from 'react-intl';
 
 const propTypes = {
   /**
+   * @private
    * The intl object to be injected for translations. Provided by the injectIntl function.
    */
   intl: intlShape.isRequired,

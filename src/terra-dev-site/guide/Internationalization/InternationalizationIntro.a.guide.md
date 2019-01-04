@@ -22,7 +22,7 @@ The first part of setting up internalization and translations in your app requir
 
 **Note:** *This component should be your root component and wrap all components in your app. This is to help ensure that the entire application is within the same configured i18n context provided by [react-intl's `<IntlProvider />`](https://github.com/yahoo/react-intl/wiki/Components#intlprovider). The terra-base component provides an abstraction around react-intl's `<IntlProvider />` component which allows code splitting of translations per locale.*
 
-You can [read more about react-inlt's API here](https://github.com/yahoo/react-intl/wiki/API).
+You can [read more about react-intl's API here](https://github.com/yahoo/react-intl/wiki/API).
 
 If your app doesn't have any custom translations, you can set up and use terra-base as follows:
 

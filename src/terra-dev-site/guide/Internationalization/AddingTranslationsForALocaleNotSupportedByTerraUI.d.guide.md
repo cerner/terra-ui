@@ -14,7 +14,7 @@ const aggregateTranslations = require ('terra-toolkit/scripts/aggregate-translat
 aggregateTranslations({ locales: ['en', 'pl']});
 ```
 
-If you want to support all of the Terra UI supported locales in addition to Polish, you can call `aggregateTranslations` fuction with the following:
+If you want to support all of the Terra UI supported locales in addition to Polish, you can call `aggregateTranslations` function with the following:
 
 ```js
 const aggregateTranslations = require ('terra-toolkit/scripts/aggregate-translations/aggregate-translations');
@@ -24,7 +24,7 @@ const supportedLocales = require('terra-toolkit/scripts/aggregate-translations/i
 aggregateTranslations({ locales: [...supportedLocales, 'pl']});
 ```
 
-Similarly, [you can add a `terraI18n.config.js` file to the root of your project with options to pass to aggreaget-translations when its called](https://github.com/cerner/terra-toolkit/blob/master/docs/AggregateTranslations.md#terrai18nconfig-example).
+Similarly, [you can add a `terraI18n.config.js` file to the root of your project with options to pass to aggregate-translations when its called](https://github.com/cerner/terra-toolkit/blob/master/docs/AggregateTranslations.md#terrai18nconfig-example).
 
 **Note** *When aggregating a locale not supported by Terra UI, you will see two types of warning messages*
 

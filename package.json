@@ -63,7 +63,7 @@
     "terra-core": "git://github.com/cerner/terra-core.git#terra-visually-hidden-text@1.8.0",
     "terra-dev-site": "^2.0.0",
     "terra-doc-template": "^1.9.0",
-    "terra-framework": "git://github.com/cerner/terra-framework.git#terra-time-input@2.35.0",
+    "terra-framework": "git://github.com/cerner/terra-framework.git#terra-time-input@2.36.0",
     "terra-grid": "^4.0.1",
     "terra-heading": "^2.0.1",
     "terra-i18n": "^2.0.0",

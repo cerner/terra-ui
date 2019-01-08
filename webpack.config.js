@@ -1,7 +1,6 @@
 const defaultWebpackConfig = require('terra-dev-site/config/webpack/webpack.config');
 const path = require('path');
 
-
 const webpackConfig = (env, argv) => {
   const config = defaultWebpackConfig(env, argv);
 
@@ -9,7 +8,7 @@ const webpackConfig = (env, argv) => {
   const momentAlias = path.resolve(path.join(process.cwd(), 'node_modules', 'moment'));
   const intl = path.resolve(path.join(process.cwd(), 'node_modules', 'intl'));
   const terraMarkdown = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-markdown'));
-  const terraDatePicker = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-core', 'packages', 'terra-date-picker'));
+  const terraDatePicker = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-date-picker'));
   const resizeObserver = path.resolve(path.join(process.cwd(), 'node_modules', 'resize-observer-polyfill'));
   const reactRouterDom = path.resolve(path.join(process.cwd(), 'node_modules', 'react-router-dom'));
   const babelRuntime = path.resolve(path.join(process.cwd(), 'node_modules', 'babel-runtime'));

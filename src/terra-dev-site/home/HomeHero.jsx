@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import Particles from 'react-particles-js';
 import { NavLink } from 'react-router-dom';

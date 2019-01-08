@@ -1,10 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Grid from 'terra-grid';
 import Heading from 'terra-heading';
 import Text from 'terra-text';
-/* eslint-enable import/no-extraneous-dependencies */
 import styles from './HomeMoreInfo.scss';
 
 const HomeAdditionalPages = () => (

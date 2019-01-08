@@ -9,20 +9,23 @@
     "url": "https://github.com/cerner/terra-ui/issues"
   },
   "engines": {
-    "node": "^8.9.2"
+    "node": ">=8.9.2"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-ui.git"
   },
   "eslintConfig": {
-    "extends": "terra"
+    "extends": "terra",
+    "rules": {
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    }
   },
   "stylelint": {
     "extends": "stylelint-config-terra"
   },
   "scripts": {
-    "clean": "node scripts/clean-modules/index.js",
+    "clean": "shx rm -rf node_modules",
     "clean:install": "npm run clean && npm install",
     "build:test": "NODE_ENV=test webpack --config webpack.config.js",
     "build:production": "NODE_ENV=production webpack --config webpack.config.js -p",
@@ -55,7 +58,7 @@
     "react-particles-js": "^2.1.0",
     "react-router-dom": "^4.2.2",
     "rimraf": "^2.6.1",
-    "shelljs": "^0.8.2",
+    "shx": "^0.3.2",
     "stylelint": "^9.0.0",
     "stylelint-config-terra": "^1.2.0",
     "terra-brand-footer": "^1.7.0",
@@ -69,10 +72,8 @@
     "terra-i18n": "^2.0.0",
     "terra-image": "^2.0.1",
     "terra-text": "^2.0.1",
+    "terra-legacy-theme": "^2.0.0",
     "terra-toolkit": "^4.6.0",
     "xfc": "^1.2.1"
-  },
-  "dependencies": {
-    "terra-legacy-theme": "^2.0.0"
   }
 }

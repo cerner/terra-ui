@@ -1,3 +1,4 @@
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 const glob = require('glob');
 const navConfig = require('./navigation.config');
 

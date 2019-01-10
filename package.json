@@ -16,15 +16,7 @@
     "url": "git+https://github.com/cerner/terra-ui.git"
   },
   "eslintConfig": {
-    "extends": "terra",
-    "rules": {
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ]
-    }
+    "extends": "terra"
   },
   "stylelint": {
     "extends": "stylelint-config-terra"
@@ -44,28 +36,13 @@
     "test": "npm run lint",
     "deploy": "gh-pages -d build"
   },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+  "dependencies": {
     "classnames": "^2.2.5",
-    "eslint": "^5.0.0",
-    "eslint-config-terra": "^2.1.0",
-    "gh-pages": "^1.1.0",
-    "glob": "^7.1.1",
-    "lerna": "^2.7.0",
     "prop-types": "^15.5.10",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-particles-js": "^2.1.0",
     "react-router-dom": "^4.2.2",
-    "rimraf": "^2.6.1",
-    "shx": "^0.3.2",
-    "stylelint": "^9.0.0",
-    "stylelint-config-terra": "^1.2.0",
     "terra-abstract-modal": "^1.0.0",
     "terra-action-footer": "^1.0.0",
     "terra-action-header": "^2.0.0",
@@ -100,7 +77,6 @@
     "terra-date-picker": "^3.0.0",
     "terra-date-time-picker": "^3.0.0",
     "terra-demographics-banner": "^3.0.0",
-    "terra-dev-site": "^2.9.0",
     "terra-dialog": "^2.0.0",
     "terra-dialog-modal": "^1.0.0",
     "terra-disclosure-manager": "^3.0.0",
@@ -160,8 +136,26 @@
     "terra-toggle": "^2.0.0",
     "terra-toggle-button": "^2.0.0",
     "terra-toggle-section-header": "^1.0.0",
-    "terra-visually-hidden-text": "^1.0.0",
     "terra-toolkit": "^4.6.0",
+    "terra-visually-hidden-text": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.0.0",
+    "eslint-config-terra": "^2.1.0",
+    "gh-pages": "^1.1.0",
+    "glob": "^7.1.1",
+    "lerna": "^2.7.0",
+    "rimraf": "^2.6.1",
+    "shx": "^0.3.2",
+    "stylelint": "^9.0.0",
+    "stylelint-config-terra": "^1.2.0",
+    "terra-dev-site": "^2.9.0",
     "xfc": "^1.2.1"
   }
 }

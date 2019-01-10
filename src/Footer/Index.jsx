@@ -8,7 +8,7 @@ const AppFooter = () => (
       <a href="https://www.cerner.com/">
         <img alt="Cerner Corporation" src={cernerLogo} />
       </a>
-)}
+    )}
     isVertical
     sections={[
       {

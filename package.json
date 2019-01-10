@@ -136,7 +136,6 @@
     "terra-toggle": "^2.0.0",
     "terra-toggle-button": "^2.0.0",
     "terra-toggle-section-header": "^1.0.0",
-    "terra-toolkit": "^4.6.0",
     "terra-visually-hidden-text": "^1.0.0"
   },
   "devDependencies": {
@@ -148,14 +147,12 @@
     "babel-preset-react": "^6.24.1",
     "eslint": "^5.0.0",
     "eslint-config-terra": "^2.1.0",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^2.0.1",
     "glob": "^7.1.1",
-    "lerna": "^2.7.0",
-    "rimraf": "^2.6.1",
     "shx": "^0.3.2",
     "stylelint": "^9.0.0",
     "stylelint-config-terra": "^1.2.0",
     "terra-dev-site": "^2.9.0",
-    "xfc": "^1.2.1"
+    "terra-toolkit": "^4.6.0"
   }
 }

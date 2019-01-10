@@ -1,7 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import Heading from 'terra-heading';
-/* eslint-enable import/no-extraneous-dependencies */
 import imgWebpack from './assets/webpack.svg';
 import imgReact from './assets/react.svg';
 import imgCssModules from './assets/css-modules.png';

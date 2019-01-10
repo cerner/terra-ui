@@ -22,7 +22,7 @@ const AppFooter = () => (
       {
         headerText: 'Support',
         links: [
-          { text: 'Log an issue', href: 'https://github.com/cerner/terra-core/issues/new' },
+          { text: 'Log an issue', href: 'https://github.com/cerner/terra-core/issues/new/choose' },
         ],
       },
       {

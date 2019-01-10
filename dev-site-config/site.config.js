@@ -1,9 +1,10 @@
-const path = require('path');
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+const glob = require('glob');
 const navConfig = require('./navigation.config');
 
-const terraFrameworkPath = path.join(process.cwd(), 'node_modules', 'terra-framework');
-const terraClinicalPath = path.join(process.cwd(), 'node_modules', 'terra-clinical');
-const terraCorePath = path.join(process.cwd(), 'node_modules', 'terra-core');
+const patterns = glob.sync('node_modules/terra-*/lib/terra-dev-site').map(file => (
+  { root: `node_modules/${file.split('/')[1]}`, dist: 'lib', entryPoint: 'terra-dev-site' }
+)).filter(file => file.root !== 'node_modules/terra-dev-site');
 
 const siteConfig = {
   /* The navigation configuration.  */
@@ -16,32 +17,9 @@ const siteConfig = {
         dist: 'src',
         entryPoint: 'terra-dev-site',
       },
-      {
-        root: terraFrameworkPath,
-        dist: 'lib',
-        entryPoint: 'terra-dev-site',
-      },
-      {
-        root: terraClinicalPath,
-        dist: 'lib',
-        entryPoint: 'terra-dev-site',
-      },
-      {
-        root: terraCorePath,
-        dist: 'lib',
-        entryPoint: 'terra-dev-site',
-      },
+      ...patterns,
     ],
   },
-
-  monoRepo: {
-    packages: [
-      path.join(terraFrameworkPath, 'packages'),
-      path.join(terraClinicalPath, 'packages'),
-      path.join(terraCorePath, 'packages'),
-    ],
-  },
-
   hotReloading: false,
 
   readMeContent: undefined,

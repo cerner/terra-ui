@@ -1,7 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import BrandFooter from 'terra-brand-footer';
-/* eslint-enable import/no-extraneous-dependencies */
 import cernerLogo from './cerner_logo.png';
 
 const AppFooter = () => (
@@ -10,7 +8,7 @@ const AppFooter = () => (
       <a href="https://www.cerner.com/">
         <img alt="Cerner Corporation" src={cernerLogo} />
       </a>
-)}
+    )}
     isVertical
     sections={[
       {
@@ -24,7 +22,7 @@ const AppFooter = () => (
       {
         headerText: 'Support',
         links: [
-          { text: 'Log an issue', href: 'https://github.com/cerner/terra-core/issues/new' },
+          { text: 'Log an issue', href: 'https://github.com/cerner/terra-core/issues/new/choose' },
         ],
       },
       {

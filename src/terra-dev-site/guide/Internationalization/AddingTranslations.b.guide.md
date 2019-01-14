@@ -22,6 +22,6 @@ Here is an example translation file.
 }
 ```
 
-Translations must be included for each locale the app intends to support. At a minimum, apps must included `en` translations as `en` is the fallback locale for terra-base.
+Translations must be included for each locale the app intends to support. At a minimum, apps must include `en` translations as it is intended to be the fallback locale for terra-base.
 
 Translation keys should be namespaced and unique to prevent translation key collision from other dependencies.

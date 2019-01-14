@@ -34,7 +34,7 @@ export default App;
 
 **Note:** *The terra-base component doesn't need to wrap individual components with translations, it should be used once to wrap the entire React app.*
 
-By default `<FormattedMessage>` will render the formatted string into a `<span>`. If you need to customize rendering, we recommend using the render prop version of FormattedMessage.
+By default `<FormattedMessage>` will render the formatted string into a `<span>`. If you need to customize rendering, we recommend using the [render prop version of FormattedMessage](https://github.com/yahoo/react-intl/wiki/Components#formattedmessage).
 
 For example, the terra-button component has a prop for text, however it only accepts strings. We can use the render prop version of the FormattedMessage component to pass a string to the button text prop like so:
 
@@ -84,7 +84,7 @@ We could continue to use the render prop version of FormattedMessage:
 </FormattedMessage>
 ```
 
-However, in this case, instead of nesting multiple FormattedMessage components, we'd recommend using [react-intl's injectIntl high-order component (HOC)](https://github.com/yahoo/react-intl/wiki/API#injectintl).
+However, in this case, instead of nesting multiple FormattedMessage components, we'd recommend using [react-intl's injectIntl higher-order component (HOC)](https://github.com/yahoo/react-intl/wiki/API#injectintl).
 
 
 ```jsx

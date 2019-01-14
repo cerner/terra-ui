@@ -11,3 +11,17 @@ translations/
   ↳ en.json
   ↳ es.json
 ```
+
+Here is an example translation file.
+
+```json
+{
+  "myApp.componentName.error": "Error.",
+  "myApp.componentName.warning": "Warning.",
+  "myApp.componentName.success": "Success."
+}
+```
+
+Translations must be included for each locale the app intends to support. At a minimum, apps must included `en` translations as `en` is the fallback locale for terra-base.
+
+Translation keys should be namespaced and unique to prevent translation key collision from other dependencies.

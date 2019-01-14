@@ -8,7 +8,7 @@ Install [terra-base](https://www.npmjs.com/package/terra-base) and [terra-toolki
 If you're using npm, run the following command:
 
 ```
-npm install terra-base terra-toolkit
+npm install terra-base terra-toolkit --save
 ```
 
 If you're using yarn, run the following command:
@@ -18,7 +18,7 @@ yarn add terra-base terra-toolkit
 ```
 
 # Terra Base
-The first part of setting up internalization and translations in your app requires installing and configuring terra-base. This component is designed to manage loading locale information such as translations and locale data, handling locale switching and loading sate, and combining customized translation messages from an application with Terra UI component translations.
+The first part of setting up internalization and translations in your app requires installing and configuring terra-base. This component is designed to manage loading locale information such as translations and locale data, handling locale switching and loading state, and combining customized translation messages from an application with Terra UI component translations.
 
 **Note:** *This component should be your root component and wrap all components in your app. This is to help ensure that the entire application is within the same configured i18n context provided by [react-intl's `<IntlProvider />`](https://github.com/yahoo/react-intl/wiki/Components#intlprovider). The terra-base component provides an abstraction around react-intl's `<IntlProvider />` component which allows code splitting of translations per locale.*
 
@@ -43,7 +43,7 @@ const locale = (navigator.languages && navigator.languages[0])
 
 This will load the `en` translations for any Terra UI components you use in your app.
 
-**Note:** *This requires running terra-toolkit's aggregate translation tool to fully work. See the terra-toolkit's aggregate translation section below for more info.*
+**Note:** *This requires running [terra-toolkit's aggregate translation tool](https://github.com/cerner/terra-toolkit/blob/master/docs/AggregateTranslations.md) before starting your server to fully work. See the terra-toolkit's aggregate translation section below for more info.*
 
 If your app has custom translations outside of the ones provided by Terra UI, you can set up and use terra-base as follows:
 
@@ -63,9 +63,7 @@ const locale = (navigator.languages && navigator.languages[0])
 </Base>
 ```
 
-**Note:** *This requires running terra-toolkit's aggregate translation tool to fully work. See the terra-toolkit's aggregate translation section below for more info.*
-
-[More info on terra-base can be found on it's documentation page.](https://engineering.cerner.com/terra-ui/#/components/terra-base/base/base)
+[More info on terra-base can be found on its documentation page.](https://engineering.cerner.com/terra-ui/#/components/terra-base/base/base)
 
 
 # HTML Attributes Which Help With Internationalization

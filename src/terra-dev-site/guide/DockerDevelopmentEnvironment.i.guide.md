@@ -51,6 +51,11 @@ To attach to a running docker container, run:
 docker exec -it <hash for running docker container> /bin/zsh
 ```
 
+### Sharing node_modules
+The docker development environment intentionally will write out node_modules to the shared host volume. This provides several benefits:
+* Simpler volume mounting, everything edited in the repo is shared to the docker container.
+* Node module cacheing. For the development containers ```npm install``` is run at run time of the docker container (opposed to build time). This is done to allow ```npm install``` to discover local dependencies. To avoid long startup times node_modules are cached to the local volume. If node_modules are found ```npm install``` is not run at run time.
+
 ### Local dependencies
 Local dependencies are supported in the docker development environment but require an additional step. For the docker container to be able to find the local dependency, it must be volume mounted to the docker container.
 
@@ -78,11 +83,6 @@ dev:
     # This is the local dependency volume mount.
     - ../classnames:/opt/classnames
 ```
-
-### Sharing node_modules
-The docker development environment intentionally will write out node_modules to the shared host volume. This provides several benefits:
-* Simpler volume mounting, everything edited in the repo is shared to the docker container.
-* Node module cacheing. For the development containers ```npm install``` is run at run time of the docker container (opposed to build time). This is done to allow ```npm install``` to discover local dependencies. To avoid long startup times node_modules are cached to the local volume. If node_modules are found ```npm install``` is not run at run time.
 
 ### Troubleshooting
 #### Error: Missing binding

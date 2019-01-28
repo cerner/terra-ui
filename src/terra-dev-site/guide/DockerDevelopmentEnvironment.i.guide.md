@@ -30,7 +30,7 @@ docker-compose run  --service-ports term
 ```
 The ```--service-ports``` flag runs the command with the service's ports enabled and mapped to the host.
 
-There a couple of additional methods of running the terminal on the docker container. Either Run a terminal through docker-compose or use docker to attach to a running docker image.
+There a couple of additional methods of running the terminal on the docker container. Either run a terminal through docker-compose or use docker to attach to a running docker image.
 
 To launch to the terminal on the dev image, run:
 

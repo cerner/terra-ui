@@ -12,25 +12,26 @@ const paths = [
 ];
 
 const urls = [];
-const prefixURL = 'https://engineering.cerner.com/terra-ui/#'
+const prefixURL = 'https://engineering.cerner.com/terra-ui/#';
 
-var stringContents = fileContents[1];
+const stringContents = fileContents[1];
 
-var words = stringContents.split(/'path': '/);
+const words = stringContents.split(/'path': '/);
 
 // add all the URLs from routeConfig.js to an array
-for(i = 0; i < words.length; i++) {
-  var url = words[i]
-  var n = url.indexOf(/'/);
-  url = url.substring(0, url.indexOf("'"));
-  url = prefixURL + url;
-  urls.push(url)
-};
+let i;
+for (i = 0; i < words.length; i += 1) {
+  const url = words[i];
+  var urlNew = url.substring(0, url.indexOf("'"));
+  urlNew = prefixURL + urlNew;
+  urls.push(urlNew);
+}
 
-urls.shift(); //remove faulty firsty entry '{\n   }'
+urls.shift(); // remove faulty firsty entry '{\n   }'
 
-urls.push(paths[0]);  // add 2 urls not included in routeConfig.js
+urls.push(paths[0]); // add 2 urls not included in routeConfig.js
 urls.push(paths[1]);
+
 
 const results = [];
 let axeResults;
@@ -38,18 +39,19 @@ let promise;
 const time = process.hrtime();
 puppeteer.launch().then(async (browser) => {
   const promises = [];
-  console.log("Running...");
-  for (let i = 0; i < urls.length; i++) {
-    const url = urls[i];
+  console.log('Running...');
+  for (let k = 0; k < urls.length; k += 1) {
+    const url = urls[k];
     promise = await browser.newPage().then(async (page) => {
       await page.goto(`${url}`, {
-                waitUntil: 'load',
-            });
+        waitUntil: 'load',
+      });
+
       // add axe-core to the pages
       await page.addScriptTag({
         path: require.resolve('axe-core')
       });
-      console.log('[' + i + '/' + urls.length-1 + ']   ', url);
+      console.log('[' + k + '/' + (urls.length - 1) + ']   ', url);
       // run axe on the page
       axeResults = await page.evaluate(async () => {
         return await axe.run(document, {
@@ -57,12 +59,11 @@ puppeteer.launch().then(async (browser) => {
           resultTypes: ['violations']
         });
       });
-      delete axeResults.incomplete;
       delete axeResults.inapplicable;
       delete axeResults.passes;
       // add results to the collection of axe results
       if (axeResults.violations.length !== 0) {
-        if (i === 0) {
+        if (k === 0) {
           axeReports.processResults(axeResults, 'csv', 'scripts/a11y/a11y-output-csv', true);
         } else {
           axeReports.processResults(axeResults, 'csv', 'scripts/a11y/a11y-output-csv');
@@ -71,21 +72,19 @@ puppeteer.launch().then(async (browser) => {
       }
       await page.close();
     });
-    promises.push(promise)
+    promises.push(promise);
   }
-  await Promise.all(promises)
+  await Promise.all(promises);
   browser.close();
   //axeReports.processResults(promises, 'csv', '/scripts/a11y/test-results', true);
 
   // write output to file scripts/a11y/a11y-output.txt
-  fs.writeFile("scripts/a11y/a11y-output-txt.txt", util.inspect(results, false, null, true), function(err) {
-    if(err) {
-        return console.log(err);
+  fs.writeFile('scripts/a11y/a11y-output-txt.txt', util.inspect(results, false, null, true), function (err) {
+    if (err) {
+      return console.log(err);
     }
-    console.log();
-    console.log("Logs successfully outputted to: terra-core/scripts/a11y");
+    console.log('\nLogs successfully outputted to: terra-core/scripts/a11y');
   });
   const diff = process.hrtime(time);
-  console.log();
-  console.log(`Script run time: ${diff[0]} seconds.`);
+  console.log(`\nScript run time: ${diff[0]} seconds.`);
 });

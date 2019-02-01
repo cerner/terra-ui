@@ -1,47 +1,68 @@
 const fs = require('fs');
-const util = require('util');
 const puppeteer = require('puppeteer');
 const axe = require('axe-core');
 const axeReports = require('axe-reports');
 
-const fileContents = fs.readFileSync('./dev-site-config/build/routeConfig.js').toString().split('export default');
+const fileContents = fs.readFileSync('./dev-site-config/build/routeConfig.js').toString().split('\n');
 
-const paths = [
-  'https://engineering.cerner.com/terra-ui/#/home/terra-ui/index',
-  'https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/what-is-terra',
-];
+// Remove unuseful data from array
+const filteredFileContents = fileContents
+  .filter(i => !i.includes('import '))
+  .filter(i => !i.includes('export default'))
+  .filter(i => !i.includes("'componentClass'"))
+  .filter(i => !i.includes("'props': void"))
+  .filter(i => !i.includes("'content':"))
+  .filter(i => !i.includes("'props': { 'src'"))
+  .filter(i => !i.includes("'readme':"));
 
-const urls = [];
-const prefixURL = 'https://engineering.cerner.com/terra-ui/#';
+// Clean array to allow it to be parsed as JSON
+const cleanedFileContents = filteredFileContents
+  .join('')
+  .toString()
+  .replace(/\'/g, '"') // eslint-disable-line no-useless-escape
+  .replace(/\n/g, '')
+  .replace(/^/, '{')
+  .replace(/};/, '');
 
-const stringContents = fileContents[1];
+const fileContentsObj = JSON.parse(cleanedFileContents);
 
-const words = stringContents.split(/'path': '/);
+// Create a set of unique URLS from routeConfig
+const uniqueUrls = new Set();
+Object.keys(fileContentsObj).forEach((key) => {
+  if (fileContentsObj[key].path) {
+    uniqueUrls.add(fileContentsObj[key].path);
+  }
+});
 
-// add all the URLs from routeConfig.js to an array
-let i;
-for (i = 0; i < words.length; i += 1) {
-  const url = words[i];
-  var urlNew = url.substring(0, url.indexOf("'"));
-  urlNew = prefixURL + urlNew;
-  urls.push(urlNew);
+const csvFilePath = 'scripts/a11y/a11y-output-csv.csv';
+
+// Delete CSV file if it exists
+if (fs.existsSync(csvFilePath)) {
+  fs.unlink(csvFilePath, (err) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(`${csvFilePath} file deleted successfully`);
+    return null;
+  });
 }
 
-urls.shift(); // remove faulty firsty entry '{\n   }'
+const prefixURL = 'https://engineering.cerner.com/terra-ui/#';
+const urls = Array.from(uniqueUrls).map(route => prefixURL + route);
 
-urls.push(paths[0]); // add 2 urls not included in routeConfig.js
-urls.push(paths[1]);
-
-
-const results = [];
+const results = new Set();
 let axeResults;
 let promise;
 const time = process.hrtime();
+
 puppeteer.launch().then(async (browser) => {
   const promises = [];
+
   console.log('Running...');
+
   for (let k = 0; k < urls.length; k += 1) {
     const url = urls[k];
+    /* eslint-disable no-await-in-loop, no-loop-func */
     promise = await browser.newPage().then(async (page) => {
       await page.goto(`${url}`, {
         waitUntil: 'load',
@@ -49,18 +70,24 @@ puppeteer.launch().then(async (browser) => {
 
       // add axe-core to the pages
       await page.addScriptTag({
-        path: require.resolve('axe-core')
+        path: require.resolve('axe-core'),
       });
-      console.log('[' + k + '/' + (urls.length - 1) + ']   ', url);
+
+      console.log(`[${k}/${urls.length - 1}]   `, url);
+
       // run axe on the page
+      // eslint-disable-next-line arrow-body-style
       axeResults = await page.evaluate(async () => {
+        // eslint-disable-next-line no-return-await
         return await axe.run(document, {
           runOnly: ['wcag2aa', 'section508'],
-          resultTypes: ['violations']
+          resultTypes: ['violations'],
         });
       });
+
       delete axeResults.inapplicable;
       delete axeResults.passes;
+
       // add results to the collection of axe results
       if (axeResults.violations.length !== 0) {
         if (k === 0) {
@@ -68,23 +95,18 @@ puppeteer.launch().then(async (browser) => {
         } else {
           axeReports.processResults(axeResults, 'csv', 'scripts/a11y/a11y-output-csv');
         }
-        results.push(axeResults);
+        results.add(axeResults);
       }
       await page.close();
     });
+
+    /* eslint-disable no-await-in-loop, no-loop-func */
     promises.push(promise);
   }
+  // eslint-disable-next-line compat/compat
   await Promise.all(promises);
   browser.close();
-  //axeReports.processResults(promises, 'csv', '/scripts/a11y/test-results', true);
 
-  // write output to file scripts/a11y/a11y-output.txt
-  fs.writeFile('scripts/a11y/a11y-output-txt.txt', util.inspect(results, false, null, true), function (err) {
-    if (err) {
-      return console.log(err);
-    }
-    console.log('\nLogs successfully outputted to: terra-core/scripts/a11y');
-  });
   const diff = process.hrtime(time);
   console.log(`\nScript run time: ${diff[0]} seconds.`);
 });

@@ -17,6 +17,10 @@ const navConfig = {
       path: '/contributing',
       text: 'Contributing',
       pageTypes: ['contributing'],
+    }, {
+      path: '/issue-form',
+      text: 'Issue Form',
+      pageTypes: ['issueform'],
     }],
   },
 };

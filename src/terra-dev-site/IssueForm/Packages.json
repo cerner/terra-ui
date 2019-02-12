@@ -1,7 +1,6 @@
 {
   "repos": {
-    "terra-core": {
-      "packages": [
+    "terra-core": [
         "terra-action-footer",
         "terra-action-header",
         "terra-alert",
@@ -57,10 +56,8 @@
         "terra-toggle-section-header",
         "terra-toggle",
         "terra-visually-hidden-text"
-      ]
-    },
-    "terra-framework": {
-      "packages": [
+    ],
+    "terra-framework": [
         "terra-abstract-model",
         "terra-aggregator",
         "terra-application-header-layout",
@@ -92,10 +89,8 @@
         "terra-tabs",
         "terra-theme-provider",
         "terra-time-input"
-      ]
-    },
-    "terra-clinical": {
-      "packages": [
+    ],
+    "terra-clinical": [
         "terra-clinical-application",
         "terra-clinical-data-grid",
         "terra-clinical-detail-view",
@@ -105,7 +100,6 @@
         "terra-clinical-item-view",
         "terra-clinical-label-value-view",
         "terra-clinical-onset-picker"
-      ]
-    }
+    ]
   }
 }

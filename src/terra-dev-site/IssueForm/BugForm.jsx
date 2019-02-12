@@ -1,25 +1,49 @@
 import React from 'react';
-import Field from 'terra-form-field';
-import Textarea from 'terra-form-textarea';
+import TextareaField from 'terra-form-textarea/lib/TextareaField';
 
-const BugForm = () => {
+const BugForm = (props) => {
+  const { title, value } = props;
   return (
     <div>
-      <Field label="Title" required help="Literally the most important part of what you're about to do">
-        <Textarea rows={1} required name="title" style={{ resize: 'none', maxWidth: '50em' }} />
-      </Field>
-      <Field label="Issue Description" required help="Describe the issue">
-        <Textarea rows={2} isAutoResizable style={{ minWidth: '50em', maxWidth: '50em' }} />
-      </Field>
-      <Field label="Expected Behavior" required help="Describe the expected behavior">
-        <Textarea rows={2} isAutoResizable style={{ minWidth: '50em', maxWidth: '50em' }} />
-      </Field>
-      <Field label="Current Behavior" required help="Describe the current behavior">
-        <Textarea rows={2} isAutoResizable style={{ minWidth: '50em', maxWidth: '50em' }} />
-      </Field>
-      <Field label="Steps to Reproduce" required help="Detail steps on how to reproduce the issue">
-        <Textarea defaultValue={'1. \n2. \n3. \n4. '} rows={4} isAutoResizable style={{ minWidth: '50em', maxWidth: '50em' }} />
-      </Field>
+      <TextareaField 
+        label="Title"
+        inputId="title"
+        required
+        help="Literally the most important part of what you're about to do"
+        name="title"
+        maxWidth="50em"
+        value={value}
+        onChange={title}
+      />
+      <TextareaField
+        label="Issue Description"
+        inputId="description"
+        required
+        help="Describe the issue"
+        maxWidth="50em"
+      />
+      <TextareaField
+        label="Expected Behavior"
+        inputId="expected"
+        required
+        help="Describe the expected behavior"
+        maxWidth="50em"
+      />
+      <TextareaField
+        label="Current Behavior"
+        inputId="current"
+        required
+        help="Describe the current behavior"
+        maxWidth="50em"
+      />
+      <TextareaField
+        label="Steps to Reproduce"
+        inputId="steps"
+        required
+        help="Detail steps on how to reproduce the issue"
+        defaultValue={'1. \n2. \n3. \n4. '}
+        maxWidth="50em"
+      />
     </div>
   );
 };

@@ -155,7 +155,7 @@
     "glob": "^7.1.1",
     "shx": "^0.3.2",
     "stylelint": "^9.0.0",
-    "stylelint-config-terra": "^1.2.0",
+    "stylelint-config-terra": "^2.0.0",
     "terra-dev-site": "^3.0.0",
     "terra-toolkit": "^4.6.0"
   }

@@ -61,7 +61,18 @@ class IssueForm extends React.Component {
             selectedPackage={this.handlePackageSelect}
             packageList={packageList}
           />
-          { issueType === 'bug' ? <BugForm title={this.handleTitle} value={title} /> : <FeatureForm title={this.handleTitle} value={title} />}
+          { issueType === 'bug' ?
+            <BugForm 
+              title={this.handleTitle}
+              issueBody={this.handleIssueBody}
+              value={title}
+            /> :
+            <FeatureForm
+              title={this.handleTitle}
+              issueBody={this.handleIssueBody}
+              value={title}
+            />
+          }
           <ButtonGroup style={{ paddingLeft: '40em' }}>
             <ButtonGroup.Button text="Preview" key="preview" />
             <ButtonGroup.Button text="Submit" key="Submit" />

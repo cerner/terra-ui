@@ -5,7 +5,7 @@ const BugForm = (props) => {
   const { title, value } = props;
   return (
     <div>
-      <TextareaField 
+      <TextareaField
         label="Title"
         inputId="title"
         required

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Base from 'terra-base';
 import Spacer from 'terra-spacer';
 import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
 import BugForm from './BugForm';
 import FeatureForm from './FeatureForm';
-import SelectForm from './SelectForm';
+import PackageSelect from './PackageSelect';
+import IssueSelect from './IssueSelect';
 import Packages from './Packages.json';
 
 const getPackages = () => {
@@ -21,66 +22,50 @@ const getRepo = (packageName) => {
   return repoName;
 };
 
-class IssueForm extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      issueType: 'bug',
-      selectedPackage: '',
-      selectedRepo: '',
-      issueBody: '',
-      title: '',
-    };
-    this.handleIssueSelect = this.handleIssueSelect.bind(this);
-    this.handlePackageSelect = this.handlePackageSelect.bind(this);
-    this.handleCreateIssue = this.handlePackageSelect.bind(this);
-    this.handleTitle = this.handleTitle.bind(this);
-  }
+const initialState = {
+  issueType: 'bug',
+  title: '',
+};
 
-  handleTitle(event) {
-    this.setState({ title: event.target.value });
-  }
+function IssueForm() {
+  const [issueType, setIssue] = useState(initialState.issueType);
+  const [selectedPackage, setPackage] = useState('');
+  const [title, setTitle] = useState(initialState.title);
+  const packageList = getPackages();
+  const packageRepo = getRepo(selectedPackage);
 
-  handleIssueSelect(issueType) {
-    this.setState({ issueType });
-  }
+  const previousIssueType = useRef(issueType);
+  useEffect(() => {
+    if (previousIssueType.current !== issueType) {
+      setTitle('');
+      previousIssueType.current = issueType;
+    }
+  });
 
-  handlePackageSelect(selectedPackage) {
-    this.setState({ selectedPackage, selectedRepo: getRepo(selectedPackage) });
-  }
-
-  render() {
-    const { issueType, title } = this.state;
-    const packageList = getPackages();
-
-    return (
-      <Spacer padding="large+2">
-        <Base>
-          <SelectForm
-            issueType={this.handleIssueSelect}
-            selectedPackage={this.handlePackageSelect}
-            packageList={packageList}
-          />
-          { issueType === 'bug' ?
-            <BugForm 
-              title={this.handleTitle}
-              issueBody={this.handleIssueBody}
-              value={title}
-            /> :
-            <FeatureForm
-              title={this.handleTitle}
-              issueBody={this.handleIssueBody}
-              value={title}
+  return (
+    <Spacer padding="large+2">
+      <Base>
+        <IssueSelect issueType={issueType} setIssue={setIssue} value={issueType} />
+        <PackageSelect setPackage={setPackage} packageList={packageList} />
+        { issueType === 'bug'
+          ? (
+            <BugForm
+              title={event => setTitle(event.target.value)}
             />
+          )
+          : (
+            <FeatureForm
+              title={event => setTitle(event.target.value)}
+            />
+          )
           }
-          <ButtonGroup style={{ paddingLeft: '40em' }}>
-            <ButtonGroup.Button text="Preview" key="preview" />
-            <ButtonGroup.Button text="Submit" key="Submit" />
-          </ButtonGroup>
-        </Base>
-      </Spacer>
-    );
-  }
+        <ButtonGroup style={{ paddingLeft: '40em' }}>
+          <ButtonGroup.Button text="Preview" key="preview" />
+          <ButtonGroup.Button text="Submit" key="Submit" />
+        </ButtonGroup>
+      </Base>
+    </Spacer>
+  );
 }
 
 export default IssueForm;

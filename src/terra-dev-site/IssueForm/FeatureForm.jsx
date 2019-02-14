@@ -1,7 +1,8 @@
 import React from 'react';
 import TextareaField from 'terra-form-textarea/lib/TextareaField';
 
-const FeatureForm = () => {
+const FeatureForm = (props) => {
+  const { title, value } = props;
   return (
     <div>
       <TextareaField
@@ -11,6 +12,8 @@ const FeatureForm = () => {
         help="Literally the most important part of what you're about to do"
         name="title"
         maxWidth="50em"
+        value={value}
+        onChange={title}
       />
       <TextareaField
         label="Description"

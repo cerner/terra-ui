@@ -11,7 +11,7 @@ const propTypes = {
 
 const repoOptions = Object.keys(JSON.parse(JSON.stringify(Packages)).repos);
 
-const RepoSelect = (props) => {
+function RepoSelect(props) {
   return (
     <Field label="Repo Name" required help="Which repo you're causing problems in">
       <Select style={{ maxWidth: '30em' }} onChange={props.repo} value={props.value}>
@@ -19,7 +19,7 @@ const RepoSelect = (props) => {
       </Select>
     </Field>
   );
-};
+}
 
 RepoSelect.propTypes = propTypes;
 export default RepoSelect;

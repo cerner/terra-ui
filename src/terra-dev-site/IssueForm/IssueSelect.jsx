@@ -1,9 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import Select from 'terra-form-select';
 
+const propTypes = {
+  setIssue: PropTypes.func,
+  value: PropTypes.string,
+};
+
 function IssueSelect(props) {
-  const { setIssue, value } = props;
+  const {
+    setIssue,
+    value,
+  } = props;
 
   return (
     <Field label="Issue Type" required help="Bug report, or feature request">
@@ -15,4 +24,5 @@ function IssueSelect(props) {
   );
 }
 
+IssueSelect.propTypes = propTypes;
 export default IssueSelect;

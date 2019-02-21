@@ -42,7 +42,7 @@ class IssuePreview extends React.Component {
     console.log(targetRef);
     return (
       <React.Fragment>
-        <Popup isOpen={open} contentHeight="auto" targetRef={this.getButtonNode} contentWidth="640" onRequestClose={close}>
+        <Popup isOpen={open} contentHeight="auto" targetRef={targetRef} contentWidth="640" onRequestClose={close}>
           <Spacer padding="large+2">
             <Markdown src={markdownBody} />
           </Spacer>

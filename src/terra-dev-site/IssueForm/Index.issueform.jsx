@@ -61,6 +61,10 @@ ${environment}
 ## @ Mentions
 ${mentions}`;
 
+const titleTemplate = (title, repo, selectedPackage) => `# Title
+[${repo}][${selectedPackage}] ${title}
+`;
+
 const initialState = {
   issueType: 'bug',
   selectedPackage: '',
@@ -73,6 +77,7 @@ const initialState = {
   solution: '',
   environment: '',
   isOpen: false,
+  ref: null,
 };
 
 function IssueForm() {
@@ -96,6 +101,7 @@ function IssueForm() {
   const [solution, setSolution] = useState(initialState.solution);
   const [environment, setEnvironment] = useState(initialState.environment);
   const [isOpen, setIsOpen] = useState(initialState.isOpen);
+  const [ref, setRef] = useState(initialState.ref);
 
   const packageList = getPackages();
   const packageRepo = getRepo(selectedPackage);
@@ -103,6 +109,8 @@ function IssueForm() {
   const issueBody = issueType === 'bug'
     ? bugBody(description, steps, context, expected, solution, environment, mentions)
     : featureBody(description, context, mentions);
+
+  const markdownBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
 
   const submitForm = () => {
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
@@ -112,15 +120,6 @@ function IssueForm() {
     );
   };
 
-  const previewForm = () => {
-    setIsOpen(true);
-    return (
-      <IssuePreview isOpen={isOpen} setIsOpen={setIsOpen}>
-        <div>balls</div>
-      </IssuePreview>
-    )
-  }
-
   const openPopup = () => {
     setIsOpen(true);
   }
@@ -129,9 +128,9 @@ function IssueForm() {
     setIsOpen(false);
   }
 
-  const popupRef = useRef(null);
+  const popupRef = useRef();
   const newTarget = () => {
-    return popupRef.current;
+    return setRef(popupRef.current);
   }
 
   return (
@@ -162,12 +161,20 @@ function IssueForm() {
           )
           }
         <ButtonGroup style={{ paddingLeft: '40em' }}>
-          <IssuePreview title={title} repo={packageRepo} openPopup={openPopup} targetRef={newTarget} open={isOpen} close={closePopup} selectedPackage={selectedPackage} issueBody={issueBody} key="Preview" />
+          <React.Fragment>
+            <Popup isOpen={isOpen} contentHeight="auto" targetRef={ref} contentWidth="640" onRequestClose={closePopup} key="preview-popup">
+              <Spacer padding="large+2">
+                <Markdown src={markdownBody} />
+              </Spacer>
+            </Popup>
+            <Button text="Preview" onClick={openPopup} refCallback={newTarget} key="Preview" />
+          </React.Fragment>
           <ButtonGroup.Button text="Submit" key="Submit" onClick={submitForm} />
         </ButtonGroup>
       </Base>
     </Spacer>
   );
 }
+//          <IssuePreview title={title} repo={packageRepo} openPopup={openPopup} targetRef={newTarget} open={isOpen} close={closePopup} selectedPackage={selectedPackage} issueBody={issueBody} key="Preview" />
 
 export default IssueForm;

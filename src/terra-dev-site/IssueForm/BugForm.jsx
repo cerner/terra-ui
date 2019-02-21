@@ -10,8 +10,8 @@ const propTypes = {
   context: PropTypes.func,
   solution: PropTypes.func,
   environment: PropTypes.func,
+  environmentTemplate: PropTypes.string,
   mentions: PropTypes.func,
-  value: PropTypes.string,
 };
 
 const BugForm = (props) => {
@@ -23,15 +23,9 @@ const BugForm = (props) => {
     context,
     solution,
     environment,
+    environmentTemplate,
     mentions,
-    value
   } = props;
-
-  const environmentDefault = `* Component Name and Version: 
-* Browser Name and Version: 
-* Node/npm Version [e.g. Node 8/npm 5]: 
-* Webpack Version: 
-* Operating System and version (desktop or mobile): `;
 
   return (
     <div>
@@ -42,7 +36,6 @@ const BugForm = (props) => {
         help="Literally the most important part of what you're about to do"
         name="title"
         maxWidth="50em"
-        value={value}
         onChange={title}
       />
       <TextareaField
@@ -92,7 +85,7 @@ const BugForm = (props) => {
         size="large"
         help="Include as many relevant details about the environment you experienced the bug in."
         maxWidth="50em"
-        defaultValue={environmentDefault}
+        defaultValue={environmentTemplate}
         onChange={environment}
       />
       <TextareaField

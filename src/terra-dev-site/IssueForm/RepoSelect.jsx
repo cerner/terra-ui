@@ -12,9 +12,14 @@ const propTypes = {
 const repoOptions = Object.keys(JSON.parse(JSON.stringify(Packages)).repos);
 
 function RepoSelect(props) {
+  const {
+    repo,
+    value,
+  } = props;
+
   return (
     <Field label="Repo Name" required help="Which repo you're causing problems in">
-      <Select style={{ maxWidth: '30em' }} onChange={props.repo} value={props.value}>
+      <Select style={{ maxWidth: '30em' }} onChange={repo} value={value}>
         {repoOptions.map(currentRepo => <Select.Option value={currentRepo} display={currentRepo} key={currentRepo}>{currentRepo}</Select.Option>)}
       </Select>
     </Field>

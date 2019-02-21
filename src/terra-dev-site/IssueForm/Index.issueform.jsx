@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Base from 'terra-base';
 import Spacer from 'terra-spacer';
 import Button from 'terra-button';
-import Overlay from 'terra-overlay';
 import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
 import Popup from 'terra-popup';
 import Markdown from 'terra-markdown';
@@ -10,20 +9,17 @@ import BugForm from './BugForm';
 import FeatureForm from './FeatureForm';
 import PackageSelect from './PackageSelect';
 import IssueSelect from './IssueSelect';
-import IssuePreview from './IssuePreview';
 import Packages from './Packages.json';
 
 const repoList = JSON.parse(JSON.stringify(Packages)).repos;
 
 const getPackages = () => {
   const packageList = Object.values(repoList).map(item => item);
-
   return packageList.concat.apply([], packageList);
 };
 
 const getRepo = (packageName) => {
   const repoName = Object.keys(repoList).find(key => repoList[key].includes(packageName));
-
   return repoName;
 };
 
@@ -61,13 +57,21 @@ ${environment}
 ## @ Mentions
 ${mentions}`;
 
-const titleTemplate = (title, repo, selectedPackage) => `# Title
-[${repo}][${selectedPackage}] ${title}
+const environmentTemplate = `* Component Name and Version: 
+* Browser Name and Version: 
+* Node/npm Version [e.g. Node 8/npm 5]: 
+* Webpack Version: 
+* Operating System and version (desktop or mobile): `;
+
+const titleTemplate = (title, repo, selectedPackage) => `# Repo
+${repo}
+# Title
+[${selectedPackage}] ${title}
 `;
 
 const initialState = {
   issueType: 'bug',
-  selectedPackage: '',
+  selectedPackage: 'terra-action-footer',
   title: '',
   description: '',
   context: '',
@@ -75,23 +79,15 @@ const initialState = {
   steps: '',
   expected: '',
   solution: '',
-  environment: '',
+  environment: environmentTemplate,
   isOpen: false,
-  ref: null,
+  count: 0,
 };
 
 function IssueForm() {
   const [title, setTitle] = useState(initialState.title);
   const [issueType, setIssue] = useState(initialState.issueType);
-
-  const previousIssueType = useRef(issueType);
-  useEffect(() => {
-    if (previousIssueType.current !== issueType) {
-      setTitle('');
-      previousIssueType.current = issueType;
-    }
-  });
-
+  const [count, setCount] = useState(initialState.count);
   const [selectedPackage, setPackage] = useState(initialState.selectedPackage);
   const [description, setDescription] = useState(initialState.description);
   const [context, setContext] = useState(initialState.context);
@@ -101,7 +97,33 @@ function IssueForm() {
   const [solution, setSolution] = useState(initialState.solution);
   const [environment, setEnvironment] = useState(initialState.environment);
   const [isOpen, setIsOpen] = useState(initialState.isOpen);
-  const [ref, setRef] = useState(initialState.ref);
+
+  const previousIssueType = useRef(issueType);
+  useEffect(() => {
+    if (previousIssueType.current !== issueType) {
+      if (issueType === 'bug') {
+        setTitle('');
+        setDescription('');
+        setContext('');
+        setMentions('');
+        setSteps('');
+        setExpected('');
+        setSolution('');
+        setEnvironment(environmentTemplate);
+      } else {
+        setTitle('');
+        setDescription('');
+        setContext('');
+        setMentions('');
+      }
+      setCount(0);
+      previousIssueType.current = issueType;
+    }
+    const total = issueType === 'bug'
+      ? [title, selectedPackage, description, context, mentions, steps, expected, solution, environment].reduce((prev, current) => prev + current).length
+      : [title, selectedPackage, description, context, mentions].reduce((prev, current) => prev + current).length;
+    setCount(total);
+  });
 
   const packageList = getPackages();
   const packageRepo = getRepo(selectedPackage);
@@ -109,29 +131,23 @@ function IssueForm() {
   const issueBody = issueType === 'bug'
     ? bugBody(description, steps, context, expected, solution, environment, mentions)
     : featureBody(description, context, mentions);
-
-  const markdownBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
+  const previewBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
 
   const submitForm = () => {
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
-
     window.open(
       `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${title}&body=${encodeBody}`,
     );
   };
 
-  const openPopup = () => {
-    setIsOpen(true);
-  }
+  const popupTarget = () => document.getElementById('preview-button');
+  const errorSrc = `Character count for form exceeded. If you require more space, submit the issue directly to [github](https://github.com/cerner/${packageRepo}/issues/new/choose).`;
 
-  const closePopup = () => {
-    setIsOpen(false);
-  }
-
-  const popupRef = useRef();
-  const newTarget = () => {
-    return setRef(popupRef.current);
-  }
+  const togglePopup = () => {
+    return !isOpen
+      ? setIsOpen(true)
+      : setIsOpen(false);
+  };
 
   return (
     <Spacer padding="large+2">
@@ -147,6 +163,7 @@ function IssueForm() {
               expected={event => setExpected(event.target.value)}
               solution={event => setSolution(event.target.value)}
               environment={event => setEnvironment(event.target.value)}
+              environmentTemplate={environmentTemplate}
               context={event => setContext(event.target.value)}
               mentions={event => setMentions(event.target.value)}
             />
@@ -160,14 +177,28 @@ function IssueForm() {
             />
           )
           }
+        <p>
+          {`Character count / max: ${count} / `}
+          {count > 5500 ? <span style={{ color: 'red' }}>5500</span> : 5500}
+        </p>
         <ButtonGroup style={{ paddingLeft: '40em' }}>
-          <React.Fragment>
-            <Popup isOpen={isOpen} contentHeight="auto" targetRef={ref} contentWidth="640" onRequestClose={closePopup} key="preview-popup">
-              <Spacer padding="large+2">
-                <Markdown src={markdownBody} />
-              </Spacer>
-            </Popup>
-            <Button text="Preview" onClick={openPopup} refCallback={newTarget} key="Preview" />
+          <React.Fragment key="popup">
+            { count > 5500
+              ? (
+                <Popup contentAttachment="top center" isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="auto" onRequestClose={togglePopup}>
+                  <Spacer style={{ textAlign: 'center' }} padding="large">
+                    <Markdown src={errorSrc} />
+                  </Spacer>
+                </Popup>
+              )
+              : (
+                <Popup isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="960" onRequestClose={togglePopup}>
+                  <Spacer padding="large+2">
+                    <Markdown src={previewBody} />
+                  </Spacer>
+                </Popup>
+              )}
+            <Button id="preview-button" text="Preview" onClick={togglePopup} key="Preview" />
           </React.Fragment>
           <ButtonGroup.Button text="Submit" key="Submit" onClick={submitForm} />
         </ButtonGroup>
@@ -175,6 +206,5 @@ function IssueForm() {
     </Spacer>
   );
 }
-//          <IssuePreview title={title} repo={packageRepo} openPopup={openPopup} targetRef={newTarget} open={isOpen} close={closePopup} selectedPackage={selectedPackage} issueBody={issueBody} key="Preview" />
 
 export default IssueForm;

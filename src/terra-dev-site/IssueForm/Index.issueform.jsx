@@ -1,11 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import Base from 'terra-base';
 import Spacer from 'terra-spacer';
+import Button from 'terra-button';
+import Overlay from 'terra-overlay';
 import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
+import Popup from 'terra-popup';
+import Markdown from 'terra-markdown';
 import BugForm from './BugForm';
 import FeatureForm from './FeatureForm';
 import PackageSelect from './PackageSelect';
 import IssueSelect from './IssueSelect';
+import IssuePreview from './IssuePreview';
 import Packages from './Packages.json';
 
 const repoList = JSON.parse(JSON.stringify(Packages)).repos;
@@ -67,21 +72,12 @@ const initialState = {
   expected: '',
   solution: '',
   environment: '',
+  isOpen: false,
 };
 
 function IssueForm() {
-  const [issueType, setIssue] = useState(initialState.issueType);
-  const [selectedPackage, setPackage] = useState(initialState.selectedPackage);
   const [title, setTitle] = useState(initialState.title);
-  const [description, setDescription] = useState(initialState.description);
-  const [context, setContext] = useState(initialState.context);
-  const [mentions, setMentions] = useState(initialState.mentions);
-  const [steps, setSteps] = useState(initialState.steps);
-  const [expected, setExpected] = useState(initialState.expected);
-  const [solution, setSolution] = useState(initialState.solution);
-  const [environment, setEnvironment] = useState(initialState.environment);
-  const packageList = getPackages();
-  const packageRepo = getRepo(selectedPackage);
+  const [issueType, setIssue] = useState(initialState.issueType);
 
   const previousIssueType = useRef(issueType);
   useEffect(() => {
@@ -91,17 +87,52 @@ function IssueForm() {
     }
   });
 
-  const submitForm = () => {
-    const issueBody = issueType === 'bug'
-      ? bugBody(description, steps, context, expected, solution, environment, mentions)
-      : featureBody(description, context, mentions);
+  const [selectedPackage, setPackage] = useState(initialState.selectedPackage);
+  const [description, setDescription] = useState(initialState.description);
+  const [context, setContext] = useState(initialState.context);
+  const [mentions, setMentions] = useState(initialState.mentions);
+  const [steps, setSteps] = useState(initialState.steps);
+  const [expected, setExpected] = useState(initialState.expected);
+  const [solution, setSolution] = useState(initialState.solution);
+  const [environment, setEnvironment] = useState(initialState.environment);
+  const [isOpen, setIsOpen] = useState(initialState.isOpen);
 
+  const packageList = getPackages();
+  const packageRepo = getRepo(selectedPackage);
+
+  const issueBody = issueType === 'bug'
+    ? bugBody(description, steps, context, expected, solution, environment, mentions)
+    : featureBody(description, context, mentions);
+
+  const submitForm = () => {
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
 
     window.open(
       `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${title}&body=${encodeBody}`,
     );
   };
+
+  const previewForm = () => {
+    setIsOpen(true);
+    return (
+      <IssuePreview isOpen={isOpen} setIsOpen={setIsOpen}>
+        <div>balls</div>
+      </IssuePreview>
+    )
+  }
+
+  const openPopup = () => {
+    setIsOpen(true);
+  }
+
+  const closePopup = () => {
+    setIsOpen(false);
+  }
+
+  const popupRef = useRef(null);
+  const newTarget = () => {
+    return popupRef.current;
+  }
 
   return (
     <Spacer padding="large+2">
@@ -131,7 +162,7 @@ function IssueForm() {
           )
           }
         <ButtonGroup style={{ paddingLeft: '40em' }}>
-          <ButtonGroup.Button text="Preview" key="preview" />
+          <IssuePreview title={title} repo={packageRepo} openPopup={openPopup} targetRef={newTarget} open={isOpen} close={closePopup} selectedPackage={selectedPackage} issueBody={issueBody} key="Preview" />
           <ButtonGroup.Button text="Submit" key="Submit" onClick={submitForm} />
         </ButtonGroup>
       </Base>

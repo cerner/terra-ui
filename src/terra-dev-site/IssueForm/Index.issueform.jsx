@@ -242,7 +242,7 @@ function IssueForm() {
                     {`Character count / max: ${count} / `}
                     {count > 5500 ? <span style={{ color: 'red' }}>5500</span> : 5500}
                   </p>
-                  <ButtonGroup style={{ paddingLeft: '40em' }}>
+                  <ButtonGroup>
                     <React.Fragment key="popup">
                       { count > 5500
                         ? (
@@ -325,7 +325,7 @@ function IssueForm() {
                     {`Character count / max: ${count} / `}
                     {count > 5500 ? <span style={{ color: 'red' }}>5500</span> : 5500}
                   </p>
-                  <ButtonGroup style={{ paddingLeft: '40em' }}>
+                  <ButtonGroup>
                     <React.Fragment key="popup">
                       { count > 5500
                         ? (
@@ -342,9 +342,9 @@ function IssueForm() {
                             </Spacer>
                           </Popup>
                         )}
-                      <Button id="preview-button" text="Preview" onClick={togglePopup} key="Preview" />
                     </React.Fragment>
-                    <ButtonGroup.Button text="Submit" key="Submit" type="submit" disabled={pristine || invalid} />
+                    <ButtonGroup.Button id="preview-button" text="Preview" onClick={togglePopup} key="Preview" />
+                    <ButtonGroup.Button text="Submit" key="Submit" type="submit" />
                   </ButtonGroup>
                 </form>
               )

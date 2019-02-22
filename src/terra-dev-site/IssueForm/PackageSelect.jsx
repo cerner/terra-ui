@@ -15,7 +15,7 @@ const PackageSelect = (props) => {
   } = props;
 
   return (
-    <Field label="Package Name" required help="Which package you have broken">
+    <Field label="Package Name" help="Selected package for issue / feature request.">
       <Select style={{ maxWidth: '30em' }} onChange={setPackage} defaultValue="terra-action-footer">
         {packageList.map(currentPackage => <Select.Option value={currentPackage} display={currentPackage} key={currentPackage} />)}
       </Select>

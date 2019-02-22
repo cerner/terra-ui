@@ -17,11 +17,11 @@ const featureBody = (description, context, mentions) => `# Feature Request
 ## Description
 ${description}
 
-## Additional Context / Screenshots
-${context}
+${context ? `## Additional Context / Screenshots
+${context}` : ''}
 
-## @ Mentions
-${mentions}`;
+${mentions ? `## @ Mentions
+${mentions}` : ''}`;
 
 const bugBody = (description, steps, context, expected, solution, environment, mentions) => `# Bug Report
 
@@ -31,20 +31,20 @@ ${description}
 ## Steps to Reproduce
 ${steps}
 
-## Additional Context / Screenshots
-${context}
-
 ## Expected Behavior
 ${expected}
-
-## Possible Solution
-${solution}
 
 ## Environment
 ${environment}
 
-## @ Mentions
-${mentions}`;
+${context ? `## Additional Context / Screenshots
+${context}` : ''}
+
+${solution ? `## Possible Solution
+${solution}` : ''}
+
+${mentions ? `## @ Mentions
+${mentions}` : ''}`;
 
 const environmentTemplate = `* Component Name and Version: 
 * Browser Name and Version: 

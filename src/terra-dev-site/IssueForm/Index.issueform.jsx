@@ -198,6 +198,25 @@ function IssueForm() {
                       />
                     )}
                   </Field>
+                  <Field
+                    name="environment"
+                    validate={validateForm}
+                  >
+                    {({ input, meta }) => (
+                      <TextareaField
+                        label="Environment"
+                        inputId="environment"
+                        required
+                        error={meta.error}
+                        isInvalid={meta.invalid && meta.touched}
+                        help="Include as many relevant details about the environment you experienced the bug in."
+                        maxWidth="50em"
+                        defaultValue={environmentTemplate}
+                        onChange={(event) => { input.onChange(event.target.value); setEnvironment(event.target.value); }}
+                        inputAttrs={{ ...input }}
+                      />
+                    )}
+                  </Field>
                   <TextareaField
                     label="Additional Context / Screenshots"
                     inputId="context"
@@ -211,15 +230,6 @@ function IssueForm() {
                     help="If you have suggestions to fix the bug, let us know."
                     maxWidth="50em"
                     onChange={event => setSolution(event.target.value)}
-                  />
-                  <TextareaField
-                    label="Environment"
-                    inputId="environment"
-                    size="large"
-                    help="Include as many relevant details about the environment you experienced the bug in."
-                    maxWidth="50em"
-                    defaultValue={environmentTemplate}
-                    onChange={event => setEnvironment(event.target.value)}
                   />
                   <TextareaField
                     label="Mentions"

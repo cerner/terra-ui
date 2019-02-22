@@ -16,7 +16,7 @@ const PackageSelect = (props) => {
 
   return (
     <Field label="Package Name" required help="Which package you have broken">
-      <Select style={{ maxWidth: '30em' }} onChange={setPackage}>
+      <Select style={{ maxWidth: '30em' }} onChange={setPackage} defaultValue="terra-action-footer">
         {packageList.map(currentPackage => <Select.Option value={currentPackage} display={currentPackage} key={currentPackage} />)}
       </Select>
     </Field>

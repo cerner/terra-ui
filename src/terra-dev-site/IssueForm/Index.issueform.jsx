@@ -1,73 +1,30 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Form, Field } from 'react-final-form';
 import Base from 'terra-base';
 import Spacer from 'terra-spacer';
 import Button from 'terra-button';
 import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
 import Popup from 'terra-popup';
 import Markdown from 'terra-markdown';
-import BugForm from './BugForm';
-import FeatureForm from './FeatureForm';
+import TextareaField from 'terra-form-textarea/lib/TextareaField';
 import PackageSelect from './PackageSelect';
 import IssueSelect from './IssueSelect';
-import Packages from './Packages.json';
+import {
+  getPackages, getRepo, featureBody, bugBody, environmentTemplate, titleTemplate,
+} from './Helper';
 
-const repoList = JSON.parse(JSON.stringify(Packages)).repos;
+/* eslint-disable compat/compat */
+const validateForm = async (value) => {
+  const response = new Promise((resolve) => {
+    if (!value) {
+      return resolve('Field is required.');
+    }
+    return resolve('');
+  });
 
-const getPackages = () => {
-  const packageList = Object.values(repoList).map(item => item);
-  return packageList.concat.apply([], packageList);
+  await response;
+  return response;
 };
-
-const getRepo = (packageName) => {
-  const repoName = Object.keys(repoList).find(key => repoList[key].includes(packageName));
-  return repoName;
-};
-
-const featureBody = (description, context, mentions) => `# Feature Request
-
-## Description
-${description}
-
-## Additional Context / Screenshots
-${context}
-
-## @ Mentions
-${mentions}`;
-
-const bugBody = (description, steps, context, expected, solution, environment, mentions) => `# Bug Report
-
-## Description
-${description}
-
-## Steps to Reproduce
-${steps}
-
-## Additional Context / Screenshots
-${context}
-
-## Expected Behavior
-${expected}
-
-## Possible Solution
-${solution}
-
-## Environment
-${environment}
-
-## @ Mentions
-${mentions}`;
-
-const environmentTemplate = `* Component Name and Version: 
-* Browser Name and Version: 
-* Node/npm Version [e.g. Node 8/npm 5]: 
-* Webpack Version: 
-* Operating System and version (desktop or mobile): `;
-
-const titleTemplate = (title, repo, selectedPackage) => `# Repo
-${repo}
-# Title
-[${selectedPackage}] ${title}
-`;
 
 const initialState = {
   issueType: 'bug',
@@ -133,7 +90,10 @@ function IssueForm() {
     : featureBody(description, context, mentions);
   const previewBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
 
-  const submitForm = () => {
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+  const submitForm = async () => {
+    await sleep(300);
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
     window.open(
       `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${title}&body=${encodeBody}`,
@@ -150,61 +110,241 @@ function IssueForm() {
   };
 
   return (
-    <Spacer padding="large+2">
-      <Base>
-        <IssueSelect issueType={issueType} setIssue={setIssue} value={issueType} />
-        <PackageSelect setPackage={setPackage} packageList={packageList} />
-        { issueType === 'bug'
-          ? (
-            <BugForm
-              title={event => setTitle(event.target.value)}
-              description={event => setDescription(event.target.value)}
-              steps={event => setSteps(event.target.value)}
-              expected={event => setExpected(event.target.value)}
-              solution={event => setSolution(event.target.value)}
-              environment={event => setEnvironment(event.target.value)}
-              environmentTemplate={environmentTemplate}
-              context={event => setContext(event.target.value)}
-              mentions={event => setMentions(event.target.value)}
-            />
-          )
-          : (
-            <FeatureForm
-              title={event => setTitle(event.target.value)}
-              description={event => setDescription(event.target.value)}
-              context={event => setContext(event.target.value)}
-              mentions={event => setMentions(event.target.value)}
-            />
-          )
-          }
-        <p>
-          {`Character count / max: ${count} / `}
-          {count > 5500 ? <span style={{ color: 'red' }}>5500</span> : 5500}
-        </p>
-        <ButtonGroup style={{ paddingLeft: '40em' }}>
-          <React.Fragment key="popup">
-            { count > 5500
+    <Form
+      onSubmit={submitForm}
+      render={({ handleSubmit, pristine, invalid }) => (
+        <Spacer padding="large+2">
+          <Base>
+            <IssueSelect issueType={issueType} setIssue={setIssue} value={issueType} />
+            <PackageSelect setPackage={setPackage} packageList={packageList} />
+            { issueType === 'bug'
               ? (
-                <Popup contentAttachment="top center" isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="auto" onRequestClose={togglePopup}>
-                  <Spacer style={{ textAlign: 'center' }} padding="large">
-                    <Markdown src={errorSrc} />
-                  </Spacer>
-                </Popup>
+                <form
+                  onSubmit={handleSubmit}
+                >
+                  <Field
+                    name="title"
+                    validate={validateForm}
+                  >
+                    {({ input, meta }) => (
+                      <TextareaField
+                        label="Title"
+                        inputId="title"
+                        required
+                        error={meta.error}
+                        isInvalid={meta.invalid && meta.touched}
+                        help="Brief description. Selected package will be included in title."
+                        maxWidth="50em"
+                        onChange={(event) => { input.onChange(event.target.value); setTitle(event.target.value); }}
+                        value={input.value}
+                        inputAttrs={{ ...input }}
+                      />
+                    )}
+                  </Field>
+                  <Field
+                    name="description"
+                    validate={validateForm}
+                  >
+                    {({ input, meta }) => (
+                      <TextareaField
+                        label="Issue Description"
+                        inputId="description"
+                        required
+                        error={meta.error}
+                        isInvalid={meta.invalid && meta.touched}
+                        help="A clear and concise description of what the bug is. Providing a link to a live example / minimal demo of the problem greatly helps us debug issues."
+                        maxWidth="50em"
+                        onChange={(event) => { input.onChange(event.target.value); setDescription(event.target.value); }}
+                        value={input.value}
+                        inputAttrs={{ ...input }}
+                      />
+                    )}
+                  </Field>
+                  <Field
+                    name="steps"
+                    validate={validateForm}
+                  >
+                    {({ input, meta }) => (
+                      <TextareaField
+                        label="Steps to Reproduce"
+                        inputId="steps"
+                        required
+                        error={meta.error}
+                        isInvalid={meta.invalid && meta.touched}
+                        help="Please specify the exact steps you took for this bug to occur. Provide as much detail as possible so we're able to reproduce these steps."
+                        maxWidth="50em"
+                        onChange={(event) => { input.onChange(event.target.value); setSteps(event.target.value); }}
+                        value={input.value}
+                        inputAttrs={{ ...input }}
+                      />
+                    )}
+                  </Field>
+                  <Field
+                    name="expected"
+                    validate={validateForm}
+                  >
+                    {({ input, meta }) => (
+                      <TextareaField
+                        label="Expected Behavior"
+                        inputId="description"
+                        required
+                        error={meta.error}
+                        isInvalid={meta.invalid && meta.touched}
+                        help="A clear and concise description of what you expected to happen."
+                        maxWidth="50em"
+                        onChange={(event) => { input.onChange(event.target.value); setExpected(event.target.value); }}
+                        value={input.value}
+                        inputAttrs={{ ...input }}
+                      />
+                    )}
+                  </Field>
+                  <TextareaField
+                    label="Additional Context / Screenshots"
+                    inputId="context"
+                    help="Add any other context about the feature here. If applicable, add screenshots to help explain."
+                    maxWidth="50em"
+                    onChange={event => setContext(event.target.value)}
+                  />
+                  <TextareaField
+                    label="Possible Solution"
+                    inputId="solution"
+                    help="If you have suggestions to fix the bug, let us know."
+                    maxWidth="50em"
+                    onChange={event => setSolution(event.target.value)}
+                  />
+                  <TextareaField
+                    label="Environment"
+                    inputId="environment"
+                    size="large"
+                    help="Include as many relevant details about the environment you experienced the bug in."
+                    maxWidth="50em"
+                    defaultValue={environmentTemplate}
+                    onChange={event => setEnvironment(event.target.value)}
+                  />
+                  <TextareaField
+                    label="Mentions"
+                    inputId="mentions"
+                    help="@ Mention anyone on the terra team that you have been working with so far."
+                    maxWidth="50em"
+                    onChange={event => setMentions(event.target.value)}
+                  />
+                  <p>
+                    {`Character count / max: ${count} / `}
+                    {count > 5500 ? <span style={{ color: 'red' }}>5500</span> : 5500}
+                  </p>
+                  <ButtonGroup style={{ paddingLeft: '40em' }}>
+                    <React.Fragment key="popup">
+                      { count > 5500
+                        ? (
+                          <Popup contentAttachment="top center" isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="auto" onRequestClose={togglePopup}>
+                            <Spacer style={{ textAlign: 'center' }} padding="large">
+                              <Markdown src={errorSrc} />
+                            </Spacer>
+                          </Popup>
+                        )
+                        : (
+                          <Popup isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="960" onRequestClose={togglePopup}>
+                            <Spacer padding="large+2">
+                              <Markdown src={previewBody} />
+                            </Spacer>
+                          </Popup>
+                        )}
+                      <Button id="preview-button" text="Preview" onClick={togglePopup} key="Preview" />
+                    </React.Fragment>
+                    <ButtonGroup.Button text="Submit" key="Submit" type="submit" disabled={pristine || invalid} />
+                  </ButtonGroup>
+                </form>
               )
               : (
-                <Popup isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="960" onRequestClose={togglePopup}>
-                  <Spacer padding="large+2">
-                    <Markdown src={previewBody} />
-                  </Spacer>
-                </Popup>
-              )}
-            <Button id="preview-button" text="Preview" onClick={togglePopup} key="Preview" />
-          </React.Fragment>
-          <ButtonGroup.Button text="Submit" key="Submit" onClick={submitForm} />
-        </ButtonGroup>
-      </Base>
-    </Spacer>
+                <form
+                  onSubmit={handleSubmit}
+                >
+                  <Field
+                    name="title"
+                    validate={validateForm}
+                  >
+                    {({ input, meta }) => (
+                      <TextareaField
+                        label="Title"
+                        inputId="title"
+                        required
+                        error={meta.error}
+                        isInvalid={meta.invalid && meta.touched}
+                        help="Brief description. Selected package will be included in title."
+                        maxWidth="50em"
+                        onChange={(event) => { input.onChange(event.target.value); setTitle(event.target.value); }}
+                        value={input.value}
+                        inputAttrs={{ ...input }}
+                      />
+                    )}
+                  </Field>
+                  <Field
+                    name="description"
+                    validate={validateForm}
+                  >
+                    {({ input, meta }) => (
+                      <TextareaField
+                        label="Description"
+                        inputId="description"
+                        required
+                        error={meta.error}
+                        isInvalid={meta.invalid && meta.touched}
+                        help="A clear and concise description of what the feature is."
+                        maxWidth="50em"
+                        onChange={(event) => { input.onChange(event.target.value); setDescription(event.target.value); }}
+                        value={input.value}
+                        inputAttrs={{ ...input }}
+                      />
+                    )}
+                  </Field>
+                  <TextareaField
+                    label="Additional Context / Screenshots"
+                    inputId="context"
+                    help="Add any other context about the feature here. If applicable, add screenshots to help explain."
+                    maxWidth="50em"
+                    onChange={event => setContext(event.target.value)}
+                  />
+                  <TextareaField
+                    label="Mentions"
+                    inputId="mentions"
+                    help="@ Mention anyone on the terra team that you have been working with so far."
+                    maxWidth="50em"
+                    onChange={event => setMentions(event.target.value)}
+                  />
+                  <p>
+                    {`Character count / max: ${count} / `}
+                    {count > 5500 ? <span style={{ color: 'red' }}>5500</span> : 5500}
+                  </p>
+                  <ButtonGroup style={{ paddingLeft: '40em' }}>
+                    <React.Fragment key="popup">
+                      { count > 5500
+                        ? (
+                          <Popup contentAttachment="top center" isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="auto" onRequestClose={togglePopup}>
+                            <Spacer style={{ textAlign: 'center' }} padding="large">
+                              <Markdown src={errorSrc} />
+                            </Spacer>
+                          </Popup>
+                        )
+                        : (
+                          <Popup isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="960" onRequestClose={togglePopup}>
+                            <Spacer padding="large+2">
+                              <Markdown src={previewBody} />
+                            </Spacer>
+                          </Popup>
+                        )}
+                      <Button id="preview-button" text="Preview" onClick={togglePopup} key="Preview" />
+                    </React.Fragment>
+                    <ButtonGroup.Button text="Submit" key="Submit" type="submit" disabled={pristine || invalid} />
+                  </ButtonGroup>
+                </form>
+              )
+            }
+          </Base>
+        </Spacer>
+      )}
+    />
   );
 }
+
 
 export default IssueForm;

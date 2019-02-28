@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Form } from 'react-final-form';
 import Base from 'terra-base';
-import Spacer from 'terra-spacer';
 import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
-import Popup from 'terra-popup';
 import Markdown from 'terra-markdown';
-import PackageSelect from './PackageSelect';
-import IssueSelect from './IssueSelect';
+import Popup from 'terra-popup';
+import Spacer from 'terra-spacer';
 import BugForm from './BugForm';
 import FeatureForm from './FeatureForm';
+import IssueSelect from './IssueSelect';
+import PackageSelect from './PackageSelect';
 import {
-  getPackages, getRepo, featureTemplate, bugTemplate, environmentTemplate, titleTemplate,
+  bugTemplate, environmentTemplate, errorTemplate, featureTemplate, getPackages, getRepo, titleTemplate,
 } from './Helper';
 
 const initialState = {
@@ -63,16 +63,22 @@ function IssueForm() {
     setCount(total);
   });
 
+  /* eslint-disable compat/compat */
   const packageList = getPackages();
   const packageRepo = getRepo(selectedPackage);
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   const issueBody = issueType === 'bug'
     ? bugTemplate(description, steps, context, expected, solution, environment, mentions)
     : featureTemplate(description, context, mentions);
   const previewBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
 
-  /* eslint-disable compat/compat */
-  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const popupTarget = () => document.getElementById('preview-button');
+  const togglePopup = () => {
+    return !isOpen
+      ? setIsOpen(true)
+      : setIsOpen(false);
+  };
 
   const submitForm = async () => {
     await sleep(500);
@@ -82,15 +88,6 @@ function IssueForm() {
     window.open(
       `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${encodeTitle}&body=${encodeBody}`,
     );
-  };
-
-  const popupTarget = () => document.getElementById('preview-button');
-  const errorSrc = `Character count for form exceeded. If you require more space, submit the issue directly to [github](https://github.com/cerner/${packageRepo}/issues/new/choose).`;
-
-  const togglePopup = () => {
-    return !isOpen
-      ? setIsOpen(true)
-      : setIsOpen(false);
   };
 
   return (
@@ -136,22 +133,54 @@ function IssueForm() {
                 <React.Fragment key="popup">
                   { count > 5500
                     ? (
-                      <Popup contentAttachment="top center" isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="auto" onRequestClose={togglePopup}>
-                        <Spacer style={{ textAlign: 'center' }} padding="large">
-                          <Markdown src={errorSrc} />
+                      <Popup
+                        contentAttachment="top center"
+                        isOpen={isOpen}
+                        contentHeight="auto"
+                        targetRef={popupTarget}
+                        contentWidth="auto"
+                        onRequestClose={togglePopup}
+                      >
+                        <Spacer
+                          style={{ textAlign: 'center' }}
+                          padding="large"
+                        >
+                          <Markdown
+                            src={errorTemplate}
+                          />
                         </Spacer>
                       </Popup>
                     )
                     : (
-                      <Popup isOpen={isOpen} contentHeight="auto" targetRef={popupTarget} contentWidth="960" onRequestClose={togglePopup}>
-                        <Spacer padding="large+2">
-                          <Markdown src={previewBody} />
+                      <Popup
+                        isOpen={isOpen}
+                        contentHeight="auto"
+                        targetRef={popupTarget}
+                        contentWidth="960"
+                        onRequestClose={togglePopup}
+                      >
+                        <Spacer
+                          padding="large+2"
+                        >
+                          <Markdown
+                            src={previewBody}
+                          />
                         </Spacer>
                       </Popup>
                     )}
                 </React.Fragment>
-                <ButtonGroup.Button id="preview-button" text="Preview" onClick={togglePopup} key="Preview" />
-                <ButtonGroup.Button text="Submit" key="Submit" type="submit" disabled={pristine || invalid} />
+                <ButtonGroup.Button
+                  id="preview-button"
+                  text="Preview"
+                  onClick={togglePopup}
+                  key="Preview"
+                />
+                <ButtonGroup.Button
+                  text="Submit"
+                  key="Submit"
+                  type="submit"
+                  disabled={pristine || invalid}
+                />
               </ButtonGroup>
             </form>
           </Base>

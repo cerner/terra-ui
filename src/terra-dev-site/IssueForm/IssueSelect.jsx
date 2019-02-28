@@ -15,10 +15,25 @@ function IssueSelect(props) {
   } = props;
 
   return (
-    <Field label="Issue Type" help="Bug report, or feature request">
-      <Select style={{ maxWidth: '30em' }} onChange={setIssue} value={value}>
-        <Select.Option value="bug" display="Bug Report" key="bug" />
-        <Select.Option value="feature" display="Feature Request" key="feature" />
+    <Field
+      label="Issue Type"
+      help="Bug report, or feature request"
+    >
+      <Select
+        style={{ maxWidth: '30em' }}
+        onChange={setIssue}
+        value={value}
+      >
+        <Select.Option
+          value="bug"
+          display="Bug Report"
+          key="bug"
+        />
+        <Select.Option
+          value="feature"
+          display="Feature Request"
+          key="feature"
+        />
       </Select>
     </Field>
   );

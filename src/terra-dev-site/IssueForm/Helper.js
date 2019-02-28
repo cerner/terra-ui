@@ -1,29 +1,6 @@
 import Packages from './Packages.json';
 
-const repoList = JSON.parse(JSON.stringify(Packages)).repos;
-
-const getPackages = () => {
-  const packageList = Object.values(repoList).map(item => item);
-  return packageList.concat.apply([], packageList);
-};
-
-const getRepo = (packageName) => {
-  const repoName = Object.keys(repoList).find(key => repoList[key].includes(packageName));
-  return repoName;
-};
-
-const featureBody = (description, context, mentions) => `# Feature Request
-
-## Description
-${description}
-
-${context ? `## Additional Context / Screenshots
-${context}` : ''}
-
-${mentions ? `## @ Mentions
-${mentions}` : ''}`;
-
-const bugBody = (description, steps, context, expected, solution, environment, mentions) => `# Bug Report
+const bugTemplate = (description, steps, context, expected, solution, environment, mentions) => `# Bug Report
 
 ## Description
 ${description}
@@ -52,17 +29,54 @@ const environmentTemplate = `* Component Name and Version:
 * Webpack Version: 
 * Operating System and version (desktop or mobile): `;
 
+const featureTemplate = (description, context, mentions) => `# Feature Request
+
+## Description
+${description}
+
+${context ? `## Additional Context / Screenshots
+${context}` : ''}
+
+${mentions ? `## @ Mentions
+${mentions}` : ''}`;
+
 const titleTemplate = (title, repo, selectedPackage) => `# Repo
 ${repo}
 # Title
 [${selectedPackage}] ${title}
 `;
 
+const repoList = JSON.parse(JSON.stringify(Packages)).repos;
+
+const getPackages = () => {
+  const packageList = Object.values(repoList).map(item => item);
+  return packageList.concat.apply([], packageList);
+};
+
+const getRepo = (packageName) => {
+  const repoName = Object.keys(repoList).find(key => repoList[key].includes(packageName));
+  return repoName;
+};
+
+/* eslint-disable compat/compat */
+const validateForm = async (value) => {
+  const response = new Promise((resolve) => {
+    if (!value) {
+      return resolve('Field is required.');
+    }
+    return resolve('');
+  });
+
+  await response;
+  return response;
+};
+
 export {
+  bugTemplate,
+  environmentTemplate,
+  featureTemplate,
   getPackages,
   getRepo,
-  featureBody,
-  bugBody,
-  environmentTemplate,
   titleTemplate,
+  validateForm,
 };

@@ -29,6 +29,7 @@ const initialState = {
 };
 
 function IssueForm() {
+  // Initialize state variables and setter functions.
   const [context, setContext] = useState(initialState.context);
   const [count, setCount] = useState(initialState.count);
   const [description, setDescription] = useState(initialState.description);
@@ -42,6 +43,7 @@ function IssueForm() {
   const [steps, setSteps] = useState(initialState.steps);
   const [title, setTitle] = useState(initialState.title);
 
+  // Set reference to issue type, used in useEffect to manage state between issue type changes.
   const previousIssueType = useRef(issueType);
   useEffect(() => {
     if (previousIssueType.current !== issueType) {
@@ -57,6 +59,7 @@ function IssueForm() {
       setCount(0);
       previousIssueType.current = issueType;
     }
+    // Initialize and track character count between updates and form changes.
     const total = issueType === 'bug'
       ? [context, description, environment, expected, mentions, selectedPackage, solution, steps, title]
         .reduce((prev, current) => prev + current).length
@@ -66,16 +69,30 @@ function IssueForm() {
   });
 
   /* eslint-disable compat/compat */
+  // Get packagelist from file, and update repo based on the currently selected package.
   const packageList = getPackages();
   const packageRepo = getRepo(selectedPackage);
-  const errorText = errorTemplate(packageRepo);
-  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+  // Construct error text template, with link to appropriate repo issue selection based on selected package.
+  const errorText = errorTemplate(packageRepo);
+
+  // Construct issue body based on current input form data.
   const issueBody = issueType === 'bug'
-    ? bugTemplate(description, steps, context, expected, solution, environment, mentions)
-    : featureTemplate(description, context, mentions);
+    ? bugTemplate({
+      description,
+      steps,
+      context,
+      expected,
+      solution,
+      environment,
+      mentions,
+    })
+    : featureTemplate({ description, context, mentions });
+
+  // Construct markdown template with current data for previewing.
   const previewBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
 
+  // Set target for preview window popup, and toggle open status.
   const popupTarget = () => document.getElementById('preview-button');
   function togglePopup() {
     return !isOpen
@@ -83,6 +100,8 @@ function IssueForm() {
       : setIsOpen(false);
   }
 
+  // Wait to ensure form validation has completed, then submit form data to the appropriate repo on github.
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   const submitForm = async () => {
     await sleep(500);
     const encodeTitle = encodeURIComponent(title).replace(/%2B/gi, '+');

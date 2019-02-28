@@ -27,28 +27,28 @@ const propTypes = {
 };
 
 // Templates used for preview, errors, and forms.
-const bugTemplate = (description, steps, context, expected, solution, environment, mentions) => `# Bug Report
+const bugTemplate = props => `# Bug Report
 
 ## Description
-${description}
+${props.description}
 
 ## Steps to Reproduce
-${steps}
+${props.steps}
 
 ## Expected Behavior
-${expected}
+${props.expected}
 
 ## Environment
-${environment}
+${props.environment}
 
-${context ? `## Additional Context / Screenshots
-${context}` : ''}
+${props.context ? `## Additional Context / Screenshots
+${props.context}` : ''}
 
-${solution ? `## Possible Solution
-${solution}` : ''}
+${props.solution ? `## Possible Solution
+${props.solution}` : ''}
 
-${mentions ? `## @ Mentions
-${mentions}` : ''}`;
+${props.mentions ? `## @ Mentions
+${props.mentions}` : ''}`;
 
 const environmentTemplate = `* Component Name and Version: 
 * Browser Name and Version: 
@@ -58,16 +58,16 @@ const environmentTemplate = `* Component Name and Version:
 
 const errorTemplate = packageRepo => `Character count for form exceeded. If you require more space, submit the issue directly to <a href="https://github.com/cerner/${packageRepo}/issues/new/choose" target="_blank">github</a>.`;
 
-const featureTemplate = (description, context, mentions) => `# Feature Request
+const featureTemplate = props => `# Feature Request
 
 ## Description
-${description}
+${props.description}
 
-${context ? `## Additional Context / Screenshots
-${context}` : ''}
+${props.context ? `## Additional Context / Screenshots
+${props.context}` : ''}
 
-${mentions ? `## @ Mentions
-${mentions}` : ''}`;
+${props.mentions ? `## @ Mentions
+${props.mentions}` : ''}`;
 
 const titleTemplate = (title, repo, selectedPackage) => `# Repo
 ${repo}

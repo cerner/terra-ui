@@ -92,13 +92,13 @@ function IssueForm() {
   };
 
   return (
-    <Form
-      onSubmit={submitForm}
-      render={({ handleSubmit, pristine, invalid }) => (
-        <Spacer padding="large+2">
-          <Base>
-            <IssueSelect issueType={issueType} setIssue={setIssue} value={issueType} />
-            <PackageSelect setPackage={setPackage} packageList={packageList} />
+    <Spacer padding="large+2">
+      <Base>
+        <IssueSelect issueType={issueType} setIssue={setIssue} value={issueType} />
+        <PackageSelect setPackage={setPackage} packageList={packageList} />
+        <Form
+          onSubmit={submitForm}
+          render={({ handleSubmit, pristine, invalid }) => (
             <form
               onSubmit={handleSubmit}
             >
@@ -179,15 +179,16 @@ function IssueForm() {
                 <ButtonGroup.Button
                   text="Submit"
                   key="Submit"
-                  type="submit"
-                  disabled={pristine || invalid}
+                  onClick={count > 5500 ? togglePopup : undefined}
+                  type={count > 5500 ? undefined : 'submit'}
+                  isDisabled={pristine || invalid}
                 />
               </ButtonGroup>
             </form>
-          </Base>
-        </Spacer>
-      )}
-    />
+          )}
+        />
+      </Base>
+    </Spacer>
   );
 }
 

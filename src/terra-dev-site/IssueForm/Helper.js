@@ -1,5 +1,32 @@
+import PropTypes from 'prop-types';
 import Packages from './Packages.json';
 
+// Prop types for all components.
+const propTypes = {
+  /**
+   * List of packages from terra clinical, core, and framework.
+   */
+  packageList: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Functions that set state with the provided field values.
+   */
+  setContext: PropTypes.func,
+  setDescription: PropTypes.func,
+  setEnvironment: PropTypes.func,
+  setExpected: PropTypes.func,
+  setIssue: PropTypes.func,
+  setMentions: PropTypes.func,
+  setPackage: PropTypes.func,
+  setSolution: PropTypes.func,
+  setSteps: PropTypes.func,
+  setTitle: PropTypes.func,
+  /**
+   * Sets the value of the issue type select box to the selected issue type.
+   */
+  value: PropTypes.string,
+};
+
+// Templates used for preview, errors, and forms.
 const bugTemplate = (description, steps, context, expected, solution, environment, mentions) => `# Bug Report
 
 ## Description
@@ -48,6 +75,7 @@ ${repo}
 [${selectedPackage}] ${title}
 `;
 
+// Functions for gathering package lists and their associated repos.
 const repoList = JSON.parse(JSON.stringify(Packages)).repos;
 
 const getPackages = () => {
@@ -60,6 +88,7 @@ const getRepo = (packageName) => {
   return repoName;
 };
 
+// Form validation for required fields.
 /* eslint-disable compat/compat */
 const validateForm = async (value) => {
   const response = new Promise((resolve) => {
@@ -80,6 +109,7 @@ export {
   featureTemplate,
   getPackages,
   getRepo,
+  propTypes,
   titleTemplate,
   validateForm,
 };

@@ -1,15 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import TextareaField from 'terra-form-textarea/lib/TextareaField';
-import { validateForm } from './Helper';
-
-const propTypes = {
-  setContext: PropTypes.func,
-  setDescription: PropTypes.func,
-  setMentions: PropTypes.func,
-  setTitle: PropTypes.func,
-};
+import { propTypes, validateForm } from './Helper';
 
 const FeatureForm = (props) => {
   const {

@@ -1,19 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import TextareaField from 'terra-form-textarea/lib/TextareaField';
-import { environmentTemplate, validateForm } from './Helper';
-
-const propTypes = {
-  setContext: PropTypes.func,
-  setDescription: PropTypes.func,
-  setEnvironment: PropTypes.func,
-  setExpected: PropTypes.func,
-  setMentions: PropTypes.func,
-  setSolution: PropTypes.func,
-  setSteps: PropTypes.func,
-  setTitle: PropTypes.func,
-};
+import { environmentTemplate, propTypes, validateForm } from './Helper';
 
 const BugForm = (props) => {
   const {

@@ -1,12 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Field from 'terra-form-field';
 import Select from 'terra-form-select';
-
-const propTypes = {
-  setIssue: PropTypes.func,
-  value: PropTypes.string,
-};
+import propTypes from './Helper';
 
 function IssueSelect(props) {
   const {

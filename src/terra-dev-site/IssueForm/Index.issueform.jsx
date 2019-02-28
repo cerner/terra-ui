@@ -137,9 +137,8 @@ function IssueForm() {
                       <Popup
                         contentAttachment="top center"
                         isOpen={isOpen}
-                        contentHeight="auto"
                         targetRef={popupTarget}
-                        contentWidth="auto"
+                        contentWidth="640"
                         onRequestClose={togglePopup}
                       >
                         <Spacer
@@ -155,7 +154,7 @@ function IssueForm() {
                     : (
                       <Popup
                         isOpen={isOpen}
-                        contentHeight="auto"
+                        contentHeight="880"
                         targetRef={popupTarget}
                         contentWidth="960"
                         onRequestClose={togglePopup}

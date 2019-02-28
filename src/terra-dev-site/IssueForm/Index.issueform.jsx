@@ -14,51 +14,45 @@ import {
 } from './Helper';
 
 const initialState = {
-  issueType: 'bug',
-  selectedPackage: 'terra-action-footer',
-  title: '',
-  description: '',
   context: '',
-  mentions: '',
-  steps: '',
-  expected: '',
-  solution: '',
-  environment: environmentTemplate,
-  isOpen: false,
   count: 0,
+  description: '',
+  environment: environmentTemplate,
+  expected: '',
+  isOpen: false,
+  issueType: 'bug',
+  mentions: '',
+  selectedPackage: 'terra-action-footer',
+  solution: '',
+  steps: '',
+  title: '',
 };
 
 function IssueForm() {
-  const [title, setTitle] = useState(initialState.title);
-  const [issueType, setIssue] = useState(initialState.issueType);
-  const [count, setCount] = useState(initialState.count);
-  const [selectedPackage, setPackage] = useState(initialState.selectedPackage);
-  const [description, setDescription] = useState(initialState.description);
   const [context, setContext] = useState(initialState.context);
-  const [mentions, setMentions] = useState(initialState.mentions);
-  const [steps, setSteps] = useState(initialState.steps);
-  const [expected, setExpected] = useState(initialState.expected);
-  const [solution, setSolution] = useState(initialState.solution);
+  const [count, setCount] = useState(initialState.count);
+  const [description, setDescription] = useState(initialState.description);
   const [environment, setEnvironment] = useState(initialState.environment);
+  const [expected, setExpected] = useState(initialState.expected);
   const [isOpen, setIsOpen] = useState(initialState.isOpen);
+  const [issueType, setIssue] = useState(initialState.issueType);
+  const [mentions, setMentions] = useState(initialState.mentions);
+  const [selectedPackage, setPackage] = useState(initialState.selectedPackage);
+  const [solution, setSolution] = useState(initialState.solution);
+  const [steps, setSteps] = useState(initialState.steps);
+  const [title, setTitle] = useState(initialState.title);
 
   const previousIssueType = useRef(issueType);
   useEffect(() => {
     if (previousIssueType.current !== issueType) {
       if (issueType === 'bug') {
-        setTitle('');
-        setDescription('');
         setContext('');
-        setMentions('');
         setSteps('');
         setExpected('');
         setSolution('');
         setEnvironment(environmentTemplate);
       } else {
-        setTitle('');
-        setDescription('');
         setContext('');
-        setMentions('');
       }
       setCount(0);
       previousIssueType.current = issueType;
@@ -82,9 +76,11 @@ function IssueForm() {
 
   const submitForm = async () => {
     await sleep(500);
+    const encodeTitle = encodeURIComponent(title).replace(/%2B/gi, '+');
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
+
     window.open(
-      `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${title}&body=${encodeBody}`,
+      `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${encodeTitle}&body=${encodeBody}`,
     );
   };
 

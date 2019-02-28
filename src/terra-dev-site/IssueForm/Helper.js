@@ -29,7 +29,7 @@ const environmentTemplate = `* Component Name and Version:
 * Webpack Version: 
 * Operating System and version (desktop or mobile): `;
 
-const errorTemplate = `Character count for form exceeded. If you require more space, submit the issue directly to [github](https://github.com/cerner/${packageRepo}/issues/new/choose).`;
+const errorTemplate = packageRepo => `Character count for form exceeded. If you require more space, submit the issue directly to [github](https://github.com/cerner/${packageRepo}/issues/new/choose).`;
 
 const featureTemplate = (description, context, mentions) => `# Feature Request
 

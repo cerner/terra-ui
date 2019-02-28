@@ -66,6 +66,7 @@ function IssueForm() {
   /* eslint-disable compat/compat */
   const packageList = getPackages();
   const packageRepo = getRepo(selectedPackage);
+  const errorText = errorTemplate(packageRepo);
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   const issueBody = issueType === 'bug'
@@ -146,7 +147,7 @@ function IssueForm() {
                           padding="large"
                         >
                           <Markdown
-                            src={errorTemplate}
+                            src={errorText}
                           />
                         </Spacer>
                       </Popup>

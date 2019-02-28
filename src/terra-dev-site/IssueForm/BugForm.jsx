@@ -24,6 +24,7 @@ const BugForm = (props) => {
         {({ input, meta }) => (
           <TextareaField
             label="Title"
+            aria-label="Brief description. Selected package will be included in title."
             inputId="title"
             required
             error={meta.error}
@@ -43,6 +44,7 @@ const BugForm = (props) => {
         {({ input, meta }) => (
           <TextareaField
             label="Issue Description"
+            aria-label="A clear and concise description of what the bug is. Providing a link to a live example / minimal demo of the problem greatly helps us debug issues."
             inputId="description"
             required
             error={meta.error}
@@ -62,6 +64,7 @@ const BugForm = (props) => {
         {({ input, meta }) => (
           <TextareaField
             label="Steps to Reproduce"
+            aria-label="Please specify the exact steps you took for this bug to occur. Provide as much detail as possible so we're able to reproduce these steps."
             inputId="steps"
             required
             error={meta.error}
@@ -81,6 +84,7 @@ const BugForm = (props) => {
         {({ input, meta }) => (
           <TextareaField
             label="Expected Behavior"
+            aria-label="A clear and concise description of what you expected to happen."
             inputId="description"
             required
             error={meta.error}
@@ -100,6 +104,7 @@ const BugForm = (props) => {
         {({ input, meta }) => (
           <TextareaField
             label="Environment"
+            aria-label="Include as many relevant details about the environment you experienced the bug in."
             inputId="environment"
             required
             error={meta.error}
@@ -114,6 +119,7 @@ const BugForm = (props) => {
       </Field>
       <TextareaField
         label="Additional Context / Screenshots"
+        aria-label="Add any other context about the feature here. If applicable, add screenshots to help explain."
         inputId="context"
         help="Add any other context about the feature here. If applicable, add screenshots to help explain."
         maxWidth="50em"
@@ -121,6 +127,7 @@ const BugForm = (props) => {
       />
       <TextareaField
         label="Possible Solution"
+        aria-label="If you have suggestions to fix the bug, let us know."
         inputId="solution"
         help="If you have suggestions to fix the bug, let us know."
         maxWidth="50em"
@@ -128,6 +135,7 @@ const BugForm = (props) => {
       />
       <TextareaField
         label="Mentions"
+        aria-label="@ Mention anyone on the terra team that you have been working with so far."
         inputId="mentions"
         help="@ Mention anyone on the terra team that you have been working with so far."
         maxWidth="50em"

@@ -20,6 +20,7 @@ const FeatureForm = (props) => {
         {({ input, meta }) => (
           <TextareaField
             label="Title"
+            aria-label="Brief description. Selected package will be included in title."
             inputId="title"
             required
             error={meta.error}
@@ -39,6 +40,7 @@ const FeatureForm = (props) => {
         {({ input, meta }) => (
           <TextareaField
             label="Description"
+            aria-label="A clear and concise description of what the feature is."
             inputId="description"
             required
             error={meta.error}
@@ -53,6 +55,7 @@ const FeatureForm = (props) => {
       </Field>
       <TextareaField
         label="Additional Context / Screenshots"
+        aria-label="Add any other context about the feature here. If applicable, add screenshots to help explain."
         inputId="context"
         help="Add any other context about the feature here. If applicable, add screenshots to help explain."
         maxWidth="50em"
@@ -60,6 +63,7 @@ const FeatureForm = (props) => {
       />
       <TextareaField
         label="Mentions"
+        aria-label="@ Mention anyone on the terra team that you have been working with so far."
         inputId="mentions"
         help="@ Mention anyone on the terra team that you have been working with so far."
         maxWidth="50em"

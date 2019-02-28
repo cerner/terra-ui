@@ -47,10 +47,10 @@ function IssueForm() {
     if (previousIssueType.current !== issueType) {
       if (issueType === 'bug') {
         setContext('');
-        setSteps('');
+        setEnvironment(environmentTemplate);
         setExpected('');
         setSolution('');
-        setEnvironment(environmentTemplate);
+        setSteps('');
       } else {
         setContext('');
       }
@@ -58,8 +58,10 @@ function IssueForm() {
       previousIssueType.current = issueType;
     }
     const total = issueType === 'bug'
-      ? [title, selectedPackage, description, context, mentions, steps, expected, solution, environment].reduce((prev, current) => prev + current).length
-      : [title, selectedPackage, description, context, mentions].reduce((prev, current) => prev + current).length;
+      ? [context, description, environment, expected, mentions, selectedPackage, solution, steps, title]
+        .reduce((prev, current) => prev + current).length
+      : [context, description, mentions, selectedPackage, title]
+        .reduce((prev, current) => prev + current).length;
     setCount(total);
   });
 
@@ -75,11 +77,11 @@ function IssueForm() {
   const previewBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
 
   const popupTarget = () => document.getElementById('preview-button');
-  const togglePopup = () => {
+  function togglePopup() {
     return !isOpen
       ? setIsOpen(true)
       : setIsOpen(false);
-  };
+  }
 
   const submitForm = async () => {
     await sleep(500);
@@ -105,24 +107,22 @@ function IssueForm() {
               { issueType === 'bug'
                 ? (
                   <BugForm
-                    handleSubmit={handleSubmit}
-                    setTitle={setTitle}
-                    setDescription={setDescription}
-                    setSteps={setSteps}
-                    setExpected={setExpected}
-                    setEnvironment={setEnvironment}
                     setContext={setContext}
-                    setSolution={setSolution}
+                    setDescription={setDescription}
+                    setEnvironment={setEnvironment}
+                    setExpected={setExpected}
                     setMentions={setMentions}
+                    setSolution={setSolution}
+                    setSteps={setSteps}
+                    setTitle={setTitle}
                   />
                 )
                 : (
                   <FeatureForm
-                    handleSubmit={handleSubmit}
-                    setTitle={setTitle}
-                    setDescription={setDescription}
                     setContext={setContext}
+                    setDescription={setDescription}
                     setMentions={setMentions}
+                    setTitle={setTitle}
                   />
                 )
               }

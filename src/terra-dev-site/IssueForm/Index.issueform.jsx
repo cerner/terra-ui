@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-final-form';
 import Base from 'terra-base';
 import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
@@ -10,7 +10,7 @@ import FeatureForm from './FeatureForm';
 import IssueSelect from './IssueSelect';
 import PackageSelect from './PackageSelect';
 import {
-  bugTemplate, environmentTemplate, errorTemplate, featureTemplate, getPackages, getRepo, titleTemplate,
+  bugTemplate, disclaimerTemplate, environmentTemplate, errorTemplate, featureTemplate, getPackages, getRepo, titleTemplate,
 } from './Helper';
 
 const initialState = {
@@ -104,6 +104,7 @@ function IssueForm() {
   return (
     <Spacer padding="large+2">
       <Base>
+        <Markdown src={disclaimerTemplate} />
         <IssueSelect issueType={issueType} setIssue={setIssue} value={issueType} />
         <PackageSelect setPackage={setPackage} packageList={packageList} />
         <Form

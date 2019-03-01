@@ -50,6 +50,9 @@ ${props.solution}` : ''}
 ${props.mentions ? `## @ Mentions
 ${props.mentions}` : ''}`;
 
+const disclaimerTemplate = `When logging issues to Terra, it is most helpful to have steps to reproduce that just contain the minimal set of components.  Even better would be to be able to reproduce it on <a href="https://engineering.cerner.com/terra-ui" target="_blank">https://engineering.cerner.com/terra-ui</a>. 
+    If there are videos or screenshots that are available, those are helpful as well.  Note to Cerner associates: if you have proprietary information, don't post it directly.  Instead post a link to a site that can be protected by the Cerner IDP (e.g. sharepoint or new relic).`;
+
 const environmentTemplate = `* Component Name and Version: 
 * Browser Name and Version: 
 * Node/npm Version [e.g. Node 8/npm 5]: 
@@ -105,6 +108,7 @@ const validateForm = async (value) => {
 export {
   bugTemplate,
   environmentTemplate,
+  disclaimerTemplate,
   errorTemplate,
   featureTemplate,
   getPackages,

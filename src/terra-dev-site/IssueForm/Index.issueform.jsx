@@ -44,7 +44,11 @@ function IssueForm() {
   const [title, setTitle] = useState(initialState.title);
 
   useEffect(() => {
-    // Initialize and track character count between updates and form changes.
+    /**
+     * Initialize and track character count between updates and form changes.
+     * The total amount of characters that can be submitted in a URL is limited,
+     * so the form has an upper limit of 5500 characters. IE will fail at around 2K.
+     */
     const total = issueType === 'bug'
       ? [context, description, environment, expected, mentions, selectedPackage, solution, steps, title]
         .reduce((prev, current) => prev + current).length

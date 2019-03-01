@@ -43,22 +43,7 @@ function IssueForm() {
   const [steps, setSteps] = useState(initialState.steps);
   const [title, setTitle] = useState(initialState.title);
 
-  // Set reference to issue type, used in useEffect to manage state between issue type changes.
-  const previousIssueType = useRef(issueType);
   useEffect(() => {
-    if (previousIssueType.current !== issueType) {
-      if (issueType === 'bug') {
-        setContext('');
-        setEnvironment(environmentTemplate);
-        setExpected('');
-        setSolution('');
-        setSteps('');
-      } else {
-        setContext('');
-      }
-      setCount(0);
-      previousIssueType.current = issueType;
-    }
     // Initialize and track character count between updates and form changes.
     const total = issueType === 'bug'
       ? [context, description, environment, expected, mentions, selectedPackage, solution, steps, title]
@@ -134,6 +119,9 @@ function IssueForm() {
                     setSolution={setSolution}
                     setSteps={setSteps}
                     setTitle={setTitle}
+                    context={context}
+                    mentions={mentions}
+                    solution={solution}
                   />
                 )
                 : (
@@ -142,6 +130,8 @@ function IssueForm() {
                     setDescription={setDescription}
                     setMentions={setMentions}
                     setTitle={setTitle}
+                    context={context}
+                    mentions={mentions}
                   />
                 )
               }

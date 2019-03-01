@@ -5,6 +5,8 @@ import { propTypes, validateForm } from './Helper';
 
 const FeatureForm = (props) => {
   const {
+    context,
+    mentions,
     setContext,
     setDescription,
     setMentions,
@@ -59,6 +61,7 @@ const FeatureForm = (props) => {
         inputId="context"
         help="Add any other context about the feature here. If applicable, add screenshots to help explain."
         maxWidth="50em"
+        value={context}
         onChange={event => setContext(event.target.value)}
       />
       <TextareaField
@@ -67,6 +70,7 @@ const FeatureForm = (props) => {
         inputId="mentions"
         help="@ Mention anyone on the terra team that you have been working with so far."
         maxWidth="50em"
+        value={mentions}
         onChange={event => setMentions(event.target.value)}
       />
     </div>

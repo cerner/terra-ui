@@ -5,6 +5,9 @@ import { environmentTemplate, propTypes, validateForm } from './Helper';
 
 const BugForm = (props) => {
   const {
+    context,
+    mentions,
+    solution,
     setContext,
     setDescription,
     setEnvironment,
@@ -111,7 +114,7 @@ const BugForm = (props) => {
             isInvalid={meta.invalid && meta.touched}
             help="Include as many relevant details about the environment you experienced the bug in."
             maxWidth="50em"
-            defaultValue={environmentTemplate}
+            value={!input.value ? environmentTemplate : input.value}
             onChange={(event) => { input.onChange(event.target.value); setEnvironment(event.target.value); }}
             inputAttrs={{ ...input }}
           />
@@ -123,6 +126,7 @@ const BugForm = (props) => {
         inputId="context"
         help="Add any other context about the feature here. If applicable, add screenshots to help explain."
         maxWidth="50em"
+        value={context}
         onChange={event => setContext(event.target.value)}
       />
       <TextareaField
@@ -131,6 +135,7 @@ const BugForm = (props) => {
         inputId="solution"
         help="If you have suggestions to fix the bug, let us know."
         maxWidth="50em"
+        value={solution}
         onChange={event => setSolution(event.target.value)}
       />
       <TextareaField
@@ -139,6 +144,7 @@ const BugForm = (props) => {
         inputId="mentions"
         help="@ Mention anyone on the terra team that you have been working with so far."
         maxWidth="50em"
+        value={mentions}
         onChange={event => setMentions(event.target.value)}
       />
     </div>

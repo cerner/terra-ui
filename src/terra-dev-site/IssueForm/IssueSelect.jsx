@@ -5,7 +5,7 @@ import propTypes from './Helper';
 
 function IssueSelect(props) {
   const {
-    setIssue,
+    setIssueType,
     value,
   } = props;
 
@@ -15,8 +15,7 @@ function IssueSelect(props) {
       help="Bug report, or feature request"
     >
       <Select
-        style={{ maxWidth: '30em' }}
-        onChange={setIssue}
+        onChange={setIssueType}
         value={value}
       >
         <Select.Option

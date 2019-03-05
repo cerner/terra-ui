@@ -36,13 +36,12 @@ function IssueForm() {
   const [environment, setEnvironment] = useState(initialState.environment);
   const [expected, setExpected] = useState(initialState.expected);
   const [isOpen, setIsOpen] = useState(initialState.isOpen);
-  const [issueType, setIssue] = useState(initialState.issueType);
+  const [issueType, setIssueType] = useState(initialState.issueType);
   const [mentions, setMentions] = useState(initialState.mentions);
   const [selectedPackage, setPackage] = useState(initialState.selectedPackage);
   const [solution, setSolution] = useState(initialState.solution);
   const [steps, setSteps] = useState(initialState.steps);
   const [title, setTitle] = useState(initialState.title);
-
   /**
    * Initialize and track character count between updates and form changes.
    * The total amount of characters that can be submitted in a URL is limited,
@@ -56,10 +55,8 @@ function IssueForm() {
 
   // Basic test to check if form data has been entered when attempting to navigate away from the page.
   const formDidUpdate = [title, description, steps, expected, context, mentions].reduce((prev, current) => prev + current).length > 0;
-
   useEffect(() => {
     setCount(total);
-
     if (formDidUpdate) {
       window.onbeforeunload = () => true;
     } else {
@@ -115,8 +112,12 @@ function IssueForm() {
     <Spacer padding="large+2">
       <Base>
         <Markdown src={disclaimerTemplate} />
-        <IssueSelect issueType={issueType} setIssue={setIssue} value={issueType} />
-        <PackageSelect setPackage={setPackage} packageList={packageList} />
+        <div style={{ display: 'inline-block' }}>
+          <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />
+        </div>
+        <div style={{ display: 'inline-block', marginLeft: '2em' }}>
+          <PackageSelect setPackage={setPackage} packageList={packageList} />
+        </div>
         <Form
           onSubmit={submitForm}
           render={({ handleSubmit, pristine, invalid }) => (
@@ -126,6 +127,9 @@ function IssueForm() {
               { issueType === 'bug'
                 ? (
                   <BugForm
+                    context={context}
+                    mentions={mentions}
+                    solution={solution}
                     setContext={setContext}
                     setDescription={setDescription}
                     setEnvironment={setEnvironment}
@@ -134,9 +138,6 @@ function IssueForm() {
                     setSolution={setSolution}
                     setSteps={setSteps}
                     setTitle={setTitle}
-                    context={context}
-                    mentions={mentions}
-                    solution={solution}
                   />
                 )
                 : (

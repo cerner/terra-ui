@@ -31,7 +31,6 @@ const FeatureForm = (props) => {
             maxWidth="50em"
             onChange={(event) => { input.onChange(event.target.value); setTitle(event.target.value); }}
             value={input.value}
-            maxLength={24}
             inputAttrs={{ ...input }}
           />
         )}

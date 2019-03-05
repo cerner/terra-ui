@@ -15,7 +15,6 @@ const PackageSelect = (props) => {
       help="Selected package for issue / feature request."
     >
       <Select
-        style={{ maxWidth: '30em' }}
         onChange={setPackage}
         defaultValue="terra-action-footer"
       >

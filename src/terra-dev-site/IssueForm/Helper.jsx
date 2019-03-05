@@ -51,7 +51,9 @@ ${props.mentions ? `## @ Mentions
 ${props.mentions}` : ''}`;
 
 const disclaimerTemplate = `When logging issues to Terra, it is most helpful to have steps to reproduce that just contain the minimal set of components.  Even better would be to be able to reproduce it on <a href="https://engineering.cerner.com/terra-ui" target="_blank">https://engineering.cerner.com/terra-ui</a>. 
-    If there are videos or screenshots that are available, those are helpful as well. **Note to Cerner associates:** if you have proprietary information, don't post it directly.  Instead post a link to a site that can be protected by the Cerner IDP (e.g. sharepoint or new relic).`;
+    If there are videos or screenshots that are available, those are helpful as well. 
+
+**Note to Cerner associates:** if you have proprietary information, don't post it directly.  Instead post a link to a site that can be protected by the Cerner IDP (e.g. sharepoint or new relic).`;
 
 const environmentTemplate = `* Component Name and Version: 
 * Browser Name and Version: 
@@ -91,18 +93,17 @@ const getRepo = (packageName) => {
   return repoName;
 };
 
+const pattern = /^[a-z0-9!"#$%&'()*+,./:;<>=?@[\] ^_`{|}~-]*$/im;
 // Form validation for required fields.
 /* eslint-disable compat/compat */
-const validateForm = async (value) => {
-  const response = new Promise((resolve) => {
-    if (!value) {
-      return resolve('Field is required.');
-    }
-    return resolve('');
-  });
-
-  await response;
-  return response;
+const validateForm = (value) => {
+  if (!pattern.test(value)) {
+    return 'Invalid character used';
+  }
+  if (!value) {
+    return 'Field is required.';
+  }
+  return '';
 };
 
 export {

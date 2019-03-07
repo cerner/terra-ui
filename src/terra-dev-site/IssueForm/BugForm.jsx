@@ -140,9 +140,9 @@ const BugForm = (props) => {
       />
       <TextareaField
         label="Mentions"
-        aria-label="@ Mention anyone on the terra team that you have been working with so far."
+        aria-label="Mention anyone on the terra team that you have been working with so far."
         inputId="mentions"
-        help="@ Mention anyone on the terra team that you have been working with so far."
+        help="Mention anyone on the terra team that you have been working with so far."
         maxWidth="50em"
         value={mentions}
         onChange={event => setMentions(event.target.value)}

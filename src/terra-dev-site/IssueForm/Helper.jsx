@@ -55,7 +55,7 @@ const disclaimerTemplate = `When logging issues to Terra, it is most helpful to 
 
 **Note to Cerner associates:** if you have proprietary information, don't post it directly.  Instead post a link to a site that can be protected by the Cerner IDP (e.g. sharepoint or new relic).`;
 
-const environmentTemplate = `* Component Name and Version: 
+const environmentTemplate = `* Component Version: 
 * Browser Name and Version: 
 * Node/npm Version [e.g. Node 8/npm 5]: 
 * Webpack Version: 

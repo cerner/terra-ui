@@ -21,6 +21,7 @@ const navConfig = {
       path: '/issue-form',
       text: 'Issue Form',
       pageTypes: ['issueform'],
+      isHidden: true,
     }],
   },
 };

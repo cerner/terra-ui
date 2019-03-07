@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form } from 'react-final-form';
 import Base from 'terra-base';
 import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
+import Heading from 'terra-heading';
 import Markdown from 'terra-markdown';
 import Popup from 'terra-popup';
 import Spacer from 'terra-spacer';
@@ -114,6 +115,7 @@ function IssueForm() {
   return (
     <Spacer padding="large+2">
       <Base>
+        <Heading level={1}>Issue Form</Heading>
         <Markdown src={disclaimerTemplate} />
         <div className={styles['issue-form-select-margin']}>
           <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />

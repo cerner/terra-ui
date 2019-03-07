@@ -13,6 +13,9 @@ import {
   bugTemplate, disclaimerTemplate, environmentTemplate, errorTemplate, featureTemplate, getPackages, getRepo, titleTemplate,
 } from './Helper';
 
+/* eslint-disable compat/compat */
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 const initialState = {
   context: '',
   count: 0,
@@ -28,6 +31,9 @@ const initialState = {
   title: '',
 };
 
+// Get packagelist from Packages.json.
+const packageList = getPackages();
+
 function IssueForm() {
   // Initialize state variables and setter functions.
   const [context, setContext] = useState(initialState.context);
@@ -42,6 +48,7 @@ function IssueForm() {
   const [solution, setSolution] = useState(initialState.solution);
   const [steps, setSteps] = useState(initialState.steps);
   const [title, setTitle] = useState(initialState.title);
+
   /**
    * Initialize and track character count between updates and form changes.
    * The total amount of characters that can be submitted in a URL is limited,
@@ -64,9 +71,7 @@ function IssueForm() {
     }
   });
 
-  /* eslint-disable compat/compat */
-  // Get packagelist from file, and update repo based on the currently selected package.
-  const packageList = getPackages();
+  // Update repo based on the currently selected package.
   const packageRepo = getRepo(selectedPackage);
 
   // Construct error text template, with link to appropriate repo issue selection based on selected package.
@@ -97,14 +102,13 @@ function IssueForm() {
   }
 
   // Wait to ensure form validation has completed, then submit form data to the appropriate repo on github.
-  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   const submitForm = async () => {
     await sleep(500);
     const encodeTitle = encodeURIComponent(title).replace(/%2B/gi, '+');
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
 
     window.open(
-      `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${encodeTitle}&body=${encodeBody}`,
+      `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}]${encodeTitle}&body=${encodeBody}`,
     );
   };
 
@@ -112,10 +116,10 @@ function IssueForm() {
     <Spacer padding="large+2">
       <Base>
         <Markdown src={disclaimerTemplate} />
-        <div style={{ display: 'inline-block' }}>
+        <div style={{ display: 'inline-block', width: '20em', marginRight: '2em' }}>
           <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />
         </div>
-        <div style={{ display: 'inline-block', marginLeft: '2em' }}>
+        <div style={{ display: 'inline-block', width: '20em' }}>
           <PackageSelect setPackage={setPackage} packageList={packageList} />
         </div>
         <Form

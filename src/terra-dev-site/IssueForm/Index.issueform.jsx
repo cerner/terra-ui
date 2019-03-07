@@ -10,8 +10,9 @@ import FeatureForm from './FeatureForm';
 import IssueSelect from './IssueSelect';
 import PackageSelect from './PackageSelect';
 import {
-  bugTemplate, disclaimerTemplate, environmentTemplate, errorTemplate, featureTemplate, getPackages, getRepo, titleTemplate,
+  bugTemplate, disclaimerTemplate, environmentTemplate, errorTemplate, featureTemplate, getRepo, titleTemplate,
 } from './Helper';
+import styles from './IssueForm.scss';
 
 /* eslint-disable compat/compat */
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -30,9 +31,6 @@ const initialState = {
   steps: '',
   title: '',
 };
-
-// Get packagelist from Packages.json.
-const packageList = getPackages();
 
 function IssueForm() {
   // Initialize state variables and setter functions.
@@ -108,7 +106,7 @@ function IssueForm() {
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
 
     window.open(
-      `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}]${encodeTitle}&body=${encodeBody}`,
+      `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${encodeTitle}&body=${encodeBody}`,
     );
   };
 
@@ -116,15 +114,16 @@ function IssueForm() {
     <Spacer padding="large+2">
       <Base>
         <Markdown src={disclaimerTemplate} />
-        <div style={{ display: 'inline-block', width: '20em', marginRight: '2em' }}>
+        <div className={styles['issue-form-select-margin']}>
           <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />
         </div>
-        <div style={{ display: 'inline-block', width: '20em' }}>
-          <PackageSelect setPackage={setPackage} packageList={packageList} />
+        <div className={styles['issue-form-select']}>
+          <PackageSelect setPackage={setPackage} />
         </div>
         <Form
           onSubmit={submitForm}
-          render={({ handleSubmit, pristine, invalid }) => (
+          subscription={{ submitting: true, pristine: true }}
+          render={({ handleSubmit, submitting, pristine }) => (
             <form
               onSubmit={handleSubmit}
             >
@@ -157,7 +156,7 @@ function IssueForm() {
               }
               <p>
                 {`Character count / max: ${count} / `}
-                {count > 5500 ? <span style={{ color: 'red' }}>5500</span> : 5500}
+                {count > 5500 ? <span className={styles['error-text']}>5500</span> : 5500}
               </p>
               <ButtonGroup>
                 <React.Fragment key="popup">
@@ -171,7 +170,7 @@ function IssueForm() {
                         onRequestClose={togglePopup}
                       >
                         <Spacer
-                          style={{ textAlign: 'center' }}
+                          className={styles['center-text']}
                           padding="large"
                         >
                           <Markdown
@@ -209,7 +208,7 @@ function IssueForm() {
                   key="Submit"
                   onClick={count > 5500 ? togglePopup : undefined}
                   type={count > 5500 ? undefined : 'submit'}
-                  isDisabled={pristine || invalid}
+                  isDisabled={submitting || pristine}
                 />
               </ButtonGroup>
             </form>

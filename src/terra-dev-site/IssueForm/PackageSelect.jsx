@@ -1,11 +1,18 @@
 import React from 'react';
 import Field from 'terra-form-field';
 import Select from 'terra-form-select';
-import propTypes from './Helper';
+import { getPackages, propTypes } from './Helper';
+
+const packageList = getPackages().map(currentPackage => (
+  <Select.Option
+    value={currentPackage}
+    display={currentPackage}
+    key={currentPackage}
+  />
+));
 
 const PackageSelect = (props) => {
   const {
-    packageList,
     setPackage,
   } = props;
 
@@ -18,13 +25,7 @@ const PackageSelect = (props) => {
         onChange={setPackage}
         defaultValue="terra-action-footer"
       >
-        {packageList.map(currentPackage => (
-          <Select.Option
-            value={currentPackage}
-            display={currentPackage}
-            key={currentPackage}
-          />
-        ))}
+        {packageList}
       </Select>
     </Field>
   );

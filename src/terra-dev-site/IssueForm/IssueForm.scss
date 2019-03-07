@@ -1,0 +1,23 @@
+:local {
+  @mixin terra-form-select {
+    display: inline-block;
+    width: 20em;
+  }
+
+  .center-text {
+    text-align: center;
+  }
+
+  .error-text {
+    color: #ff0000;
+  }
+
+  .issue-form-select {
+    @include terra-form-select;
+  }
+
+  .issue-form-select-margin {
+    @include terra-form-select;
+    margin-right: 2em;
+  }
+}

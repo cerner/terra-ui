@@ -47,7 +47,7 @@ ${props.context}` : ''}
 ${props.solution ? `## Possible Solution
 ${props.solution}` : ''}
 
-${props.mentions ? `## @ Mentions
+${props.mentions ? `## Mentions
 ${props.mentions}` : ''}`;
 
 const disclaimerTemplate = `When logging issues to Terra, it is most helpful to have steps to reproduce that just contain the minimal set of components.  Even better would be to be able to reproduce it on <a href="https://engineering.cerner.com/terra-ui" target="_blank">https://engineering.cerner.com/terra-ui</a>. 
@@ -71,7 +71,7 @@ ${props.description}
 ${props.context ? `## Additional Context / Screenshots
 ${props.context}` : ''}
 
-${props.mentions ? `## @ Mentions
+${props.mentions ? `## Mentions
 ${props.mentions}` : ''}`;
 
 const titleTemplate = (title, repo, selectedPackage) => `# Repo

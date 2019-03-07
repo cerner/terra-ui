@@ -7,6 +7,7 @@ import Popup from 'terra-popup';
 import Spacer from 'terra-spacer';
 import BugForm from './BugForm';
 import FeatureForm from './FeatureForm';
+import { FormTitle, FormContext, FormMentions } from './CommonForm';
 import IssueSelect from './IssueSelect';
 import PackageSelect from './PackageSelect';
 import {
@@ -127,33 +128,26 @@ function IssueForm() {
             <form
               onSubmit={handleSubmit}
             >
+              <FormTitle setTitle={setTitle} />
               { issueType === 'bug'
                 ? (
                   <BugForm
-                    context={context}
-                    mentions={mentions}
                     solution={solution}
-                    setContext={setContext}
                     setDescription={setDescription}
                     setEnvironment={setEnvironment}
                     setExpected={setExpected}
-                    setMentions={setMentions}
                     setSolution={setSolution}
                     setSteps={setSteps}
-                    setTitle={setTitle}
                   />
                 )
                 : (
                   <FeatureForm
-                    setContext={setContext}
                     setDescription={setDescription}
-                    setMentions={setMentions}
-                    setTitle={setTitle}
-                    context={context}
-                    mentions={mentions}
                   />
                 )
               }
+              <FormContext context={context} setContext={setContext} />
+              <FormMentions mentions={mentions} setMentions={setMentions} />
               <p>
                 {`Character count / max: ${count} / `}
                 {count > 5500 ? <span className={styles['error-text']}>5500</span> : 5500}

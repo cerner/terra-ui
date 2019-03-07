@@ -15,6 +15,7 @@ function IssueSelect(props) {
       help="Bug report, or feature request"
     >
       <Select
+        aria-label="Issue Type drop down select menu. Select Bug Report or Feature Request."
         onChange={setIssueType}
         value={value}
       >

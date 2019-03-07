@@ -115,7 +115,7 @@ function IssueForm() {
   return (
     <Spacer padding="large+2">
       <Base>
-        <Heading level={1}>Issue Form</Heading>
+        <Heading aria-label="Issue Form" tabIndex={0} level={1}>Issue Form</Heading>
         <Markdown src={disclaimerTemplate} />
         <div className={styles['issue-form-select-margin']}>
           <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />

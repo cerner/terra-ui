@@ -63,7 +63,7 @@ const BugForm = (props) => {
           <TextareaField
             label="Expected Behavior"
             aria-label="A clear and concise description of what you expected to happen."
-            inputId="description"
+            inputId="expected"
             required
             error={meta.error}
             isInvalid={meta.invalid && meta.touched}

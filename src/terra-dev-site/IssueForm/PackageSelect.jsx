@@ -22,6 +22,7 @@ const PackageSelect = (props) => {
       help="Selected package for issue / feature request."
     >
       <Select
+        aria-label="Drop down menu for selecting the package related to the bug report or feature request."
         onChange={setPackage}
         defaultValue="terra-action-footer"
       >

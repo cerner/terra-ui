@@ -213,7 +213,6 @@ const IssueForm = () => {
       </Base>
     </Spacer>
   );
-}
-
+};
 
 export default IssueForm;

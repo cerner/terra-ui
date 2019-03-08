@@ -34,7 +34,7 @@ const initialState = {
   title: '',
 };
 
-function IssueForm() {
+const IssueForm = () => {
   // Initialize state variables and setter functions.
   const [context, setContext] = useState(initialState.context);
   const [count, setCount] = useState(initialState.count);

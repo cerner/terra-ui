@@ -47,7 +47,6 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-final-form": "^4.0.2",
-    "react-final-form-hooks": "^1.0.0",
     "react-particles-js": "^2.1.0",
     "react-router-dom": "^4.2.2",
     "terra-abstract-modal": "^2.0.0",

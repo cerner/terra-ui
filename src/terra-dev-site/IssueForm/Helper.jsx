@@ -50,15 +50,15 @@ ${props.solution}` : ''}
 ${props.mentions ? `## Mentions
 ${props.mentions}` : ''}`;
 
-const disclaimerTemplate = `When logging issues to Terra, it is most helpful to have steps to reproduce that just contain the minimal set of components.  Even better would be to be able to reproduce it on <a href="https://engineering.cerner.com/terra-ui" target="_blank">https://engineering.cerner.com/terra-ui</a>. 
-    If there are videos or screenshots that are available, those are helpful as well. 
+const disclaimerTemplate = `When logging issues to Terra UI, it is most helpful to have steps to reproduce the issue that just contain the minimal set of components.  Even better would be to be able to reproduce it on <a href="https://engineering.cerner.com/terra-ui" target="_blank">https://engineering.cerner.com/terra-ui</a>.
+    If there are videos or screenshots that are available, those are helpful as well.
 
-**Note to Cerner associates:** if you have proprietary information, don't post it directly.  Instead post a link to a site that can be protected by the Cerner IDP (e.g. sharepoint or new relic).`;
+**Note to Cerner associates:** If you have proprietary information, don't post it directly.  Instead post a link to a site that can be protected by the Cerner IDP (e.g. sharepoint).`;
 
-const environmentTemplate = `* Component Version: 
-* Browser Name and Version: 
-* Node/npm Version [e.g. Node 8/npm 5]: 
-* Webpack Version: 
+const environmentTemplate = `* Component Version:
+* Browser Name and Version:
+* Node/npm Version [e.g. Node 8/npm 5]:
+* Webpack Version:
 * Operating System and version (desktop or mobile): `;
 
 const errorTemplate = packageRepo => `Character count for form exceeded. If you require more space, submit the issue directly to <a href="https://github.com/cerner/${packageRepo}/issues/new/choose" target="_blank">github</a>.`;

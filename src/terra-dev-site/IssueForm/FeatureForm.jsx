@@ -26,7 +26,7 @@ const FeatureForm = (props) => {
             maxWidth="50em"
             onChange={(event) => { input.onChange(event.target.value); setDescription(event.target.value); }}
             value={input.value}
-            inputAttrs={{ ...input }}
+            inputAttrs={{ ...input, rows: 4, isAutoResizable: true }}
           />
         )}
       </Field>

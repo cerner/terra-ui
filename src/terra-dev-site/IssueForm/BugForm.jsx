@@ -31,7 +31,7 @@ const BugForm = (props) => {
             maxWidth="50em"
             onChange={(event) => { input.onChange(event.target.value); setDescription(event.target.value); }}
             value={input.value}
-            inputAttrs={{ ...input }}
+            inputAttrs={{ ...input, rows: 4, isAutoResizable: true }}
           />
         )}
       </Field>
@@ -51,7 +51,7 @@ const BugForm = (props) => {
             maxWidth="50em"
             onChange={(event) => { input.onChange(event.target.value); setSteps(event.target.value); }}
             value={input.value}
-            inputAttrs={{ ...input }}
+            inputAttrs={{ ...input, rows: 4, isAutoResizable: true }}
           />
         )}
       </Field>
@@ -71,7 +71,7 @@ const BugForm = (props) => {
             maxWidth="50em"
             onChange={(event) => { input.onChange(event.target.value); setExpected(event.target.value); }}
             value={input.value}
-            inputAttrs={{ ...input }}
+            inputAttrs={{ ...input, rows: 2, isAutoResizable: true }}
           />
         )}
       </Field>
@@ -103,6 +103,7 @@ const BugForm = (props) => {
         maxWidth="50em"
         value={solution}
         onChange={event => setSolution(event.target.value)}
+        inputAttrs={{ rows: 2, isAutoResizable: true }}
       />
     </div>
   );

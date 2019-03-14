@@ -22,7 +22,7 @@ const FormTitle = (props) => {
           maxWidth="50em"
           onChange={(event) => { input.onChange(event.target.value); setTitle(event.target.value); }}
           value={input.value}
-          inputAttrs={{ ...input }}
+          inputAttrs={{ ...input, rows: 1, isAutoResizable: true }}
         />
       )}
     </Field>
@@ -40,6 +40,7 @@ const FormContext = (props) => {
       maxWidth="50em"
       value={context}
       onChange={event => setContext(event.target.value)}
+      inputAttrs={{ rows: 2, isAutoResizable: true }}
     />
   );
 };
@@ -55,6 +56,7 @@ const FormMentions = (props) => {
       maxWidth="50em"
       value={mentions}
       onChange={event => setMentions(event.target.value)}
+      inputAttrs={{ rows: 2, isAutoResizable: true }}
     />
   );
 };

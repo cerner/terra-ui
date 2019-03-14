@@ -13,7 +13,7 @@ import { FormTitle, FormContext, FormMentions } from './CommonForm';
 import IssueSelect from './IssueSelect';
 import PackageSelect from './PackageSelect';
 import {
-  bugTemplate, disclaimerTemplate, environmentTemplate, errorTemplate, featureTemplate, getRepo, titleTemplate,
+  bugTemplate, disclaimerTemplate, environmentTemplate, featureTemplate, getRepo, titleTemplate,
 } from './Helper';
 import styles from './IssueForm.scss';
 
@@ -75,11 +75,8 @@ const IssueForm = () => {
   // Update repo based on the currently selected package.
   const packageRepo = getRepo(selectedPackage);
 
-  // Construct error text template, with link to appropriate repo issue selection based on selected package.
-  const errorText = errorTemplate(packageRepo);
-
   // Construct issue body based on current input form data.
-  const issueBody = issueType === 'bug'
+  let issueBody = issueType === 'bug'
     ? bugTemplate({
       description,
       steps,
@@ -91,8 +88,34 @@ const IssueForm = () => {
     })
     : featureTemplate({ description, context, mentions });
 
-  // Construct markdown template with current data for previewing.
-  const previewBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
+  /**
+   * Construct preview body. marked.js ignores new lines when inserting a block of text into a template;
+   * this maintains formatting entered into the form when previewing.
+   */
+  const createPreview = () => {
+    let issuePreview;
+    if (issueType === 'bug') {
+      issuePreview = Object.assign({}, {
+        context: context.replace(/(?:\n)/g, '<br>'),
+        description: description.replace(/(?:\n)/g, '<br>'),
+        environment,
+        expected: expected.replace(/(?:\n)/g, '<br>'),
+        mentions: mentions.replace(/(?:\n)/g, '<br>'),
+        solution: solution.replace(/(?:\n)/g, '<br>'),
+        steps: steps.replace(/(?:\n)/g, '<br>'),
+      });
+      return bugTemplate(issuePreview);
+    }
+    issuePreview = Object.assign({}, {
+      description: description.replace(/(?:\n)/g, '<br>'),
+      context: context.replace(/(?:\n)/g, '<br>'),
+      mentions: mentions.replace(/(?:\n)/g, '<br>'),
+    });
+    return featureTemplate(issuePreview);
+  };
+
+  // Feed Markdown expected string value
+  const previewBody = titleTemplate(title, packageRepo, selectedPackage) + createPreview();
 
   function toggleModal() {
     return !isOpen
@@ -107,6 +130,11 @@ const IssueForm = () => {
   // Wait to ensure form validation has completed, then submit form data to the appropriate repo on github.
   const submitForm = async () => {
     await sleep(500);
+
+    if (count > 5500) {
+      issueBody = issueBody.slice(0, 5500);
+    }
+
     const encodeTitle = encodeURIComponent(title).replace(/%2B/gi, '+');
     const encodeBody = encodeURIComponent(issueBody).replace(/%2B/gi, '+');
 
@@ -155,27 +183,24 @@ const IssueForm = () => {
               <FormMentions mentions={mentions} setMentions={setMentions} />
               <p>
                 {`Character count / max: ${count} / `}
-                {count > 5500 ? <span className={styles['error-text']}>5500</span> : 5500}
+                {count > 5500 ? (
+                  <span>
+                    <span className={styles['error-text']}>5500</span>
+                    <br />
+                    Character count exceeded. Click Submit to continue on Github (Characters beyond form limit will be truncated).
+                  </span>
+                ) : 5500}
               </p>
               <DialogModal
                 ariaLabel="Default Dialog Modal"
                 isOpen={isOpen}
                 onRequestClose={handleCloseModal}
                 header={<ActionHeader title="Preview Issue" onClose={handleCloseModal} />}
+                footer={<div />}
               >
-                {count > 5500
-                  ? (
-                    <Spacer
-                      className={styles['center-text']}
-                      padding="large"
-                    >
-                      <Markdown src={errorText} />
-                    </Spacer>
-                  ) : (
-                    <Spacer padding="large+2">
-                      <Markdown src={previewBody} />
-                    </Spacer>
-                  )}
+                <Spacer padding="large+2">
+                  <Markdown src={previewBody} />
+                </Spacer>
               </DialogModal>
               <ButtonGroup>
                 <ButtonGroup.Button
@@ -187,8 +212,7 @@ const IssueForm = () => {
                 <ButtonGroup.Button
                   text="Submit"
                   key="Submit"
-                  onClick={count > 5500 ? toggleModal : undefined}
-                  type={count > 5500 ? undefined : 'submit'}
+                  type="submit"
                   isDisabled={submitting || pristine}
                 />
               </ButtonGroup>

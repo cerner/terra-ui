@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Form } from 'react-final-form';
 import Base from 'terra-base';
-import ButtonGroup from 'terra-button-group/lib/ButtonGroup';
+import ActionHeader from 'terra-action-header';
+import ButtonGroup from 'terra-button-group';
+import DialogModal from 'terra-dialog-modal';
 import Heading from 'terra-heading';
 import Markdown from 'terra-markdown';
-import Popup from 'terra-popup';
 import Spacer from 'terra-spacer';
 import BugForm from './BugForm';
 import FeatureForm from './FeatureForm';
@@ -93,12 +94,14 @@ const IssueForm = () => {
   // Construct markdown template with current data for previewing.
   const previewBody = titleTemplate(title, packageRepo, selectedPackage) + issueBody;
 
-  // Set target for preview window popup, and toggle open status.
-  const popupTarget = () => document.getElementById('preview-button');
-  function togglePopup() {
+  function toggleModal() {
     return !isOpen
       ? setIsOpen(true)
       : setIsOpen(false);
+  }
+
+  function handleCloseModal() {
+    return setIsOpen(false);
   }
 
   // Wait to ensure form validation has completed, then submit form data to the appropriate repo on github.
@@ -154,55 +157,37 @@ const IssueForm = () => {
                 {`Character count / max: ${count} / `}
                 {count > 5500 ? <span className={styles['error-text']}>5500</span> : 5500}
               </p>
+              <DialogModal
+                ariaLabel="Default Dialog Modal"
+                isOpen={isOpen}
+                onRequestClose={handleCloseModal}
+                header={<ActionHeader title="Preview Issue" onClose={handleCloseModal} />}
+              >
+                {count > 5500
+                  ? (
+                    <Spacer
+                      className={styles['center-text']}
+                      padding="large"
+                    >
+                      <Markdown src={errorText} />
+                    </Spacer>
+                  ) : (
+                    <Spacer padding="large+2">
+                      <Markdown src={previewBody} />
+                    </Spacer>
+                  )}
+              </DialogModal>
               <ButtonGroup>
-                <React.Fragment key="popup">
-                  { count > 5500
-                    ? (
-                      <Popup
-                        contentAttachment="top center"
-                        isOpen={isOpen}
-                        targetRef={popupTarget}
-                        contentWidth="640"
-                        onRequestClose={togglePopup}
-                      >
-                        <Spacer
-                          className={styles['center-text']}
-                          padding="large"
-                        >
-                          <Markdown
-                            src={errorText}
-                          />
-                        </Spacer>
-                      </Popup>
-                    )
-                    : (
-                      <Popup
-                        isOpen={isOpen}
-                        contentHeight="880"
-                        targetRef={popupTarget}
-                        contentWidth="960"
-                        onRequestClose={togglePopup}
-                      >
-                        <Spacer
-                          padding="large+2"
-                        >
-                          <Markdown
-                            src={previewBody}
-                          />
-                        </Spacer>
-                      </Popup>
-                    )}
-                </React.Fragment>
                 <ButtonGroup.Button
                   id="preview-button"
                   text="Preview"
-                  onClick={togglePopup}
+                  onClick={toggleModal}
                   key="Preview"
                 />
                 <ButtonGroup.Button
                   text="Submit"
                   key="Submit"
-                  onClick={count > 5500 ? togglePopup : undefined}
+                  onClick={count > 5500 ? toggleModal : undefined}
                   type={count > 5500 ? undefined : 'submit'}
                   isDisabled={submitting || pristine}
                 />

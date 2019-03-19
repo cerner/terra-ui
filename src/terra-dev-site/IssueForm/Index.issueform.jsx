@@ -8,12 +8,16 @@ import Heading from 'terra-heading';
 import Markdown from 'terra-markdown';
 import Spacer from 'terra-spacer';
 import BugForm from './BugForm';
+import BugTemplate from './BugTemplate';
 import FeatureForm from './FeatureForm';
-import { FormTitle, FormContext, FormMentions } from './CommonForm';
+import FeatureTemplate from './FeatureTemplate';
+import FormContext from './FormContext';
+import FormMentions from './FormMentions';
+import FormTitle from './FormTitle';
 import IssueSelect from './IssueSelect';
 import PackageSelect from './PackageSelect';
 import {
-  bugTemplate, disclaimerTemplate, environmentTemplate, featureTemplate, getRepo, titleTemplate,
+  disclaimerTemplate, environmentTemplate, getRepo, titleTemplate,
 } from './Helper';
 import styles from './IssueForm.scss';
 
@@ -77,7 +81,7 @@ const IssueForm = () => {
 
   // Construct issue body based on current input form data.
   let issueBody = issueType === 'bug'
-    ? bugTemplate({
+    ? BugTemplate({
       description,
       steps,
       context,
@@ -86,7 +90,7 @@ const IssueForm = () => {
       environment,
       mentions,
     })
-    : featureTemplate({ description, context, mentions });
+    : FeatureTemplate({ description, context, mentions });
 
   /**
    * Construct preview body. marked.js ignores new lines when inserting a block of text into a template;
@@ -104,27 +108,23 @@ const IssueForm = () => {
         solution: solution.replace(/(?:\n)/g, '<br>'),
         steps: steps.replace(/(?:\n)/g, '<br>'),
       });
-      return bugTemplate(issuePreview);
+      return BugTemplate(issuePreview);
     }
     issuePreview = Object.assign({}, {
       description: description.replace(/(?:\n)/g, '<br>'),
       context: context.replace(/(?:\n)/g, '<br>'),
       mentions: mentions.replace(/(?:\n)/g, '<br>'),
     });
-    return featureTemplate(issuePreview);
+    return FeatureTemplate(issuePreview);
   };
 
   // Feed Markdown expected string value
   const previewBody = titleTemplate(title, packageRepo, selectedPackage) + createPreview();
 
-  function toggleModal() {
+  function handleModal() {
     return !isOpen
       ? setIsOpen(true)
       : setIsOpen(false);
-  }
-
-  function handleCloseModal() {
-    return setIsOpen(false);
   }
 
   // Wait to ensure form validation has completed, then submit form data to the appropriate repo on github.
@@ -194,8 +194,8 @@ const IssueForm = () => {
               <DialogModal
                 ariaLabel="Default Dialog Modal"
                 isOpen={isOpen}
-                onRequestClose={handleCloseModal}
-                header={<ActionHeader title="Preview Issue" onClose={handleCloseModal} />}
+                onRequestClose={handleModal}
+                header={<ActionHeader title="Preview Issue" onClose={handleModal} />}
                 footer={<div />}
               >
                 <Spacer padding="large+2">
@@ -206,7 +206,7 @@ const IssueForm = () => {
                 <ButtonGroup.Button
                   id="preview-button"
                   text="Preview"
-                  onClick={toggleModal}
+                  onClick={handleModal}
                   key="Preview"
                 />
                 <ButtonGroup.Button

@@ -2,15 +2,7 @@
 
 We recommend using [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) for writing React component unit tests.
 
-When testing components that interact with react-intl, typically the component being tested needs to be wrapped with an `IntlProvider` to work correctly. Along with this, components need translations provided to IntlProvider's `messages` prop.
-
-To ensure translations are available for your Jest tests, we recommend adding the aggregate translations function to your Jest setup file like so:
-
-```js
-import aggregateTranslations from 'terra-toolkit/scripts/aggregate-translations/aggregate-translations';
-
-aggregateTranslations();
-```
+When testing components that interact with react-intl, typically the component being tested needs to be wrapped with an `IntlProvider` to work correctly.
 
 We also recommend using [enzyme-react-intl](https://github.com/joetidee/enzyme-react-intl) which provides helpers for shallow rendering with Intl, mounting with Intl, and passing messages to the the IntlProvider component.
 
@@ -37,6 +29,29 @@ describe('<Toggle />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+```
+
+If you require translations in your Jest tests, create a `jestglobalsetup.js` file in your app.
+
+Add the following code to `jestglobalsetup.js`:
+
+```js
+const aggregateTranslations = require('terra-toolkit/scripts/aggregate-translations/aggregate-translations');
+
+module.exports = () => {
+  aggregateTranslations();
+};
+```
+
+In your app's jest config file, add the following:
+
+```js
+globalSetup: './jestglobalsetup.js',
+// This allows jest to resolve files from the generated aggregated-translations in addition to node_modules
+moduleDirectories: [
+  'aggregated-translations',
+  'node_modules',
+],
 ```
 
 **Note** *The terra-base component uses terra-i18n which currently uses `require.ensure` to handle code splitting of translations. Jest does not support `require.ensure` out of the box. Because of this, we do not recommend using terra-base in your Jest tests.*

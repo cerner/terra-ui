@@ -2,9 +2,8 @@
 
 We recommend using [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) for writing React component unit tests.
 
-When testing components that interact with react-intl, typically the component being tested needs to be wrapped with an `IntlProvider` to work correctly.
 
-We also recommend using [enzyme-react-intl](https://github.com/joetidee/enzyme-react-intl) which provides helpers for shallow rendering with Intl, mounting with Intl, and passing messages to the the IntlProvider component.
+We also recommend using [terra-enzyme-intl](https://github.com/cerner/terra-enzyme-intl) which provides helpers for testing components that use react-intl with enzyme.
 
 A test using enzyme-react-intl looks like:
 
@@ -31,7 +30,10 @@ describe('<Toggle />', () => {
 });
 ```
 
-If you require translations in your Jest tests, create a `jestglobalsetup.js` file in your app.
+## Aggregating translations for Jest tests
+With [terra-enzyme-intl](https://github.com/cerner/terra-enzyme-intl), aggregating translations for Jest tests is not necessary. The terra-enzyme-intl will use the translation keys for the translation strings  instead of the actual translations. If you want to test the actual translation string values, we recommend testing translations with a tool like webdriver.io.
+
+However, if you require translations in your Jest tests, you can create a `jestglobalsetup.js` file in your app.
 
 Add the following code to `jestglobalsetup.js`:
 

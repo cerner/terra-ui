@@ -28,7 +28,7 @@ describe('<Toggle />', () => {
 ```
 
 ## Aggregating translations for Jest tests
-With [terra-enzyme-intl](https://github.com/cerner/terra-enzyme-intl), aggregating translations for Jest tests is not necessary. The terra-enzyme-intl will use the translation keys for the translation strings  instead of the actual translations. If you want to test the actual translation string values, we recommend testing translations with a tool like webdriver.io.
+With [terra-enzyme-intl](https://github.com/cerner/terra-enzyme-intl), aggregating translations for Jest tests is not necessary. The terra-enzyme-intl package will use the translation keys for the translation strings  instead of the actual translations. If you want to test the actual translation string values, we recommend testing translations with a tool like webdriver.io.
 
 However, if you require translations in your Jest tests, you can create a `jestglobalsetup.js` file in your app.
 

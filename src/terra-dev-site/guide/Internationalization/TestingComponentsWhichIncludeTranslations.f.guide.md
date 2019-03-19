@@ -5,17 +5,14 @@ We recommend using [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enz
 
 We also recommend using [terra-enzyme-intl](https://github.com/cerner/terra-enzyme-intl) which provides helpers for testing components that use react-intl with enzyme.
 
-A test using enzyme-react-intl looks like:
+A test using terra-enzyme-intl looks like:
 
 ```jsx
 // Toggle.test.jsx
 import React from 'react';
-import { shallowWithIntl, mountWithIntl, loadTranslationObject } from 'enzyme-react-intl';
+import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 
 import Toggle from '../../src/Toggle';
-import { messages } from '../../aggregated-translations/en';
-
-loadTranslationObject(messages);
 
 describe('<Toggle />', () => {
   it('shallow renders Toggle component', () => {

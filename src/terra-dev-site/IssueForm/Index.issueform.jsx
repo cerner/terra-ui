@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Form } from 'react-final-form';
-import Base from 'terra-base';
 import ActionHeader from 'terra-action-header';
 import ButtonGroup from 'terra-button-group';
 import DialogModal from 'terra-dialog-modal';
@@ -145,81 +144,79 @@ const IssueForm = () => {
 
   return (
     <Spacer padding="large+2">
-      <Base>
-        <Heading level={1}>Issue Form</Heading>
-        <Markdown src={disclaimerTemplate} />
-        <div className={styles['issue-form-select-margin']}>
-          <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />
-        </div>
-        <div className={styles['issue-form-select']}>
-          <PackageSelect setPackage={setPackage} />
-        </div>
-        <Form
-          onSubmit={submitForm}
-          subscription={{ submitting: true, pristine: true }}
-          render={({ handleSubmit, submitting, pristine }) => (
-            <form
-              onSubmit={handleSubmit}
+      <Heading level={1}>Issue Form</Heading>
+      <Markdown src={disclaimerTemplate} />
+      <div className={styles['issue-form-select-margin']}>
+        <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />
+      </div>
+      <div className={styles['issue-form-select']}>
+        <PackageSelect setPackage={setPackage} />
+      </div>
+      <Form
+        onSubmit={submitForm}
+        subscription={{ submitting: true, pristine: true }}
+        render={({ handleSubmit, submitting, pristine }) => (
+          <form
+            onSubmit={handleSubmit}
+          >
+            <FormTitle setTitle={setTitle} />
+            { issueType === 'bug'
+              ? (
+                <BugForm
+                  solution={solution}
+                  setDescription={setDescription}
+                  setEnvironment={setEnvironment}
+                  setExpected={setExpected}
+                  setSolution={setSolution}
+                  setSteps={setSteps}
+                />
+              )
+              : (
+                <FeatureForm
+                  setDescription={setDescription}
+                />
+              )
+            }
+            <FormContext context={context} setContext={setContext} />
+            <FormMentions mentions={mentions} setMentions={setMentions} />
+            <p>
+              {`Character count / max: ${count} / `}
+              {count > 5500 ? (
+                <span>
+                  <span className={styles['error-text']}>5500</span>
+                  <br />
+                  Character count exceeded. Click Submit to continue on Github (Characters beyond form limit will be truncated).
+                </span>
+              ) : 5500}
+            </p>
+            <DialogModal
+              ariaLabel="Default Dialog Modal"
+              isOpen={isOpen}
+              onRequestClose={handleModal}
+              header={<ActionHeader title="Preview Issue" onClose={handleModal} />}
+              footer={<div />}
             >
-              <FormTitle setTitle={setTitle} />
-              { issueType === 'bug'
-                ? (
-                  <BugForm
-                    solution={solution}
-                    setDescription={setDescription}
-                    setEnvironment={setEnvironment}
-                    setExpected={setExpected}
-                    setSolution={setSolution}
-                    setSteps={setSteps}
-                  />
-                )
-                : (
-                  <FeatureForm
-                    setDescription={setDescription}
-                  />
-                )
-              }
-              <FormContext context={context} setContext={setContext} />
-              <FormMentions mentions={mentions} setMentions={setMentions} />
-              <p>
-                {`Character count / max: ${count} / `}
-                {count > 5500 ? (
-                  <span>
-                    <span className={styles['error-text']}>5500</span>
-                    <br />
-                    Character count exceeded. Click Submit to continue on Github (Characters beyond form limit will be truncated).
-                  </span>
-                ) : 5500}
-              </p>
-              <DialogModal
-                ariaLabel="Default Dialog Modal"
-                isOpen={isOpen}
-                onRequestClose={handleModal}
-                header={<ActionHeader title="Preview Issue" onClose={handleModal} />}
-                footer={<div />}
-              >
-                <Spacer padding="large+2">
-                  <Markdown src={previewBody} />
-                </Spacer>
-              </DialogModal>
-              <ButtonGroup>
-                <ButtonGroup.Button
-                  id="preview-button"
-                  text="Preview"
-                  onClick={handleModal}
-                  key="Preview"
-                />
-                <ButtonGroup.Button
-                  text="Submit"
-                  key="Submit"
-                  type="submit"
-                  isDisabled={submitting || pristine}
-                />
-              </ButtonGroup>
-            </form>
-          )}
-        />
-      </Base>
+              <Spacer padding="large+2">
+                <Markdown src={previewBody} />
+              </Spacer>
+            </DialogModal>
+            <ButtonGroup>
+              <ButtonGroup.Button
+                id="preview-button"
+                text="Preview"
+                onClick={handleModal}
+                key="Preview"
+              />
+              <ButtonGroup.Button
+                text="Submit"
+                key="Submit"
+                type="submit"
+                isDisabled={submitting || pristine}
+              />
+            </ButtonGroup>
+          </form>
+        )}
+      />
     </Spacer>
   );
 };

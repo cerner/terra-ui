@@ -35,7 +35,7 @@ However, if you require translations in your Jest tests, you can create a `jestg
 Add the following code to `jestglobalsetup.js`:
 
 ```js
-const aggregateTranslations = require('terra-toolkit/scripts/aggregate-translations/aggregate-translations');
+const aggregateTranslations = require('terra-aggregate-translations');
 
 module.exports = () => {
   aggregateTranslations();

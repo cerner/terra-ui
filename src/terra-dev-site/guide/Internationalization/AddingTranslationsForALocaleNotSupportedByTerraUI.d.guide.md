@@ -1,6 +1,6 @@
 # Adding Translations For A Locale Not Supported By Terra UI
 
-Terra UI provides translations for [the following locales](https://github.com/cerner/terra-toolkit/blob/master/scripts/aggregate-translations/i18nSupportedLocales.js) for any string used in our components. In some cases, you may need to support locales outside of the ones we provide by default. This is possible, however one must ensure the locales are supported by `react-intl`, otherwise no locale-data will exist and loading the intl data will result in an error. Once confirmed that the locale is supported by `react-intl`, one is responsible for including the appropriate translations messages for each terra component used in your application, otherwise the translations will fail and `react-intl` will display the message name as the fallback.
+Terra UI provides translations for [the following locales](https://github.com/cerner/terra-aggregate-translations/blob/master/config/i18nSupportedLocales.js) for any string used in our components. In some cases, you may need to support locales outside of the ones we provide by default. This is possible, however one must ensure the locales are supported by `react-intl`, otherwise no locale-data will exist and loading the intl data will result in an error. Once confirmed that the locale is supported by `react-intl`, one is responsible for including the appropriate translations messages for each terra component used in your application, otherwise the translations will fail and `react-intl` will display the message name as the fallback.
 
 As an example, let's say you need to support Polish (`pl`) in your app.
 
@@ -9,7 +9,7 @@ In the aggregate translation functions, set the locales option and include the `
 If you only need to support English and Polish, you can call `aggregateTranslations` function with the following:
 
 ```js
-const aggregateTranslations = require ('terra-toolkit/scripts/aggregate-translations/aggregate-translations');
+const aggregateTranslations = require('terra-aggregate-translations');
 
 aggregateTranslations({ locales: ['en', 'pl']});
 ```
@@ -17,14 +17,14 @@ aggregateTranslations({ locales: ['en', 'pl']});
 If you want to support all of the Terra UI supported locales in addition to Polish, you can call `aggregateTranslations` function with the following:
 
 ```js
-const aggregateTranslations = require ('terra-toolkit/scripts/aggregate-translations/aggregate-translations');
-const supportedLocales = require('terra-toolkit/scripts/aggregate-translations/i18nSupportedLocales');
+const aggregateTranslations = require('terra-aggregate-translations');
+const supportedLocales = require('terra-aggregate-translations/config/i18nSupportedLocales.js');
 
 
 aggregateTranslations({ locales: [...supportedLocales, 'pl']});
 ```
 
-Similarly, if leveraging [Terra UI's default webpack configuration](https://github.com/cerner/terra-toolkit/blob/master/config/webpack/webpack.config.js), [you can add a `terraI18n.config.js` file to the root of your project with options to pass to aggregate-translations when its called](https://github.com/cerner/terra-toolkit/blob/master/docs/AggregateTranslations.md#terrai18nconfig-example).
+Similarly, if leveraging [Terra UI's default webpack configuration](https://github.com/cerner/terra-toolkit/blob/master/config/webpack/webpack.config.js), [you can add a `terraI18n.config.js` file to the root of your project with options to pass to aggregate-translations when its called](https://github.com/cerner/terra-aggregate-translations#terrai18nconfig-example).
 
 **Note** *When aggregating a locale not supported by Terra UI, you will see two types of warning messages*
 

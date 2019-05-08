@@ -43,7 +43,7 @@ const locale = (navigator.languages && navigator.languages[0])
 
 This will load the `en` translations for any Terra UI components you use in your app.
 
-**Note:** *This requires running [terra-toolkit's aggregate translation tool](https://github.com/cerner/terra-toolkit/blob/master/docs/AggregateTranslations.md) before starting your server to fully work. See the terra-toolkit's aggregate translation section below for more info.*
+**Note:** *This requires running the [terra-aggregate-translations tool](https://github.com/cerner/terra-aggregate-translations/blob/master/README.md) before starting your server to fully work. See the terra aggregate translation section below for more info.*
 
 If your app has custom translations outside of the ones provided by Terra UI, you can set up and use terra-base as follows:
 

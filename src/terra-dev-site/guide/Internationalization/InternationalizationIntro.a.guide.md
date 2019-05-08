@@ -3,18 +3,18 @@
 Terra UI provides builtin translations and LTR / RTL support which makes Terra UI powered apps ready to use in several countries with ease. All apps built with Terra UI are required to set up translations, even if they only intend to support English. As we support apps built for use around the world, we want apps to be prepared for internationalization from the beginning of development. It is easier to add additional locales and translations to an app built with internationalization and translations from the beginning compared to retrofitting internalization and translations into an app as it evolves into new markets.
 
 # Getting Started
-Install [terra-base](https://www.npmjs.com/package/terra-base) and [terra-toolkit](https://www.npmjs.com/package/terra-toolkit).
+Install [terra-base](https://www.npmjs.com/package/terra-base) and [terra-aggregate-translations](https://www.npmjs.com/package/terra-aggregate-translations).
 
 If you're using npm, run the following command:
 
 ```
-npm install terra-base terra-toolkit --save
+npm install terra-base terra-aggregate-translations --save
 ```
 
 If you're using yarn, run the following command:
 
 ```
-yarn add terra-base terra-toolkit
+yarn add terra-base terra-aggregate-translations
 ```
 
 # Terra Base

@@ -49,7 +49,7 @@
     "react-final-form": "^4.0.2",
     "react-particles-js": "^2.1.0",
     "react-router-dom": "^5.0.0",
-    "terra-abstract-modal": "^2.0.0",
+    "terra-abstract-modal": "^3.0.0",
     "terra-action-footer": "^2.0.0",
     "terra-action-header": "^2.0.0",
     "terra-aggregator": "^4.0.0",

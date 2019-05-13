@@ -78,7 +78,7 @@
     "terra-clinical-item-view": "^3.0.0",
     "terra-clinical-label-value-view": "^3.0.0",
     "terra-clinical-onset-picker": "^4.0.0",
-    "terra-collapsible-menu-view": "^5.0.0",
+    "terra-collapsible-menu-view": "^6.0.0",
     "terra-content-container": "^3.0.0",
     "terra-date-picker": "^3.0.0",
     "terra-date-time-picker": "^3.0.0",

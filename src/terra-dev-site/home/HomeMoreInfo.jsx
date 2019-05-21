@@ -7,7 +7,7 @@ import styles from './HomeMoreInfo.scss';
 const HomeAdditionalPages = () => (
   <Grid className={styles.section}>
     <Grid.Row>
-      <Grid.Column col={12} small={6}>
+      <Grid.Column tiny={12} small={6}>
         <Heading level={2}>Getting Started</Heading>
         <div style={{ marginTop: '.5rem' }}>
           <Text fontSize={18}>
@@ -19,7 +19,7 @@ const HomeAdditionalPages = () => (
           </Text>
         </div>
       </Grid.Column>
-      <Grid.Column col={12} small={6}>
+      <Grid.Column tiny={12} small={6}>
         <Heading level={2}>Components</Heading>
         <div style={{ marginTop: '.5rem' }}>
           <Text fontSize={18}>

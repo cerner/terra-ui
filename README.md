@@ -10,7 +10,7 @@
 
 
 [![Cerner OSS](https://badgen.net/badge/Cerner/OSS/blue)](http://engineering.cerner.com/2014/01/cerner-and-open-source/)
-[![Build Status](https://badgen.net/travis/cerner/terra-ui)](https://travis-ci.org/cerner/terra-ui)
+[![Build Status](https://badgen.net/travis/cerner/terra-ui)](https://travis-ci.com/cerner/terra-ui)
 [![Dependencies status](https://badgen.net/david/dep/cerner/terra-ui)](https://david-dm.org/cerner/terra-ui)
 [![devDependencies status](https://badgen.net/david/dev/cerner/terra-ui)](https://david-dm.org/cerner/terra-ui?type=dev)
 

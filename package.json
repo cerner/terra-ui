@@ -25,9 +25,9 @@
     "a11y": "node scripts/a11y/index.js",
     "clean": "shx rm -rf node_modules",
     "clean:install": "npm run clean && npm install",
-    "build:test": "NODE_ENV=test webpack --config webpack.config.js",
-    "build:production": "NODE_ENV=production webpack --config webpack.config.js -p",
-    "build:development": "NODE_ENV=development webpack -w --config webpack.config.js",
+    "build:test": "NODE_OPTIONS=--max-old-space-size=8192 NODE_ENV=test webpack --config webpack.config.js",
+    "build:production": "NODE_OPTIONS=--max-old-space-size=8192 NODE_ENV=production webpack --config webpack.config.js -p",
+    "build:development": "NODE_OPTIONS=--max-old-space-size=8192 NODE_ENV=development webpack -w --config webpack.config.js",
     "heroku-postbuild": "npm install && npm run build:production",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
@@ -46,7 +46,7 @@
     "puppeteer": "^1.11.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-final-form": "^4.0.2",
+    "react-final-form": "^5.0.0",
     "react-particles-js": "^2.1.0",
     "react-router-dom": "^5.0.0",
     "terra-abstract-modal": "^3.0.0",
@@ -97,6 +97,7 @@
     "terra-form-radio": "^3.0.0",
     "terra-form-select": "^5.0.0",
     "terra-form-textarea": "^3.0.0",
+    "terra-form-validation": "^1.0.0",
     "terra-grid": "^6.0.0",
     "terra-heading": "^4.0.0",
     "terra-hookshot": "^5.0.0",
@@ -113,6 +114,7 @@
     "terra-mixins": "^1.0.0",
     "terra-modal-manager": "^6.0.0",
     "terra-navigation-layout": "^5.0.0",
+    "terra-navigation-prompt": "^1.0.0",
     "terra-navigation-side-menu": "^2.0.0",
     "terra-notification-dialog": "^3.0.0",
     "terra-overlay": "^3.0.0",
@@ -158,8 +160,8 @@
     "shx": "^0.3.2",
     "stylelint": "^10.0.0",
     "stylelint-config-terra": "^3.0.0",
+    "terra-aggregate-translations": "^1.0.0",
     "terra-dev-site": "^4.0.0",
-    "terra-toolkit": "^4.6.0",
-    "terra-aggregate-translations": "^1.0.0"
+    "terra-toolkit": "^4.6.0"
   }
 }

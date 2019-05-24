@@ -8,17 +8,17 @@ import styles from './HomeTech.scss';
 const HomeTech = () => (
   <div className={styles.section}>
     <div className={styles.card}>
-      <img width="100%" src={imgCssModules} alt="CSS Modules" />
-      <div className={styles.container}>
-        <Heading level={3}>CSS Modules</Heading>
-        <p>Terra UI utilizes CSS Modules to ensure all class names are scoped locally by default.</p>
-      </div>
-    </div>
-    <div className={styles.card}>
       <img width="100%" src={imgReact} alt="ReactJS" />
       <div className={styles.container}>
         <Heading level={3}>React</Heading>
         <p>Terra UI components are created using React, making composition easy for consuming applications.</p>
+      </div>
+    </div>
+    <div className={styles.card}>
+      <img width="100%" src={imgCssModules} alt="CSS Modules" />
+      <div className={styles.container}>
+        <Heading level={3}>CSS Modules</Heading>
+        <p>Terra UI utilizes CSS Modules to ensure all class names are scoped locally by default.</p>
       </div>
     </div>
     <div className={styles.card}>

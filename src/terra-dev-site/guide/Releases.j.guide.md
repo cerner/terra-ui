@@ -51,4 +51,3 @@ Upcoming major version bumps can be found by searching our repository issues for
 * [terra-clinical](https://github.com/cerner/terra-clinical/issues?q=is%3Aissue+is%3Aopen+label%3A%22Major+Version+Bump%22)
 * [terra-core](https://github.com/cerner/terra-core/issues?q=is%3Aissue+is%3Aopen+label%3A%22Major+Version+Bump%22)
 * [terra-framework](https://github.com/cerner/terra-framework/issues?q=is%3Aissue+is%3Aopen+label%3A%22Major+Version+Bump%22)
-

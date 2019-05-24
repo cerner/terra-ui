@@ -1,0 +1,24 @@
+$grid: 'tui-illustration-grid';
+
+.#{$grid} {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  pre .codeblock {
+    white-space: pre-line; // helps with wrapping inside of flexbox
+  }
+}
+
+.#{$grid}-col {
+  flex: 1 0 17em;
+}
+
+.#{$grid}-col-illustration {
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.#{$grid}-col-illustration > svg {
+  max-width: 30rem;
+}

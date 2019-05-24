@@ -12,7 +12,7 @@ const HomeHero = () => (
       <Particles style={particleStyle} params={HomeHeroConfig} />
       <div className={styles['hero-content']}>
         <h1 className={styles['hero-title']}>Terra UI</h1>
-        <a className={styles['hero-button']} href="https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/what-is-terra">Get Started</a>
+        <a className={styles['hero-button']} href="#/getting-started/terra-ui/what-is-terra">Get Started</a>
       </div>
     </div>
   </section>

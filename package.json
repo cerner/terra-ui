@@ -46,7 +46,7 @@
     "puppeteer": "^1.11.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-final-form": "^5.0.0",
+    "react-final-form": "^6.0.0",
     "react-particles-js": "^2.1.0",
     "react-router-dom": "^5.0.0",
     "terra-abstract-modal": "^3.0.0",

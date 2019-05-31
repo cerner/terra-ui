@@ -41,7 +41,7 @@
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
     "start": "tt-serve",
-    "start-heroku": " npm run compile:prod && tt-serve-static --port $PORT --site './build' ",
+    "start-heroku": " npm run compile:production && tt-serve-static --port $PORT --site './build' ",
     "test": "npm run lint",
     "deploy": "gh-pages -d build"
   },

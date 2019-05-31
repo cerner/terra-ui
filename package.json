@@ -162,6 +162,6 @@
     "stylelint-config-terra": "^3.0.0",
     "terra-aggregate-translations": "^1.0.0",
     "terra-dev-site": "^4.0.0",
-    "terra-toolkit": "^4.6.0"
+    "terra-toolkit": "^5.0.0"
   }
 }

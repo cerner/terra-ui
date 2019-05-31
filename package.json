@@ -19,7 +19,12 @@
     "extends browserslist-config-terra"
   ],
   "eslintConfig": {
-    "extends": "terra"
+    "extends": "terra",
+    "settings": {
+      "polyfills": [
+        "promises"
+      ]
+    }
   },
   "stylelint": {
     "extends": "stylelint-config-terra"

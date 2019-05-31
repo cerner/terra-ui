@@ -28,6 +28,10 @@ const siteConfig = {
     'terra-legacy-theme/lib/scoped-theme',
   ],
 
+  sideEffectImports: [
+    './initializeXFC.js',
+  ],
+
   appConfig: {
     /* The title for the site header. */
     title: 'Terra UI',

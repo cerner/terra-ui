@@ -60,10 +60,10 @@ const disclaimerTemplate = `When logging issues to Terra UI, it is helpful to ha
 
 **Note to Cerner associates:** If you have proprietary information, don't post it directly.  Instead post a link to a site that can be protected by the Cerner IDP (e.g. sharepoint).`;
 
-const environmentTemplate = `* Component Version: 
-* Browser Name and Version: 
-* Node/npm Version [e.g. Node 8/npm 5]: 
-* Webpack Version: 
+const environmentTemplate = `* Component Version:
+* Browser Name and Version:
+* Node/npm Version [e.g. Node 8/npm 5]:
+* Webpack Version:
 * Operating System and version (desktop or mobile): `;
 
 const titleTemplate = (title, repo, selectedPackage) => `# Repo
@@ -76,6 +76,7 @@ ${repo}
 const repoList = JSON.parse(JSON.stringify(Packages)).repos;
 
 const getPackages = () => {
+  // eslint-disable-next-line compat/compat
   const packageList = Object.values(repoList).map(item => item);
   return packageList.concat.apply([], packageList);
 };

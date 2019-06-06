@@ -2,8 +2,6 @@ import React from 'react';
 import HomeHero from './HomeHero';
 import HomeAboutTerra from './HomeAboutTerra';
 import HomeAdditionalPages from './HomeMoreInfo';
-import HomeAboutTerra2 from './HomeModular';
-import HomeTech from './HomeTech';
 import Footer from '../../Footer/Index';
 import './IllustrationGrid.scss';
 
@@ -12,8 +10,6 @@ const Home = () => (
     <HomeHero />
     <HomeAboutTerra />
     <HomeAdditionalPages />
-    {/* <HomeAboutTerra2 />
-     <HomeTech /> */}
     <Footer />
   </div>
 );

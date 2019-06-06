@@ -2,8 +2,8 @@ $grid: 'tui-illustration-grid';
 
 .#{$grid} {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
 
   pre .codeblock {
     white-space: pre-line; // helps with wrapping inside of flexbox

@@ -1,0 +1,16 @@
+:local {
+  .callout-icon {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  // Hide components icon on tiny viewports
+  .callout-icon-components {
+    display: none;
+
+    @media screen and (min-width: 544px) {
+      display: block;
+    }
+  }
+}

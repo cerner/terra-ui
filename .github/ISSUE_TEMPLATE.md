@@ -1,5 +1,5 @@
 # Issue Description
-<!-- Describe the issue as best you can. We love screenshots! -->
+<!-- Describe the issue as best you can. -->
 
 ## Issue Type
 <!-- Is this a new feature request, enhancement, bug report, other? -->

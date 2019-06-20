@@ -24,10 +24,6 @@ const siteConfig = {
 
   readMeContent: undefined,
 
-  themeImports: [
-    'terra-legacy-theme/lib/scoped-theme',
-  ],
-
   sideEffectImports: [
     './initializeXFC.js',
   ],
@@ -37,14 +33,19 @@ const siteConfig = {
     title: 'Terra UI',
 
     /* The themes to toggle in the site. */
-    themes: {
-      'Default Theme': '',
-      'Legacy Theme': 'terra-legacy-theme',
-    },
-
-    extensions: {
-      gitHubUrl: 'https://github.com/cerner?utf8=%E2%9C%93&q=terra&type=&language=',
-    },
+    // themes: {
+    //   'Default Theme': '',
+    //   'Legacy Theme': 'terra-legacy-theme',
+    // },
+    extensions: [
+      {
+        iconPath: 'terra-icon/lib/icon/IconCompose',
+        key: 'terra-ui.issue-form',
+        text: 'Issue Form',
+        componentPath: '../src/terra-dev-site/IssueForm/Index',
+        size: 'huge',
+      },
+    ],
   },
 
   filterSideMenu: true,

@@ -6,6 +6,8 @@ import DialogModal from 'terra-dialog-modal';
 import Heading from 'terra-heading';
 import Markdown from 'terra-markdown';
 import Spacer from 'terra-spacer';
+import { disclosureManagerShape, withDisclosureManager } from 'terra-application/lib/disclosure-manager';
+import ContentContainer from 'terra-content-container';
 import BugForm from './BugForm';
 import BugTemplate from './BugTemplate';
 import FeatureForm from './FeatureForm';
@@ -38,7 +40,14 @@ const initialState = {
   title: '',
 };
 
-const IssueForm = () => {
+const propTypes = {
+  /**
+   * Injected by disclosure manager
+   */
+  disclosureManager: disclosureManagerShape.isRequired,
+};
+
+const IssueForm = ({ disclosureManager }) => {
   // Initialize state variables and setter functions.
   const [context, setContext] = useState(initialState.context);
   const [count, setCount] = useState(initialState.count);
@@ -73,6 +82,9 @@ const IssueForm = () => {
     } else {
       window.onbeforeunload = undefined;
     }
+    return () => {
+      window.onbeforeunload = undefined;
+    };
   });
 
   // Update repo based on the currently selected package.
@@ -140,85 +152,100 @@ const IssueForm = () => {
     window.open(
       `https://github.com/cerner/${packageRepo}/issues/new?title=[${selectedPackage}] ${encodeTitle}&body=${encodeBody}`,
     );
+
+    disclosureManager.closeDisclosure();
   };
 
   return (
-    <Spacer padding="large+2">
-      <Heading level={1}>Issue Form</Heading>
-      <Markdown src={disclaimerTemplate} />
-      <div className={styles['issue-form-select-margin']}>
-        <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />
-      </div>
-      <div className={styles['issue-form-select']}>
-        <PackageSelect setPackage={setPackage} />
-      </div>
-      <Form
-        onSubmit={submitForm}
-        subscription={{ submitting: true, pristine: true }}
-        render={({ handleSubmit, submitting, pristine }) => (
-          <form
-            onSubmit={handleSubmit}
-          >
-            <FormTitle setTitle={setTitle} />
-            { issueType === 'bug'
-              ? (
-                <BugForm
-                  solution={solution}
-                  setDescription={setDescription}
-                  setEnvironment={setEnvironment}
-                  setExpected={setExpected}
-                  setSolution={setSolution}
-                  setSteps={setSteps}
-                />
-              )
-              : (
-                <FeatureForm
-                  setDescription={setDescription}
-                />
-              )
-            }
-            <FormContext context={context} setContext={setContext} />
-            <FormMentions mentions={mentions} setMentions={setMentions} />
-            <p>
-              {`Character count / max: ${count} / `}
-              {count > 5500 ? (
-                <span>
-                  <span className={styles['error-text']}>5500</span>
-                  <br />
-                  Character count exceeded. Click Submit to continue on Github (Characters beyond form limit will be truncated).
-                </span>
-              ) : 5500}
-            </p>
-            <DialogModal
-              ariaLabel="Default Dialog Modal"
-              isOpen={isOpen}
-              onRequestClose={handleModal}
-              header={<ActionHeader title="Preview Issue" onClose={handleModal} />}
-              footer={<div />}
+    <ContentContainer
+      header={(
+        <ActionHeader
+          title="Issue Form"
+          onBack={disclosureManager.goBack}
+          onClose={disclosureManager.closeDisclosure}
+        />
+      )}
+      fill
+    >
+      <Spacer padding="large+2">
+        <Heading level={1}>Issue Form</Heading>
+        <Markdown src={disclaimerTemplate} />
+        <div className={styles['issue-form-select-margin']}>
+          <IssueSelect issueType={issueType} setIssueType={setIssueType} value={issueType} />
+        </div>
+        <div className={styles['issue-form-select']}>
+          <PackageSelect setPackage={setPackage} />
+        </div>
+        <Form
+          onSubmit={submitForm}
+          subscription={{ submitting: true, pristine: true }}
+          render={({ handleSubmit, submitting, pristine }) => (
+            <form
+              onSubmit={handleSubmit}
             >
-              <Spacer padding="large+2">
-                <Markdown src={previewBody} />
-              </Spacer>
-            </DialogModal>
-            <ButtonGroup>
-              <ButtonGroup.Button
-                id="preview-button"
-                text="Preview"
-                onClick={handleModal}
-                key="Preview"
-              />
-              <ButtonGroup.Button
-                text="Submit"
-                key="Submit"
-                type="submit"
-                isDisabled={submitting || pristine}
-              />
-            </ButtonGroup>
-          </form>
-        )}
-      />
-    </Spacer>
+              <FormTitle setTitle={setTitle} />
+              { issueType === 'bug'
+                ? (
+                  <BugForm
+                    solution={solution}
+                    setDescription={setDescription}
+                    setEnvironment={setEnvironment}
+                    setExpected={setExpected}
+                    setSolution={setSolution}
+                    setSteps={setSteps}
+                  />
+                )
+                : (
+                  <FeatureForm
+                    setDescription={setDescription}
+                  />
+                )
+              }
+              <FormContext context={context} setContext={setContext} />
+              <FormMentions mentions={mentions} setMentions={setMentions} />
+              <p>
+                {`Character count / max: ${count} / `}
+                {count > 5500 ? (
+                  <span>
+                    <span className={styles['error-text']}>5500</span>
+                    <br />
+                    Character count exceeded. Click Submit to continue on Github (Characters beyond form limit will be truncated).
+                  </span>
+                ) : 5500}
+              </p>
+              <DialogModal
+                ariaLabel="Default Dialog Modal"
+                isOpen={isOpen}
+                onRequestClose={handleModal}
+                header={<ActionHeader title="Preview Issue" onClose={handleModal} />}
+                footer={<div />}
+              >
+                <Spacer padding="large+2">
+                  <Markdown src={previewBody} />
+                </Spacer>
+              </DialogModal>
+              <ButtonGroup>
+                <ButtonGroup.Button
+                  id="preview-button"
+                  text="Preview"
+                  onClick={handleModal}
+                  key="Preview"
+                />
+                <ButtonGroup.Button
+                  text="Submit"
+                  key="Submit"
+                  type="submit"
+                  isDisabled={submitting || pristine}
+                />
+              </ButtonGroup>
+            </form>
+          )}
+        />
+      </Spacer>
+    </ContentContainer>
   );
 };
 
-export default IssueForm;
+IssueForm.propTypes = propTypes;
+
+export default withDisclosureManager(IssueForm);

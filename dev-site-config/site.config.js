@@ -32,11 +32,6 @@ const siteConfig = {
     /* The title for the site header. */
     title: 'Terra UI',
 
-    /* The themes to toggle in the site. */
-    // themes: {
-    //   'Default Theme': '',
-    //   'Legacy Theme': 'terra-legacy-theme',
-    // },
     extensions: [
       {
         iconPath: 'terra-icon/lib/icon/IconCompose',

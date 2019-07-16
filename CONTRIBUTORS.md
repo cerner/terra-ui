@@ -9,6 +9,7 @@ Cerner Corporation
 - Dave Kasper [@dkasper-was-taken]
 - Brett Jankord [@bjankord]
 - Jaime Mackey [@jmsv6d]
+- Avinash Gupta [@avinashg1994]
 
 [@matt-butler]: https://github.com/matt-butler
 [@windse7en]:https://github.com/windse7en
@@ -19,3 +20,4 @@ Cerner Corporation
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@bjankord]: https://github.com/bjankord
 [@jmsv6d]: https://github.com/jmsv6d
+[avinashg1994]: https://github.com/avinashg1994

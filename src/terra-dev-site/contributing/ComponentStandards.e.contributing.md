@@ -34,11 +34,12 @@ Components should work responsively without introducing horizontal scrollbars on
 Terra components are built following the mobile-first approach and utilize the following media query breakpoints:
 
  - Default: Applies to all viewport widths.
- - Tiny: `@media screen and (min-width: 544px)` Applies to screen viewport width 544px and wider.
- - Small: `@media screen and (min-width: 768px)` Applies to screen viewport width 768px and wider.
- - Medium: `@media screen and (min-width: 992px)` Applies to screen viewport width 992px and wider.
- - Large: `@media screen and (min-width: 1216px)` Applies to screen viewport width 1216px and wider.
- - Huge: `@media screen and (min-width: 1440px)` Applies to screen viewport width 1440px and wider.
+ - Tiny: `@media screen and (min-width: 0px)` Applies to screen viewport width 0px and wider.
+ - Small: `@media screen and (min-width: 544px)` Applies to screen viewport width 544px and wider.
+ - Medium: `@media screen and (min-width: 768px)` Applies to screen viewport width 768px and wider.
+ - Large: `@media screen and (min-width: 992px)` Applies to screen viewport width 992px and wider.
+ - Huge: `@media screen and (min-width: 1216px)` Applies to screen viewport width 1216px and wider.
+ - Enormous: `@media screen and (min-width: 1440px)` Applies to screen viewport width 1440px and wider.
 
 ## Mobile Support
 

@@ -91,7 +91,6 @@
         "terra-time-input"
     ],
     "terra-clinical": [
-        "terra-clinical-application",
         "terra-clinical-data-grid",
         "terra-clinical-detail-view",
         "terra-clinical-header",

@@ -62,6 +62,8 @@
     "terra-action-header": "^2.0.0",
     "terra-aggregator": "^4.0.0",
     "terra-alert": "^4.0.0",
+    "terra-application": "^1.0.0",
+    "terra-application-navigation": "^1.0.0",
     "terra-application-header-layout": "^3.0.0",
     "terra-application-layout": "^5.0.0",
     "terra-application-links": "^6.0.0",

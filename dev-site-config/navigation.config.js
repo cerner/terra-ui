@@ -14,7 +14,7 @@ const navConfig = {
       text: 'Components',
       pageTypes: ['doc'],
       capabilities: {
-        devToolbar: true,
+        devTools: true,
       },
     }, {
       path: '/contributing',

@@ -18,7 +18,7 @@ const HomeAdditionalPages = () => (
             <Text fontSize={18}>
               Want to learn more about the Terra UI component library? Check out the
               {' '}
-              <A href="https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/what-is-terra">Getting Started Guide</A>
+              <A href="https://engineering.cerner.com/terra-ui/getting-started/terra-ui/what-is-terra">Getting Started Guide</A>
               {' '}
               to learn more about the following: component features, usage, installation, configuration, and more.
             </Text>
@@ -42,7 +42,7 @@ const HomeAdditionalPages = () => (
             <Text fontSize={18}>
               Terra UI offers a wide range of components - from common UI components to specialized components designed for clinical use.
               {' '}
-              <A href="https://engineering.cerner.com/terra-ui/#/components">View the entire component library</A>
+              <A href="https://engineering.cerner.com/terra-ui/components">View the entire component library</A>
               .
             </Text>
           </Spacer>

@@ -20,12 +20,6 @@ const AppFooter = () => (
         ],
       },
       {
-        headerText: 'Support',
-        links: [
-          { text: 'Log an issue', href: '#/issue-form/terra-ui/index' },
-        ],
-      },
-      {
         headerText: 'About Us',
         links: [
           { text: 'Cerner', href: 'https://www.cerner.com/' },

@@ -13,20 +13,13 @@ const navConfig = {
       path: '/components',
       text: 'Components',
       pageTypes: ['doc'],
+      capabilities: {
+        devTools: true,
+      },
     }, {
       path: '/contributing',
       text: 'Contributing',
       pageTypes: ['contributing'],
-    }, {
-      path: '/issue-form',
-      text: 'Issue Form',
-      pageTypes: ['issueform'],
-      isHidden: true,
-    }, {
-      path: '/provider',
-      text: 'Provider',
-      pageTypes: ['provider'],
-      isHidden: true,
     }],
   },
 };

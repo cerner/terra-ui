@@ -11,6 +11,7 @@ Cerner Corporation
 - Jaime Mackey [@jmsv6d]
 - Avinash Gupta [@avinashg1994]
 - Saket Bajaj [@saket2403]
+- Mark Sun [@spartasixzero]
 
 [@matt-butler]: https://github.com/matt-butler
 [@windse7en]:https://github.com/windse7en
@@ -23,3 +24,4 @@ Cerner Corporation
 [@jmsv6d]: https://github.com/jmsv6d
 [avinashg1994]: https://github.com/avinashg1994
 [saket2403]: https://github.com/saket2403
+[@spartasixzero]: https://github.com/SpartaSixZero

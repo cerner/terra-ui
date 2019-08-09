@@ -6,7 +6,7 @@ $grid: 'tui-illustration-grid';
   flex-wrap: wrap;
 
   pre .codeblock {
-    white-space: pre-line; // helps with wrapping inside of flexbox
+    white-space: pre-wrap; // helps with wrapping inside of flexbox
   }
 }
 

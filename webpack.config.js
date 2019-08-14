@@ -15,6 +15,7 @@ const webpackConfig = (env, argv) => {
   const terraButton = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-button'));
 
   config.stats = 'normal';
+  config.resolve.alias = {};
   config.resolve.alias['terra-props-table'] = propsTable;
   config.resolve.alias['terra-markdown'] = terraMarkdown;
   config.resolve.alias['terra-date-picker'] = terraDatePicker;

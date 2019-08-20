@@ -40,9 +40,9 @@ const csvFilePath = 'scripts/a11y/a11y-output-csv.csv';
 if (fs.existsSync(csvFilePath)) {
   fs.unlink(csvFilePath, (err) => {
     if (err) {
-      return console.log(err);
+      return console.log(err); // eslint-disable-line no-console
     }
-    console.log(`${csvFilePath} file deleted successfully`);
+    console.log(`${csvFilePath} file deleted successfully`); // eslint-disable-line no-console
     return null;
   });
 }
@@ -58,7 +58,7 @@ const time = process.hrtime();
 puppeteer.launch().then(async (browser) => {
   const promises = [];
 
-  console.log('Running...');
+  console.log('Running...'); // eslint-disable-line no-console
 
   for (let k = 0; k < urls.length; k += 1) {
     const url = urls[k];
@@ -73,7 +73,7 @@ puppeteer.launch().then(async (browser) => {
         path: require.resolve('axe-core'),
       });
 
-      console.log(`[${k}/${urls.length - 1}]   `, url);
+      console.log(`[${k}/${urls.length - 1}]   `, url); // eslint-disable-line no-console
 
       // run axe on the page
       // eslint-disable-next-line arrow-body-style
@@ -108,5 +108,5 @@ puppeteer.launch().then(async (browser) => {
   browser.close();
 
   const diff = process.hrtime(time);
-  console.log(`\nScript run time: ${diff[0]} seconds.`);
+  console.log(`\nScript run time: ${diff[0]} seconds.`); // eslint-disable-line no-console
 });

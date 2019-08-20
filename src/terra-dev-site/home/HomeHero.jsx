@@ -9,6 +9,7 @@ const particleStyle = { background: `url(${imgTerra}) no-repeat 50% calc(50% - 7
 const HomeHero = () => (
   <section>
     <div className={styles.hero}>
+      {/* eslint-disable react/forbid-component-props */}
       <Particles style={particleStyle} params={HomeHeroConfig} />
       <div className={styles['hero-content']}>
         <h1 className={styles['hero-title']}>Terra UI</h1>

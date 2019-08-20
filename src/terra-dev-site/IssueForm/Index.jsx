@@ -110,7 +110,7 @@ const IssueForm = ({ disclosureManager }) => {
   const createPreview = () => {
     let issuePreview;
     if (issueType === 'bug') {
-      issuePreview = Object.assign({}, {
+      issuePreview = {
         context: context.replace(/(?:\n)/g, '<br>'),
         description: description.replace(/(?:\n)/g, '<br>'),
         environment,
@@ -118,14 +118,14 @@ const IssueForm = ({ disclosureManager }) => {
         mentions: mentions.replace(/(?:\n)/g, '<br>'),
         solution: solution.replace(/(?:\n)/g, '<br>'),
         steps: steps.replace(/(?:\n)/g, '<br>'),
-      });
+      };
       return BugTemplate(issuePreview);
     }
-    issuePreview = Object.assign({}, {
+    issuePreview = {
       description: description.replace(/(?:\n)/g, '<br>'),
       context: context.replace(/(?:\n)/g, '<br>'),
       mentions: mentions.replace(/(?:\n)/g, '<br>'),
-    });
+    };
     return FeatureTemplate(issuePreview);
   };
 
@@ -199,8 +199,7 @@ const IssueForm = ({ disclosureManager }) => {
                   <FeatureForm
                     setDescription={setDescription}
                   />
-                )
-              }
+                )}
               <FormContext context={context} setContext={setContext} />
               <FormMentions mentions={mentions} setMentions={setMentions} />
               <p>

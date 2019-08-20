@@ -3,9 +3,10 @@ import HomeHero from './HomeHero';
 import HomeAboutTerra from './HomeAboutTerra';
 import HomeAdditionalPages from './HomeMoreInfo';
 import Footer from '../../Footer/Index';
+import styles from './Index.scss';
 
 const Home = () => (
-  <div style={{ height: '100%', overflow: 'auto' }}>
+  <div classNAme={styles.index}>
     <HomeHero />
     <HomeAboutTerra />
     <HomeAdditionalPages />

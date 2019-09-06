@@ -26,6 +26,14 @@ const webpackConfig = (env, argv) => {
   config.resolve.alias['babel-runtime'] = babelRuntime;
   config.resolve.alias['terra-button'] = terraButton;
 
+  // TODO: Remove this resolveLoader config once it is a part of terra-dev-site
+  // Related issue: https://github.com/cerner/terra-dev-site/issues/199
+  config.resolveLoader = {
+    alias: {
+      'terra-props-table-loader': path.join(__dirname, 'scripts/terra-props-table-loader'),
+    },
+  };
+
   return config;
 };
 

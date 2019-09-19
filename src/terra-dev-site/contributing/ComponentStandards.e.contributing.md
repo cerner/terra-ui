@@ -91,6 +91,8 @@ Components should be internationalized and support the following locales:
 
 * Arabic `ar`
 * English `en`
+* English (Australia) `en-AU`
+* English (Canada) `en-CA`
 * English (US) `en-US`
 * English (United Kingdom) `en-GB`
 * Spanish `es`

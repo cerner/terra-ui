@@ -1,4 +1,4 @@
-import ClickHereIcon from '../icon/clickHereIcon'
+import ClickHereIcon from '../icon/ClickHereIcon'
 
 ## Basic Usage
 

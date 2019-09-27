@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react';
+import classNames from 'classnames/bind';
+import styles from './DeveloperActivityIcon.module.scss';
+
+const cx = classNames.bind(styles);
 
 function Icon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      style={{ float: "right", maxWidth: 400 }}
+      className={cx('icon')}
       data-name="Layer 1"
       viewBox="0 0 1144 617.32"
     >

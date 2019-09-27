@@ -6,7 +6,7 @@ import Footer from '../../Footer/Index';
 import styles from './Index.scss';
 
 const Home = () => (
-  <div classNAme={styles.index}>
+  <div className={styles.index}>
     <HomeHero />
     <HomeAboutTerra />
     <HomeAdditionalPages />

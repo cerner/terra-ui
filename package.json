@@ -181,7 +181,7 @@
     "stylelint": "^10.0.0",
     "stylelint-config-terra": "^3.0.0",
     "terra-aggregate-translations": "^1.0.0",
-    "terra-dev-site": "^6.0.0",
+    "terra-dev-site": "cerner/terra-dev-site#mdx",
     "terra-toolkit": "^5.0.0",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.3.2",

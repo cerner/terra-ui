@@ -16,7 +16,7 @@ import PairProgrammingIcon from '../icon/PairProgrammingIcon';
 
 </div>
 <div className="tui-illustration-grid-col tui-illustration-grid-col-illustration">
-<PairProgramingIcon />
+<PairProgrammingIcon />
 </div>
 </div>
 

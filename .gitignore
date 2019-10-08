@@ -28,3 +28,4 @@ build/
 
 scripts/a11y/a11y-output-csv.csv
 scripts/a11y/a11y-output-txt.txt
+.DS_Store

@@ -4,8 +4,8 @@ import Heading from 'terra-heading';
 import A from 'terra-hyperlink';
 import Spacer from 'terra-spacer';
 import Text from 'terra-text';
-import GettingStartedIcon from './GettingStartedIcon';
-import ComponentsIcon from './ComponentsIcon';
+import GettingStartedIcon from '../icon/GettingStartedIcon';
+import ComponentsIcon from '../icon/ComponentsIcon';
 import styles from './HomeMoreInfo.scss';
 
 const HomeAdditionalPages = () => (

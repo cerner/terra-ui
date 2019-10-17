@@ -39,10 +39,10 @@ The maintainers are individuals who are recognized by merit and have a demonstra
 
 The current Maintainers on the project are:
 
-- [Brett Jankord](https://github.com/bjankord)
 - [Matt Henkes](https://github.com/mjhenkes)
 - [Ryan Manuel](https://github.com/rfmanuel)
 - [Tyler Biethman](https://github.com/tbiethman)
+- [Dave Kasper](https://github.com/dkasper-was-taken)
 
 ### Committers
 

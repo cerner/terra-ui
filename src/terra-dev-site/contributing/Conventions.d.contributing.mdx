@@ -23,14 +23,18 @@ import PairProgrammingIcon from '../icon/PairProgrammingIcon';
 
 ### CSS Modules
 
-We use a concept called [CSS Modules](https://github.com/css-modules/css-modules) when creating the styles for the Terra UI components. A CSS Module is a CSS file, SCSS file in our case, in which all class names and animation names are scoped locally by default.
+We use a concept called [CSS Modules](https://github.com/css-modules/css-modules) when creating the styles for the Terra UI components. A CSS Module is a CSS file, SCSS file in our case, in which all class names and animation names are scoped locally via tooling.
+For Terra, [we default the CSS Modules scope to be global](https://github.com/cerner/terra-toolkit/blob/master/config/webpack/webpack.config.js#L64).
+This allows us to opt-in to the automated name-spacing for CSS we author will allowing us to use global CSS for third-party libraries we consume in Terra UI which may not have been written with CSS Modules in mind.
 
 Input:
 
 ```scss
 /* style.module.css before CSS modules */
-.className {
-  color: green;
+:local { // This is a CSS Modules specific selector we use to opt-in to the automated name-spacing for class names and animation names
+  .className {
+    color: green;
+  }
 }
 ```
 

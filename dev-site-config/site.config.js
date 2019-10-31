@@ -2,14 +2,9 @@
 const glob = require('glob');
 const navConfig = require('./navigation.config');
 
-const excludes = [
-  'node_modules/terra-dev-site',
-  'node_modules/terra-application',
-];
-
 const patterns = glob.sync('node_modules/terra-*/lib/terra-dev-site').map(file => (
   { root: `node_modules/${file.split('/')[1]}`, dist: 'lib', entryPoint: 'terra-dev-site' }
-)).filter(file => !excludes.includes(file.root));
+)).filter(file => file.root !== 'node_modules/terra-dev-site');
 
 const siteConfig = {
   /* The navigation configuration.  */

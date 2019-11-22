@@ -4,7 +4,6 @@ const navConfig = require('./navigation.config');
 
 const excludes = [
   'node_modules/terra-dev-site',
-  'node_modules/terra-application',
 ];
 
 const patterns = glob.sync('node_modules/terra-*/lib/terra-dev-site').map(file => (

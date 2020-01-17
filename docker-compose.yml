@@ -1,21 +1,6 @@
 version: '3'
 
 services:
-  dev: &dev
-    image: "terra-ui:dev"
-    build:
-      context: ./
-      args:
-        - npm_install=false
-    ports:
-      - 8080:8080
-    environment:
-      - CI=true
-    depends_on:
-      - standalone-chrome
-    volumes:
-      - .:/opt/module
-
   standalone-chrome:
     image: 'selenium/standalone-chrome:3.14.0-helium'
     ports:
@@ -27,6 +12,17 @@ services:
     environment:
       TZ: 'America/Chicago'
 
-  term:
-    <<: *dev
-    command: "/bin/zsh"
+  dev:
+    image: cerner/terra-node-dev:1
+    ports:
+      - 8080:8080
+    depends_on:
+      - standalone-chrome
+    volumes:
+      - .:/opt/module
+
+  test-ci:
+    build: ./
+    image: "${DOCKER_IMAGE}-test:${TAG:-latest}"
+    depends_on:
+      - standalone-chrome

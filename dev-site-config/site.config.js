@@ -37,6 +37,11 @@ const siteConfig = {
     /* The title for the site header. */
     title: 'Terra UI',
 
+    themes: {
+      'Default Theme': '',
+      'Orion Fusion Theme': 'orion-fusion-theme',
+    },
+
     extensions: [
       {
         iconPath: 'terra-icon/lib/icon/IconCompose',

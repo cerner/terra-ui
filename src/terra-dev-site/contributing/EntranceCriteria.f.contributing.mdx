@@ -1,0 +1,30 @@
+# Entrance Criteria
+
+## UX Approval
+
+Any component that gets added in Terra, requires the approval of Cerner's UX design team. This team ensures general UX consistency of the Terra component library.
+
+## Proprietary Concerns
+
+Terra is open source. Thus, components should not leak or depend on internal Cerner intellectual property. Specific examples of things to look out for that will not be allowed in Terra are:
+
+* Service calls
+* Internal components references
+* Holistic clinical components
+
+## Reusability
+
+As Terra is a multi-concept UX library, all the components that are contained therein must be broadly reusable. Thus, Terra excludes the inclusion of niche components with a small amount of consumers.
+
+## Meets Existing Standards
+
+Terra has a set of standards that *must* be followed by all components.  This includes:
+
+* Accessibility
+* Browser Support
+* Theme Support
+* i18n Support
+* RTL Support
+* Jest/WDIO Test Coverage
+
+For more specifics see the [component standards page](/contributing/terra-ui/component-standards)

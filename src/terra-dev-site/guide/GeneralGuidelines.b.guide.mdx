@@ -1,0 +1,11 @@
+# General Guidelines
+
+Keep these things in mind when developing with Terra components:
+
+* Terra components are black boxes. You should not rely on internal implementation specifics. This includes DOM structure, CSS specifics, themeable variables, class names, and undocumented side effects. These details are not part of the documented API contract and are subject to change at any time.
+* Javascript components in `private` directories are not part of Terras public API and should not be consumed directly.
+* Try to minimize your application's DOM footprint. An application's DOM size is inversely proportional to its performance. If you have a list that could have thousands of items in it, you need to rethink your design.
+* Take some time to learn the basics of [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [React](https://reactjs.org/tutorial/tutorial.html).
+* Pay attention to your dependencies. Dependencies that are only used in development should be dev dependencies. Make sure all peer dependencies are met.
+* Terra is delivered via npm packages. Take some time to learn about [npm](https://docs.npmjs.com/about-npm/).
+* Use Terra's [webpack](https://engineering.cerner.com/terra-ui/getting-started/terra-ui/webpack) configuration where possible.

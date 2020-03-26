@@ -153,6 +153,7 @@
     "terra-toggle": "^3.0.0",
     "terra-toggle-button": "^3.0.0",
     "terra-toggle-section-header": "^2.0.0",
+    "terra-toolbar": "^1.0.0",
     "terra-visually-hidden-text": "^2.0.0",
     "xfc": "^1.2.1"
   },

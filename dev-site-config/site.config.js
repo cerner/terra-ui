@@ -35,7 +35,7 @@ const siteConfig = {
 
   appConfig: {
     /* The title for the site header. */
-    title: 'Terra UI',
+    title: 'Terra',
 
     themes: {
       'Default Theme': '',

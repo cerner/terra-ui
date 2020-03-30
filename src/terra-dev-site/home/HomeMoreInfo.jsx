@@ -18,7 +18,7 @@ const HomeAdditionalPages = () => (
             <Text fontSize={18}>
               Want to learn more about the Terra UI component library? Check out the
               {' '}
-              <A href="https://engineering.cerner.com/terra-ui/getting-started/terra-ui/what-is-terra">Getting Started Guide</A>
+              <A href="https://engineering.cerner.com/terra-ui/about/terra-ui/what-is-terra">Getting Started Guide</A>
               {' '}
               to learn more about the following: component features, usage, installation, configuration, and more.
             </Text>

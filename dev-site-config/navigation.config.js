@@ -11,10 +11,6 @@ const navConfig = {
       pageTypes: ['about'],
     }, {
     }, {
-      path: '/guides',
-      text: 'Guides',
-      pageTypes: ['guide'],
-    }, {
       path: '/application',
       text: 'Application',
       pageTypes: ['app'],
@@ -29,12 +25,16 @@ const navConfig = {
         devTools: true,
       },
     }, {
-      path: '/dev_environment',
-      text: 'Dev Environment',
-      pageTypes: ['env'],
+      path: '/dev_tools',
+      text: 'Developer Tools',
+      pageTypes: ['tools'],
       capabilities: {
         devTools: true,
       },
+    }, {
+      path: '/guides',
+      text: 'Guides',
+      pageTypes: ['guide'],
     }],
   },
 };

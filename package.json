@@ -55,7 +55,7 @@
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",
     "prop-types": "^15.5.10",
-    "puppeteer": "^1.11.0",
+    "puppeteer": "^3.0.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-final-form": "^6.3.0",

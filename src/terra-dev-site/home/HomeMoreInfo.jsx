@@ -16,7 +16,7 @@ const HomeAdditionalPages = () => (
           <Heading level={2} weight={400}>Getting Started</Heading>
           <Spacer marginTop="small" marginBottom="large+3">
             <Text fontSize={18}>
-              Want to learn more about the Terra UI component library? Check out the
+              Want to learn more about the Terra component library? Check out the
               {' '}
               <A href="https://engineering.cerner.com/terra-ui/about/terra-ui/what-is-terra">Getting Started Guide</A>
               {' '}
@@ -40,7 +40,7 @@ const HomeAdditionalPages = () => (
           <Heading level={2} weight={400}>Components</Heading>
           <Spacer marginTop="small">
             <Text fontSize={18}>
-              Terra UI offers a wide range of components - from common UI components to specialized components designed for clinical use.
+              Terra offers a wide range of components - from common UI components to specialized components designed for clinical use.
               {' '}
               <A href="https://engineering.cerner.com/terra-ui/components">View the entire component library</A>
               .

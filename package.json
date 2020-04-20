@@ -66,7 +66,7 @@
     "terra-action-header": "^2.0.0",
     "terra-aggregator": "^4.0.0",
     "terra-alert": "^4.0.0",
-    "terra-application": "cerner/terra-application#doc-update",
+    "terra-application": "github:cerner/terra-application#doc-update",
     "terra-application-navigation": "^1.0.0",
     "terra-arrange": "^3.0.0",
     "terra-avatar": "^3.0.0",

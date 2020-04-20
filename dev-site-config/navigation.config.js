@@ -27,7 +27,7 @@ const navConfig = {
     }, {
       path: '/dev_tools',
       text: 'Developer Tools',
-      pageTypes: ['tools'],
+      pageTypes: ['tool'],
       capabilities: {
         devTools: true,
       },

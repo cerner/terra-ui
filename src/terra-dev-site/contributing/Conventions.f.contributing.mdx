@@ -24,7 +24,7 @@ import PairProgrammingIcon from '../icon/PairProgrammingIcon';
 ### CSS Modules
 
 We use a concept called [CSS Modules](https://github.com/css-modules/css-modules) when creating the styles for the Terra UI components. A CSS Module is a CSS file, SCSS file in our case, in which all class names and animation names are scoped locally via tooling.
-For Terra, [we default the CSS Modules scope to be global](https://github.com/cerner/terra-toolkit/blob/master/config/webpack/webpack.config.js#L64).
+For Terra, [we default the CSS Modules scope to be global](https://github.com/cerner/terra-toolkit-boneyard/blob/v6.0.0/config/webpack/webpack.config.js#L68).
 This allows us to opt-in to the automated name-spacing for CSS we author will allowing us to use global CSS for third-party libraries we consume in Terra UI which may not have been written with CSS Modules in mind.
 
 Input:
@@ -405,4 +405,4 @@ Terra.should.themeCombinationOfCustomProperties({
     });
 ````
 
-You can find more info on writing webdriver.io tests for terra [here](https://github.com/cerner/terra-toolkit/blob/master/docs/Wdio_Utility.md#writing-tests).
+You can find more info on writing webdriver.io tests for terra [here](https://github.com/cerner/terra-toolkit-boneyard/blob/master/docs/Wdio_Utility.md#writing-tests).

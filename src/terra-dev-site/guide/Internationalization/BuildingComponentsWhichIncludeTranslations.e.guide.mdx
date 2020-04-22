@@ -14,7 +14,7 @@ There are various ways to render the string as a translation with react-intl. We
 
 ```jsx
 import React from 'react';
-import Base from 'terra-base';
+import ApplicationBase from 'terra-application/lib/application-base';
 import { FormattedMessage } from 'react-intl';
 
 const Toggle = () => (
@@ -24,15 +24,15 @@ const Toggle = () => (
 );
 
 const App = () => (
-  <Base className="custom-App" locale="en">
+  <ApplicationBase locale="en">
     <Toggle />
-  </Base>
+  </ApplicationBase>
 );
 
 export default App;
 ```
 
-**Note:** *The terra-base component doesn't need to wrap individual components with translations, it should be used once to wrap the entire React app.*
+**Note:** *The Terra Application Base component doesn't need to wrap individual components with translations, it should be used once to wrap the entire React app.*
 
 By default `<FormattedMessage>` will render the formatted string into a `<span>`. If you need to customize rendering, we recommend using the [render prop version of FormattedMessage](https://github.com/yahoo/react-intl/wiki/Components#formattedmessage).
 
@@ -40,7 +40,7 @@ For example, the terra-button component has a prop for text, however it only acc
 
 ```jsx
 import React from 'react';
-import Base from 'terra-base';
+import ApplicationBase from 'terra-application/lib/application-base';
 import { FormattedMessage } from 'react-intl';
 import Button from 'terra-button';
 
@@ -53,9 +53,9 @@ const Toggle = () => (
 );
 
 const App = () => (
-  <Base className="custom-App" locale="en">
+  <ApplicationBase locale="en">
     <Toggle />
-  </Base>
+  </ApplicationBase>
 );
 
 export default App;

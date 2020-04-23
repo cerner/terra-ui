@@ -18,7 +18,7 @@ const HomeAdditionalPages = () => (
           <Heading level={2} weight={400}>About Terra</Heading>
           <Spacer marginTop="small" marginBottom="large+3">
             <Text fontSize={18}>
-              Terra is Cerner&apos;s open-source platform for creating web applications integrating into the Cerner application ecosystem.
+              Terra is Cerner&apos;s open-source framework for creating web applications integrating into the Cerner application ecosystem.
               Want to learn more about Terra? Check out the
               {' '}
               <A href="/terra-ui/about/terra-ui/what-is-terra">About Section</A>

@@ -1,8 +1,8 @@
 # Contributing
 
-[Read through our prerequisites guide](https://engineering.cerner.com/terra-ui/#/contributing/terra-ui/prerequisites) to become familiar with setup and process for contributing to Terra UI.
+[Read through our prerequisites guide](https://engineering.cerner.com/terra-ui/about/terra-ui/contributing/development-prerequisites) to become familiar with setup and process for contributing to Terra.
 
-[Read through our git workflow guide](https://engineering.cerner.com/terra-ui/#/contributing/terra-ui/git-workflow) to become familiar with our git process.
+[Read through our git workflow guide](https://engineering.cerner.com/terra-ui/about/terra-ui/contributing/git-workflow) to become familiar with our git process.
 
 ## Issue Reporting
 

@@ -1,13 +1,15 @@
 import MarketingIcon from '../icon/MarketingIcon';
 
-# Terra UI Component Standards
+# Terra Component Standards
+
+All Terra components adhere to the following standards.
 
 <div className="tui-illustration-grid">
 <div className="tui-illustration-grid-col">
 
 ## Cross-Browser Support
 
-Components should be tested and work in the following browsers.
+Components are tested and work in the following browsers.
 
 ### Desktop Browsers
 
@@ -31,7 +33,7 @@ A list of the exact browsers this currently includes can be [found here](http://
 
 ## Responsive Support
 
-Components should work responsively without introducing horizontal scrollbars on resize.
+Components are designed to function correctly within Terra's supported breakpoint ranges.
 
 Terra components are built following the mobile-first approach and utilize the following media query breakpoints:
 
@@ -45,21 +47,21 @@ Terra components are built following the mobile-first approach and utilize the f
 
 ## Mobile Support
 
-Components should:
+Terra Components:
 * Support gestures when possible (swiping / pinching)
-* Not use hover events
+* Not use hover events without an alternative method of accessing the same information
 * Avoid small tap target sizes
 
 ## Accessibility (A11y)
 
-We should strive to make components accessible. Use the following guides to help build accessible components.
+Terra components comply to WCAG 2.0 standards at the AAA level. Use the following guides to help build accessible components.
 * [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 * [Section 508](https://www.access-board.gov/guidelines-and-standards/communications-and-it/about-the-ict-refresh/final-rule/text-of-the-standards-and-guidelines)
 * [Color Contrast Checker](http://webaim.org/resources/contrastchecker/)
 
-Components should support keyboard navigation.
+Components support keyboard navigation.
 
-All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to ('focusing') interactive elements and activating them using keystrokes.
+All functionality that is available by mouse or touch is also available by keyboard. Keyboard operation is possible by moving to ('focusing') interactive elements and activating them using keystrokes.
 
 The important keys for testing are:
 
@@ -75,21 +77,9 @@ Test terra components with the following screen reader / browser combinations.
 * [VoiceOver](https://help.apple.com/voiceover/info/guide/10.12/) on Mac / Safari
 * [VoiceOver](https://www.imore.com/how-use-voiceover-iphone-and-ipad) on iOS / Safari
 
-## CSS
+## Internationalization (I18n)
 
-Components should follow [https://sass-guidelin.es/](https://sass-guidelin.es/) and our [CSS conventions](/#/contributing/terra-ui/conventions) for Terra UI.
-
-## JavaScript
-
-Components should follow [Airbnb javascript style guide](https://github.com/airbnb/javascript) and our [JS conventions](/#/contributing/terra-ui/conventions) for Terra UI.
-
-## Testing
-
-Components should include [Jest](https://github.com/facebook/jest) tests and [Webdriver.io](http://webdriver.io/) tests and follow our [testing conventions](/#/contributing/terra-ui/conventions) for Terra UI.
-
-## Internationalization (I18n) Support
-
-Components should be internationalized and support the following locales:
+Terra Components are internationalized and support the following locales:
 
 * English `en`
 * English (Australia) `en-AU`
@@ -109,6 +99,26 @@ Components should be internationalized and support the following locales:
 * Swedish `sv`
 * Swedish (Sweden) `sv-SE`
 
-### LTR / RTL Support
+## LTR / RTL
 
-Components should support both LTR and RTL directionalities. This is largely handled by our use of [postcss-rtl](https://github.com/vkalinichev/postcss-rtl). When working on CSS changes, be sure to test in RTL.
+Terra support both LTR and RTL directionalities. This is largely handled by our use of [postcss-rtl](https://github.com/vkalinichev/postcss-rtl). When working on CSS changes, be sure to test in RTL.
+
+## Themeing
+
+Terra components support the following themes:
+
+* terra-default-theme
+* clinical-lowlight-theme
+* orion-fusion-theme
+
+## CSS
+
+Components follow [sass-guidelines](https://sass-guidelin.es/), provide Style encapsulation via [CSS Modules](https://github.com/css-modules/css-modules), adhere to our [stylelint config](https://github.com/cerner/stylelint-config-terra), and follow our [CSS conventions](/about/terra-ui/contributing/conventions#css-conventions) for Terra.
+
+## JavaScript
+
+Components follow [Airbnb javascript style guide](https://github.com/airbnb/javascript), adhere to our [eslint config](https://github.com/cerner/eslint-config-terra) and our [JS conventions](/about/terra-ui/contributing/conventions#javascript-conventions) for Terra.
+
+## Testing
+
+Components are tested with unit tests via [Jest](https://github.com/facebook/jest) tests and functional tests via [Webdriver.io](http://webdriver.io/) and follow our [testing conventions](/about/terra-ui/contributing/conventions#testing-conventions) for Terra. Terra components are also manually tested for screen reader compatibility and keyboard navigation.

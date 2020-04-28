@@ -4,6 +4,10 @@ const navConfig = require('./navigation.config');
 
 const excludes = [
   'node_modules/terra-dev-site',
+  'node_modules/terra-doc-template',
+  'node_modules/terra-abstract-modal',
+  'node_modules/terra-dialog',
+  'node_modules/terra-dialog-modal',
 ];
 
 const patterns = glob.sync('node_modules/terra-*/lib/terra-dev-site').map(file => (
@@ -35,7 +39,7 @@ const siteConfig = {
 
   appConfig: {
     /* The title for the site header. */
-    title: 'Terra UI',
+    title: 'Terra',
 
     themes: {
       'Default Theme': '',

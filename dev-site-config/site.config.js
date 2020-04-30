@@ -8,6 +8,7 @@ const excludes = [
   'node_modules/terra-abstract-modal',
   'node_modules/terra-dialog',
   'node_modules/terra-dialog-modal',
+  'node_modules/terra-theme-context',
 ];
 
 const patterns = glob.sync('node_modules/terra-*/lib/terra-dev-site').map(file => (

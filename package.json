@@ -55,7 +55,7 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-final-form": "^6.3.0",
-    "react-particles-js": "^2.1.0",
+    "react-particles-js": "^3.2.1",
     "react-router-dom": "^5.0.0",
     "terra-action-footer": "^2.0.0",
     "terra-action-header": "^2.0.0",

@@ -3,7 +3,6 @@ const glob = require('glob');
 const navConfig = require('./navigation.config');
 
 const excludes = [
-  'node_modules/terra-dev-site',
   'node_modules/terra-doc-template',
   'node_modules/terra-abstract-modal',
   'node_modules/terra-dialog',

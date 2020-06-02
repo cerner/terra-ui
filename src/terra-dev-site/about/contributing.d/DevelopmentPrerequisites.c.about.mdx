@@ -1,0 +1,60 @@
+import ProgrammerIcon from '../../icon/ProgrammerIcon';
+
+# Development Prerequisites
+
+The following sections are helpful to be familiar with before starting a contribution to Terra. If you are new to open source, be sure to check out [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+
+<div className="tui-illustration-grid">
+<div className="tui-illustration-grid-col">
+
+## Licensing
+
+All files are released with the Apache 2.0 licence.
+Please add your name to the CONTRIBUTORS.md file in the repo you are contributing to. Adding your name to the CONTRIBUTORS.md file signifies agreement to all rights and reservations provided by the [License](https://github.com/cerner/terra-ui/blob/master/LICENSE).
+
+</div>
+<div className="tui-illustration-grid-col tui-illustration-grid-col-illustration">
+<ProgrammerIcon/>
+</div>
+</div>
+
+## Repositories
+
+Terra is divided into several projects:
+- [browserslist-config-terra](https://github.com/cerner/browserslist-config-terra) - Terra’s browserslist configuration.
+- [eslint-config-terra](https://github.com/cerner/eslint-config-terra) - Terra’s eslint configuration.
+- [generator-terra-module](https://github.com/cerner/generator-terra-module) - Yeoman based generator for scaffolding out a new directory for terra npm packages in a monorepo.
+- [stylelint-config-terra](https://github.com/cerner/stylelint-config-terra) - Terra’s stylelint configuration.
+- [terra-aggregate-translations](https://github.com/cerner/terra-aggregate-translations) - Terra's solution for aggregating translations across multiple dependencies.
+- [terra-application](https://github.com/cerner/terra-application) - A framework to support application development with Terra components.
+- [terra-clinical](https://github.com/cerner/terra-clinical) - Contains clinical focused components to help developers quickly build out new applications.
+- [terra-core](https://github.com/cerner/terra-core) -  Contains core react components to help developers quickly build out new applications.
+- [terra-dev-site](https://github.com/cerner/terra-dev-site) - Common 'dev site' for documenting terra components.
+- [terra-enzyme-intl](https://github.com/cerner/terra-enzyme-intl) - Helpers for running tests with react intl and enzyme.
+- [terra-framework](https://github.com/cerner/terra-framework) - Contains higher order, opinionated react components to help developers quickly build out new applications.
+- [terra-toolkit](https://github.com/cerner/terra-toolkit-boneyard) - A set of tools providing configuration, as well as helper functions for testing.
+- [terra-ui](https://github.com/cerner/terra-ui) - The primary documentation site for terra.
+
+## Development Setup
+
+### Git / GitHub
+
+You must have [git](https://help.github.com/articles/set-up-git/) installed on your computer and an account with [Github](https://github.com/).
+
+### Node / NPM
+
+You’ll need to install [Node.js](https://nodejs.org/) and npm. (npm will be installed when you install Node.js)
+
+We currently use the 10.x version of node in our projects.
+
+We recommend using [nvm](https://github.com/creationix/nvm) to install and manage node on your machine.
+
+In the project directory you can run `nvm use` to use the specified version of node associated with the project.
+
+If your console tells you that you don’t have that version installed, run `nvm install`
+
+### Docker
+
+[Terra Toolkit](https://github.com/cerner/terra-toolkit-boneyard) uses [Docker](https://www.docker.com/) to setup, run, and tear down selenium to ensure a consistent testing environment locally and in continuous integration build systems. To use Terra Toolkit for webdriver testing, you must install docker on your machine.
+
+Install Docker version 17.09.0 or higher. Installation instructions can be found at [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop).

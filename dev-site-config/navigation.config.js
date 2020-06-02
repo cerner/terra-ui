@@ -6,9 +6,17 @@ const navConfig = {
       text: 'Home',
       pageTypes: ['home'],
     }, {
-      path: '/getting-started',
-      text: 'Getting Started',
-      pageTypes: ['guide'],
+      path: '/about',
+      text: 'About',
+      pageTypes: ['about'],
+    }, {
+    }, {
+      path: '/application',
+      text: 'Application',
+      pageTypes: ['app'],
+      capabilities: {
+        devTools: true,
+      },
     }, {
       path: '/components',
       text: 'Components',
@@ -17,9 +25,16 @@ const navConfig = {
         devTools: true,
       },
     }, {
-      path: '/contributing',
-      text: 'Contributing',
-      pageTypes: ['contributing'],
+      path: '/dev_tools',
+      text: 'Developer Tools',
+      pageTypes: ['tool'],
+      capabilities: {
+        devTools: true,
+      },
+    }, {
+      path: '/guides',
+      text: 'Guides',
+      pageTypes: ['guide'],
     }],
   },
 };

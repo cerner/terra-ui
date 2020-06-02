@@ -1,13 +1,16 @@
 ### Summary
-Summarize the contents of the code changes in your pull request. Tag any open issues you believe to be resolved by this pull request.
+<!--- Summarize and explain the reason behind these code changes. What are the changes, and why are they necessary? -->
 
 ### Additional Details
-If you have anything else that you think may be relevant to this issue, list it here. Additional information can help us better understand your changes and speed up the review process.
+<!-- List anything else that is relevant to this issue. Additional information will help us better understand your changes and speed up the review process. -->
 
-Please add your name to the [CONTRIBUTORS.md] file. Adding your name to the [CONTRIBUTORS.md] file signifies agreement to all rights and reservations provided by the [License].
+<!--
+*Before publishing*
 
-Thanks for contributing to Terra. 
+1. Assign yourself to the PR.
+2. Add the appropriate labels
+3. Add your name to the CONTRIBUTORS.md file. Adding your name to the CONTRIBUTORS.md file signifies agreement to all rights and reservations provided by the License.
+-->
+
+Thank you for contributing to Terra.
 @cerner/terra
-
-[CONTRIBUTORS.md]: ../blob/master/CONTRIBUTORS.md
-[License]: ../blob/master/LICENSE

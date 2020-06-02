@@ -1,0 +1,124 @@
+import MarketingIcon from '../icon/MarketingIcon';
+
+# Terra Component Standards
+
+All Terra components adhere to the following standards.
+
+<div className="tui-illustration-grid">
+<div className="tui-illustration-grid-col">
+
+## Cross-Browser Support
+
+Components are tested and work in the following browsers.
+
+### Desktop Browsers
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br />Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br />Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br />Edge  | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br />IE | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br />Safari |
+| --------- | --------- | --------- | --------- | --------- |
+| last 2 versions | last 2 versions | last 2 versions | IE10, IE11| last 2 versions |
+
+### Mobile Browsers
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br />Chrome for Android | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br />Safari for iOS |
+| --------- | --------- |
+| last 2 versions | iOS >= 12 |
+
+A list of the exact browsers this currently includes can be [found here](http://browserl.ist/?q=iOS+%3E%3D+12%2C+last+2+and_chr+versions%2C+last+2+android+versions%2C+last+2+chrome+versions%2C+last+2+edge+versions%2C+last+2+firefox+versions%2C+last+2+ie+versions%2C+last+2+safari+versions).
+
+</div>
+<div className="tui-illustration-grid-col tui-illustration-grid-col-illustration">
+<MarketingIcon />
+</div>
+</div>
+
+## Responsive Support
+
+Components are designed to function correctly within Terra's supported breakpoint ranges.
+
+Terra components are built following the mobile-first approach and utilize the following media query breakpoints:
+
+ - Default: Applies to all viewport widths.
+ - Tiny: `@media screen and (min-width: 0px)` Applies to screen viewport width 0px and wider.
+ - Small: `@media screen and (min-width: 544px)` Applies to screen viewport width 544px and wider.
+ - Medium: `@media screen and (min-width: 768px)` Applies to screen viewport width 768px and wider.
+ - Large: `@media screen and (min-width: 992px)` Applies to screen viewport width 992px and wider.
+ - Huge: `@media screen and (min-width: 1216px)` Applies to screen viewport width 1216px and wider.
+ - Enormous: `@media screen and (min-width: 1440px)` Applies to screen viewport width 1440px and wider.
+
+## Mobile Support
+
+Terra Components:
+* Support gestures when possible (swiping / pinching)
+* Not use hover events without an alternative method of accessing the same information
+* Avoid small tap target sizes
+
+## Accessibility (A11y)
+
+Terra components comply to WCAG 2.0 standards at the AAA level. Use the following guides to help build accessible components.
+* [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
+* [Section 508](https://www.access-board.gov/guidelines-and-standards/communications-and-it/about-the-ict-refresh/final-rule/text-of-the-standards-and-guidelines)
+* [Color Contrast Checker](http://webaim.org/resources/contrastchecker/)
+
+Components support keyboard navigation.
+
+All functionality that is available by mouse or touch is also available by keyboard. Keyboard operation is possible by moving to ('focusing') interactive elements and activating them using keystrokes.
+
+The important keys for testing are:
+
+* `Tab` for moving focus to the next interactive element
+* `Shift` + `Tab` for moving focus to the previous interactive element
+* `Enter` and/or `Space` for activating (i.e. pressing/clicking) the interactive element
+* `←` and/or `→` for moving focus within tabs and some other custom controls
+* `Esc` for closing menus, dialogs, and popups
+
+Test terra components with the following screen reader / browser combinations.
+
+* [JAWS](https://www.freedomscientific.com/Products/Blindness/JAWS) with Internet Explorer 11
+* [VoiceOver](https://help.apple.com/voiceover/info/guide/10.12/) on Mac / Safari
+* [VoiceOver](https://www.imore.com/how-use-voiceover-iphone-and-ipad) on iOS / Safari
+
+## Internationalization (I18n)
+
+Terra Components are internationalized and support the following locales:
+
+* English `en`
+* English (Australia) `en-AU`
+* English (Canada) `en-CA`
+* English (US) `en-US`
+* English (United Kingdom) `en-GB`
+* Spanish `es`
+* Spanish (Spain) `es-ES`
+* Spanish (United States) `es-US`
+* German `de`
+* French `fr`
+* French (France) `fr-FR`
+* Dutch `nl`
+* Dutch (Belgium) `nl-BE`
+* Portuguese `pt`
+* Portuguese (Brazil) `pt-BR`
+* Swedish `sv`
+* Swedish (Sweden) `sv-SE`
+
+## LTR / RTL
+
+Terra support both LTR and RTL directionalities. This is largely handled by our use of [postcss-rtl](https://github.com/vkalinichev/postcss-rtl). When working on CSS changes, be sure to test in RTL.
+
+## Themeing
+
+Terra components support the following themes:
+
+* terra-default-theme
+* clinical-lowlight-theme
+* orion-fusion-theme
+
+## CSS
+
+Components follow [sass-guidelines](https://sass-guidelin.es/), provide Style encapsulation via [CSS Modules](https://github.com/css-modules/css-modules), adhere to our [stylelint config](https://github.com/cerner/stylelint-config-terra), and follow our [CSS conventions](/about/terra-ui/contributing/conventions#css-conventions) for Terra.
+
+## JavaScript
+
+Components follow [Airbnb javascript style guide](https://github.com/airbnb/javascript), adhere to our [eslint config](https://github.com/cerner/eslint-config-terra) and our [JS conventions](/about/terra-ui/contributing/conventions#javascript-conventions) for Terra.
+
+## Testing
+
+Components are tested with unit tests via [Jest](https://github.com/facebook/jest) tests and functional tests via [Webdriver.io](http://webdriver.io/) and follow our [testing conventions](/about/terra-ui/contributing/conventions#testing-conventions) for Terra. Terra components are also manually tested for screen reader compatibility and keyboard navigation.

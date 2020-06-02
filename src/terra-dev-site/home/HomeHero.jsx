@@ -12,8 +12,8 @@ const HomeHero = () => (
       {/* eslint-disable react/forbid-component-props */}
       <Particles style={particleStyle} params={HomeHeroConfig} />
       <div className={styles['hero-content']}>
-        <h1 className={styles['hero-title']}>Terra UI</h1>
-        <a className={styles['hero-button']} href="https://engineering.cerner.com/terra-ui/getting-started/terra-ui/what-is-terra">Get Started</a>
+        <h1 className={styles['hero-title']}>Terra</h1>
+        <a className={styles['hero-button']} href="/terra-ui/about/terra-ui/what-is-terra">Get Started</a>
       </div>
     </div>
   </section>

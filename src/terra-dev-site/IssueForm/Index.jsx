@@ -22,7 +22,6 @@ import {
 } from './Helper';
 import styles from './IssueForm.scss';
 
-/* eslint-disable compat/compat */
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const initialState = {
@@ -85,7 +84,7 @@ const IssueForm = ({ disclosureManager }) => {
     return () => {
       window.onbeforeunload = undefined;
     };
-  });
+  }, [total, formDidUpdate]);
 
   // Update repo based on the currently selected package.
   const packageRepo = getRepo(selectedPackage);

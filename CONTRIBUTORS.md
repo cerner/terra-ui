@@ -14,6 +14,7 @@ Cerner Corporation
 - Mark Sun [@spartasixzero]
 - Stephen Esser [@StephenEsser]
 - Matt Anderson [@mndrsn]
+- Dianna McGinn [@DMcGinn]
 
 [@matt-butler]: https://github.com/matt-butler
 [@windse7en]:https://github.com/windse7en
@@ -29,3 +30,4 @@ Cerner Corporation
 [@spartasixzero]: https://github.com/SpartaSixZero
 [@StephenEsser]: https://github.com/StephenEsser
 [@mndrsn]: https://github.com/mndrsn
+[@DMcginn]: https://github.com/DMcginn

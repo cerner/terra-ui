@@ -79,7 +79,7 @@ const HomeAdditionalPages = () => (
           <Heading level={2} weight={400}>Developer Tools</Heading>
           <Spacer marginTop="small">
             <Text fontSize={18}>
-            Terra provides a development and testing environment to help you build pieces of your application in isolation.
+              Terra provides a development and testing environment to help you build pieces of your application in isolation.
               {' '}
               <A href="/terra-ui/dev_tools">View the selection of tools</A>
               .

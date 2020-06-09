@@ -76,7 +76,6 @@ ${repo}
 const repoList = JSON.parse(JSON.stringify(Packages)).repos;
 
 const getPackages = () => {
-  // eslint-disable-next-line compat/compat
   const packageList = Object.values(repoList).map(item => item);
   return packageList.concat.apply([], packageList);
 };
@@ -88,7 +87,6 @@ const getRepo = (packageName) => {
 
 const pattern = /^[a-z0-9!"#$%&'()*+,./:;<>=?@[\] ^_`{|}~-]*$/im;
 // Form validation for required fields.
-/* eslint-disable compat/compat */
 const validateForm = (value) => {
   if (!pattern.test(value)) {
     return 'Invalid character used';

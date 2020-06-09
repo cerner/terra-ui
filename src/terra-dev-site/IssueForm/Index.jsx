@@ -22,7 +22,6 @@ import {
 } from './Helper';
 import styles from './IssueForm.scss';
 
-/* eslint-disable compat/compat */
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const initialState = {

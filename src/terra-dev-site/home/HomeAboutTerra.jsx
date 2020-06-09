@@ -9,7 +9,7 @@ const HomeAboutTerra = () => (
       <Grid.Column tiny={1} />
       <Grid.Column tiny={10}>
         <Text className={styles['home-about-terra']} fontSize={24}>
-          {'Build and integrate apps with Cerner'}
+          Build and integrate apps with Cerner
         </Text>
       </Grid.Column>
       <Grid.Column tiny={1} />

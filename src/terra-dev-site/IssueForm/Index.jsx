@@ -84,7 +84,7 @@ const IssueForm = ({ disclosureManager }) => {
     return () => {
       window.onbeforeunload = undefined;
     };
-  });
+  }, [total, formDidUpdate]);
 
   // Update repo based on the currently selected package.
   const packageRepo = getRepo(selectedPackage);

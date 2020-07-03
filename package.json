@@ -77,7 +77,7 @@
     "terra-clinical-detail-view": "^3.0.0",
     "terra-clinical-header": "^3.0.0",
     "terra-clinical-item-collection": "^4.0.0",
-    "terra-clinical-item-display": "^3.0.0",
+    "terra-clinical-item-display": "^4.0.1",
     "terra-clinical-item-view": "^3.0.0",
     "terra-clinical-label-value-view": "^3.0.0",
     "terra-clinical-onset-picker": "^4.0.0",

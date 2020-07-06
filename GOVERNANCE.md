@@ -8,7 +8,7 @@
    - [Implementers](#implementers)
    - [The Community](#the-community)
 - [Contributions](#contributions)
-  - [Master branch](#master-branch)
+  - [Main branch](#main-branch)
   - [Feature branches](#feature-branches)
   - [Forks](#forks)
 - [Voting and Consensus](#voting-and-consensus)
@@ -46,7 +46,7 @@ The current Maintainers on the project are:
 
 ### Committers
 
-The committers are individuals who have demonstrated an active role in the terra community and commit to the project regularly. They are given access to create branches within Terra projects and merge branches to master after checks and reviews have completed. They do not have access to push directly to master. Committers may be removed after long periods of inactivity.
+The committers are individuals who have demonstrated an active role in the terra community and commit to the project regularly. They are given access to create branches within Terra projects and merge branches to main after checks and reviews have completed. They do not have access to push directly to main. Committers may be removed after long periods of inactivity.
 
 ### Contributors
 
@@ -68,9 +68,9 @@ Any existing maintainer may nominate a contributor to be a new maintainer on the
 
 Anyone is welcome to contribute to the project. All contributions are public and associated to the individual(s) submitting the change.
 
-### Master branch
+### main branch
 
-The master branch must be kept in a releasable state.
+The main branch must be kept in a releasable state.
 
 Trivial changes may be committed directly to a repository. Changes deemed trivial are things like small documentation typos, ecosystem changes (eg, CI configuration, linting rules), etc. Obviously, *trivial* is subjective and anyone is welcome to comment directly on such changes or open an issue regarding them.
 
@@ -106,13 +106,13 @@ Large
 
 Committers should use feature branches to work on in-progress features and changes. Committers may commit directly to feature branches at any time and without prior review.
 
-Committers can submit a pull request from their feature branch to the master branch for review.
+Committers can submit a pull request from their feature branch to the main branch for review.
 
 ### Forks
 
 As contributors do not have write access to the repository, their contributions must be done from personal forks.
 
-Contributors can submit a pull request from their fork to the upstream master branch for review.
+Contributors can submit a pull request from their fork to the upstream main branch for review.
 
 ## Voting and Consensus
 

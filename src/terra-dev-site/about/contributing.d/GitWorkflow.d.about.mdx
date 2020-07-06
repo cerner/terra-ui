@@ -13,10 +13,10 @@ _Note: The [terra team](https://github.com/orgs/cerner/teams/terra) and [terra c
 
 ## Creating A Branch
 
-Before starting your work, first ensure you're in the master branch and that you've pulled down the latest changes:
+Before starting your work, first ensure you're in the main branch and that you've pulled down the latest changes:
 
 ```sh
-git checkout master
+git checkout main
 git pull
 ```
 
@@ -37,7 +37,7 @@ Read through our [development workflow guide](/about/terra-ui/contributing/devel
 ## Adding, Committing, And Pushing Changes
 
 Git commit to the local branch and git push to the remote branch. [Write good commit messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
-Your commits will automatically be squashed when your PR is merged into master.
+Your commits will automatically be squashed when your PR is merged into main.
 
 This will commit your changes to your local copy of the repo.
 
@@ -56,7 +56,7 @@ We use [Github pull requests](https://help.github.com/articles/about-pull-reques
 
 ### Submit A Pull Request
 
-When your branch is ready, open a new pull request via GitHub. The repo [PR template](https://github.com/cerner/terra-ui/blob/master/.github/PULL_REQUEST_TEMPLATE.md) will guide you toward describing your contribution.
+When your branch is ready, open a new pull request via GitHub. The repo [PR template](https://github.com/cerner/terra-ui/blob/main/.github/PULL_REQUEST_TEMPLATE.md) will guide you toward describing your contribution.
 
 You can [use words in PR description that refrence the related issue](https://help.github.com/articles/closing-issues-using-keywords/) and will automatically close it when the PR is merged.
 
@@ -64,7 +64,7 @@ For example, to close an issue numbered `123`, you could use the phrase `Closes 
 
 ### Code Review
 
-Per our [terra governance model](https://github.com/cerner/terra-ui/blob/master/GOVERNANCE.md), changes must be reviewed by the maintainers. This includes contributions from the community, as well as the current maintainers.
+Per our [terra governance model](https://github.com/cerner/terra-ui/blob/main/GOVERNANCE.md), changes must be reviewed by the maintainers. This includes contributions from the community, as well as the current maintainers.
 
 In order for your pull request to be accepted, the [Travis CI](https://travis-ci.org/) build needs to pass.
 
@@ -113,7 +113,7 @@ We use [GitHub project boards](https://help.github.com/articles/about-project-bo
 
 Once everything is good on the PR, an individual from the [terra team](https://github.com/orgs/cerner/teams/terra) will merge your change in!
 
-After the PR has been merged into master, the PR branch will be deleted.
+After the PR has been merged into main, the PR branch will be deleted.
 
 ## Versioning
 
@@ -127,4 +127,4 @@ For more information on versioning, check out [https://semver.npmjs.com/](https:
 
 ## Releases
 
-At that point, your contribution will be available in the next official release of Terra. Releases happen on weekly basis, whatever is ready in the master branch gets released. If you have any questions at all, don't hesitate to get in touch. We love to talk all things terra and we look forward to seeing your contribution!
+At that point, your contribution will be available in the next official release of Terra. Releases happen on weekly basis, whatever is ready in the main branch gets released. If you have any questions at all, don't hesitate to get in touch. We love to talk all things terra and we look forward to seeing your contribution!

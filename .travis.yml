@@ -5,7 +5,7 @@ script:
   - npm test
 branches:
   only:
-    - master
+    - main
 before_deploy:
   - TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY='c494ac44c8' TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID='142381315' TERRA_DEV_SITE_PUBLIC_PATH='/terra-ui/' npm run build:production
 deploy:
@@ -14,4 +14,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: build
   on:
-    branch: master
+    branch: main

@@ -7,7 +7,7 @@
 ## Issue Reporting
 
 * Please browse our [existing issues](https://github.com/cerner/terra-ui/issues) before logging new issues.
-* Check that the issue has not already been fixed in the `master` branch.
+* Check that the issue has not already been fixed in the `main` branch.
 * Open an issue with a descriptive title and a summary.
 * Please be as clear and explicit as you can in your description of the problem.
 * Please state the version of Operating System, Browser, and the version you are using in the description.

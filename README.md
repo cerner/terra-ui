@@ -24,23 +24,25 @@ Documentation site for Terra. Terra is the core UI component library, unifying U
 - [Contributing](#contributing)
 - [LICENSE](#license)
 
-
 ## Getting Started
 
 ### Install Application
-```
+
+```bash
 git clone https://github.com/cerner/terra-ui.git
 
 npm install
 ```
 
 ### Run Application
-```
+
+```bash
 npm run start
 ```
 
 ### Test Application
-```
+
+```bash
 npm run test
 ```
 

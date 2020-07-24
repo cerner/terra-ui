@@ -2,11 +2,11 @@
 
 - [Overview](#overview)
 - [Roles](#roles)
-   - [Maintainers](#maintainers)
-   - [Committers](#committers)
-   - [Contributors](#contributors)
-   - [Implementers](#implementers)
-   - [The Community](#the-community)
+  - [Maintainers](#maintainers)
+  - [Committers](#committers)
+  - [Contributors](#contributors)
+  - [Implementers](#implementers)
+  - [The Community](#the-community)
 - [Contributions](#contributions)
   - [Main branch](#main-branch)
   - [Feature branches](#feature-branches)
@@ -85,22 +85,24 @@ Component API changes are scrutinized far more closely than that of documentatio
 Example change classifications:
 
 Trivial
+
 - Change log updates
 - Release preparation
 - Dependency lock in or rollbacks
 
 Small
+
 - Test changes
 - Documentation changes
 - Lint updates
 - Minor dependency version bumps
 
 Large
+
 - A new component
 - Non-passive public api changes
 - Changing the testing framework
 - Major dependency version bumps
-
 
 ### Feature branches
 
@@ -141,6 +143,7 @@ Red X, These votes ask the author to make alterations to their proposed change. 
 Consensus is defined as a general agreement between the maintainers. Consensus is achieved when all participating maintainers have reached agreement. A minimum of two maintainers must participate for consensus. Adequate time must be provided for maintainers to participate. Again, *adequate* is subjective and left up to the best judgment of the maintainers.
 
 ## Releases
+
 The Terra projects strive to be released weekly if the project has had changes the week prior.
 
 ### Versioning

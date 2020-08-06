@@ -153,7 +153,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "7.10.5",
-    "@babel/parser": "7.10.5",
+    "@babel/parser": "7.11.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
     "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/preset-env": "^7.5.0",

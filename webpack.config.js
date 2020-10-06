@@ -4,7 +4,6 @@ const path = require('path');
 const webpackConfig = (env, argv) => {
   const config = defaultWebpackConfig(env, argv);
 
-  const propsTable = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-props-table'));
   const momentAlias = path.resolve(path.join(process.cwd(), 'node_modules', 'moment'));
   const intl = path.resolve(path.join(process.cwd(), 'node_modules', 'intl'));
   const terraMarkdown = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-markdown'));
@@ -16,7 +15,6 @@ const webpackConfig = (env, argv) => {
 
   config.stats = 'normal';
   config.resolve.alias = {};
-  config.resolve.alias['terra-props-table'] = propsTable;
   config.resolve.alias['terra-markdown'] = terraMarkdown;
   config.resolve.alias['terra-date-picker'] = terraDatePicker;
   config.resolve.alias.moment = momentAlias;

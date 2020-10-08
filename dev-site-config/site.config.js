@@ -14,6 +14,10 @@ const patterns = glob.sync('node_modules/terra-*/lib/terra-dev-site').map(file =
   { root: `node_modules/${file.split('/')[1]}`, dist: 'lib', entryPoint: 'terra-dev-site' }
 )).filter(file => !excludes.includes(file.root));
 
+const scopedPatterns = glob.sync('node_modules/\\@cerner/terra-*/lib/terra-dev-site').map(file => (
+  { root: `node_modules/@cerner/${file.split('/')[2]}`, dist: 'lib', entryPoint: 'terra-dev-site' }
+)).filter(file => !excludes.includes(file.root));
+
 const siteConfig = {
   /* The navigation configuration.  */
   navConfig,
@@ -26,6 +30,7 @@ const siteConfig = {
         entryPoint: 'terra-dev-site',
       },
       ...patterns,
+      ...scopedPatterns,
     ],
   },
   hotReloading: false,

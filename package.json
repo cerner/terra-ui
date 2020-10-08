@@ -43,12 +43,13 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
-    "start": "tt-serve",
+    "start": "NODE_OPTIONS=--max-old-space-size=8192 tt-serve",
     "start-heroku": "tt-serve-static --port $PORT --site './build' ",
     "test": "npm run lint",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",
     "prop-types": "^15.5.10",

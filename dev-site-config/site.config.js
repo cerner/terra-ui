@@ -18,8 +18,6 @@ const scopedPatterns = glob.sync('node_modules/\\@cerner/terra-*/lib/terra-dev-s
   { root: `node_modules/@cerner/${file.split('/')[2]}`, dist: 'lib', entryPoint: 'terra-dev-site' }
 )).filter(file => !excludes.includes(file.root));
 
-console.log('scopedPatterns', scopedPatterns);
-
 const siteConfig = {
   /* The navigation configuration.  */
   navConfig,

@@ -1,0 +1,41 @@
+:local {
+  .cellgrid-wrapper {
+    border-bottom: 1px solid #c8cacb;
+  }
+
+  .row {
+    border-top: 1px solid #c8cacb;
+    display: flex;
+    min-height: 60px;
+  }
+
+  .row:nth-child(even) {
+    background: #f4f4f4;
+  }
+
+  .start-accessory {
+    border-left: 1px solid #c8cacb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .end-accessory {
+    align-items: flex-end;
+    border-right: 1px solid #c8cacb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+  }
+
+  .comment {
+    min-width: 75px;
+  }
+
+  .display {
+    min-width: 75px;
+    padding-right: 1rem;
+  }
+}

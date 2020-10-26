@@ -11,9 +11,8 @@ import ItemView from 'terra-clinical-item-view';
 import Table from 'terra-table';
 import classNames from 'classnames/bind';
 import styles from './ResponsiveListAndTableExample.scss';
-import mockData from './mock-data/table-select-data'
+import mockData from './mock-data/table-select-data';
 
-//Replace ITEMviee.Display
 const display1 = <ItemView.Display icon={<IconPerson />} text="Asif Khan" />;
 const display2 = <ItemView.Display text="Care Position: Primary" />;
 const display3 = <ItemView.Display text="Room 100A" />;
@@ -106,7 +105,6 @@ const listDisplay = (
     </Item>
   </List>
 );
-
 
 const createCell = cell => ({ key: cell.key, children: cell.children, attrs: cell.attrs });
 const createCellsForRow = cells => cells.map(cell => createCell(cell));

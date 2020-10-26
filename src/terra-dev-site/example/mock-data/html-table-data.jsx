@@ -1,9 +1,3 @@
-import React from 'react';
-import classNames from 'classnames/bind';
-import styles from '../ResponsiveListAndTableExample.scss';
-
-const cx = classNames.bind(styles);
-
 const mockData = [
   {
     key: 'header-row',

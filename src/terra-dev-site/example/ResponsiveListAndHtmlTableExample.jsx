@@ -1,9 +1,5 @@
 import React from 'react';
 import ResponsiveElement from 'terra-responsive-element';
-import IconPerson from 'terra-icon/lib/icon/IconPerson';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
-import IconInformation from 'terra-icon/lib/icon/IconInformation';
-import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import Table, {
@@ -14,18 +10,16 @@ import Table, {
   Row,
 } from 'terra-html-table';
 import classNames from 'classnames/bind';
-import mockData from './mock-data/html-table-data'
+import mockData from './mock-data/html-table-data';
 import styles from './ResponsiveListAndHtmlTableExample.scss';
 
 const cx = classNames.bind(styles);
 
 const createItemDisplays = (cells, headerRow) => {
-  let displays = [];
+  const displays = [];
   displays.push(<ItemView.Display text={cells[0].children} textStyle="strong"/>);
   for (let i = 1; i < cells.length; i++) {
-    displays.push(
-      <ItemView.Display text={`${headerRow.cells[i].children}: ${cells[i].children}`} textStyle="secondary" />
-    );
+    displays.push(<ItemView.Display text={`${headerRow.cells[i].children}: ${cells[i].children}`} textStyle="secondary" />);
   }
   return displays;
 };
@@ -36,13 +30,9 @@ const createItemView = (rowData, headerRow) => (
   />
 );
 const createItems = rows => {
-  let items = [];
-  for (let i = 1; i < rows.length; i++) {
-    items.push(
-      <Item key="default" >
-        {createItemView(rows[i], rows[0])}
-      </Item>
-    );
+  const items = [];
+  for (let i = 1; i < rows.length; i+1) {
+    items.push(<Item key="default">{createItemView(rows[i], rows[0])}</Item>);
   }
   return items;
 };
@@ -68,8 +58,8 @@ const createRow = rowData => (
   </Row>
 );
 const createBody = rows => {
-  let bodyrows = [];
-  for (let i = 1; i < rows.length; i++) {
+  const bodyrows = [];
+  for (let i = 1; i < rows.length; i+1) {
     bodyrows.push(createRow(rows[i]));
   }
   return (
@@ -85,7 +75,6 @@ const tableDisplay = (
     {createBody(mockData)}
   </Table>
 );
-
 
 const CustomItemCollection = () => (
   <ResponsiveElement

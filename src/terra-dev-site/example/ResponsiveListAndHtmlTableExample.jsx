@@ -1,9 +1,5 @@
 import React from 'react';
 import ResponsiveElement from 'terra-responsive-element';
-import IconPerson from 'terra-icon/lib/icon/IconPerson';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
-import IconInformation from 'terra-icon/lib/icon/IconInformation';
-import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import Table, {
@@ -21,7 +17,7 @@ const cx = classNames.bind(styles);
 
 const createItemDisplays = (cells, headerRow) => {
   const displays = [];
-  displays.push(<ItemView.Display text={cells[0].children} textStyle="strong"/>);
+  displays.push(<ItemView.Display text={cells[0].children} textStyle="strong" />);
   for (let i = 1; i < cells.length; i += 1) {
     displays.push(<ItemView.Display text={`${headerRow.cells[i].children}: ${cells[i].children}`} textStyle="secondary" />);
   }

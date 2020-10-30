@@ -1,5 +1,9 @@
 import React from 'react';
 import ResponsiveElement from 'terra-responsive-element';
+import IconPerson from 'terra-icon/lib/icon/IconPerson';
+import IconAlert from 'terra-icon/lib/icon/IconAlert';
+import IconInformation from 'terra-icon/lib/icon/IconInformation';
+import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import Table, {
@@ -18,7 +22,7 @@ const cx = classNames.bind(styles);
 const createItemDisplays = (cells, headerRow) => {
   const displays = [];
   displays.push(<ItemView.Display text={cells[0].children} textStyle="strong"/>);
-  for (let i = 1; i < cells.length; i++) {
+  for (let i = 1; i < cells.length; i += 1) {
     displays.push(<ItemView.Display text={`${headerRow.cells[i].children}: ${cells[i].children}`} textStyle="secondary" />);
   }
   return displays;
@@ -31,7 +35,7 @@ const createItemView = (rowData, headerRow) => (
 );
 const createItems = rows => {
   const items = [];
-  for (let i = 1; i < rows.length; i+1) {
+  for (let i = 1; i < rows.length; i += 1) {
     items.push(<Item key="default">{createItemView(rows[i], rows[0])}</Item>);
   }
   return items;
@@ -59,7 +63,7 @@ const createRow = rowData => (
 );
 const createBody = rows => {
   const bodyrows = [];
-  for (let i = 1; i < rows.length; i+1) {
+  for (let i = 1; i < rows.length; i += 1) {
     bodyrows.push(createRow(rows[i]));
   }
   return (

@@ -39,10 +39,12 @@ The maintainers are individuals who are recognized by merit and have a demonstra
 
 The current Maintainers on the project are:
 
+- [Dave Kasper](https://github.com/dkasper-was-taken)
+- [Emily Rohrbough](https://github.com/emilyrohrbough)
 - [Matt Henkes](https://github.com/mjhenkes)
 - [Ryan Manuel](https://github.com/rfmanuel)
+- [Stephen Esser](https://github.com/StephenEsser)
 - [Tyler Biethman](https://github.com/tbiethman)
-- [Dave Kasper](https://github.com/dkasper-was-taken)
 
 ### Committers
 

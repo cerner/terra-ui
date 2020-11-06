@@ -1,30 +1,77 @@
-const defaultWebpackConfig = require('terra-dev-site/config/webpack/webpack.config');
 const path = require('path');
+const { merge } = require('webpack-merge');
+const {
+  TerraDevSite,
+  TerraDevSiteEntrypoints,
+} = require('@cerner/terra-dev-site');
+const WebpackConfigTerra = require('terra-toolkit/config/webpack/webpack.config');
 
-const webpackConfig = (env, argv) => {
-  const config = defaultWebpackConfig(env, argv);
+const packageJson = require('./package.json');
 
-  const momentAlias = path.resolve(path.join(process.cwd(), 'node_modules', 'moment'));
-  const intl = path.resolve(path.join(process.cwd(), 'node_modules', 'intl'));
-  const terraMarkdown = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-markdown'));
-  const terraDatePicker = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-date-picker'));
-  const resizeObserver = path.resolve(path.join(process.cwd(), 'node_modules', 'resize-observer-polyfill'));
-  const reactRouterDom = path.resolve(path.join(process.cwd(), 'node_modules', 'react-router-dom'));
-  const babelRuntime = path.resolve(path.join(process.cwd(), 'node_modules', 'babel-runtime'));
-  const terraButton = path.resolve(path.join(process.cwd(), 'node_modules', 'terra-button'));
+const cwd = process.cwd();
 
-  config.stats = 'normal';
-  config.resolve.alias = {};
-  config.resolve.alias['terra-markdown'] = terraMarkdown;
-  config.resolve.alias['terra-date-picker'] = terraDatePicker;
-  config.resolve.alias.moment = momentAlias;
-  config.resolve.alias.intl = intl;
-  config.resolve.alias['resize-observer-polyfill'] = resizeObserver;
-  config.resolve.alias['react-router-dom'] = reactRouterDom;
-  config.resolve.alias['babel-runtime'] = babelRuntime;
-  config.resolve.alias['terra-button'] = terraButton;
+const excludes = [
+  'terra-dialog-modal',
+];
 
-  return config;
-};
+const additionalSearchDirectories = Object.keys(packageJson.dependencies).reduce((acc, dependency) => {
+  if ((dependency.startsWith('terra-') || dependency.startsWith('terra-')) && !excludes.includes(dependency)) {
+    acc.push(path.join(cwd, 'node_modules', dependency, 'lib', 'terra-dev-site'));
+  }
+  return acc;
+}, []);
 
-module.exports = webpackConfig;
+const coreConfig = (env = {}) => ({
+  entry: TerraDevSiteEntrypoints,
+  plugins: [
+    new TerraDevSite({
+      titleConfig: {
+        title: 'Terra',
+      },
+      primaryNavigationItems: [{
+        path: '/home',
+        text: 'Home',
+        contentExtension: 'home',
+      }, {
+        path: '/about',
+        text: 'About',
+        contentExtension: 'about',
+      }, {
+        path: '/application',
+        text: 'Application',
+        contentExtension: 'app',
+      }, {
+        path: '/components',
+        text: 'Components',
+        contentExtension: 'doc',
+      }, {
+        path: '/dev_tools',
+        text: 'Developer Tools',
+        contentExtension: 'tool',
+      }, {
+        path: '/guides',
+        text: 'Guides',
+        contentExtension: 'guide',
+      }],
+      additionalSearchDirectories,
+      sideEffectImportFilePaths: [
+        'terra-ui/dev-site-config/initializeXFC.js',
+        'terra-ui/dev-site-config/IllustrationGrid.scss',
+      ],
+      // extensionItems: [
+      //   {
+      //     iconPath: 'terra-icon/lib/icon/IconCompose',
+      //     key: 'terra-ui.issue-form',
+      //     text: 'Issue Form',
+      //     modalPath: 'terra-ui/src/terra-dev-site/IssueForm/Index',
+      //   },
+      // ],
+    }),
+  ],
+});
+
+const mergedConfig = (env, argv) => (
+  merge(WebpackConfigTerra(env, argv), coreConfig())
+);
+
+module.exports = mergedConfig;

@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
-import ResponsiveElement from 'terra-responsive-element';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import Table, {
@@ -77,7 +76,7 @@ const tableDisplay = (
   </Table>
 );
 
-const CustomItemCollection = (props) => {
+const CustomItemCollection = () => {
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
 
   switch (activeBreakpoint) {

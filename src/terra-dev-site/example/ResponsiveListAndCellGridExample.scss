@@ -13,7 +13,7 @@
     background: #f4f4f4;
   }
 
-  .start-accessory {
+  .content-start-accessory {
     border-left: 1px solid #c8cacb;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
     text-align: center;
   }
 
-  .end-accessory {
+  .content-end-accessory {
     align-items: flex-end;
     border-right: 1px solid #c8cacb;
     display: flex;
@@ -30,11 +30,11 @@
     text-align: right;
   }
 
-  .comment {
+  .content-comment {
     min-width: 75px;
   }
 
-  .display {
+  .content-display {
     min-width: 75px;
     padding-right: 1rem;
   }

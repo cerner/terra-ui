@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
@@ -76,12 +77,20 @@ const tableDisplay = (
   </Table>
 );
 
-const CustomItemCollection = () => (
-  <ResponsiveElement
-    responsiveTo="parent"
-    tiny={listDisplay}
-    small={tableDisplay}
-  />
-);
+const CustomItemCollection = (props) => {
+  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
+
+  switch (activeBreakpoint) {
+    case 'tiny':
+    case 'small':
+    case 'medium':
+      return listDisplay;
+    case 'large':
+    case 'huge':
+    case 'enormous':
+    default:
+      return tableDisplay;
+  }
+};
 
 export default CustomItemCollection;

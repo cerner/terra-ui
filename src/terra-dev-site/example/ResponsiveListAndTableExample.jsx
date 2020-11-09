@@ -1,6 +1,5 @@
-import React, {
-  useState,
-} from 'react';
+import React, { useState, useRef } from 'react';
+import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
 import ResponsiveElement from 'terra-responsive-element';
 import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
@@ -106,11 +105,10 @@ const listDisplay = (
   </List>
 );
 
-const createCell = cell => ({ key: cell.key, children: cell.children, attrs: cell.attrs });
-const createCellsForRow = cells => cells.map(cell => createCell(cell));
-
 const CustomItemCollection = () => {
   const [selectedKey, setSelectedKey] = useState([]);
+  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
+
   const handleRowDisclose = (event, metaData) => {
     event.preventDefault();
     if (selectedKey !== metaData.key) {
@@ -121,7 +119,7 @@ const CustomItemCollection = () => {
     {
       key: rowData.key,
       isStriped: rowData.isStriped,
-      cells: createCellsForRow(rowData.cells),
+      cells: rowData.cells,
       discloseAction: {
         metaData: { key: rowData.key },
         discloseLabel: rowData.discloseText,
@@ -148,13 +146,17 @@ const CustomItemCollection = () => {
     />
   );
 
-  return (
-    <ResponsiveElement
-      responsiveTo="parent"
-      tiny={listDisplay}
-      small={tableDisplay}
-    />
-  );
+  switch (activeBreakpoint) {
+    case 'tiny':
+    case 'small':
+    case 'medium':
+      return listDisplay;
+    case 'large':
+    case 'huge':
+    case 'enormous':
+    default:
+      return tableDisplay;
+  }
 };
 
 export default CustomItemCollection;

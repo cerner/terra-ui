@@ -4,21 +4,35 @@ import ResponsiveListandHtmlTableExample from '../example/ResponsiveListandHtmlT
 
 # Creating An Item Collection
 
-Start by making a `ResponsiveElement` that will switch between its two sub-components, a `Table` version of the content when above a certain size and a `List` version of the same content as the default display. In this `ResponsiveElement`, we set 3 attributes. The first is the defaultElement which is just the `List` version of the content. The second is the `responsiveTo` attribute, which determines what the component compares itself to in order to resizes itself, its parent or the window. Terra's `ItemCollection` surrounds its `ResponsiveElement` in a `<div>` tag, and sets `responsiveTo` to `parent`. Finally the breakpoint you want to switch at is defined by setting one of the following attributes: `tiny`, `small`, `medium`, `large`, or `huge` to the `Table` version of the content.
+An Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size.
 
-The following is a simplified example of what the code should look like.
+The `terra-item-collection` used [terra-responsive-element](/components/terra-responsive-element/responsive-element/responsive-element) to swap between it's [terra-table](/components/terra-table/table/table) and [terra-list](/components/terra-list/list/list) displays. The examples in this guide use `ActiveBreakpointContext` from [terra-application](/application/terra-application/application) to switch what is displayed based on current browser size.
 
 ```javascript
-  <ResponsiveElement
-    responsiveTo="parent"
-    defaultElement={listDisplay}
-    medium={tableDisplay}
-  />
+import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
+...
+const CustomItemCollection = () => {
+  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
+  ...
+  switch (activeBreakpoint) {
+    case 'tiny':
+    case 'small':
+    case 'medium':
+      return listDisplay;
+    case 'large':
+    case 'huge':
+    case 'enormous':
+    default:
+      return tableDisplay;
+  }
+};
 ```
 
-With the base `ResponsiveElement` now set up, making the two displays versions of content is next.
+This will display our list display at browser size `medium` and below and our table display on larger sizes.
 
-## Replicating the Deprecated Terra Clinical Item Collection
+The examples also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not necessary and is used to to recreate the deprecated `terra-item-collection`.
+
+## Replicating the Deprecated Terra Clinical Item Collection displays
 
 ### Creating the List version
 
@@ -42,8 +56,6 @@ Next we build the children that are going into this `<List>`. Each child should 
     </Item>
   );
 ```
-
-The props listed in the code examples are the ones set in `terra-clinical-item-collection`, however there are plenty more to be set as needed listed in the `terra-list` documentation. A quirk to pay attention to is if `isSelectable` is used on `<Item>`, `tabIndex` should be added to the `<Item>` and set to `0`.
 
 ## Creating Single Selectable Table version
 
@@ -120,7 +132,7 @@ const attrs = { className: cx('content-display')};
 
 ## Creating a Cell Grid that looks like a Table
 
-Instead of using `<Table>`, you can use `<CellGrid>` to create another version of the default content when over a certain window size. This method requires a little bit of CSS to be put in place to get a closer match to `<Table>`'s default style. The basic content look of it looks like this.
+Instead of using `<Table>`, you can use [CellGrid](/components/terra-cell-grid/cell-grid/cell-grid) to create another version of the default content when over a certain window size. This method requires a little bit of CSS to be put in place to get a closer match to `<Table>`'s default style. The basic content look of it looks like this.
 
 ```javascript
   const cellGridDisplay = (
@@ -157,7 +169,7 @@ For the main styles it uses the following CSS.
 
 ## Creating a read-only example using HTML table
 
-If you are making a read-only table, we suggest using HTML Table which gets put together like this.
+If you are making a read-only table, we suggest using [HTML Table](/components/terra-html-table/html-table/table) which gets put together like this.
 
 ```javascript
 const htmlTable = (

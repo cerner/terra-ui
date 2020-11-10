@@ -7,7 +7,7 @@ import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import CellGrid, { Cell } from 'terra-cell-grid';
-import classNames from 'classNames/bind';
+import classNames from 'classnames/bind';
 import styles from './ResponsiveListAndCellGridExample.scss';
 import mockData from './mock-data/cell-grid-data';
 

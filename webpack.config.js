@@ -2,7 +2,6 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const {
   TerraDevSite,
-  TerraDevSiteEntrypoints,
 } = require('@cerner/terra-dev-site');
 const WebpackConfigTerra = require('terra-toolkit/config/webpack/webpack.config');
 
@@ -21,8 +20,7 @@ const additionalSearchDirectories = Object.keys(packageJson.dependencies).reduce
   return acc;
 }, []);
 
-const coreConfig = (env = {}) => ({
-  entry: TerraDevSiteEntrypoints,
+const coreConfig = () => ({
   plugins: [
     new TerraDevSite({
       titleConfig: {

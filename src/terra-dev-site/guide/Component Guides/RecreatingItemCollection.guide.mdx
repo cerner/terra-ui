@@ -4,7 +4,7 @@ import ResponsiveListandHtmlTableExample from '../../example/ResponsiveListAndHt
 
 # Re-creating Item Collection
 
-An Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size.
+`terra-item-collection` was a wrapper component designed to display data as either a table or list of items dependent on the relative container size. It has been deprecated in favor of encouraging teams to create their own component. We found that the item collection was too limited in API to meet the varied needs of all consumers and instead we now recommend teams use terra components to create their own flexible list/table component. This guide is intended to help consumers create their own 'item-collection' to switch between a table and list layout depending on the relative container size.
 
 The `terra-item-collection` used [terra-responsive-element](/components/terra-responsive-element/responsive-element/responsive-element) to swap between it's [terra-table](/components/terra-table/table/table) and [terra-list](/components/terra-list/list/list) displays. The examples in this guide use `ActiveBreakpointContext` from [terra-application](/application/terra-application/application) to switch what is displayed based on current browser size.
 
@@ -30,7 +30,7 @@ const CustomItemCollection = () => {
 
 This will display our list display at browser size `medium` and below and our table display on larger sizes.
 
-The examples also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not necessary and is used to to recreate the deprecated `terra-item-collection`.
+The examples also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not required. It is used here to to recreate the deprecated `terra-item-collection` but you may create your own cell layout to meet the requirements of your design..
 
 ## Replicating the Deprecated Terra Clinical Item Collection displays
 
@@ -45,10 +45,10 @@ Start with a Terra `List` component and define these two props: `dividerStyles` 
   </List>);
 ```
 
-Next we build the children that are going into this `<List>`. Each child should be wrapped in `terra-list`'s `<Item>` and as display in an `<ItemView>` from `terra-clinical-item-view`.
+Next we build the children that are going into this `List`. Each child should be dropped in `terra-list`'s `Item` and be set as the display prop in an `ItemView` from `terra-clinical-item-view`.
 
 ```javascript
-  var listChild = (
+  const listChild = (
     <Item>
       <ItemView
         displays={React.Children.toArray(children)}
@@ -86,7 +86,7 @@ For `tableDisplay`, we start with this.
 In our particular example, we created a mock data object we parse through to create the rows and cells. The `createRows` function which looks like this.
 
 ```javascript
-const createRow = rowData => (
+const createRows = rowData => (
   {
     key: rowData.key,
     isStriped: rowData.isStriped,

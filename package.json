@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@cerner/terra-application": "github:cerner/terra-application#application-v2-integration",
-    "@cerner/terra-dev-site": "github:cerner/terra-dev-site#terra-app-v2",
+    "@cerner/terra-dev-site": "github:cerner/terra-dev-site#unlock-terra-application",
     "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",

@@ -11,10 +11,11 @@ const cwd = process.cwd();
 
 const excludes = [
   'terra-dialog-modal',
+  '@cerner/terra-application',
 ];
 
 const additionalSearchDirectories = Object.keys(packageJson.dependencies).reduce((acc, dependency) => {
-  if ((dependency.startsWith('terra-') || dependency.startsWith('terra-')) && !excludes.includes(dependency)) {
+  if ((dependency.startsWith('terra-') || dependency.startsWith('@cerner/terra-')) && !excludes.includes(dependency)) {
     acc.push(path.join(cwd, 'node_modules', dependency, 'lib', 'terra-dev-site'));
   }
   return acc;
@@ -28,27 +29,27 @@ const coreConfig = () => ({
       },
       primaryNavigationItems: [{
         path: '/home',
-        text: 'Home',
+        label: 'Home',
         contentExtension: 'home',
       }, {
         path: '/about',
-        text: 'About',
+        label: 'About',
         contentExtension: 'about',
       }, {
         path: '/application',
-        text: 'Application',
+        label: 'Application',
         contentExtension: 'app',
       }, {
         path: '/components',
-        text: 'Components',
+        label: 'Components',
         contentExtension: 'doc',
       }, {
         path: '/dev_tools',
-        text: 'Developer Tools',
+        label: 'Developer Tools',
         contentExtension: 'tool',
       }, {
         path: '/guides',
-        text: 'Guides',
+        label: 'Guides',
         contentExtension: 'guide',
       }],
       additionalSearchDirectories,
@@ -56,14 +57,6 @@ const coreConfig = () => ({
         'terra-ui/dev-site-config/initializeXFC.js',
         'terra-ui/dev-site-config/IllustrationGrid.scss',
       ],
-      // extensionItems: [
-      //   {
-      //     iconPath: 'terra-icon/lib/icon/IconCompose',
-      //     key: 'terra-ui.issue-form',
-      //     text: 'Issue Form',
-      //     modalPath: 'terra-ui/src/terra-dev-site/IssueForm/Index',
-      //   },
-      // ],
     }),
   ],
 });

@@ -37,7 +37,7 @@ const ParticlesConfig = {
     },
     move: {
       enable: true,
-      speed: .5,
+      speed: 0.5,
       direction: 'none',
       random: true,
       straight: false,
@@ -63,6 +63,7 @@ const ParticlesConfig = {
 const HomeHero = () => (
   <section>
     <div className={styles.hero}>
+      {/* eslint-disable react/forbid-component-props */}
       <Particles style={particleStyle} params={ParticlesConfig} />
       <div className={styles['hero-content']}>
         <h1 className={styles['hero-title']}>Terra</h1>

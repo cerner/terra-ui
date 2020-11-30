@@ -8,6 +8,7 @@ const excludes = [
   'node_modules/terra-dialog',
   'node_modules/terra-dialog-modal',
   'node_modules/terra-theme-context',
+  'node_modules/terra-markdown',
 ];
 
 const patterns = glob.sync('node_modules/terra-*/lib/terra-dev-site').map(file => (
@@ -50,16 +51,6 @@ const siteConfig = {
       'Default Theme': '',
       'Orion Fusion Theme': 'orion-fusion-theme',
     },
-
-    extensions: [
-      {
-        iconPath: 'terra-icon/lib/icon/IconCompose',
-        key: 'terra-ui.issue-form',
-        text: 'Issue Form',
-        componentPath: '../src/terra-dev-site/IssueForm/Index',
-        size: 'huge',
-      },
-    ],
   },
 
   filterSideMenu: true,

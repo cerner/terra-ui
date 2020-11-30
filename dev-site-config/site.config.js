@@ -52,16 +52,6 @@ const siteConfig = {
       'Default Theme': '',
       'Orion Fusion Theme': 'orion-fusion-theme',
     },
-
-    extensions: [
-      {
-        iconPath: 'terra-icon/lib/icon/IconCompose',
-        key: 'terra-ui.issue-form',
-        text: 'Issue Form',
-        componentPath: '../src/terra-dev-site/IssueForm/Index',
-        size: 'huge',
-      },
-    ],
   },
 
   filterSideMenu: true,

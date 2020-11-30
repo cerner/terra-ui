@@ -5,66 +5,61 @@ import styles from './HomeHero.scss';
 
 const particleStyle = { background: `url(${imgTerra}) no-repeat 50% calc(50% - 70px) / 250px 250px #223` };
 
-const ParticlesConfig = {
+const ParticlesConfigConstellations = {
   particles: {
     number: {
-      value: 200,
+      value: 150,
       density: {
         enable: true,
-        area: 800,
+        value_area: 1500,
       },
     },
-    color: { value: '#ddd' },
-    shape: {
-      type: 'circle',
-      stroke: { width: 0, color: '#ccc' },
-      polygon: { nb_sides: 3 },
-    },
-    opacity: {
-      value: 1,
-      random: true,
-    },
-    size: {
-      value: 2,
-      random: true,
-    },
     links: {
-      enable: false,
-      distance: 30,
-      color: '#ffffff',
-      opacity: 0.4,
-      width: 1,
+      enable: true,
+      opacity: 0.04,
+      distance: 100,
     },
     move: {
-      enable: true,
-      speed: 0.5,
-      direction: 'none',
-      random: true,
-      straight: false,
+      direction: 'right',
+      speed: 0.05,
       out_mode: 'out',
-      bounce: false,
+    },
+    size: {
+      value: 1.5,
+      random: {
+        enable: true,
+        minimumValue: 1,
+      },
+    },
+    opacity: {
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0.05,
+      },
     },
   },
   interactivity: {
-    detect_on: 'canvas',
     events: {
-      onhover: { enable: false, mode: 'repulse' },
-      onclick: { enable: true, mode: 'repulse' },
-      resize: true,
+      onclick: {
+        enable: true,
+        mode: 'push',
+      },
     },
     modes: {
-      repulse: { distance: 200, duration: 5, speed: 1 },
+      push: {
+        particles_nb: 1,
+      },
     },
   },
-  retina_detect: false,
-  pauseOnBlur: true,
+  retina_detect: true,
 };
 
 const HomeHero = () => (
   <section>
     <div className={styles.hero}>
       {/* eslint-disable react/forbid-component-props */}
-      <Particles style={particleStyle} params={ParticlesConfig} />
+      <Particles style={particleStyle} params={ParticlesConfigConstellations} />
       <div className={styles['hero-content']}>
         <h1 className={styles['hero-title']}>Terra</h1>
         <a className={styles['hero-button']} href="/terra-ui/about/terra-ui/what-is-terra">Get Started</a>

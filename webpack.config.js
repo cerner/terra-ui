@@ -51,6 +51,7 @@ const coreConfig = () => ({
         label: 'Guides',
         contentExtension: 'guide',
       }],
+      distributionFolder: 'src',
       additionalSearchDirectories,
       sideEffectImportFilePaths: [
         'terra-ui/dev-site-config/initializeXFC.js',

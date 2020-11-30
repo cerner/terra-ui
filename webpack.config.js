@@ -10,7 +10,6 @@ const packageJson = require('./package.json');
 const cwd = process.cwd();
 
 const excludes = [
-  'terra-dialog-modal',
   '@cerner/terra-application',
 ];
 

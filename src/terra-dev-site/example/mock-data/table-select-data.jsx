@@ -54,6 +54,7 @@ const mockData = [
       { key: 'comment', children: comment, attrs: { className: cx('content-comment') } },
       { key: 'endAccessory', children: endAccessory, attrs: { className: cx('content-accessory', 'content-accessory-align-center', 'content-end-accessory') } },
     ],
+    layout: 'twoColumns'
   },
   {
     key: 'row-2',
@@ -89,6 +90,7 @@ const mockData = [
       { key: 'comment', children: comment, attrs: { className: cx('content-comment') } },
       { key: 'endAccessory', children: endAccessory, attrs: { className: cx('content-accessory', 'content-accessory-align-center', 'content-end-accessory') } },
     ],
+    layout: 'twoColumns'
   },
   {
     key: 'row-4',

@@ -1,12 +1,10 @@
 import ResponsiveListandTableExample from '../../example/ResponsiveListAndTableExample?dev-site-example';
-import ResponsiveListandCellGridExample from '../../example/ResponsiveListAndCellGridExample?dev-site-example';
-import ResponsiveListandHtmlTableExample from '../../example/ResponsiveListAndHtmlTableExample?dev-site-example';
 
 # Re-creating Item Collection
 
 `terra-item-collection` was a wrapper component designed to display data as either a table or list of items dependent on the relative container size. It has been deprecated in favor of encouraging teams to create their own component. We found that the item collection was too limited in API to meet the varied needs of all consumers and instead we now recommend teams use terra components to create their own flexible list/table component. This guide is intended to help consumers create their own 'item-collection' to switch between a table and list layout depending on the relative container size.
 
-The `terra-item-collection` used [terra-responsive-element](/components/terra-responsive-element/responsive-element/responsive-element) to swap between it's [terra-table](/components/terra-table/table/table) and [terra-list](/components/terra-list/list/list) displays. The examples in this guide use `ActiveBreakpointContext` from [terra-application](/application/terra-application/application) to switch what is displayed based on current browser size.
+The `terra-item-collection` used [terra-responsive-element](/components/terra-responsive-element/responsive-element/responsive-element) to swap between it's [terra-table](/components/terra-table/table/table) and [terra-list](/components/terra-list/list/list) displays. The example in this guide use `ActiveBreakpointContext` from [terra-application](/application/terra-application/application) to switch what is displayed based on current browser size.
 
 ```javascript
 import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
@@ -30,9 +28,11 @@ const CustomItemCollection = () => {
 
 This will display our list display at browser size `medium` and below and our table display on larger sizes.
 
-The examples also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not required. It is used here to to recreate the deprecated `terra-item-collection` but you may create your own cell layout to meet the requirements of your design..
+The example also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not required. It is used here to to recreate the deprecated `terra-item-collection` but you may create your own cell layout to meet the requirements of your design..
 
 ## Replicating the Deprecated Terra Clinical Item Collection displays
+
+In the following examples we create 2 different displays. A [terra-list](/components/terra-list/list/list) display is used when browser size is below 'medium'. The other display is a [terra-table](/components/terra-table/table/table).
 
 ### Creating the List version
 
@@ -45,21 +45,24 @@ Start with a Terra `List` component and define these two props: `dividerStyles` 
   </List>);
 ```
 
-Next we build the children that are going into this `List`. Each child should be dropped in `terra-list`'s `Item` and be set as the display prop in an `ItemView` from `terra-clinical-item-view`.
+Next we build the children that are going into this `List`. Each child should be dropped in [`terra-list`'s `Item`](/components/terra-list/list/list-item) and be set as the display prop in an [ItemView](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view).
 
 ```javascript
   const listChild = (
     <Item>
       <ItemView
         displays={React.Children.toArray(children)}
+        ...
       />
     </Item>
   );
 ```
 
+In our example we use many optional props to better organize and display the mock data we have provided.
+
 ## Creating Single Selectable Table version
 
-For `tableDisplay`, we start with this.
+Using [terra-table](/components/terra-table/table/table), we start with this.
 
 ```javascript
   const tableDisplay = (
@@ -71,7 +74,7 @@ For `tableDisplay`, we start with this.
       rowStyle="disclose"
       bodyData={[
         {
-          rows: createRows(mockData),
+          rows: React.Children.toArray(createRows(mockData)),
         },
       ]}
       className={cx('table')}
@@ -79,7 +82,7 @@ For `tableDisplay`, we start with this.
   );
 ```
 
-`summaryId` is an element-id for the component, `summary` is just a brief text to describe the table's content, and `className` is just add some CSS. `numberOfColumns` is also pretty self-explanatory as how many columns you will need in the table. `dividerStyle` is used to put divisions between rows.
+`summaryId` is an element-id for the component, `summary` is just a brief text to describe the table's content, and `className` is a scope class name tp add CSS. `numberOfColumns` is also pretty self-explanatory as how many columns you will need in the table. `dividerStyle` is used to put divisions between rows.
 
 `rowStyle` we define as 'disclose' because in our example our rows are selectable to then disclose further information upon selection.
 
@@ -130,72 +133,5 @@ Cells are simple and just require a key, the children of said cell and then we u
 const attrs = { className: cx('content-display')};
 ```
 
-## Creating a Cell Grid that looks like a Table
-
-Instead of using `<Table>`, you can use [CellGrid](/components/terra-cell-grid/cell-grid/cell-grid) to create another version of the default content when over a certain window size. This method requires a little bit of CSS to be put in place to get a closer match to `<Table>`'s default style. The basic content look of it looks like this.
-
-```javascript
-  const cellGridDisplay = (
-    <div className={cx('cellgrid-wrapper')}>
-      <CellGrid className={cx('row')}>
-        <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
-        <Cell className={cx('display')} key="cell-i" width={{ scalar: 1 }}>{display}</Cell>
-        ...
-      </CellGrid>
-      ...
-    </div>
-  );
-```
-
-In this example, the `<CellGrid>` effectively act as rows and doesn't require any props other than defining a class for it. The `<Cell>`'s are where the content is placed. In the example provided at the bottom of this page, the content has two accessories on either side of the main information. Setting these accessories `width` prop to `{ static: { value: 40, unit: 'px' } }` allows the accessories to only take up a small amount of space, while the rest of the `Cell`'s use `{ scalar: 1 }` for width to automatically take up an equal percentage of the remaining space.
-
-For the main styles it uses the following CSS.
-
-```css
-.cellgrid-wrapper {
-  border-bottom: 1px solid #c8cacb;
-}
-
-.row {
-  border-top: 1px solid #c8cacb;
-  display: flex;
-  min-height: 60px;
-}
-
-.row:nth-child(even) {
-  background: #f4f4f4;
-}
-```
-
-## Creating a read-only example using HTML table
-
-If you are making a read-only table, we suggest using [HTML Table](/components/terra-html-table/html-table/table) which gets put together like this.
-
-```javascript
-const htmlTable = (
-  <Table>
-    <Header>
-      <HeaderCell key="cell-date">{"Date"}</HeaderCell>
-      <HeaderCell key="cell-1">{"Chrome"}</HeaderCell>
-      ...
-    </Header>
-    <Body>
-      <Row key="row_0">
-        <Cell key="display_0" className={cx('cell-date')}>{"October 2019"}</Cell>
-        <Cell key="display_1" className={cx('cell')}>{"68.91%"}</Cell>
-        ...
-      </Row>
-      ...
-    </Body>
-  </Table>
-);
-```
-
-It uses a straightforward Header and Body section. The header section is composed of `<HeaderCell>`'s which just needs a simple key and child for its display.
-
-The body `<Row>`s and `<Cell>`s are also for the most part easily constructed with keys required for both. The `<Cell>`s also get classes for ease of styling and children for actual content.
-
 ## Example
 <ResponsiveListandTableExample title='Responsive List And Table Example' />
-<ResponsiveListandCellGridExample title='Responsive List And Cell Grid Example' />
-<ResponsiveListandHtmlTableExample title='Responsive List And HTML Table Example' />

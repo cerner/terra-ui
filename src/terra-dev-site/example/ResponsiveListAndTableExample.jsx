@@ -18,15 +18,12 @@ const createItem = rowData => {
       case 'startAccessory':
         startAccessory = cell.children;
         return null;
-        break;
       case 'comment':
         comment = cell.children;
         return null;
-        break;
       case 'endAccessory':
         endAccessory = cell.children;
         return null;
-        break;
       default:
         return cell.children;
     }

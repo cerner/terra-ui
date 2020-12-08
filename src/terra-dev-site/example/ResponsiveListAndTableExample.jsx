@@ -11,25 +11,28 @@ const cx = classNames.bind(styles);
 const createItem = rowData => {
   let startAccessory;
   let comment;
-  let endAccessory
+  let endAccessory;
 
   const displays = rowData.cells.map((cell) => {
-    switch(cell.key) {
+    switch (cell.key) {
       case 'startAccessory':
-          startAccessory = cell.children;
+        startAccessory = cell.children;
+        return null;
         break;
       case 'comment':
-          comment = cell.children;
+        comment = cell.children;
+        return null;
         break;
       case 'endAccessory':
-          endAccessory = cell.children;
+        endAccessory = cell.children;
+        return null;
         break;
       default:
         return cell.children;
     }
   });
 
-  if(startAccessory) {
+  if (startAccessory) {
     return (
       <Item>
         <ItemView

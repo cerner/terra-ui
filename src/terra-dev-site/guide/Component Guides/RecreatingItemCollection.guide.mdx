@@ -1,6 +1,6 @@
 import ResponsiveListandTableExample from '../../example/ResponsiveListAndTableExample?dev-site-example';
 
-# Re-creating Item Collection
+# Building an Item Collection
 
 `terra-item-collection` was a wrapper component designed to display data as either a table or list of items dependent on the relative container size. It has been deprecated in favor of encouraging teams to create their own component. We found that the item collection was too limited in API to meet the varied needs of all consumers and instead we now recommend teams use terra components to create their own flexible list/table component. This guide is intended to help consumers create their own 'item-collection' to switch between a table and list layout depending on the relative container size.
 
@@ -26,15 +26,15 @@ const CustomItemCollection = () => {
 };
 ```
 
-This will display our list display at browser size `medium` and below and our table display on larger sizes.
+This will display a list at browser size `medium` and below and a table on larger sizes.
 
-The example also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not required. It is used here to to recreate the deprecated `terra-item-collection` but you may create your own cell layout to meet the requirements of your design..
+The example also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not required. It is used here to to recreate the deprecated `terra-item-collection` but we encourage you to create your own cell layout to meet the requirements of your design..
 
-## Replicating the Deprecated Terra Clinical Item Collection displays
+## Creating the Item Collection
 
-In the following examples we create 2 different displays. A [terra-list](/components/terra-list/list/list) display is used when browser size is below 'medium'. The other display is a [terra-table](/components/terra-table/table/table).
+In the following examples we create 2 different components. A [terra-list](/components/terra-list/list/list) display is used when browser size is below 'medium'. The other component is a [terra-table](/components/terra-table/table/table).
 
-### Creating the List version
+### Creating the List
 
 Start with a Terra `List` component and define these two props: `dividerStyles` and `role`. `dividerStyle` is used to determine if and where you want the border-color to be applied to each of the children and can have the values 'none', 'standard', 'bottom-only'. `role` is only used if the children you have in `List` are selectable, and if they are, is defined as 'listbox'.
 
@@ -60,7 +60,7 @@ Next we build the children that are going into this `List`. Each child should be
 
 In our example we use many optional props to better organize and display the mock data we have provided.
 
-## Creating Single Selectable Table version
+## Creating the Table
 
 Using [terra-table](/components/terra-table/table/table), we start with this.
 

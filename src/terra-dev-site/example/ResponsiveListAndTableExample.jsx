@@ -43,16 +43,15 @@ const CustomItemCollection = () => {
 
     if (startAccessory) {
       itemview = (
-          <ItemView
-            displays={displays}
-            startAccessory={startAccessory}
-            comment={comment}
-            endAccessory={endAccessory}
-            layout={rowData.layout}
-          />
+        <ItemView
+          displays={displays}
+          startAccessory={startAccessory}
+          comment={comment}
+          endAccessory={endAccessory}
+          layout={rowData.layout}
+        />
       );
-    }
-    else {
+    } else {
       itemview = (
         <ItemView
           displays={displays}

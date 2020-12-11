@@ -8,70 +8,81 @@ import styles from './ResponsiveListAndTableExample.scss';
 import mockData from './mock-data/table-select-data';
 
 const cx = classNames.bind(styles);
-const createItem = rowData => {
-  let startAccessory;
-  let comment;
-  let endAccessory;
-
-  const displays = rowData.cells.map((cell) => {
-    switch (cell.key) {
-      case 'startAccessory':
-        startAccessory = cell.children;
-        return null;
-      case 'comment':
-        comment = cell.children;
-        return null;
-      case 'endAccessory':
-        endAccessory = cell.children;
-        return null;
-      default:
-        return cell.children;
-    }
-  });
-
-  if (startAccessory) {
-    return (
-      <Item>
-        <ItemView
-          displays={displays}
-          startAccessory={startAccessory}
-          comment={comment}
-          endAccessory={endAccessory}
-          layout={rowData.layout}
-        />
-      </Item>
-    );
-  }
-
-  return (
-    <Item>
-      <ItemView
-        displays={displays}
-        reserveStartAccessorySpace
-        comment={comment}
-        endAccessory={endAccessory}
-        layout={rowData.layout}
-      />
-    </Item>
-  );
-};
-const createItems = data => data.map(childItem => createItem(childItem));
-const listDisplay = (
-  <List role="listbox">
-    {createItems(mockData)}
-  </List>
-);
 
 const CustomItemCollection = () => {
   const [selectedKey, setSelectedKey] = useState([]);
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
-
   const handleRowDisclose = (event, metaData) => {
     event.preventDefault();
     if (selectedKey !== metaData.key) {
       setSelectedKey(metaData.key);
     }
   };
+
+  const createItem = rowData => {
+    let itemview;
+    let startAccessory;
+    let comment;
+    let endAccessory;
+
+    const displays = rowData.cells.map((cell) => {
+      switch (cell.key) {
+        case 'startAccessory':
+          startAccessory = cell.children;
+          return null;
+        case 'comment':
+          comment = cell.children;
+          return null;
+        case 'endAccessory':
+          endAccessory = cell.children;
+          return null;
+        default:
+          return cell.children;
+      }
+    });
+
+    if (startAccessory) {
+      itemview = (
+          <ItemView
+            displays={displays}
+            startAccessory={startAccessory}
+            comment={comment}
+            endAccessory={endAccessory}
+            layout={rowData.layout}
+          />
+      );
+    }
+    else {
+      itemview = (
+        <ItemView
+          displays={displays}
+          reserveStartAccessorySpace
+          comment={comment}
+          endAccessory={endAccessory}
+          layout={rowData.layout}
+        />
+      );
+    }
+
+    return (
+      <Item
+        key={rowData.key}
+        metaData={{ key: rowData.key }}
+        onSelect={handleRowDisclose}
+        isSelectable
+        isSelected={selectedKey === rowData.key}
+      >
+        {itemview}
+      </Item>
+    );
+  };
+  const createItems = data => data.map(childItem => createItem(childItem));
+  const listDisplay = (
+    <List role="listbox">
+      {createItems(mockData)}
+    </List>
+  );
+
   const createRow = rowData => (
     {
       key: rowData.key,

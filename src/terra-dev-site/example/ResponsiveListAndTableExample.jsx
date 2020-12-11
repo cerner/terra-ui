@@ -25,7 +25,7 @@ const CustomItemCollection = () => {
     let comment;
     let endAccessory;
 
-    const displays = rowData.cells.map((cell) => {
+    let displays = rowData.cells.map((cell) => {
       switch (cell.key) {
         case 'startAccessory':
           startAccessory = cell.children;
@@ -39,6 +39,10 @@ const CustomItemCollection = () => {
         default:
           return cell.children;
       }
+    });
+
+    displays = displays.filter(function (el) {
+        return el != null;
     });
 
     if (startAccessory) {

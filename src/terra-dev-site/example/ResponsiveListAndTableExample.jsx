@@ -41,8 +41,8 @@ const CustomItemCollection = () => {
       }
     });
 
-    displays = displays.filter(function (el) {
-        return el != null;
+    displays = displays.filter((el) => {
+      return el != null;
     });
 
     if (startAccessory) {

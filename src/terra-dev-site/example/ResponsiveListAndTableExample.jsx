@@ -41,9 +41,7 @@ const CustomItemCollection = () => {
       }
     });
 
-    displays = displays.filter((el) => {
-      return el != null;
-    });
+    displays = displays.filter((el) => el != null);
 
     if (startAccessory) {
       itemview = (

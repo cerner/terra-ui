@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@cerner/terra-docs": "^1.0.0",
+    "@cerner/terra-toolkit-docs": "^1.3.0",
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",
     "prop-types": "^15.5.10",

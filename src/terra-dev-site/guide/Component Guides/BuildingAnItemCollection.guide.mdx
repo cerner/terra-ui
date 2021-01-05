@@ -4,7 +4,7 @@ import ResponsiveListandTableExample from '../../example/ResponsiveListAndTableE
 
 `terra-item-collection` was a wrapper component designed to display data as either a table or list of items dependent on the relative container size. It has been deprecated in favor of encouraging teams to create their own component. We found that the item collection was too limited in API to meet the varied needs of all consumers and instead we now recommend teams use terra components to create their own flexible list/table component. This guide is intended to help consumers create their own 'item-collection' to switch between a table and list layout depending on the relative container size.
 
-The `terra-item-collection` used [terra-responsive-element](/components/terra-responsive-element/responsive-element/responsive-element) to swap between it's [terra-table](/components/terra-table/table/table) and [terra-list](/components/terra-list/list/list) displays. The example in this guide use `ActiveBreakpointContext` from [terra-application](/application/terra-application/application) to switch what is displayed based on current browser size.
+The `terra-item-collection` used [terra-responsive-element](/components/terra-responsive-element/responsive-element/responsive-element) to swap between its [terra-table](/components/terra-table/table/table) and [terra-list](/components/terra-list/list/list) displays. The example in this guide uses the `ActiveBreakpointContext` from [terra-application](/application/terra-application/application) to switch what is displayed based on the current browser size.
 
 ```javascript
 import { ActiveBreakpointContext } from 'terra-application/lib/breakpoints';
@@ -28,7 +28,7 @@ const CustomItemCollection = () => {
 
 This will display a list at browser size `medium` and below and a table on larger sizes.
 
-The example also use [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not required. It is used here to to recreate the deprecated `terra-item-collection` but we encourage you to create your own cell layout to meet the requirements of your design..
+The example also uses [terra-clinical-item-view](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view) for each cell of data which is not required. It is used here to to recreate the deprecated `terra-item-collection`, but we encourage you to create your own cell layout to meet the requirements of your design.
 
 ## Creating the Item Collection
 
@@ -36,7 +36,7 @@ In the following examples we create 2 different components. A [terra-list](/comp
 
 ### Creating the List
 
-Start with a Terra `List` component and define these two props: `dividerStyles` and `role`. `dividerStyle` is used to determine if and where you want the border-color to be applied to each of the children and can have the values 'none', 'standard', 'bottom-only'. `role` is only used if the children you have in `List` are selectable, and if they are, is defined as 'listbox'.
+We start with a Terra `List` component and define these two props: `dividerStyles` and `role`. `dividerStyle` is used to determine if and where we want the border-color to be applied to each of the children and can have the values 'none', 'standard', 'bottom-only'. `role` is only used if the children you have in `List` are selectable, and if they are, is defined as 'listbox'.
 
 ```javascript
   const listDisplay = (
@@ -45,7 +45,7 @@ Start with a Terra `List` component and define these two props: `dividerStyles` 
   </List>);
 ```
 
-Next we build the children that are going into this `List`. Each child should be dropped in [`terra-list`'s `Item`](/components/terra-list/list/list-item) and be set as the display prop in an [ItemView](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view).
+Next we build the children that are going into this `List`. Each child must be rendered within the [`terra-list`'s `Item`](/components/terra-list/list/list-item) component and be set as the display prop in an [ItemView](/components/terra-clinical-item-view/clinical-item-view/clinical-item-view).
 
 ```javascript
   const listChild = (

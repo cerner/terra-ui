@@ -3,7 +3,7 @@ const { merge } = require('webpack-merge');
 const {
   TerraDevSite,
 } = require('@cerner/terra-dev-site');
-const WebpackConfigTerra = require('terra-toolkit/config/webpack/webpack.config');
+const WebpackConfigTerra = require('@cerner/webpack-config-terra');
 
 const packageJson = require('./package.json');
 

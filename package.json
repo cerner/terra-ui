@@ -78,7 +78,6 @@
     "terra-clinical-data-grid": "^2.0.0",
     "terra-clinical-detail-view": "^3.0.0",
     "terra-clinical-header": "^3.0.0",
-    "terra-clinical-item-collection": "^4.0.0",
     "terra-clinical-item-display": "^4.0.1",
     "terra-clinical-item-view": "^4.1.0",
     "terra-clinical-label-value-view": "^3.0.0",

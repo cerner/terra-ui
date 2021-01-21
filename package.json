@@ -173,7 +173,7 @@
     "stylelint-config-terra": "^3.2.0",
     "terra-dev-site": "^6.20.0",
     "webpack": "^4.28.1",
-    "webpack-cli": "^3.3.2",
+    "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^5.7.2"
   }

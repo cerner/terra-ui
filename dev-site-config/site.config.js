@@ -7,6 +7,7 @@ const excludes = [
   'node_modules/terra-abstract-modal',
   'node_modules/terra-dialog',
   'node_modules/terra-dialog-modal',
+  'node_modules/terra-clinical-item-collection',
   'node_modules/terra-theme-context',
   'node_modules/terra-markdown',
 ];

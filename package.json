@@ -49,6 +49,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@cerner/terra-aggregate-translations": "^2.0.1",
     "@cerner/terra-docs": "^1.0.0",
     "@cerner/terra-toolkit-docs": "^1.3.0",
     "classnames": "^2.2.5",

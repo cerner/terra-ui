@@ -49,6 +49,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@cerner/terra-aggregate-translations": "^2.0.1",
     "@cerner/terra-application": "github:cerner/terra-application#application-v2-integration",
     "@cerner/terra-dev-site": "github:cerner/terra-dev-site#unlock-terra-application",
     "@cerner/terra-docs": "^1.0.0",

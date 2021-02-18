@@ -19,13 +19,7 @@
     "extends @cerner/browserslist-config-terra"
   ],
   "eslintConfig": {
-    "extends": "@cerner/terra",
-    "settings": {
-      "polyfills": [
-        "Array.from",
-        "Promise"
-      ]
-    }
+    "extends": "@cerner/terra"
   },
   "stylelint": {
     "extends": "@cerner/stylelint-config-terra",

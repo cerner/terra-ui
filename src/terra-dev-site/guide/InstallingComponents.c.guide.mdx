@@ -6,17 +6,17 @@ import ProfessorIcon from '../icon/ProfessorIcon';
 <div className="tui-illustration-grid">
 <div className="tui-illustration-grid-col">
 
-The first Terra packages that you will want to install are [terra-application](/application/terra-application) and [terra-aggregate-translations](https://github.com/cerner/terra-aggregate-translations).
+The first Terra packages that you will want to install are [terra-application](/application/terra-application).
 
 If you are using npm, run the following command:
 
 ```bash
-$ npm install terra-application terra-aggregate-translations --save
+$ npm install terra-application --save
 ```
 
-These are required to help set up [the needed internationalization config](/guides/terra-ui/internationalization/internationalization-intro) used with Terra.
+terra-application is required to use any other terra component.
 
-After those are installed and set up, you can install individual Terra components as needed. Each terra component is a separate NPM package. All of the terra packages can be found on the [public npm repository](https://www.npmjs.com/browse/keyword/Terra). To install the Terra NPM package, run a command like:
+After it is installed and set up, you can install individual Terra components as needed. Each terra component is a separate NPM package. All of the terra packages can be found on the [public npm repository](https://www.npmjs.com/browse/keyword/Terra). To install the Terra NPM package, run a command like:
 
 ```bash
 $ npm install terra-button --save
@@ -41,8 +41,6 @@ All Terra components have the following peer dependencies:
 - [react-dom](https://reactjs.org/docs/react-dom.html#overview) - React package for working with the DOM.
 
 Some components may have additional peer dependencies, and these will be listed in their package.json. If `UNMET PEER DEPENDENCY` errors are shown when installing terra components, you will need to manually install the peer dependencies listed in the console.
-
-In addition to this, it also required to set up the [terra-aggregate-translations](https://github.com/cerner/terra-aggregate-translations) pre-build tool. This module provides the aggregate-translations pre-build tool to assist with creating the translation and loader files needed for internationalized Terra components to render correctly.
 
 </div>
 <div className="tui-illustration-grid-col tui-illustration-grid-col-illustration">

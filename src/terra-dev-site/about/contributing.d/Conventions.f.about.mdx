@@ -368,41 +368,6 @@ Additional info: [https://djangostars.com/blog/what-and-how-to-test-with-enzyme-
 
 We use [Webdriver.io](http://webdriver.io/) for browser testing functionality, visual regression testing, and accessibility testing.
 
-At minimum, components should include accessibility and visual regression tests using the Terra helpers, `Terra.should.beAccessible()` and `Terra.should.matchScreenshot()`;
+At minimum, components should include accessibility and visual regression tests using the Terra helper, `Terra.validates.accessibility`.
 
-```js
-describe('Compact Button', () => {
-    before(() => browser.url('/#/raw/tests/terra-button/button/compact-button'));
-
-    Terra.should.beAccessible();
-    Terra.should.matchScreenshot();
-
-    it('displays button that has been clicked', () => {
-      browser.click('button');
-    });
-
-    Terra.should.matchScreenshot('clicked button');
-  });
-```
-
-If the component you are testing includes theming variables, you can us the following Terra helpers to test their themability.
-
-
-```js
-// Generates screenshot for each property
-Terra.should.themeEachCustomProperty({
-  '--color': 'red',
-  '--font-size': '20px',
-});
-
-// Generates 1 screenshot for the combination of properties
-Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
-        '--color': 'red',
-        '--font-size': '20px',
-      },
-    });
-````
-
-You can find more info on writing webdriver.io tests for terra [here](https://github.com/cerner/terra-toolkit-boneyard/blob/main/docs/Wdio_Utility.md#writing-tests).
+You can find more info on writing webdriver.io tests for terra [here](/dev_tools/cerner/terra-functional-testing/about).

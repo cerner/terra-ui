@@ -64,7 +64,7 @@ For example, to close an issue numbered `123`, you could use the phrase `Closes 
 
 ### Code Review
 
-Per our [terra governance model](https://github.com/cerner/terra-ui/blob/main/GOVERNANCE.md), changes must be reviewed by the maintainers. This includes contributions from the community, as well as the current maintainers.
+Per our [terra governance model](/terra-ui/about/terra-ui/governance-model), changes must be reviewed by the maintainers. This includes contributions from the community, as well as the current maintainers.
 
 In order for your pull request to be accepted, the [Travis CI](https://travis-ci.org/) build needs to pass.
 
@@ -80,22 +80,13 @@ Depending on the size of the changes, additional reviews via meetings/emails may
 
 If decisions are made in meetings/emails, details/decisions should be added to the relevant GitHub issue as comments when possible to ensure that the decisions/changes/reasons are tracked and documented.
 
-#### PR Labelling
-
-We will add the appropriate label on the PR: "**Small**" or "**Large**" to denote the change size.
-
-Changes are typically considered small unless otherwise noted by a label, “**Large**”, on the pull request.
-
 ### UX And Functional Reviews
 
-Along with reviews from maintainers, depending on the change, you may need a review from our **UX designer** and our **Solution designer**.
+Along with reviews from maintainers, depending on the change, you may need a functional, UX, and/or accessibility review from our team.*.
 
-This is denoted with the following labels added on the PR, “**Needs UX review**” and “**Needs functional review**”.
+This is denoted with the following labels added on the PR, “**Functional Review Required**”, “**UX Review Required**” and “**Accessibility Review Required**”.
 
-Once our UX designer and Solution designer complete their reviews, they’ll leave a comment and remove the associated labels.
-
-### Tech Only Changes
-If a PR has a label of “**Tech Only**” on it, UX and functional review is not required, though this will still need reviews by maintainers based on the small and large change concepts.
+Once our team member completes the review, they’ll leave a comment and remove the associated labels.
 
 ### Pull Request Deployments
 
@@ -105,9 +96,6 @@ If the Heroku deployment build fails, a link reporting the failed build status w
 
 If you've forked the repo and are submitting a PR back to the upstream repo, Heroku PR builds will not be triggered automatically when opening a PR. Reach out to one of the maintainers to trigger the Heroku PR deployment for your PR from a fork.
 
-## Adding The Pull Request To The Project Board
-
-We use [GitHub project boards](https://help.github.com/articles/about-project-boards/) to track what work is actively being developed. If you are on the [terra team](https://github.com/orgs/cerner/teams/terra), you can add PRs to the project board by clicking on the "Projects" section in the right sidebar, then clicking on the "Organizations" tab, and then clicking on "Terra". This will add a card for the PR to awaiting triage section of the [terra project board](https://github.com/orgs/cerner/projects/1). From here, [terra team](https://github.com/orgs/cerner/teams/terra) members should manage their PR card on the board and update as they work on the issue.
 
 ## Merging The Pull Request
 

@@ -142,7 +142,7 @@
     "terra-toggle-section-header": "^2.0.0",
     "terra-toolbar": "^1.0.0",
     "terra-visually-hidden-text": "^2.0.0",
-    "tsparticles": "1.19.4",
+    "tsparticles": "^1.19.4",
     "xfc": "^1.2.1"
   },
   "devDependencies": {

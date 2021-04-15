@@ -53,7 +53,7 @@ The following guide covers the development workflow for the terra monorepos that
 * [terra-framework](https://github.com/cerner/terra-framework)
 * [terra-clinical](https://github.com/cerner/terra-clinical)
 
-Components, along with their docs and tests are organized as individual packages that share similar tooling. You can read more about the [directory structure of these components here](https://github.com/cerner/generator-terra-module#generated-package).
+Components, along with their docs and tests, are organized as individual packages that share similar tooling.
 
 ## Install Dependencies
 
@@ -75,21 +75,14 @@ Note that if you switch between branches, dependencies may be different between 
 
 Running `npm start` will start up the development server. It will be available at [http://localhost:8080/](http://localhost:8080/)
 
-You can navigate to different component documentation pages. These pages are auto-generated via files in the  [terra-dev-site](https://github.com/cerner/terra-dev-site) doc directories found in each package directory.
+You can navigate to different component documentation pages. These pages are auto-generated via files in the  [terra-dev-site](/dev_tools/terra-dev-site/terra-dev-site/about) doc directories found in each package directory.
 
-## Starting The Development Server For Internet Explorer 10
-
-The version of [webpack-serve](https://github.com/webpack-contrib/webpack-serve) we use for the local development site is not compatible with IE 10. To handle this, there is a `start-static` script that can be run that will start up a static dev server that works in IE 10.
-
-`npm run start-static`
-
-_Note that this static server does not support hot reloading, if you want to see changes based on your code updates, you will need to restart the server after you've made changes to see the updates._
 
 ## Follow Component Standards
 As you work on your code changes, ensure the components follow [the Terra component standards](/about/terra-ui/component-standards).
 
 ## Running Lint Scripts
-For Terra projects, we’ve created our own [ESLint config](https://github.com/cerner/eslint-config-terra) and [Stylelint config](https://github.com/cerner/stylelint-config-terra).
+For Terra projects, we’ve created our own [ESLint config](/dev_tools/cerner/eslint-config-terra/about) and [Stylelint config](/dev_tools/cerner/stylelint-config-terra/about).
 
 * Our ESLint config is based on [Airbnb’s JavaScript style guide](https://github.com/airbnb/javascript).
 * Our Stylelint config is based on [sass-guidelin.es](https://sass-guidelin.es/).
@@ -143,9 +136,9 @@ You can also run Webdriver.io in the individual package directories.
 
 Change directories to the specific package in your terminal, e.g. `cd packages/terra-button`, and run the following command
 
-`npm run test:wdio`
+`npm run wdio`
 
-More info on writing webdriver.io tests for terra can be [found here](https://github.com/cerner/terra-toolkit-boneyard/blob/main/docs/Wdio_Utility.md).
+More info on writing webdriver.io tests for terra can be [found here](/dev_tools/cerner/stylelint-config-terra/about).
 
 _If you make changes to code inside of the `src` directories, and you do not see if reflected in tests, run `npm run compile` to ensure your tests are using the latest code changes._
 

@@ -51,7 +51,7 @@
   "dependencies": {
     "@cerner/terra-aggregate-translations": "^2.0.1",
     "@cerner/terra-application": "github:cerner/terra-application#application-v2-integration",
-    "@cerner/terra-dev-site": "github:cerner/terra-dev-site#unlock-terra-application",
+    "@cerner/terra-dev-site": "github:cerner/terra-dev-site#terra-dev-site-v7",
     "@cerner/terra-docs": "^1.0.0",
     "@cerner/terra-toolkit-docs": "^1.3.0",
     "classnames": "^2.2.5",

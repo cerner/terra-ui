@@ -42,7 +42,6 @@ The current Maintainers on the project are:
 - [Dave Kasper](https://github.com/dkasper-was-taken)
 - [Matt Henkes](https://github.com/mjhenkes)
 - [Ryan Manuel](https://github.com/rfmanuel)
-- [Stephen Esser](https://github.com/StephenEsser)
 - [Tyler Biethman](https://github.com/tbiethman)
 
 ### Committers

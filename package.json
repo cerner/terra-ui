@@ -147,7 +147,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
-    "@babel/core": "7.10.5",
+    "@babel/core": "7.14.0",
     "@babel/parser": "7.10.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
     "@babel/plugin-transform-object-assign": "^7.2.0",

@@ -9,7 +9,7 @@
     "url": "https://github.com/cerner/terra-ui/issues"
   },
   "engines": {
-    "node": ">=12 <16"
+    "node": ">=12 <15"
   },
   "repository": {
     "type": "git",

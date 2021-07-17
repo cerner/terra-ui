@@ -39,7 +39,6 @@ The maintainers are individuals who are recognized by merit and have a demonstra
 
 The current Maintainers on the project are:
 
-- [Dave Kasper](https://github.com/dkasper-was-taken)
 - [Matt Henkes](https://github.com/mjhenkes)
 - [Ryan Manuel](https://github.com/rfmanuel)
 - [Tyler Biethman](https://github.com/tbiethman)

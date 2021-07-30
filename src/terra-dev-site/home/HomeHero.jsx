@@ -1,9 +1,7 @@
 import React from 'react';
-import Particles from 'react-particles-js';
+import Particles from 'react-tsparticles';
 import imgTerra from './assets/terra-ui.png';
 import styles from './HomeHero.scss';
-
-const particleStyle = { background: `url(${imgTerra}) no-repeat 50% calc(50% - 70px) / 250px 250px #223` };
 
 const ParticlesConfigConstellations = {
   particles: {
@@ -21,8 +19,9 @@ const ParticlesConfigConstellations = {
     },
     move: {
       direction: 'right',
+      enable: 'true',
       speed: 0.05,
-      out_mode: 'out',
+      outMode: 'out',
     },
     size: {
       value: 1.5,
@@ -53,13 +52,19 @@ const ParticlesConfigConstellations = {
     },
   },
   retina_detect: true,
+  background: {
+    image: `url(${imgTerra})`,
+    position: '50% calc(50% - 70px)',
+    size: '250px 250px',
+    repeat: 'no-repeat',
+    color: '#223',
+  },
 };
 
 const HomeHero = () => (
   <section>
     <div className={styles.hero}>
-      {/* eslint-disable react/forbid-component-props */}
-      <Particles style={particleStyle} params={ParticlesConfigConstellations} />
+      <Particles options={ParticlesConfigConstellations} />
       <div className={styles['hero-content']}>
         <h1 className={styles['hero-title']}>Terra</h1>
         <a className={styles['hero-button']} href="/terra-ui/about/terra-ui/what-is-terra">Get Started</a>

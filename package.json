@@ -54,8 +54,8 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-final-form": "^6.3.0",
-    "react-particles-js": "^3.4.1",
     "react-router-dom": "^5.0.0",
+    "react-tsparticles": "^1.33.1",
     "terra-action-footer": "^2.0.0",
     "terra-action-header": "^2.0.0",
     "terra-aggregator": "^4.0.0",
@@ -144,7 +144,6 @@
     "terra-toggle-section-header": "^2.0.0",
     "terra-toolbar": "^1.0.0",
     "terra-visually-hidden-text": "^2.0.0",
-    "tsparticles": "^1.19.4",
     "xfc": "^1.2.1"
   },
   "devDependencies": {

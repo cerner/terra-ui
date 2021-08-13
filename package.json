@@ -36,8 +36,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
-    "start": "NODE_OPTIONS=--max-old-space-size=8192 webpack serve",
-    "start:new": "webpack serve",
+    "start": "webpack serve",
     "start-heroku": "terra express-server --port $PORT --site './build' ",
     "test": "npm run lint",
     "deploy": "gh-pages -d build"

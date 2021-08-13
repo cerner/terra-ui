@@ -54,8 +54,8 @@ const coreConfig = () => ({
       distributionFolder: 'src',
       additionalSearchDirectories,
       sideEffectImportFilePaths: [
-        'terra-ui/dev-site-config/initializeXFC.js',
-        'terra-ui/dev-site-config/IllustrationGrid.scss',
+        'terra-ui/src/initializeXFC.js',
+        'terra-ui/src/IllustrationGrid.scss',
       ],
     }),
   ],

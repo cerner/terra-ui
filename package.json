@@ -100,6 +100,7 @@
     "terra-form-select": "^6.0.0",
     "terra-form-textarea": "^5.0.0",
     "terra-form-validation": "^1.0.0",
+    "terra-graphs-docs": "file:cerner-terra-graphs-docs-0.0.0.tgz",
     "terra-grid": "^6.0.0",
     "terra-heading": "^4.0.0",
     "terra-hookshot": "^5.0.0",

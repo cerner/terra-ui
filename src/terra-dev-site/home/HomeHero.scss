@@ -2,6 +2,8 @@
   .hero {
     height: 33.714rem;
     position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
   }
 
   .hero canvas {
@@ -16,6 +18,7 @@
     right: 0;
     top: 0;
     z-index: 0;
+    transform: translate3d(0,0,0);
   }
 
   .hero-content {

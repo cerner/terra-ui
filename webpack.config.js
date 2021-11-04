@@ -50,6 +50,10 @@ const coreConfig = () => ({
         path: '/guides',
         label: 'Guides',
         contentExtension: 'guide',
+      }, {
+        path: '/graphs',
+        label: 'Graphs',
+        contentExtension: 'graph',
       }],
       distributionFolder: 'src',
       additionalSearchDirectories,

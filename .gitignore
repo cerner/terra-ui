@@ -32,3 +32,5 @@ scripts/a11y/a11y-output-txt.txt
 .DS_Store
 
 stats.json
+
+.idea

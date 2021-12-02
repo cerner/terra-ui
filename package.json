@@ -48,6 +48,7 @@
     "@cerner/terra-dev-site": "^7.0.0",
     "@cerner/terra-docs": "^1.0.0",
     "@cerner/terra-framework-docs": "^1.0.0",
+    "@cerner/terra-graphs-docs": "file:cerner-terra-graphs-docs-1.0.0.tgz",
     "@cerner/terra-toolkit-docs": "^2.0.0",
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",

@@ -38,7 +38,7 @@
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
     "start": "webpack serve",
     "start-heroku": "terra express-server --port $PORT --site './build' ",
-    "test": "npm run lint",
+    "test": "",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {

@@ -35,6 +35,7 @@ Care has been taken to separate the development process we follow from the tools
 
 ### Maintainers
 
+
 The maintainers are individuals who are recognized by merit and have a demonstrated history of contributions and commitment to the project. These individuals have write access to the code base and are collectively responsible for the project. This includes project direction and scope, accepting contributions, and cultivating the community. Maintainers are expected to maintain an active role in the Terra project and community. Any maintainer who has been inactive in the Terra project for a year will be relieved of the maintainer status.
 
 The current Maintainers on the project are:

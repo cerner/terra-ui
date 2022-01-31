@@ -43,6 +43,10 @@ const coreConfig = () => ({
         label: 'Components',
         contentExtension: 'doc',
       }, {
+        path: '/graphs',
+        label: 'Graphs',
+        contentExtension: 'graph',
+      }, {
         path: '/dev_tools',
         label: 'Developer Tools',
         contentExtension: 'tool',

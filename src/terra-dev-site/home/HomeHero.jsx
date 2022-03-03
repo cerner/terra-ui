@@ -1,7 +1,7 @@
-import React from 'react';
-import Particles from 'react-tsparticles';
-import imgTerra from './assets/terra-ui.png';
-import styles from './HomeHero.scss';
+import React from "react";
+import Particles from "react-tsparticles";
+import imgTerra from "./assets/terra-ui.png";
+import styles from "./HomeHero.scss";
 
 const ParticlesConfigConstellations = {
   particles: {
@@ -18,10 +18,10 @@ const ParticlesConfigConstellations = {
       distance: 100,
     },
     move: {
-      direction: 'right',
-      enable: 'true',
+      direction: "right",
+      enable: "true",
       speed: 0.05,
-      outMode: 'out',
+      outMode: "out",
     },
     size: {
       value: 1.5,
@@ -42,7 +42,7 @@ const ParticlesConfigConstellations = {
     events: {
       onclick: {
         enable: true,
-        mode: 'push',
+        mode: "push",
       },
     },
     modes: {
@@ -54,10 +54,10 @@ const ParticlesConfigConstellations = {
   retina_detect: true,
   background: {
     image: `url(${imgTerra})`,
-    position: '50% calc(50% - 70px)',
-    size: '250px 250px',
-    repeat: 'no-repeat',
-    color: '#223',
+    position: "50% calc(50% - 70px)",
+    size: "250px 250px",
+    repeat: "no-repeat",
+    color: "#223",
   },
 };
 
@@ -65,9 +65,14 @@ const HomeHero = () => (
   <section>
     <div className={styles.hero}>
       <Particles options={ParticlesConfigConstellations} />
-      <div className={styles['hero-content']}>
-        <h1 className={styles['hero-title']}>Terra</h1>
-        <a className={styles['hero-button']} href="/terra-ui/about/terra-ui/what-is-terra">Get Started</a>
+      <div className={styles["hero-content"]}>
+        <h1 className={styles["hero-title"]}>Terra</h1>
+        <a
+          className={styles["hero-button"]}
+          href="/about/terra-ui/what-is-terra"
+        >
+          Get Started
+        </a>
       </div>
     </div>
   </section>

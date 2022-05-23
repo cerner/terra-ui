@@ -63,7 +63,7 @@
     "terra-action-header": "^2.0.0",
     "terra-aggregator": "^4.0.0",
     "terra-alert": "^4.0.0",
-    "terra-application": "^1.14.2",
+    "terra-application": "file:terra-application-1.53.0.tgz",
     "terra-application-navigation": "^1.0.0",
     "terra-arrange": "^3.0.0",
     "terra-avatar": "^3.0.0",

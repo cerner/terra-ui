@@ -45,7 +45,7 @@
     "@cerner/terra-aggregate-translations": "^2.0.1",
     "@cerner/terra-application-docs": "^2.0.0",
     "@cerner/terra-core-docs": "^1.0.0",
-    "@cerner/terra-dev-site": "^7.0.0",
+    "@cerner/terra-dev-site": "^8.0.0",
     "@cerner/terra-docs": "^1.0.0",
     "@cerner/terra-framework-docs": "^1.0.0",
     "@cerner/terra-graphs-docs": "^1.0.1",

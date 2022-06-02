@@ -42,10 +42,10 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "@cerner/terra-aggregate-translations": "^2.0.1",
+    "@cerner/terra-aggregate-translations": "^3.0.0",
     "@cerner/terra-application-docs": "^2.0.0",
     "@cerner/terra-core-docs": "^1.0.0",
-    "@cerner/terra-dev-site": "^7.0.0",
+    "@cerner/terra-dev-site": "^8.0.0",
     "@cerner/terra-docs": "^1.0.0",
     "@cerner/terra-framework-docs": "^1.0.0",
     "@cerner/terra-graphs-docs": "^1.0.1",
@@ -56,14 +56,14 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-final-form": "^6.3.0",
-    "react-intl": "^2.8.0",
+    "react-intl": "^5.8.2",
     "react-router-dom": "^5.0.0",
     "react-tsparticles": "^1.33.1",
     "terra-action-footer": "^2.0.0",
     "terra-action-header": "^2.0.0",
     "terra-aggregator": "^4.0.0",
     "terra-alert": "^4.0.0",
-    "terra-application": "^1.14.2",
+    "terra-application": "^2.0.0",
     "terra-application-navigation": "^1.0.0",
     "terra-arrange": "^3.0.0",
     "terra-avatar": "^3.0.0",
@@ -160,7 +160,7 @@
     "@cerner/stylelint-config-terra": "^4.0.0",
     "@cerner/terra-cli": "^1.1.0",
     "@cerner/terra-open-source-scripts": "^1.1.0",
-    "@cerner/webpack-config-terra": "^2.0.0",
+    "@cerner/webpack-config-terra": "^3.0.0",
     "core-js": "^3.1.3",
     "eslint": "^7.19.0",
     "gh-pages": "^3.0.0",
@@ -172,7 +172,7 @@
     "stylelint": "^13.0.0",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.3.1",
+    "webpack-dev-server": "^4.9.1",
     "webpack-merge": "^5.7.2"
   }
 }

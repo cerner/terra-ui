@@ -16,6 +16,7 @@ Cerner Corporation
 - Matt Anderson [@mndrsn]
 - Dianna McGinn [@DMcGinn]
 - Lokesh P [lokesh-0813]
+- Supreeth MR [@supreethmr]
 
 [@matt-butler]: https://github.com/matt-butler
 [@windse7en]:https://github.com/windse7en
@@ -33,3 +34,4 @@ Cerner Corporation
 [@mndrsn]: https://github.com/mndrsn
 [@DMcginn]: https://github.com/DMcginn
 [@lokesh-0813]:  https://github.com/lokesh-0813
+[@supreethmr]: https://github.com/supreethmr

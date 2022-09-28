@@ -52,7 +52,6 @@
     "@cerner/terra-toolkit-docs": "^2.0.0",
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",
-    "node-sass": "^6.0",
     "prop-types": "^15.5.10",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",

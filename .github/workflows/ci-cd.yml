@@ -1,0 +1,52 @@
+---
+name: CI and CD
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+  schedule:
+    - cron: '0 1 * * SUN'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+      - name: Setup Project
+        uses: ./.github/actions/setup
+      # Linting currently does not work
+      # - name: Linting Project
+      #   run: |
+      #     npm run lint
+
+  release-and-deploy:
+    runs-on: ubuntu-latest
+
+    needs: [build]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Setup Project
+        uses: ./.github/actions/setup
+      - name: Build
+        env:
+          TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY: ${{ secrets.TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY }}
+          TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID: "142381315"
+          TERRA_DEV_SITE_PUBLIC_PATH: /terra-ui/
+        run: npm run build:production
+      - name: Release
+        run: npm test
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'chore(docs): Regenerate docs'

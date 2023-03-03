@@ -31,6 +31,10 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
+      - name: Setup GitHub Config
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
       - name: Setup Project
         uses: ./.github/actions/setup
       - name: Build
@@ -40,7 +44,10 @@ jobs:
           TERRA_DEV_SITE_PUBLIC_PATH: /terra-ui/
         run: npm run build:production
       - name: Release
-        run: npm test
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx terra release
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -47,7 +47,9 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx terra release
+        run: |
+          npm test
+          npx terra release
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

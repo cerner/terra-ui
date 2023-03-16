@@ -50,6 +50,7 @@
     "@cerner/terra-framework-docs": "^1.0.0",
     "@cerner/terra-graphs-docs": "^1.0.1",
     "@cerner/terra-toolkit-docs": "^2.0.0",
+    "@cerner/terra-pills": "^1.2.0",
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",
     "prop-types": "^15.5.10",

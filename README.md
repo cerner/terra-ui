@@ -66,14 +66,14 @@ npm run test
       - VS Code will now reload the workspace and create/start the dev container and volume
       - Please note: changes made using this option will only update files in the Docker volume. It is recommended to commit changes often in case the volume is deleted or dev container gets removed.
 5. You're now running in a dev container.  Use the terminal of the dev container in Visual Studio Code to issue any npm or bash commands.
-7. To terminate a dev container:
+6. To terminate a dev container:
     - Use command line or Rancher/Docker Desktop OR
     - Using Visual Studio Code
       - Select the Remote Explorer icon in the Activity Bar or View -> Command Palette and run **Remote Explorer: Focus on Containers View**
       - Locate the **terra-ui_devcontainer** or currently running dev container under "Dev Containers"
       - Right click and select **Stop Container** and close the workspace
         - You can also select **Rebuild Container** to restart the dev container
-8. To reopen a dev container:
+7. To reopen a dev container:
     - Existing local workspace (for Option 1)
       - Open the project in Visual Studio Code
       - Ensure the workspace contains the .devcontainer folder

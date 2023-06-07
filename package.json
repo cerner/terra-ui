@@ -49,8 +49,8 @@
     "@cerner/terra-docs": "^1.0.0",
     "@cerner/terra-framework-docs": "^1.0.0",
     "@cerner/terra-graphs-docs": "^1.0.1",
-    "@cerner/terra-toolkit-docs": "^2.0.0",
     "@cerner/terra-pills": "^1.2.0",
+    "@cerner/terra-toolkit-docs": "^2.0.0",
     "classnames": "^2.2.5",
     "final-form": "^4.11.1",
     "prop-types": "^15.5.10",
@@ -145,6 +145,7 @@
     "terra-toggle-section-header": "^2.0.0",
     "terra-toolbar": "^1.0.0",
     "terra-visually-hidden-text": "^2.0.0",
+    "terra-worklist-data-grid": "^0.1.0",
     "xfc": "^1.2.1"
   },
   "devDependencies": {

@@ -145,7 +145,7 @@
     "terra-toggle-section-header": "^2.0.0",
     "terra-toolbar": "^1.0.0",
     "terra-visually-hidden-text": "^2.0.0",
-    "terra-worklist-data-grid": "^0.1.0",
+    "terra-worklist-data-grid": "^0.3.0",
     "xfc": "^1.2.1"
   },
   "devDependencies": {

@@ -29,31 +29,12 @@
     }
   },
   "dependencies": {
-    "@cerner/terra-aggregate-translations": "2",
-    "@cerner/terra-application-docs": "2",
-    "@cerner/terra-core-docs": "1",
     "@cerner/terra-dev-site": "7",
     "@cerner/terra-docs": "1",
-    "@cerner/terra-framework-docs": "1",
-    "@cerner/terra-graphs-docs": "1",
-    "@cerner/terra-toolkit-docs": "2",
     "classnames": "2",
-    "final-form": "4",
-    "prop-types": "15",
-    "react": "16",
-    "react-dom": "16",
-    "react-final-form": "6",
-    "react-intl": "2",
-    "react-router-dom": "5",
-    "react-tsparticles": "1",
-    "terra-clinical-data-grid": "2",
-    "terra-clinical-detail-view": "3",
-    "terra-clinical-header": "3",
-    "terra-clinical-item-display": "4",
-    "terra-clinical-item-view": "4",
-    "terra-clinical-label-value-view": "3",
-    "terra-clinical-onset-picker": "4",
-    "terra-clinical-result": "1"
+
+
+    "react-tsparticles": "1"
   },
   "devDependencies": {
     "@babel/cli": "7",
@@ -68,11 +49,8 @@
     "@cerner/terra-cli": "1",
     "@cerner/terra-open-source-scripts": "1",
     "@cerner/webpack-config-terra": "2",
-    "core-js": "3",
     "eslint": "7",
     "gh-pages": "3",
-    "raf": "3",
-    "regenerator-runtime": "^0.13.2",
     "stylelint": "13",
     "webpack": "5",
     "webpack-cli": "4",
@@ -92,5 +70,20 @@
     "start-heroku": "terra express-server --port $PORT --site './build' ",
     "test": "",
     "deploy": "gh-pages -d build"
+  },
+  "peerDependencies": {
+    "@cerner/terra-application-docs": "2",
+    "@cerner/terra-core-docs": "1",
+    "@cerner/terra-framework-docs": "1",
+    "@cerner/terra-graphs-docs": "1",
+    "@cerner/terra-toolkit-docs": "2",
+    "terra-clinical-data-grid": "2",
+    "terra-clinical-detail-view": "3",
+    "terra-clinical-header": "3",
+    "terra-clinical-item-display": "4",
+    "terra-clinical-item-view": "4",
+    "terra-clinical-label-value-view": "3",
+    "terra-clinical-onset-picker": "4",
+    "terra-clinical-result": "1"
   }
 }

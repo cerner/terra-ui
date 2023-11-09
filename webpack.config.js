@@ -13,7 +13,7 @@ const excludes = [
   '@cerner/terra-application',
 ];
 
-const additionalSearchDirectories = Object.keys(packageJson.dependencies).reduce((acc, dependency) => {
+const additionalSearchDirectories = Object.keys(packageJson.peerDependencies).reduce((acc, dependency) => {
   if ((dependency.startsWith('terra-') || dependency.startsWith('@cerner/terra-')) && !excludes.includes(dependency)) {
     acc.push(path.join(cwd, 'node_modules', dependency, 'lib', 'terra-dev-site'));
   }

@@ -75,12 +75,10 @@
     "clean:install": "npm run clean && npm install",
     "build:production": "webpack --mode=production",
     "build:development": "webpack",
-    "heroku-postbuild": "npm install && npm run build:production",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
     "start": "webpack serve",
-    "start-heroku": "terra express-server --port $PORT --site './build' ",
     "test": "",
     "deploy": "gh-pages -d build"
   }

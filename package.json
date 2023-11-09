@@ -1,20 +1,20 @@
 {
   "name": "terra-ui",
-  "private": true,
   "version": "0.0.0",
   "description": "terra-ui is the documentation site for the Terra UI ecosystem.",
   "author": "Cerner Corporation",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/cerner/terra-ui/issues"
-  },
-  "engines": {
-    "node": "12 || 14",
-    "npm": "9"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cerner/terra-ui/issues"
+  },
+  "license": "Apache-2.0",
+  "private": true,
+  "engines": {
+    "node": "12 || 14",
+    "npm": "9"
   },
   "browserslist": [
     "extends @cerner/browserslist-config-terra"
@@ -32,9 +32,22 @@
     "@cerner/terra-dev-site": "7",
     "@cerner/terra-docs": "1",
     "classnames": "2",
-
-
     "react-tsparticles": "1"
+  },
+  "peerDependencies": {
+    "@cerner/terra-application-docs": "2",
+    "@cerner/terra-core-docs": "1",
+    "@cerner/terra-framework-docs": "1",
+    "@cerner/terra-graphs-docs": "1",
+    "@cerner/terra-toolkit-docs": "2",
+    "terra-clinical-data-grid": "2",
+    "terra-clinical-detail-view": "3",
+    "terra-clinical-header": "3",
+    "terra-clinical-item-display": "4",
+    "terra-clinical-item-view": "4",
+    "terra-clinical-label-value-view": "3",
+    "terra-clinical-onset-picker": "4",
+    "terra-clinical-result": "1"
   },
   "devDependencies": {
     "@babel/cli": "7",
@@ -70,20 +83,5 @@
     "start-heroku": "terra express-server --port $PORT --site './build' ",
     "test": "",
     "deploy": "gh-pages -d build"
-  },
-  "peerDependencies": {
-    "@cerner/terra-application-docs": "2",
-    "@cerner/terra-core-docs": "1",
-    "@cerner/terra-framework-docs": "1",
-    "@cerner/terra-graphs-docs": "1",
-    "@cerner/terra-toolkit-docs": "2",
-    "terra-clinical-data-grid": "2",
-    "terra-clinical-detail-view": "3",
-    "terra-clinical-header": "3",
-    "terra-clinical-item-display": "4",
-    "terra-clinical-item-view": "4",
-    "terra-clinical-label-value-view": "3",
-    "terra-clinical-onset-picker": "4",
-    "terra-clinical-result": "1"
   }
 }

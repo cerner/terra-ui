@@ -40,6 +40,7 @@
     "@cerner/terra-framework-docs": "1",
     "@cerner/terra-graphs-docs": "1",
     "@cerner/terra-toolkit-docs": "2",
+    "terra-application": "^1.56.0",
     "terra-clinical-data-grid": "2",
     "terra-clinical-detail-view": "3",
     "terra-clinical-header": "3",
